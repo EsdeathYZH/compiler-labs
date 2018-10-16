@@ -2,7 +2,9 @@
 /* Lab2 Attention: You are only allowed to add code in this file and start at Line 26.*/
 #include <string.h>
 #include "util.h"
-#include "tokens.h"
+#include "symbol.h"
+#include "absyn.h"
+#include "y.tab.h"
 #include "errormsg.h"
 
 int charPos=1;
@@ -35,7 +37,7 @@ char *getstr(const char *str)
   char* output = checked_malloc(strlen(str));
 	strcpy(output,str+1);
   int length = strlen(str);
-  if(length <= 2) return NULL;
+  if(length <= 2) return "";
   int i = 1,index = 0;
   for(; i<length-1;){
     if(str[i]==92){
@@ -152,7 +154,7 @@ int comment(int index){
 <COMMENT>"\n" {adjust(); EM_newline(); continue;}
 
 <INITIAL>\"([^"]|\\\")*\" {adjust(); yylval.sval = getstr(yytext); return STRING;}
-<INITIAL>([a-zA-Z]+[a-zA-Z0-9_]*)|("_main") {adjust(); yylval.sval = yytext; return ID;}
+<INITIAL>([a-zA-Z]+[a-zA-Z0-9_]*)|("_main") {adjust(); yylval.sval = String(yytext); return ID;}
 
 <INITIAL>","  {adjust(); return COMMA;}
 <INITIAL>":"  {adjust(); return COLON;}
