@@ -10,7 +10,7 @@
 #include "frame.h"
 
 /*Lab5: Your implementation here.*/
-static int F_wordSize = 8;
+const int F_wordSize = 8;
 //Frame
 struct F_frame_ {
 	Temp_label label;
@@ -40,31 +40,56 @@ Temp_temp F_FP(void){
 	return fp;
 }
 
+Temp_temp F_SP(void){
+	static Temp_temp fp = NULL;
+	if(!fp){
+		fp = Temp_newtemp();
+	}
+	return fp;
+}
+
+Temp_temp F_RV(void){
+	static Temp_temp fp = NULL;
+	if(!fp){
+		fp = Temp_newtemp();
+	}
+	return fp;
+}
+
 F_access InFrame(int offset){
-	F_access frameVar = (F_access) checked_malloc(sizeof (*frameVar));
+	F_access frameVar = (F_access) checked_malloc(sizeof(*frameVar));
 	frameVar->kind = inFrame;
 	frameVar->u.offset = offset;
 	return frameVar;
 }
 
 F_access InReg(Temp_temp reg){
-	F_access regVar = (F_access) checked_malloc(sizeof (*regVar));
+	F_access regVar = (F_access) checked_malloc(sizeof(*regVar));
 	regVar->kind = inReg;
 	regVar->u.reg = reg;
 	return regVar;
 }
 
+F_accessList F_AccessList(F_access head, F_accessList tail){
+	F_accessList f_accessList = (F_accessList) checked_malloc(sizeof(*f_accessList));
+	f_accessList->head = head;
+	f_accessList->tail = tail;
+	return f_accessList;
+}
+
 F_access F_allocLocal(F_frame f, bool escape){
+	F_accessList* temp_accessList = &(f->localList);
+	while(*temp_accessList){
+		temp_accessList = &((*temp_accessList)->tail);
+	}
 	if(escape){
-		f->localList->tail = f->localList;
 		f->current_size += F_wordSize;
 		F_access frameVar = InFrame(-f->current_size);
-		f->localList->head = frameVar;
+		*temp_accessList = F_AccessList(frameVar, NULL);
 		return frameVar;
 	}else{
-		f->localList->tail = f->localList;
 		F_access regVar = InReg(Temp_newtemp());
-		f->localList->head = regVar;
+		*temp_accessList = F_AccessList(regVar, NULL);
 		return regVar;
 	}
 }
@@ -74,10 +99,26 @@ F_accessList F_formals(F_frame f){
 }
 
 F_frame F_newFrame(Temp_label name, U_boolList formals){
-	F_frame frame = (F_frame) checked_malloc(sizeof(frame));
+	F_frame frame = (F_frame) checked_malloc(sizeof(*frame));
 	frame->label = name;
 	frame->current_size = 0;
-	frame->formalList = convertBoolToAccess(frame, formals);
+	frame->localList = NULL;
+	//Handle static link first
+	frame->formalList = F_AccessList(InFrame(0), NULL);
+	F_accessList* temp_accessList = &(frame->formalList->tail);
+	int offset = 0;
+	while(formals->tail){
+		//argument in memory
+		if(formals->tail->head){
+			*temp_accessList = F_AccessList(InReg(Temp_newtemp()), NULL);
+		}else{
+			*temp_accessList = F_AccessList(InFrame((2+offset)*F_wordSize), NULL);
+		}
+		offset++;
+		formals = formals->tail;
+		temp_accessList = &((*temp_accessList)->tail);
+	}
+	return frame;
 }
 
 // Must handle

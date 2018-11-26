@@ -1,2 +1,0 @@
-./mytestcase/test49.tig:5.18: syntax error
- 

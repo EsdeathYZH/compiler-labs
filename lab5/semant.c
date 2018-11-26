@@ -33,7 +33,10 @@ struct expty expTy(Tr_exp exp, Ty_ty ty)
 F_fragList SEM_transProg(A_exp exp){
 
 	//TODO LAB5: do not forget to add the main frame
-	return NULL;
+	Tr_level main_level = Tr_newLevel(Tr_outermost(), Temp_newlabel(), NULL);
+	struct expty main_exp = transExp(E_base_venv(), E_base_tenv(), exp, main_level, NULL);
+	Tr_procEntryExit(main_level, main_exp.exp, NULL);
+	return Tr_getResult();
 }
 
 Ty_ty actual_ty(Ty_ty ty){
@@ -45,7 +48,7 @@ Ty_ty actual_ty(Ty_ty ty){
 
 U_boolList makeFormalBoolList(A_fieldList fieldList, int index){
 	if(!fieldList) return NULL;
-	return U_BoolList((index > 5), makeFormalBoolList(fieldList, index+1));
+	return U_BoolList((index > 5), makeFormalBoolList(fieldList->tail, index+1));
 }
 
 Ty_tyList makeFormalTyList(S_table tenv, A_fieldList fieldList){
@@ -182,6 +185,7 @@ Tr_exp transDec(S_table venv, S_table tenv, A_dec d, Tr_level level, Temp_label 
 	switch(d->kind){
 		case A_varDec:{
 			struct expty e = transExp(venv, tenv, get_vardec_init(d), level, looplabel);
+			//now we assume every local var is escape.
 			Tr_access access = Tr_allocLocal(level, TRUE);
 			if(get_vardec_typ(d)){
 				Ty_ty type_ty = S_look(tenv, get_vardec_typ(d));
@@ -271,8 +275,12 @@ Tr_exp transDec(S_table venv, S_table tenv, A_dec d, Tr_level level, Temp_label 
 					S_enter(venv, l->head->name, E_VarEntry(formalsAccess->head, t->head));
 					formalsAccess = formalsAccess->tail;
 				}
-				struct expty body_ty = transExp(venv, tenv, f->body, level, looplabel);
-				if(body_ty.ty != result_ty){
+				//Notice!!:change level as func_level
+				struct expty body_ty = transExp(venv, tenv, f->body, func_level, looplabel);
+				if(result_ty->kind == Ty_record && (body_ty.ty->kind == Ty_nil || body_ty.ty->kind == Ty_int)){
+						//handle record:(int | nil)
+				}
+				else if(body_ty.ty != actual_ty(result_ty)){
 					EM_error(f->body->pos, "procedure returns value");
 				}
 				Tr_procEntryExit(func_level, body_ty.exp, formalsAccess);
@@ -290,7 +298,8 @@ struct expty transExp(S_table venv, S_table tenv, A_exp exp, Tr_level level, Tem
 			return transVar(venv, tenv, exp->u.var, level, looplabel);
 		}
 		case A_nilExp:{
-			return expTy(NULL, Ty_Nil());
+			//TODO: give a correct code
+			return expTy(Tr_int(0), Ty_Nil());
 		}
 		case A_intExp:{
 			return expTy(Tr_int(exp->u.intt), Ty_Int());
@@ -312,7 +321,10 @@ struct expty transExp(S_table venv, S_table tenv, A_exp exp, Tr_level level, Tem
 						break;
 					}
 					struct expty arg = transExp(venv, tenv, args_exps->head, level, looplabel);
-					if(arg.ty != actual_ty(args_types->head)){
+					if(actual_ty(args_types->head)->kind == Ty_record && (arg.ty->kind == Ty_nil || arg.ty->kind == Ty_int)){
+						//handle record:(int | nil)
+					}
+					else if(arg.ty != actual_ty(args_types->head)){
 						EM_error(exp->u.call.args->head->pos, "para type mismatch");
 					}//TODO: record and nil
 					tr_expList = Tr_ExpList(arg.exp, tr_expList);
@@ -400,7 +412,10 @@ struct expty transExp(S_table venv, S_table tenv, A_exp exp, Tr_level level, Tem
 					if(field->name != field_type->name){
 						EM_error(exp->pos, "record field id mismatch");
 					}
-					if(efield_exp.ty != actual_ty(field_type->ty)){
+					if(actual_ty(field_type->ty)->kind == Ty_record && (efield_exp.ty->kind == Ty_nil || efield_exp.ty->kind == Ty_int)){
+						//handle record:(int | nil)
+					}
+					else if(efield_exp.ty != actual_ty(field_type->ty)){
 						EM_error(exp->pos, "record field type mismatch");
 					}//TODO:record and nil
 					size++;
@@ -418,15 +433,21 @@ struct expty transExp(S_table venv, S_table tenv, A_exp exp, Tr_level level, Tem
 			}
 		}
 		case A_seqExp:{
-			A_expList explist = exp->u.seq; 
+			A_expList explist = exp->u.seq;
+			Tr_expList tr_expList = NULL; 
 			if(!explist){
-				return expTy(NULL, Ty_Void());
+				return expTy(Empty_exp(), Ty_Void());
 			}
+			//translate sequential exps
 			while(explist->tail){
-				transExp(venv, tenv, explist->head, level, looplabel);
+				struct expty temp_exp = transExp(venv, tenv, explist->head, level, looplabel);
+				tr_expList = Tr_ExpList(temp_exp.exp, tr_expList);
 				explist = explist->tail;
 			}
-			return transExp(venv, tenv, explist->head, level, looplabel);
+			//translate the last exp
+			struct expty value_exp = transExp(venv, tenv, explist->head, level, looplabel);
+			value_exp.exp = Tr_let(tr_expList, value_exp.exp);
+			return value_exp;
 		}
 		case A_assignExp:{
 			struct expty lvalue = transVar(venv, tenv, exp->u.assign.var, level, looplabel);
@@ -450,7 +471,12 @@ struct expty transExp(S_table venv, S_table tenv, A_exp exp, Tr_level level, Tem
 			}
 			if(exp->u.iff.elsee){
 				else_ty = transExp(venv, tenv, exp->u.iff.elsee, level, looplabel);
-				if(then_ty.ty != else_ty.ty){
+				if(then_ty.ty->kind == Ty_record && (else_ty.ty->kind == Ty_nil || else_ty.ty->kind == Ty_int)){
+						//handle record:(int | nil)
+				}else if(else_ty.ty->kind == Ty_record && (then_ty.ty->kind == Ty_nil || then_ty.ty->kind == Ty_int)){
+						//handle record:(int | nil)
+				}
+				else if(then_ty.ty != else_ty.ty){
 					EM_error(exp->u.iff.then->pos, "then exp and else exp type mismatch");
 				}
 			}else{
@@ -485,8 +511,8 @@ struct expty transExp(S_table venv, S_table tenv, A_exp exp, Tr_level level, Tem
 			S_beginScope(tenv);
 			Temp_label done_label = Temp_newlabel(); 
 			Tr_access loopVar = Tr_allocLocal(level, FALSE);
-			E_enventry loopEntry = E_ROVarEntry(loopVar, Ty_Int());
-			S_enter(venv, exp->u.forr.var, loopEntry);
+			E_enventry loopVarEntry = E_ROVarEntry(loopVar, Ty_Int());
+			S_enter(venv, exp->u.forr.var, loopVarEntry);
 			struct expty body_ty = transExp(venv, tenv, exp->u.forr.body, level, done_label);
 			if(body_ty.ty != Ty_Void()){
 				EM_error(exp->u.forr.body->pos, "nil type required");
@@ -496,6 +522,10 @@ struct expty transExp(S_table venv, S_table tenv, A_exp exp, Tr_level level, Tem
 			return expTy(Tr_for(loopVar, low_ty.exp, high_ty.exp, body_ty.exp, done_label), Ty_Void());
 		}
 		case A_breakExp:{
+			// check if break is in a loop
+			if(!looplabel){
+				EM_error(exp->pos, "break should be in a loop");
+			}
 			return expTy(Tr_break(looplabel), Ty_Void());
 		}
 		case A_letExp:{
@@ -520,7 +550,9 @@ struct expty transExp(S_table venv, S_table tenv, A_exp exp, Tr_level level, Tem
 					EM_error(exp->pos, "size should be a integer");
 				}
 				struct expty init_ty = transExp(venv, tenv, exp->u.array.init, level, looplabel);
-				if(init_ty.ty != actual_ty(array_type->u.array)){
+				if(actual_ty(array_type->u.array)->kind == Ty_record && (init_ty.ty->kind == Ty_nil || init_ty.ty->kind == Ty_int)){
+						//handle record:(int | nil)
+				}else if(init_ty.ty != actual_ty(array_type->u.array)){
 					EM_error(exp->pos, "init exp type mismatch");
 				}//TODO:record and nil
 				return expTy(Tr_arrayExp(size_ty.exp, init_ty.exp), array_type);

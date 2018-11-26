@@ -17,6 +17,8 @@ Temp_temp F_FP(void);
 Temp_temp F_SP(void);
 Temp_temp F_RV(void);
 
+F_accessList F_AccessList(F_access head, F_accessList tail);
+
 extern const int F_wordSize;
 T_exp F_Exp(F_access access, T_exp framePtr);
 

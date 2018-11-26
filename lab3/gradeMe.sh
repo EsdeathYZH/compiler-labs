@@ -16,7 +16,7 @@ RES=''
 BIN=a.out
 #PROJDIR=lab3
 REFOUTDIR=./refs-2
-TESTCASEDIR=./mytestcase
+TESTCASEDIR=./testcases
 #DIFFOPTION="-w -B"
 ret_value=0
 
@@ -121,7 +121,7 @@ else
 
 fi
 
-#rm -f _tmp.txt .tmp.txt	
+rm -f _tmp.txt .tmp.txt	
 if [[ $1 = "syntax" ]]; then	
 echo -e "${GREEN_COLOR}[^_^]$ite: Pass Part A${RES}"
 else
