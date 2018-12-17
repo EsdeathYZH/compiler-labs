@@ -167,4 +167,54 @@ void *G_look(G_table t, G_node node)
   return TAB_look(t, node);
 }
 
+G_nodeList G_unionNodeList(G_nodeList list1, G_nodeList list2){
+    G_nodeList result = list1;
+    while(list2){
+        if(!G_inNodeList(list1, list2->head)){
+            result = G_NodeList(list2->head, result);
+        }
+        list2 = list2->tail;
+    }
+    return result;
+}
+
+G_nodeList G_intersectNodeList(G_nodeList list1, G_nodeList list2){
+    G_nodeList result = NULL;
+    while(list2){
+        if(G_inNodeList(list1, list2->head)){
+            result = G_NodeList(list2->head, result);
+        }
+        list2 = list2->tail;
+    }
+    return result;
+}
+
+G_nodeList G_exclusiveNodeList(G_nodeList list1, G_nodeList list2){
+    G_nodeList result = NULL;
+    while(list1){
+        if(!G_inNodeList(list2, list1->head)){
+            result = G_NodeList(list1->head, result);
+        }
+        list1 = list1->tail;
+    }
+    return result;
+}
+
+bool G_isSameNodeList(G_nodeList list1, G_nodeList list2){
+    return (G_exclusiveNodeList(list1, list2) == NULL && G_exclusiveNodeList(list2, list1) == NULL);
+}
+
+G_nodeList G_insertNode(G_nodeList list, G_node node){
+    return G_NodeList(node, list);
+}
+
+G_nodeList G_deleteNode(G_nodeList list, G_node node){
+    if(!list) return list;
+    if(list->head == node){
+      return list->tail;
+    }
+    list->tail = G_deleteNode(list->tail, node);
+    return list;
+}
+
 

@@ -163,3 +163,61 @@ AS_proc AS_Proc(string p, AS_instrList b, string e)
  proc->prolog=p; proc->body=b; proc->epilog=e;
  return proc;
 }
+
+void AS_rewrite(AS_instrList iList, Temp_map m){
+  // not implemented
+}
+
+AS_instrList RewriteOneSpill(AS_instrList instrList, Temp_temp temp, F_access access){
+	AS_instr instr = instrList->head;
+	if(instr->kind == I_LABEL){
+		return AS_InstrList(instr, RewriteOneSpill(instrList->tail, temp, access));
+	}else{
+		AS_instr spilledGet = NULL, spillPut = NULL;
+		if((instr->kind == I_MOVE && Temp_inList(instr->u.MOVE.src, temp)) ||
+			(instr->kind == I_OPER && Temp_inList(instr->u.OPER.src, temp))){
+			Temp_temp new_temp = Temp_newtemp();
+			char str[100];
+			sprintf(str, " movq %d(`s0), `d0\n", access->u.offset);
+			spilledGet = AS_Oper(String(str), Temp_TempList(new_temp, NULL),
+				Temp_TempList(F_FP(), NULL), NULL);
+			//replace temp with new_temp
+			Temp_tempList srcList = (instr->kind == I_MOVE ? instr->u.MOVE.src : instr->u.OPER.src);
+			while(srcList){
+				if(srcList->head == temp) srcList->head = new_temp;
+				srcList = srcList->tail;
+			}
+		}
+		if((instr->kind == I_MOVE && Temp_inList(instr->u.MOVE.dst, temp)) ||
+			(instr->kind == I_OPER && Temp_inList(instr->u.OPER.dst, temp))){
+			Temp_temp new_temp = Temp_newtemp();
+			char str[100];
+			sprintf(str, " movq `s1, %d(`s0)\n", access->u.offset);
+			spillPut = AS_Oper(String(str), NULL,
+				Temp_TempList(F_FP(), Temp_TempList(new_temp, NULL)), NULL);
+			//replace temp with new_temp
+			Temp_tempList dstList = (instr->kind == I_MOVE ? instr->u.MOVE.dst : instr->u.OPER.dst);
+			while(dstList){
+				if(dstList->head == temp) dstList->head = new_temp;
+				dstList = dstList->tail;
+			}
+		}
+		AS_instrList result = NULL;
+		if(spilledGet && spillPut){
+			result = AS_InstrList(spilledGet, 
+					AS_InstrList(instr, 
+					AS_InstrList(spillPut, RewriteOneSpill(instrList->tail, temp, access))));
+		}
+		else if(spilledGet){
+			result = AS_InstrList(spilledGet, 
+					AS_InstrList(instr, RewriteOneSpill(instrList->tail, temp, access)));
+		}
+		else if(spillPut){
+			result = AS_InstrList(instr, 
+					AS_InstrList(spillPut, RewriteOneSpill(instrList->tail, temp, access)));
+		}else{
+			result = AS_InstrList(instr, RewriteOneSpill(instrList->tail, temp, access));
+		}
+		return result;
+	}
+} 

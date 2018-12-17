@@ -116,3 +116,188 @@ void Temp_dumpMap(FILE *out, Temp_map m) {
      Temp_dumpMap(out,m->under);
   }
 }
+
+bool Temp_inList(Temp_tempList list, Temp_temp temp){
+    while(list){
+        if(list->head == temp){
+            return TRUE;
+        }
+        list = list->tail;
+    }
+    return FALSE;
+}
+
+/* unorder list implementation - a naive version */
+
+//list1 U list2
+Temp_tempList Temp_unionList(Temp_tempList list1, Temp_tempList list2){
+    Temp_tempList result = list1;
+    while(list2){
+        if(!Temp_inList(list1, list2->head)){
+            result = Temp_TempList(list2->head, result);
+        }
+        list2 = list2->tail;
+    }
+    return result;
+}
+
+//list1 ^ list2
+Temp_tempList Temp_intersectList(Temp_tempList list1, Temp_tempList list2){
+    Temp_tempList result = NULL;
+    while(list2){
+        if(Temp_inList(list1, list2->head)){
+            result = Temp_TempList(list2->head, result);
+        }
+        list2 = list2->tail;
+    }
+    return result;
+}
+
+//list1 - list2
+Temp_tempList Temp_exclusiveList(Temp_tempList list1, Temp_tempList list2){
+    Temp_tempList result = NULL;
+    while(list1){
+        if(!Temp_inList(list2, list1->head)){
+            result = Temp_TempList(list1->head, result);
+        }
+        list1 = list1->tail;
+    }
+    return result;
+}
+
+bool Temp_isSameList(Temp_tempList list1, Temp_tempList list2){
+  return (Temp_exclusiveList(list1, list2) == NULL && Temp_exclusiveList(list2, list1) == NULL);
+}
+
+
+Temp_tempList Temp_insertTemp(Temp_tempList list, Temp_tempList temp){
+    return Temp_TempList(temp, list);
+}
+
+Temp_tempList Temp_deleteTemp(Temp_tempList list, Temp_tempList temp){
+    if(!list) return list;
+    if(list->head == temp){
+      return list->tail;
+    }
+    list->tail = Temp_deleteTemp(list->tail, temp);
+    return list;
+}
+
+/* order list implementation - a less-naive version */
+
+//list1 U list2
+// Temp_tempList unionTempList(Temp_tempList list1, Temp_tempList list2){
+//     Temp_tempList result = NULL;
+//     Temp_tempList* listPtr = &result;
+
+//     while(list1 && list2){
+//       if(list1->head > list2->head){
+//         *listPtr = Temp_TempList(list1->head, NULL);
+//         list1 = list1->tail;
+//         listPtr = &(*listPtr)->tail;
+//       }else if(list1->head < list2->head){
+//         *listPtr = Temp_TempList(list2->head, NULL);
+//         list2 = list2->tail;
+//         listPtr = &(*listPtr)->tail;
+//       }else{
+//         *listPtr = Temp_TempList(list1->head, NULL);
+//         list1 = list1->tail;
+//         list2 = list2->tail;
+//         listPtr = &(*listPtr)->tail;
+//       }
+//     }
+
+//     if(list1){
+//       *listPtr = list1;
+//     }
+//     if(list2){
+//       *listPtr = list2;
+//     }
+
+//     return result;
+// }
+
+// //list1 ^ list2
+// Temp_tempList intersectTempList(Temp_tempList list1, Temp_tempList list2){
+//     Temp_tempList result = NULL;
+//     Temp_tempList* listPtr = &result;
+
+//     while(list1 && list2){
+//       if(list1->head > list2->head){
+//         list1 = list1->tail;
+//       }else if(list1->head < list2->head){
+//         list2 = list2->tail;
+//       }else{
+//         *listPtr = Temp_TempList(list1->head, NULL);
+//         list1 = list1->tail;
+//         list2 = list2->tail;
+//         listPtr = &(*listPtr)->tail;
+//       }
+//     }
+//     return result;
+// }
+
+// //list1 - list2
+// Temp_tempList exclusiveTempList(Temp_tempList list1, Temp_tempList list2){
+//     Temp_tempList result = list1;
+//     Temp_tempList* listPtr = &result;
+//     while(list2 && (*listPtr)){
+//         if((*listPtr)->head > list2->head){
+//           list2 = list2->tail;
+//         }else if((*listPtr)->head < list2->head){
+//           listPtr = &(*listPtr)->tail;
+//         }else{
+//           *listPtr = (*listPtr)->tail;
+//         }
+//     }
+//     return result;
+// }
+
+// bool isSameTempList(Temp_tempList list1, Temp_tempList list2){
+//   while(list1 && list2){
+//     if(list1->head != list2->head){
+//       return FALSE;
+//     }else{
+//       list1 = list1->tail;
+//       list2 = list2->tail;
+//     }
+//   }
+//   if(list1 || list2){
+//     return FALSE;
+//   }
+//   return TRUE;
+// }
+
+// Temp_tempList sortTempList(Temp_tempList list){
+//   if(list == NULL) return NULL;
+//   return insertToTemplist(sortTempList(list->tail), list->head);
+// }
+
+// Temp_tempList insertToTemplist(Temp_tempList list, Temp_temp temp){
+//   if(!list){
+//     return Temp_TempList(temp, NULL);
+//   }
+
+//   if(list->head > temp){
+//     return Temp_TempList(temp, list);
+//   }
+//   if(list->head == temp){
+//     return list;
+//   }
+
+//   Temp_tempList tempList = list;
+//   while(1){
+//     if(!tempList->tail){
+//       tempList->tail = Temp_TempList(temp, NULL);
+//       return list;
+//     }
+//     if(tempList->tail->head < temp){
+//       tempList = tempList->head;
+//     }else if(tempList->tail->head == temp){
+//       return list;
+//     }else{
+//       tempList->tail = Temp_TempList(temp, tempList->tail);
+//       return list;
+//     }
+//   }
+// }

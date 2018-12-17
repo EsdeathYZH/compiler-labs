@@ -11,49 +11,261 @@
 
 /*Lab5: Your implementation here.*/
 const int F_wordSize = 8;
-//Frame
-struct F_frame_ {
-	Temp_label label;
-	F_accessList formalList;
-	F_accessList localList;
-	int current_size;
-	T_stm view_shift;
-};
-
-//varibales
-struct F_access_ {
-	enum {inFrame, inReg} kind;
-	union {
-		int offset; //inFrame
-		Temp_temp reg; //inReg
-	} u;
-};
+static returnSink = NULL;
+Temp_map specialregs = NULL;
+Temp_map argregs = NULL;
+Temp_map calleesaves = NULL;
+Temp_map callersaves = NULL;
 
 static F_access InFrame(int offset);
 static F_access InReg(Temp_temp reg);
 
+
+Temp_temp F_RV(void){
+	return F_RAX();
+}
+
 Temp_temp F_FP(void){
-	static Temp_temp fp = NULL;
-	if(!fp){
-		fp = Temp_newtemp();
-	}
-	return fp;
+	return F_RBP();
 }
 
 Temp_temp F_SP(void){
-	static Temp_temp fp = NULL;
-	if(!fp){
-		fp = Temp_newtemp();
-	}
-	return fp;
+	return F_RSP();
 }
 
-Temp_temp F_RV(void){
-	static Temp_temp fp = NULL;
-	if(!fp){
-		fp = Temp_newtemp();
+Temp_temp F_RSP(void){
+	static Temp_temp rsp = NULL;
+	if(!rsp){
+		rsp = Temp_newtemp();
 	}
-	return fp;
+	return rsp;
+}
+
+Temp_temp F_RAX(void){
+	static Temp_temp rax = NULL;
+	if(!rax){
+		rax = Temp_newtemp();
+	}
+	return rax;
+}
+
+Temp_temp F_RBP(void){
+	static Temp_temp rbp = NULL;
+	if(!rbp){
+		rbp = Temp_newtemp();
+	}
+	return rbp;
+}
+
+Temp_temp F_RBX(void){
+	static Temp_temp rbx = NULL;
+	if(!rbx){
+		rbx = Temp_newtemp();
+	}
+	return rbx;
+}
+
+Temp_temp F_RDI(void){
+	static Temp_temp rdi = NULL;
+	if(!rdi){
+		rdi = Temp_newtemp();
+	}
+	return rdi;
+}
+
+Temp_temp F_RSI(void){
+	static Temp_temp rsi = NULL;
+	if(!rsi){
+		rsi = Temp_newtemp();
+	}
+	return rsi;
+}
+
+Temp_temp F_RDX(void){
+	static Temp_temp rdx = NULL;
+	if(!rdx){
+		rdx = Temp_newtemp();
+	}
+	return rdx;
+}
+
+Temp_temp F_RCX(void){
+	static Temp_temp rcx = NULL;
+	if(!rcx){
+		rcx = Temp_newtemp();
+	}
+	return rcx;
+}
+
+Temp_temp F_R8(void){
+	static Temp_temp r8 = NULL;
+	if(!r8){
+		r8 = Temp_newtemp();
+	}
+	return r8;
+}
+
+Temp_temp F_R9(void){
+	static Temp_temp r9 = NULL;
+	if(!r9){
+		r9 = Temp_newtemp();
+	}
+	return r9;
+}
+
+Temp_temp F_R10(void){
+	static Temp_temp r10 = NULL;
+	if(!r10){
+		r10 = Temp_newtemp();
+	}
+	return r10;
+}
+
+Temp_temp F_R11(void){
+	static Temp_temp r11 = NULL;
+	if(!r11){
+		r11 = Temp_newtemp();
+	}
+	return r11;
+}
+
+Temp_temp F_R12(void){
+	static Temp_temp r12 = NULL;
+	if(!r12){
+		r12 = Temp_newtemp();
+	}
+	return r12;
+}
+
+Temp_temp F_R13(void){
+	static Temp_temp r13 = NULL;
+	if(!r13){
+		r13 = Temp_newtemp();
+	}
+	return r13;
+}
+
+Temp_temp F_R14(void){
+	static Temp_temp r14 = NULL;
+	if(!r14){
+		r14 = Temp_newtemp();
+	}
+	return r14;
+}
+
+Temp_temp F_R15(void){
+	static Temp_temp r15 = NULL;
+	if(!r15){
+		r15 = Temp_newtemp();
+	}
+	return r15;
+}
+
+//%rax %rsp %rbp
+Temp_tempList specialRegs(){
+	static Temp_tempList regs = NULL;
+    if(regs == NULL){
+        regs = Temp_TempList(F_SP(), Temp_TempList(F_RV(), Temp_TempList(F_FP(), NULL)));
+    }
+    return regs;
+}
+
+//%rdi，%rsi，%rdx，%rcx，%r8，%r9
+Temp_tempList argRegs(){
+    static Temp_tempList regs = NULL;
+    if(regs == NULL){
+        regs = Temp_TempList(F_RDI(), Temp_TempList(F_RSI(), Temp_TempList(F_RDX(), 
+				Temp_TempList(F_RCX(), Temp_TempList(F_R8(), Temp_TempList(F_R9(), NULL))))));
+    }
+    return regs;
+}
+
+//%rbx, %rbp, %r12, %r13, %r14, %r15
+Temp_tempList calleeSaves(){
+    static Temp_tempList regs = NULL;
+    if(regs == NULL){
+        regs = Temp_TempList(F_RBX(), Temp_TempList(F_RBP(), Temp_TempList(F_R12(), 
+				Temp_TempList(F_R13(), Temp_TempList(F_R14(), Temp_TempList(F_R15(), NULL))))));
+    }
+    return regs;
+}
+
+//%r10, %r11
+Temp_tempList callerSaves(){
+    static Temp_tempList regs = NULL;
+    if(regs == NULL){
+        regs = Temp_TempList(F_R10(), Temp_TempList(F_R11(), NULL));
+    }
+    return regs;
+}
+
+Temp_tempList F_registers(){
+	return Temp_TempList(F_SP(), Temp_TempList(F_RV(), Temp_TempList(F_RDI(), Temp_TempList(F_RSI(), Temp_TempList(F_RDX(), 
+			Temp_TempList(F_RCX(), Temp_TempList(F_R8(), Temp_TempList(F_R9(), Temp_TempList(F_RBX(), Temp_TempList(F_RBP(), Temp_TempList(F_R12(), 
+			Temp_TempList(F_R13(), Temp_TempList(F_R14(), Temp_TempList(F_R15(), Temp_TempList(F_R10(), Temp_TempList(F_R11(), NULL))))))))))))))));
+}
+
+void Init_F_TempMap(){
+	//TODO:rbp???
+	//DONE: use one temp to provide rbp and fp
+	//specialregs
+	Temp_enter(F_tempMap, F_FP(), String("%%rbp"));
+	Temp_enter(F_tempMap, F_SP(), String("%%rsp"));
+	Temp_enter(F_tempMap, F_RV(), String("%%rax"));
+
+	//argRegs:%rdi，%rsi，%rdx，%rcx，%r8，%r9
+	Temp_enter(F_tempMap, F_RDI(), String("%%rdi"));
+	Temp_enter(F_tempMap, F_RSI(), String("%%rsi"));
+	Temp_enter(F_tempMap, F_RDX(), String("%%rdx"));
+	Temp_enter(F_tempMap, F_RCX(), String("%%rcx"));
+	Temp_enter(F_tempMap, F_R8(), String("%%r8"));
+	Temp_enter(F_tempMap, F_R9(), String("%%r9"));
+
+	//callersaveregs:%r10, %r11
+	Temp_enter(F_tempMap, F_R10(), String("%%r10"));
+	Temp_enter(F_tempMap, F_R11(), String("%%r11"));
+
+	//calleesaveregs:%rbx, %rbp, %r12, %r13, %r14, %r15
+	Temp_enter(F_tempMap, F_RBP(), String("%%rbp"));
+	Temp_enter(F_tempMap, F_RBX(), String("%%rbx"));
+	Temp_enter(F_tempMap, F_R12(), String("%%r12"));
+	Temp_enter(F_tempMap, F_R13(), String("%%r13"));
+	Temp_enter(F_tempMap, F_R14(), String("%%r14"));
+	Temp_enter(F_tempMap, F_R15(), String("%%r15"));
+
+	//initialize specialregs
+    if(specialregs == NULL){
+        specialregs = Temp_empty();
+        Temp_enter(specialregs, F_FP(), String("%%rbp"));
+        Temp_enter(specialregs, F_RV(), String("%%rax"));
+        Temp_enter(specialregs, F_SP(), String("%%rsp"));
+    }
+    //initialize argregs
+    if(argregs == NULL){
+        argregs = Temp_empty();
+        Temp_enter(argregs, F_RDI(), String("%%rdi"));
+        Temp_enter(argregs, F_RSI(), String("%%rsi"));
+        Temp_enter(argregs, F_RDX(), String("%%rdx"));
+        Temp_enter(argregs, F_RCX(), String("%%rcx"));
+        Temp_enter(argregs, F_R8(), String("%%r8"));
+        Temp_enter(argregs, F_R9(), String("%%r9"));
+    }
+    //initialize calleesaveregs
+    if(calleesaves == NULL){
+        calleesaves = Temp_empty();
+        Temp_enter(calleesaves, F_RBP(), String("%%rbp"));
+        Temp_enter(calleesaves, F_RBX(), String("%%rbx"));
+        Temp_enter(calleesaves, F_R12(), String("%%r12"));
+        Temp_enter(calleesaves, F_R13(), String("%%r13"));
+        Temp_enter(calleesaves, F_R14(), String("%%r14"));
+        Temp_enter(calleesaves, F_R15(), String("%%r15"));
+    }
+    //initialize callersaveregs
+    if(callersaves == NULL){
+        callersaves = Temp_empty();
+        Temp_enter(callersaves, F_R10(), String("%%r10"));
+	    Temp_enter(callersaves, F_R11(), String("%%r11"));
+    }
 }
 
 F_access InFrame(int offset){
@@ -161,5 +373,17 @@ F_fragList F_FragList(F_frag head, F_fragList tail) {
 
 T_stm F_procEntryExit1(F_frame frame, T_stm stm){
 	return stm;
+}
+
+AS_instrList F_procEntryExit2(AS_instrList body){
+	if(!returnSink){
+		returnSink = Temp_TempList(F_RV(), Temp_TempList(F_SP(), calleeSaves()));
+	}
+}
+
+AS_proc F_ProcEntryExit3(F_frame frame, AS_instrList body){
+    char buf[100];
+    sprintf(buf, "%s:", S_name(frame->funcname));
+    return AS_Proc(String(buf), body, ".cfi_endproc");
 }
 

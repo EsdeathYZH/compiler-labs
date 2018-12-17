@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "util.h"
 #include "symbol.h"
+#include "graph.h"
 #include "types.h"
 #include "absyn.h"
 #include "errormsg.h"
@@ -43,6 +44,8 @@ static void doProc(FILE *out, F_frame frame, T_stm body)
  struct C_block blo;
 
  F_tempMap = Temp_empty();
+ //1. initialize the F_tempMap
+ Init_F_TempMap();
 
  //printf("doProc for function %s:\n", S_name(F_name(frame)));
  /*printStmList(stdout, T_StmList(body, NULL));
@@ -134,7 +137,7 @@ int main(int argc, string *argv)
 
    //Lab 6: escape analysis
    //If you have implemented escape analysis, uncomment this
-   //Esc_findEscape(absyn_root); /* set varDec's escape field */
+   Esc_findEscape(absyn_root); /* set varDec's escape field */
 
    frags = SEM_transProg(absyn_root);
    if (anyErrors) return 1; /* don't continue */

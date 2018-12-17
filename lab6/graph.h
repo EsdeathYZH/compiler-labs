@@ -19,6 +19,18 @@ G_node G_Node(G_graph g, void *info);
 /* Make a NodeList cell */
 G_nodeList G_NodeList(G_node head, G_nodeList tail);
 
+G_nodeList G_unionNodeList(G_nodeList list1, G_nodeList list2);
+
+G_nodeList G_intersectNodeList(G_nodeList list1, G_nodeList list2);
+
+G_nodeList G_exclusiveNodeList(G_nodeList list1, G_nodeList list2);
+
+G_nodeList G_insertNode(G_nodeList list, G_node node);
+
+G_nodeList G_deleteNode(G_nodeList list, G_node node);
+
+bool G_isSameNodeList(G_nodeList list1, G_nodeList list2);
+
 /* Get the list of nodes belonging to "g" */
 G_nodeList G_nodes(G_graph g);
 

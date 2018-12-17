@@ -5,17 +5,49 @@
 #define FRAME_H
 
 #include "tree.h"
+#include "assem.h"
 
 typedef struct F_frame_ *F_frame;
+
+//Frame
+struct F_frame_ {
+	S_symbol funcname;
+	Temp_label label;
+	F_accessList formalList;
+	F_accessList localList;
+	int current_size;
+	T_stm view_shift;
+};
+
 
 typedef struct F_access_ *F_access;
 typedef struct F_accessList_ *F_accessList;
 
 struct F_accessList_ {F_access head; F_accessList tail;};
 
+//varibales
+struct F_access_ {
+	enum {inFrame, inReg} kind;
+	union {
+		int offset; //inFrame
+		Temp_temp reg; //inReg
+	} u;
+};
+
+Temp_map F_tempMap;
+
+void Init_F_TempMap();
+
 Temp_temp F_FP(void);
 Temp_temp F_SP(void);
 Temp_temp F_RV(void);
+
+Temp_tempList specialRegs();
+Temp_tempList argRegs();
+Temp_tempList calleeSaves();
+Temp_tempList callerSaves();
+
+Temp_tempList F_registers();
 
 F_accessList F_AccessList(F_access head, F_accessList tail);
 
@@ -51,4 +83,6 @@ struct F_fragList_
 F_fragList F_FragList(F_frag head, F_fragList tail);
 
 T_stm F_procEntryExit1(F_frame feame, T_stm stm);
+AS_instrList F_procEntryExit2(AS_instrList body);
+AS_proc F_ProcEntryExit3(F_frame frame, AS_instrList body);
 #endif
