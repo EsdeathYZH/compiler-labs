@@ -38,6 +38,7 @@ bool Temp_isSameList(Temp_tempList list1, Temp_tempList list2);
 Temp_tempList Temp_unionList(Temp_tempList list1, Temp_tempList list2);
 Temp_tempList Temp_intersectList(Temp_tempList list1, Temp_tempList list2);
 Temp_tempList Temp_exclusiveList(Temp_tempList list1, Temp_tempList list2);
-Temp_tempList Temp_insertTemp(Temp_tempList list, Temp_tempList temp);
-Temp_tempList Temp_deleteTemp(Temp_tempList list, Temp_tempList temp);
+Temp_tempList Temp_insertTemp(Temp_tempList list, Temp_temp temp);
+Temp_tempList Temp_deleteTemp(Temp_tempList list, Temp_temp temp);
+Temp_tempList Temp_copyFrom(Temp_tempList origin);
 #endif

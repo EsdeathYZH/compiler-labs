@@ -47,7 +47,7 @@ static void doProc(FILE *out, F_frame frame, T_stm body)
  //1. initialize the F_tempMap
  Init_F_TempMap();
 
- //printf("doProc for function %s:\n", S_name(F_name(frame)));
+ printf("doProc for function %s:\n", S_name(F_name(frame)));
  /*printStmList(stdout, T_StmList(body, NULL));
  printf("-------====IR tree=====-----\n");*/
 
@@ -68,19 +68,11 @@ static void doProc(FILE *out, F_frame frame, T_stm body)
  iList  = F_codegen(frame, stmList); /* 9 */
 
  AS_printInstrList(stdout, iList, Temp_layerMap(F_tempMap, Temp_name()));
+
  printf("----======before RA=======-----\n");
-
- //G_graph fg = FG_AssemFlowGraph(iList);  /* 10.1 */
  struct RA_result ra = RA_regAlloc(frame, iList);  /* 11 */
-
- fprintf(out, "BEGIN function\n");
- AS_printInstrList (out, proc->body,
-                       Temp_layerMap(F_tempMap, ra.coloring));
- fprintf(out, "END function\n");
-
- //Part of TA's implementation. Just for reference.
- /*
- AS_rewrite(ra.il, Temp_layerMap(F_tempMap, ra.coloring));
+ printf("----======after RA=======-----\n");
+ 
  proc =	F_procEntryExit3(frame, ra.il);
 
  string procName = S_name(F_name(frame));
@@ -89,7 +81,21 @@ static void doProc(FILE *out, F_frame frame, T_stm body)
  fprintf(out, ".type %s, @function\n", procName);
  fprintf(out, "%s:\n", procName);
 
- 
+ fprintf(out, "BEGIN function\n");
+ //fprintf(stdout, "%s:\n", Temp_labelstring(F_name(frame)));
+ //prologue
+ fprintf(out, "%s", proc->prolog);
+ AS_printInstrList (out, proc->body,
+                       Temp_layerMap(F_tempMap, ra.coloring));
+ fprintf(out, "%s", proc->epilog);
+ //fprintf(out, "END %s\n\n", Temp_labelstring(F_name(frame)));
+ fprintf(out, "END function\n");
+
+ //Part of TA's implementation. Just for reference.
+ /*
+ AS_rewrite(ra.il, Temp_layerMap(F_tempMap, ra.coloring));
+
+
  //fprintf(stdout, "%s:\n", Temp_labelstring(F_name(frame)));
  //prologue
  fprintf(out, "%s", proc->prolog);
@@ -146,12 +152,14 @@ int main(int argc, string *argv)
    sprintf(outfile, "%s.s", argv[1]);
    out = fopen(outfile, "w");
    /* Chapter 8, 9, 10, 11 & 12 */
-   for (;frags;frags=frags->tail)
-     if (frags->head->kind == F_procFrag) {
+   for (;frags;frags=frags->tail){
+     if(frags->head->kind == F_procFrag) {
        doProc(out, frags->head->u.proc.frame, frags->head->u.proc.body);
-	 }
-     else if (frags->head->kind == F_stringFrag) 
-	   doStr(out, frags->head->u.stringg.label, frags->head->u.stringg.str);
+	   }
+     else if (frags->head->kind == F_stringFrag){
+	    doStr(out, frags->head->u.stringg.label, frags->head->u.stringg.str);
+     }
+   }
 
    fclose(out);
    return 0;

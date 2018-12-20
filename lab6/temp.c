@@ -170,17 +170,28 @@ bool Temp_isSameList(Temp_tempList list1, Temp_tempList list2){
 }
 
 
-Temp_tempList Temp_insertTemp(Temp_tempList list, Temp_tempList temp){
+Temp_tempList Temp_insertTemp(Temp_tempList list, Temp_temp temp){
     return Temp_TempList(temp, list);
 }
 
-Temp_tempList Temp_deleteTemp(Temp_tempList list, Temp_tempList temp){
+Temp_tempList Temp_deleteTemp(Temp_tempList list, Temp_temp temp){
     if(!list) return list;
     if(list->head == temp){
       return list->tail;
     }
     list->tail = Temp_deleteTemp(list->tail, temp);
     return list;
+}
+
+Temp_tempList Temp_copyFrom(Temp_tempList origin){
+    Temp_tempList result = NULL;
+    Temp_tempList* listPtr = &result;
+    while(origin){
+      (*listPtr) = Temp_TempList(origin->head, NULL);
+      listPtr = &((*listPtr)->tail);
+      origin = origin->tail;
+    }
+    return result;
 }
 
 /* order list implementation - a less-naive version */

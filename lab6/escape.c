@@ -13,6 +13,10 @@ struct EscapeEntry_ {
 
 typedef struct EscapeEntry_* EscapeEntry;
 
+static void traverseExp(S_table env, int depth, A_exp exp);
+static void traverseDec(S_table env, int depth, A_dec dec);
+static void traverseVar(S_table env, int depth, A_var var);
+
 static EscapeEntry escapeEntry(int depth, bool* escape){
 	EscapeEntry entry = (EscapeEntry) checked_malloc(sizeof(*entry));
 	entry->depth = depth;
@@ -128,7 +132,7 @@ static void traverseDec(S_table env, int depth, A_dec dec){
 			return;
 		}
 		case A_functionDec:{
-			A_fundecList funcdecList = get_funcdec_list(dec);
+			A_fundecList funcdecList = dec->u.function;
 			while(funcdecList){
 				A_fundec f = funcdecList->head;
 				S_beginScope(env);
@@ -151,24 +155,24 @@ static void traverseDec(S_table env, int depth, A_dec dec){
 static void traverseVar(S_table env, int depth, A_var var){
 	switch(var->kind){
 		case A_simpleVar:{
-			EscapeEntry entry = S_look(env, get_simplevar_sym(var));
+			EscapeEntry entry = S_look(env, var->u.simple);
 			if(entry){
 				if(depth > entry->depth){
 					*(entry->escape) = TRUE;
 				}
 				return;
 			}else{
-				EM_error(var->pos, "undefined variable %s", S_name(var->u.simple));
+				//EM_error(var->pos, "undefined variable %s", S_name(var->u.simple));
 				return;
 			}
 		}
 		case A_fieldVar:{
-			traverseVar(env, depth, get_fieldvar_var(var));
+			traverseVar(env, depth, var->u.field.var);
 			return;
 		}
 		case A_subscriptVar:{
-			traverseVar(env, depth, get_subvar_var(var));
-			traverseExp(env, depth, get_subvar_exp(var));
+			traverseVar(env, depth, var->u.subscript.var);
+			traverseExp(env, depth, var->u.subscript.exp);
 			return;
 		}
 	}

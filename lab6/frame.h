@@ -8,6 +8,8 @@
 #include "assem.h"
 
 typedef struct F_frame_ *F_frame;
+typedef struct F_access_ *F_access;
+typedef struct F_accessList_ *F_accessList;
 
 //Frame
 struct F_frame_ {
@@ -16,12 +18,11 @@ struct F_frame_ {
 	F_accessList formalList;
 	F_accessList localList;
 	int current_size;
-	T_stm view_shift;
+	//TODO:T_stmList or Seq T_stm?
+	T_stm prologue;
+	T_stm epilogue;
+	int max_arg_num;
 };
-
-
-typedef struct F_access_ *F_access;
-typedef struct F_accessList_ *F_accessList;
 
 struct F_accessList_ {F_access head; F_accessList tail;};
 
@@ -84,5 +85,5 @@ F_fragList F_FragList(F_frag head, F_fragList tail);
 
 T_stm F_procEntryExit1(F_frame feame, T_stm stm);
 AS_instrList F_procEntryExit2(AS_instrList body);
-AS_proc F_ProcEntryExit3(F_frame frame, AS_instrList body);
+AS_proc F_procEntryExit3(F_frame frame, AS_instrList body);
 #endif

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "string.h"
 #include "util.h"
 #include "symbol.h"
 #include "temp.h"
@@ -45,6 +46,7 @@ void FreezeMoves(G_node u);
 void SelectSpill();
 void AssignColors();
 void RewriteProgram();
+AS_instrList clearUselessMove(AS_instrList il);
 void LivenessAnalysis();
 void Build();
 void RA_main();
@@ -72,7 +74,6 @@ G_table degree;   //value:int*
 G_table alias;    //value:G_node
 G_table moveList; //value:Live_moveList
 G_table color;
-
 Temp_map coloring;//temp->String
 AS_instrList instructions;
 F_frame frame;
@@ -94,58 +95,45 @@ void RA_initAll(F_frame f, AS_instrList il){
 	instructions = il;
 	//算法为节点选择的颜色，初始值是那些机器寄存器 Temp->String
 	coloring = F_tempMap;
-
-	//TODO: now is just a naive intialization
-
 	//initialize registers
 	registers = F_registers();
-	
-	//TODO:adjSet should be a bool-bitmap???
-	//adjList = G_empty();
-	degree = G_empty();
-	alias = G_empty();
-	moveList = G_empty();
-
-	simplifyWorklist = NULL;
- 	freezeWorklist = NULL;
- 	spillWorklist = NULL;
- 	spilledNodes = NULL;
- 	coalescedNodes = NULL;
-	coloredNodes = NULL;
-
-	coalescedMoves = NULL;
-	constrainedMoves = NULL;
-	frozenMoves = NULL;
-	worklistMoves = NULL;
-	activeMoves = NULL;
 }
 
 void RA_main(){
 	LivenessAnalysis();
 	Build();
 	MakeWorklist();
-	while(simplifyWorklist != NULL && worklistMoves != NULL
-		&& freezeWorklist != NULL && spillWorklist != NULL){
-		if(!simplifyWorklist){
+	while(simplifyWorklist != NULL || worklistMoves != NULL
+		|| freezeWorklist != NULL || spillWorklist != NULL){
+		if(simplifyWorklist){
 			Simplify();
-		}else if(!worklistMoves){
+		}else if(worklistMoves){
 			Coalesce();
-		}else if(!freezeWorklist){
+		}else if(freezeWorklist){
 			Freeze();
-		}else if(!spillWorklist){
+		}else if(spillWorklist){
 			SelectSpill();
 		}
 	}
 	AssignColors();
-	if(!spilledNodes){
+	if(spilledNodes){
 		RewriteProgram(spilledNodes);
 		RA_main();
 	}
+	instructions = clearUselessMove(instructions);
+	simplifyWorklist = NULL;
+ 	freezeWorklist = NULL;
+ 	spillWorklist = NULL;
+ 	spilledNodes = NULL;
+ 	coalescedNodes = NULL;
+	coloredNodes = NULL;
 }
 
 void LivenessAnalysis(){
 	G_graph flowGraph = FG_AssemFlowGraph(instructions, frame);
+	printf("Finish flowgraph!!\n");
 	liveGraph = Live_liveness(flowGraph);
+	printf("Finish liveness analysis!!\n");
 }
 
 void Build(){
@@ -160,13 +148,29 @@ void Build(){
  	assert(!coalescedNodes);
 	assert(!coloredNodes);
 
-	assert(!coalescedMoves);
-	assert(!constrainedMoves);
-	assert(!frozenMoves);
+	//assert(!coalescedMoves);
+	//assert(!constrainedMoves);
+	//assert(!frozenMoves);
 	assert(!worklistMoves);
-	assert(!activeMoves);
+	//assert(!activeMoves);
 
-	//graph-related data structure need to be re-initialized.
+	//TODO:adjSet should be a bool-bitmap???
+	//adjList = G_empty();
+
+	simplifyWorklist = NULL;
+ 	freezeWorklist = NULL;
+ 	spillWorklist = NULL;
+ 	spilledNodes = NULL;
+ 	coalescedNodes = NULL;
+	coloredNodes = NULL;
+
+	coalescedMoves = NULL;
+	constrainedMoves = NULL;
+	frozenMoves = NULL;
+	worklistMoves = NULL;
+	activeMoves = NULL;
+
+	//graph-related data structure need to be initialized.
 	color = G_empty();
 	//adjList = G_empty();
 	degree = G_empty();
@@ -181,7 +185,7 @@ void Build(){
 	while(allNodes){
 		G_node node = allNodes->head;
 		Temp_temp temp = (Temp_temp) G_nodeInfo(node);
-		if(Temp_inList(precolored, temp)){
+		if(Temp_inList(registers, temp)){
 			precolored = G_insertNode(precolored, node);
 		}else{
 			initial = G_insertNode(initial, node);
@@ -197,7 +201,7 @@ void Build(){
 	}
 
 	//build worklistMoves
-	worklistMoves = tempMoveList;
+	worklistMoves = liveGraph.moves;
 	//build moveList
 	while(tempMoveList){
 		Live_moveList srcMoveList = (Live_moveList) G_look(moveList, tempMoveList->src);
@@ -212,25 +216,27 @@ void Build(){
 		int* intPtr = (int*) checked_malloc(sizeof(int));
 		*intPtr = G_degree(tempInitial->head);
 		G_enter(degree, tempInitial->head, intPtr);
-		//put succ U pred in adjList
 		//G_enter(adjList, tempInitial->head, G_adj(tempInitial->head));
 		tempInitial = tempInitial->tail;
 	}
 }
 
 void IncDegree(G_node node){
+	assert(!G_inNodeList(node, precolored));
 	int* deg = (int*) G_look(degree, node);
 	assert(deg);
 	*deg = (*deg + 1);
 }
 
 void DecDegree(G_node node){
+	assert(!G_inNodeList(node, precolored));
 	int* deg = (int*) G_look(degree, node);
 	assert(deg);
 	*deg = (*deg - 1);
 }
 
 int Degree(G_node node){
+	assert(!G_inNodeList(node, precolored));
 	int* deg = (int*) G_look(degree, node);
 	assert(deg);
 	return *deg;
@@ -249,12 +255,11 @@ G_node PopSelectStack(){
 void AddEdge(G_node u, G_node v){
 	if(!G_inNodeList(u, G_adj(v)) && u != v){
 		G_addEdge(u, v);
-		if(G_inNodeList(u, precolored)){
+		if(!G_inNodeList(u, precolored)){
 			//G_enter(adjList, u, G_insertNode(G_look(adjList, u), v));
 			IncDegree(u);
 		}
-
-		if(G_inNodeList(v, precolored)){
+		if(!G_inNodeList(v, precolored)){
 			//G_enter(adjList, v, G_insertNode(G_look(adjList, v), u));
 			IncDegree(v);
 		}
@@ -263,6 +268,7 @@ void AddEdge(G_node u, G_node v){
 
 void MakeWorklist(){
 	while(initial){
+		printf("make work list!\n");
 		G_node n = initial->head;
 		initial = initial->tail;
 		if(Degree(n) >= K){
@@ -282,23 +288,26 @@ G_nodeList Adjacent(G_node n){
 }
 
 Live_moveList NodeMoves(G_node n){
-	Live_moveList moveListn = (Live_moveList) G_look(moveList, n);
-	assert(moveListn);
-	return Move_intersectList(moveListn, Move_unionList(activeMoves, worklistMoves));
+	Live_moveList moveListN = (Live_moveList) G_look(moveList, n);
+	//assert(moveListn);
+	return Move_intersectList(moveListN, Move_unionList(activeMoves, worklistMoves));
 }
 
 bool MoveRelated(G_node n){
-	return !NodeMoves(n);
+	return NodeMoves(n) != NULL;
 }
 
 void Simplify(){
+	printf("Simplify!\n");
 	G_node n = simplifyWorklist->head;
 	simplifyWorklist = simplifyWorklist->tail;
 	PushSelectStack(n);
-	G_nodeList Adjacentn = Adjacent(n);
-	while(Adjacentn){
-		DecrementDegree(Adjacentn->head);
-		Adjacentn = Adjacentn->tail;
+	G_nodeList AdjacentN = Adjacent(n);
+	while(AdjacentN){
+		if(!G_inNodeList(AdjacentN->head, precolored)){
+			DecrementDegree(AdjacentN->head);
+		}
+		AdjacentN = AdjacentN->tail;
 	}
 }
 
@@ -307,7 +316,6 @@ void DecrementDegree(G_node m){
 	DecDegree(m);
 	if(d == K){
 		EnableMoves(G_insertNode(Adjacent(m), m));
-		//TODO:write a delete function?
 		spillWorklist = G_deleteNode(spillWorklist, m);
 		if(MoveRelated(m)){
 			freezeWorklist = G_insertNode(freezeWorklist, m);
@@ -320,23 +328,25 @@ void DecrementDegree(G_node m){
 void EnableMoves(G_nodeList nodes){
 	while(nodes){
 		G_node n = nodes->head;
-		Live_moveList NodeMovesn = NodeMoves(n);
-		while(NodeMoves){
-			if(Move_inList(activeMoves, NodeMovesn->src, NodeMovesn->dst)){
-				activeMoves = Move_deleteMove(activeMoves, NodeMovesn->src, NodeMovesn->dst);
-				worklistMoves = Move_insertMove(worklistMoves, NodeMovesn->src, NodeMovesn->dst);
+		Live_moveList NodeMovesN = NodeMoves(n);
+		while(NodeMovesN){
+			if(Move_inList(activeMoves, NodeMovesN->src, NodeMovesN->dst)){
+				activeMoves = Move_deleteMove(activeMoves, NodeMovesN->src, NodeMovesN->dst);
+				worklistMoves = Move_insertMove(worklistMoves, NodeMovesN->src, NodeMovesN->dst);
 			}
-			NodeMovesn = NodeMovesn->tail;
+			NodeMovesN = NodeMovesN->tail;
 		}
 		nodes = nodes->tail;
 	}
 }
 
 void Coalesce(){
+	//TODO:两个问题，一个是copy的顺序问题，一个是m变不变的问题
 	//select first move
+	printf("Coalesce!\n");
 	G_node u, v;
-	G_node x = worklistMoves->src;
-	G_node y = worklistMoves->dst;
+	G_node x = worklistMoves->src, mx = worklistMoves->src;
+	G_node y = worklistMoves->dst, my = worklistMoves->dst;
 	x = GetAlias(x);
 	y = GetAlias(y);
 	if(G_inNodeList(y, precolored)){
@@ -348,19 +358,19 @@ void Coalesce(){
 	}
 	worklistMoves = worklistMoves->tail;
 	if(u == v){
-		coalescedMoves = Move_insertMove(coalescedMoves, x, y);
+		coalescedMoves = Move_insertMove(coalescedMoves, mx, my);
 		AddWorkList(u);
 	}else if(G_inNodeList(v, precolored) || G_inNodeList(v, G_adj(u))){
-		constrainedMoves = Move_insertMove(constrainedMoves, x, y);
+		constrainedMoves = Move_insertMove(constrainedMoves, mx, my);
 		AddWorkList(u);
 		AddWorkList(v);
 	}else if((G_inNodeList(u, precolored) && AllOk(Adjacent(v), u)) ||
 			(!G_inNodeList(u, precolored) && Conservative(G_unionNodeList(Adjacent(u),Adjacent(v))))){
-		coalescedMoves = Move_insertMove(coalescedMoves, x, y);
+		coalescedMoves = Move_insertMove(coalescedMoves, mx, my);
 		Combine(u, v);
 		AddWorkList(u);
 	}else{
-		activeMoves = Move_insertMove(activeMoves, x, y);
+		activeMoves = Move_insertMove(activeMoves, mx, my);
 	}
 }
 
@@ -384,13 +394,13 @@ bool AllOk(G_nodeList list, G_node r){
 }
 
 bool OK(G_node t, G_node r){
-	return (Degree(t) < K || G_inNodeList(t, precolored) || G_inNodeList(r, G_adj(t)));
+	return (G_inNodeList(t, precolored) || Degree(t) < K || G_inNodeList(r, G_adj(t)));
 }
 
 bool Conservative(G_nodeList nodes){
 	int k = 0;
 	while(nodes){
-		if(Degree(nodes->head) >= K){
+		if(G_inNodeList(nodes->head, precolored) || Degree(nodes->head) >= K){
 			k++;
 		}
 		nodes = nodes->tail;
@@ -420,16 +430,18 @@ void Combine(G_node u, G_node v){
 	Live_moveList moveListu = (Live_moveList) G_look(moveList, u);
 	Live_moveList moveListv = (Live_moveList) G_look(moveList, v);
 	G_enter(moveList, u, Move_unionList(moveListu, moveListv));
-	EnableMoves(v);
+	EnableMoves(G_NodeList(v, NULL));
 
 	G_nodeList adjv = Adjacent(v);
 	while(adjv){
 		AddEdge(adjv->head, u);
-		DecrementDegree(adjv->head);
+		if(!G_inNodeList(adjv->head, precolored)){
+			DecrementDegree(adjv->head);
+		}
 		adjv = adjv->tail;
 	}
 
-	if(Degree(u) >= K && G_inNodeList(u, freezeWorklist)){
+	if(G_inNodeList(u, freezeWorklist) && Degree(u) >= K){
 		freezeWorklist = G_deleteNode(freezeWorklist, u);
 		spillWorklist = G_insertNode(spillWorklist, u);
 	}
@@ -437,6 +449,7 @@ void Combine(G_node u, G_node v){
 
 void Freeze(){
 	//select the first node
+	printf("Freeze!\n");
 	G_node u = freezeWorklist->head;
 	freezeWorklist = freezeWorklist->tail;
 
@@ -468,7 +481,20 @@ void SelectSpill(){
 	//TODO:
 	/* 用所喜好的启发式从spillWorkList选出一个节点，
 	注意：要避免选择那种由读取前面已溢出的寄存器产生的、活跃范围很小的节点*/
-	G_node m = NULL; //TODO:Haven't select a node
+	printf("select a spill node!\n");
+	G_table spillPriority = liveGraph.spillPriority;
+	float maxPriority = 0;
+	G_nodeList nodeList = spillWorklist;
+	G_node m = NULL; 
+	while(nodeList){
+		float* floatPtr = G_look(spillPriority, nodeList->head);
+		assert(floatPtr);
+		if(*floatPtr > maxPriority){
+			maxPriority = *floatPtr;
+			m = nodeList->head;
+		}
+		nodeList = nodeList->tail;
+	}
 	spillWorklist = G_deleteNode(spillWorklist, m);
 	simplifyWorklist = G_insertNode(simplifyWorklist, m);
 	FreezeMoves(m);
@@ -479,7 +505,9 @@ void AssignColors(){
 	while(selectStack){
 		G_node node = PopSelectStack();
 		Temp_temp node_temp = (Temp_temp) G_nodeInfo(node);
-		Temp_tempList okColors = registers;
+		assert(!Temp_inList(registers, node_temp));
+		//refer a global variable,we need deep copy
+		Temp_tempList okColors = Temp_copyFrom(registers);
 		//G_nodeList adjListN = (G_nodeList) G_look(adjList, node);
 		G_nodeList adjListN = G_adj(node);
 		while(adjListN){
@@ -492,24 +520,31 @@ void AssignColors(){
 			adjListN = adjListN->tail;
 		}
 		if(!okColors){
+			printf("no color left!\n");
 			spilledNodes = G_insertNode(spilledNodes, node);
 		}else{
+			printf("assign!\n");
 			coloredNodes = G_insertNode(coloredNodes, node);
 			G_enter(color, node, okColors->head);
-			assert(!Temp_inList(registers, node_temp));
-			Temp_enter(map, node_temp, Temp_look(coloring, okColors->head));
+			string assign_color = Temp_look(coloring, okColors->head);
+			assert(assign_color);
+			Temp_enter(map, node_temp, assign_color);
 		}
 	}
 	G_nodeList tempCoalescedNodes = coalescedNodes;
 	while(tempCoalescedNodes){
-		Temp_temp temp = G_look(color, GetAlias(tempCoalescedNodes->head));
+		printf("assign!\n");
+		Temp_temp temp = (Temp_temp) G_look(color, GetAlias(tempCoalescedNodes->head));
 		Temp_temp node_temp = (Temp_temp) G_nodeInfo(tempCoalescedNodes->head);
 		assert(temp);
-		//G_enter(color, tempCoalescedNodes->head, temp); 
-		Temp_enter(map, node_temp, Temp_look(coloring, temp));
+		G_enter(color, tempCoalescedNodes->head, temp);
+		string assign_color = Temp_look(coloring, temp);
+		assert(assign_color);
+		Temp_enter(map, node_temp, assign_color);
 		tempCoalescedNodes = tempCoalescedNodes->tail;
 	}
 	//每一轮的分配颜色迭代都会产生一个新层
+	printf("a assign color round!\n");
 	coloring = Temp_layerMap(map, coloring);
 }
 
@@ -519,6 +554,7 @@ void RewriteProgram(){
 	//在程序中（指令序列中）vi的每一个定值之后插入一条存储指令
 	//在vi的每一个使用之前插入一条取数指令
 	//将所有的vi放入集合newTemps
+	printf("rewrite!\n");
 	G_table accessTab = G_empty();
 	while(spilledNodes){
 		F_access access = F_allocLocal(frame, TRUE);
@@ -528,5 +564,19 @@ void RewriteProgram(){
 	spilledNodes = NULL;
 	coloredNodes = NULL;
 	coalescedNodes = NULL;
+}
+
+AS_instrList clearUselessMove(AS_instrList il){
+	if(!il) return NULL;
+	AS_instr instruction = il->head;
+	if(instruction->kind == I_MOVE){
+		Temp_temp src = instruction->u.MOVE.src->head;
+		Temp_temp dst = instruction->u.MOVE.dst->head;
+		string src_str = Temp_look(coloring, src), dst_str = Temp_look(coloring, dst);
+		if(!strcmp(src_str, dst_str)){
+			return clearUselessMove(il->tail);
+		}
+	}
+	return AS_InstrList(instruction, clearUselessMove(il->tail));
 }
 

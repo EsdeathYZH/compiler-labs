@@ -8,10 +8,10 @@
 #include "table.h"
 #include "tree.h"
 #include "frame.h"
+#include "assem.h"
 
 /*Lab5: Your implementation here.*/
 const int F_wordSize = 8;
-static returnSink = NULL;
 Temp_map specialregs = NULL;
 Temp_map argregs = NULL;
 Temp_map calleesaves = NULL;
@@ -20,6 +20,22 @@ Temp_map callersaves = NULL;
 static F_access InFrame(int offset);
 static F_access InReg(Temp_temp reg);
 
+Temp_temp F_RSP(void);
+Temp_temp F_RAX(void);
+Temp_temp F_RBP(void);
+Temp_temp F_RBX(void);
+Temp_temp F_RDI(void);
+Temp_temp F_RSI(void);
+Temp_temp F_RDX(void);
+Temp_temp F_RCX(void);
+Temp_temp F_R8(void);
+Temp_temp F_R9(void);
+Temp_temp F_R10(void);
+Temp_temp F_R11(void);
+Temp_temp F_R12(void);
+Temp_temp F_R13(void);
+Temp_temp F_R14(void);
+Temp_temp F_R15(void);
 
 Temp_temp F_RV(void){
 	return F_RAX();
@@ -200,55 +216,59 @@ Temp_tempList callerSaves(){
 }
 
 Temp_tempList F_registers(){
-	return Temp_TempList(F_SP(), Temp_TempList(F_RV(), Temp_TempList(F_RDI(), Temp_TempList(F_RSI(), Temp_TempList(F_RDX(), 
+	static Temp_tempList registers = NULL;
+	if(registers == NULL){
+		registers = Temp_TempList(F_RV(), Temp_TempList(F_RDI(), Temp_TempList(F_RSI(), Temp_TempList(F_RDX(), 
 			Temp_TempList(F_RCX(), Temp_TempList(F_R8(), Temp_TempList(F_R9(), Temp_TempList(F_RBX(), Temp_TempList(F_RBP(), Temp_TempList(F_R12(), 
-			Temp_TempList(F_R13(), Temp_TempList(F_R14(), Temp_TempList(F_R15(), Temp_TempList(F_R10(), Temp_TempList(F_R11(), NULL))))))))))))))));
+			Temp_TempList(F_R13(), Temp_TempList(F_R14(), Temp_TempList(F_R15(), Temp_TempList(F_R10(), Temp_TempList(F_R11(), Temp_TempList(F_SP(), NULL))))))))))))))));
+	}
+	return registers;
 }
 
 void Init_F_TempMap(){
 	//TODO:rbp???
 	//DONE: use one temp to provide rbp and fp
 	//specialregs
-	Temp_enter(F_tempMap, F_FP(), String("%%rbp"));
-	Temp_enter(F_tempMap, F_SP(), String("%%rsp"));
-	Temp_enter(F_tempMap, F_RV(), String("%%rax"));
+	Temp_enter(F_tempMap, F_FP(), String("%rbp"));
+	Temp_enter(F_tempMap, F_SP(), String("%rsp"));
+	Temp_enter(F_tempMap, F_RV(), String("%rax"));
 
 	//argRegs:%rdi，%rsi，%rdx，%rcx，%r8，%r9
-	Temp_enter(F_tempMap, F_RDI(), String("%%rdi"));
-	Temp_enter(F_tempMap, F_RSI(), String("%%rsi"));
-	Temp_enter(F_tempMap, F_RDX(), String("%%rdx"));
-	Temp_enter(F_tempMap, F_RCX(), String("%%rcx"));
-	Temp_enter(F_tempMap, F_R8(), String("%%r8"));
-	Temp_enter(F_tempMap, F_R9(), String("%%r9"));
+	Temp_enter(F_tempMap, F_RDI(), String("%rdi"));
+	Temp_enter(F_tempMap, F_RSI(), String("%rsi"));
+	Temp_enter(F_tempMap, F_RDX(), String("%rdx"));
+	Temp_enter(F_tempMap, F_RCX(), String("%rcx"));
+	Temp_enter(F_tempMap, F_R8(), String("%r8"));
+	Temp_enter(F_tempMap, F_R9(), String("%r9"));
 
 	//callersaveregs:%r10, %r11
-	Temp_enter(F_tempMap, F_R10(), String("%%r10"));
-	Temp_enter(F_tempMap, F_R11(), String("%%r11"));
+	Temp_enter(F_tempMap, F_R10(), String("%r10"));
+	Temp_enter(F_tempMap, F_R11(), String("%r11"));
 
 	//calleesaveregs:%rbx, %rbp, %r12, %r13, %r14, %r15
-	Temp_enter(F_tempMap, F_RBP(), String("%%rbp"));
-	Temp_enter(F_tempMap, F_RBX(), String("%%rbx"));
-	Temp_enter(F_tempMap, F_R12(), String("%%r12"));
-	Temp_enter(F_tempMap, F_R13(), String("%%r13"));
-	Temp_enter(F_tempMap, F_R14(), String("%%r14"));
-	Temp_enter(F_tempMap, F_R15(), String("%%r15"));
+	Temp_enter(F_tempMap, F_RBP(), String("%rbp"));
+	Temp_enter(F_tempMap, F_RBX(), String("%rbx"));
+	Temp_enter(F_tempMap, F_R12(), String("%r12"));
+	Temp_enter(F_tempMap, F_R13(), String("%r13"));
+	Temp_enter(F_tempMap, F_R14(), String("%r14"));
+	Temp_enter(F_tempMap, F_R15(), String("%r15"));
 
 	//initialize specialregs
     if(specialregs == NULL){
         specialregs = Temp_empty();
-        Temp_enter(specialregs, F_FP(), String("%%rbp"));
-        Temp_enter(specialregs, F_RV(), String("%%rax"));
-        Temp_enter(specialregs, F_SP(), String("%%rsp"));
+        Temp_enter(specialregs, F_FP(), String("%rbp"));
+        Temp_enter(specialregs, F_RV(), String("%rax"));
+        Temp_enter(specialregs, F_SP(), String("%rsp"));
     }
     //initialize argregs
     if(argregs == NULL){
         argregs = Temp_empty();
-        Temp_enter(argregs, F_RDI(), String("%%rdi"));
-        Temp_enter(argregs, F_RSI(), String("%%rsi"));
-        Temp_enter(argregs, F_RDX(), String("%%rdx"));
-        Temp_enter(argregs, F_RCX(), String("%%rcx"));
-        Temp_enter(argregs, F_R8(), String("%%r8"));
-        Temp_enter(argregs, F_R9(), String("%%r9"));
+        Temp_enter(argregs, F_RDI(), String("%rdi"));
+        Temp_enter(argregs, F_RSI(), String("%rsi"));
+        Temp_enter(argregs, F_RDX(), String("%rdx"));
+        Temp_enter(argregs, F_RCX(), String("%rcx"));
+        Temp_enter(argregs, F_R8(), String("%r8"));
+        Temp_enter(argregs, F_R9(), String("%r9"));
     }
     //initialize calleesaveregs
     if(calleesaves == NULL){
@@ -306,28 +326,56 @@ F_access F_allocLocal(F_frame f, bool escape){
 	}
 }
 
+Temp_label F_name(F_frame f){
+	return f->label;
+}
+
 F_accessList F_formals(F_frame f){
 	return f->formalList;
 }
 
 F_frame F_newFrame(Temp_label name, U_boolList formals){
 	F_frame frame = (F_frame) checked_malloc(sizeof(*frame));
+	assert(name);
 	frame->label = name;
 	frame->current_size = 0;
 	frame->localList = NULL;
+	frame->prologue = NULL;
+	frame->epilogue = NULL;
 	//Handle static link first
 	frame->formalList = F_AccessList(InFrame(0), NULL);
 	F_accessList* temp_accessList = &(frame->formalList->tail);
+	T_stm* prologuePtr = &frame->prologue;
 	int offset = 0;
-	while(formals->tail){
+	//skip static link
+	formals = formals->tail;
+	Temp_tempList argregs = argRegs();
+	while(formals){
 		//argument in memory
-		if(formals->tail->head){
-			*temp_accessList = F_AccessList(InReg(Temp_newtemp()), NULL);
-		}else{
+		//如果实参在内存但是本身不逃逸，就move到寄存器中
+		if(!formals->head && offset > 5){
+			F_access localVar = F_allocLocal(frame, FALSE);
+			*temp_accessList = F_AccessList(localVar, NULL);
+			*prologuePtr = T_Seq(T_Move(T_Temp(localVar->u.reg), 
+						T_Mem(T_Binop(T_plus, T_Const((2+offset)*F_wordSize), T_Temp(F_FP())))), NULL);
+			prologuePtr = &((*prologuePtr)->u.SEQ.right);
+		}//其余两种对应的情况，就什么都不做直接用实参来访问
+		else if(!formals->head && offset <= 5){
+			*temp_accessList = F_AccessList(InReg(argregs->head), NULL);
+		}else if(formals->head && offset > 5){
 			*temp_accessList = F_AccessList(InFrame((2+offset)*F_wordSize), NULL);
+		}
+		//如果实参在寄存器但是本身逃逸，就move到内存中
+		else{
+			F_access localVar = F_allocLocal(frame, TRUE);
+			*temp_accessList = F_AccessList(localVar, NULL);
+			*prologuePtr = T_Seq(T_Move(T_Mem(
+				T_Binop(T_plus, T_Const(localVar->u.offset), T_Temp(F_FP()))), T_Temp(argregs->head)), NULL);
+			prologuePtr = &((*prologuePtr)->u.SEQ.right);
 		}
 		offset++;
 		formals = formals->tail;
+		argregs = argregs->tail;
 		temp_accessList = &((*temp_accessList)->tail);
 	}
 	return frame;
@@ -361,7 +409,7 @@ F_frag F_ProcFrag(T_stm body, F_frame frame) {
 	frag->kind = F_procFrag;
 	frag->u.proc.body = body;
 	frag->u.proc.frame = frame;
-	return frag;                                     
+	return frag;                             
 }                                                     
                                                       
 F_fragList F_FragList(F_frag head, F_fragList tail) { 
@@ -372,18 +420,59 @@ F_fragList F_FragList(F_frag head, F_fragList tail) {
 }               
 
 T_stm F_procEntryExit1(F_frame frame, T_stm stm){
+	Temp_tempList calleeSaveRegs = calleeSaves();
+	T_stm saveStm, unsaveStm;
+	T_stm* saveStmPtr = &saveStm, *unsaveStmPtr = &unsaveStm;
+	Temp_tempList saveTemps = NULL;
+	Temp_tempList* saveTempsPtr = &saveTemps;
+	//save stm
+	while(calleeSaveRegs){
+		Temp_temp temp = Temp_newtemp();
+		*saveStmPtr = T_Seq(T_Move(T_Temp(temp), T_Temp(calleeSaveRegs->head)), NULL);
+		*saveTempsPtr = Temp_TempList(temp, NULL);
+		saveStmPtr = &((*saveStmPtr)->u.SEQ.right);
+		saveTempsPtr = &((*saveTempsPtr)->tail);
+		calleeSaveRegs = calleeSaveRegs->tail;
+	}
+	calleeSaveRegs = calleeSaves();
+	//unsave stm
+	while(calleeSaveRegs){
+		*unsaveStmPtr = T_Seq(T_Move(T_Temp(calleeSaveRegs->head), T_Temp(saveTemps->head)), NULL);
+		unsaveStmPtr = &((*unsaveStmPtr)->u.SEQ.right);
+		calleeSaveRegs = calleeSaveRegs->tail;
+		saveTemps = saveTemps->tail;
+	}
+	//there should no temps left
+	assert(!saveTemps);
 	return stm;
 }
-
+static Temp_tempList returnSink = NULL;
 AS_instrList F_procEntryExit2(AS_instrList body){
+	//scan the whole proc body to find max arg's number
+	AS_instrList tempBody = body;
+	int max_num = 0;
+	while(tempBody){
+		AS_instr instr = tempBody->head;
+		if(instr->kind == I_OPER && !strncmp(instr->u.OPER.assem, " call", 4)){
+			int num = 0;
+			Temp_tempList tempList = instr->u.OPER.src;
+			while(tempList){
+				tempList = tempList->tail;
+				num++;
+			}
+			max_num = (max_num > num ? max_num : num);
+		}
+		tempBody = tempBody->tail;
+	}
 	if(!returnSink){
 		returnSink = Temp_TempList(F_RV(), Temp_TempList(F_SP(), calleeSaves()));
 	}
+	return AS_splice(body, AS_InstrList(AS_Oper("", NULL, returnSink, NULL), NULL));
 }
 
-AS_proc F_ProcEntryExit3(F_frame frame, AS_instrList body){
+AS_proc F_procEntryExit3(F_frame frame, AS_instrList body){
     char buf[100];
-    sprintf(buf, "%s:", S_name(frame->funcname));
+    sprintf(buf, "%s:", S_name(frame->label));
     return AS_Proc(String(buf), body, ".cfi_endproc");
 }
 

@@ -170,7 +170,7 @@ void *G_look(G_table t, G_node node)
 G_nodeList G_unionNodeList(G_nodeList list1, G_nodeList list2){
     G_nodeList result = list1;
     while(list2){
-        if(!G_inNodeList(list1, list2->head)){
+        if(!G_inNodeList(list2->head, list1)){
             result = G_NodeList(list2->head, result);
         }
         list2 = list2->tail;
@@ -181,7 +181,7 @@ G_nodeList G_unionNodeList(G_nodeList list1, G_nodeList list2){
 G_nodeList G_intersectNodeList(G_nodeList list1, G_nodeList list2){
     G_nodeList result = NULL;
     while(list2){
-        if(G_inNodeList(list1, list2->head)){
+        if(G_inNodeList(list2->head, list1)){
             result = G_NodeList(list2->head, result);
         }
         list2 = list2->tail;
@@ -192,7 +192,7 @@ G_nodeList G_intersectNodeList(G_nodeList list1, G_nodeList list2){
 G_nodeList G_exclusiveNodeList(G_nodeList list1, G_nodeList list2){
     G_nodeList result = NULL;
     while(list1){
-        if(!G_inNodeList(list2, list1->head)){
+        if(!G_inNodeList(list1->head, list2)){
             result = G_NodeList(list1->head, result);
         }
         list1 = list1->tail;
@@ -215,6 +215,17 @@ G_nodeList G_deleteNode(G_nodeList list, G_node node){
     }
     list->tail = G_deleteNode(list->tail, node);
     return list;
+}
+
+G_nodeList G_copyFrom(G_nodeList origin){
+    G_nodeList result = NULL;
+    G_nodeList* listPtr = &result;
+    while(origin){
+      (*listPtr) = G_NodeList(origin->head, NULL);
+      listPtr = &((*listPtr)->tail);
+      origin = origin->tail;
+    }
+    return result;
 }
 
 

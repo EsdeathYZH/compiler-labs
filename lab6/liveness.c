@@ -41,7 +41,6 @@ Live_moveList Live_MoveList(G_node src, G_node dst, Live_moveList tail) {
 }
 
 Temp_temp Live_gtemp(G_node n) {
-	//your code here.
 	return (Temp_temp) G_nodeInfo(n);
 }
 
@@ -52,21 +51,53 @@ struct Live_graph Live_liveness(G_graph flow) {
 	G_table inmap = G_empty();
 	G_table outmap = G_empty();
 
+	struct Live_graph lg;
+	G_graph conflictGraph = G_Graph();
+	G_table spillPriority = G_empty();
+
 	G_nodeList flowNodeList = G_nodes(flow);
 	G_nodeList reverseNodeList = NULL;
+	printf("begin to initial all maps!\n");
 	///initialize all maps
 	assert(flowNodeList);
-	while(!flowNodeList){
+	while(flowNodeList){
 		G_node flowNode = flowNodeList->head;
 		reverseNodeList = G_NodeList(flowNodeList->head, reverseNodeList);
-		//TODO:sort defList and useList if we use order-list 
-		//DONE: I have sorted them.
+
 		enterLiveMap(defsmap, flowNode, FG_def(flowNode));
 		enterLiveMap(usesmap, flowNode, FG_use(flowNode));
 		enterLiveMap(inmap, flowNode, NULL);
 		enterLiveMap(outmap, flowNode, NULL);
-	}
 
+		Temp_tempList defs = FG_def(flowNode);
+		Temp_tempList uses = FG_use(flowNode);
+		// +def
+		while(defs){
+			G_node node = FindorCreateTempNode(conflictGraph, defs->head);
+			float* floatPtr = (float*) G_look(spillPriority, node);
+			if(!floatPtr){
+				floatPtr = (float*)checked_malloc(sizeof(float));
+				*floatPtr = 0;
+				G_enter(spillPriority, node, floatPtr);
+			}
+			*floatPtr = (*floatPtr) + 1;
+			defs = defs->tail;
+		}
+		// +use
+		while(uses){
+			G_node node = FindorCreateTempNode(conflictGraph, uses->head);
+			float* floatPtr = (float*) G_look(spillPriority, node);
+			if(!floatPtr){
+				floatPtr = (float*)checked_malloc(sizeof(float));
+				*floatPtr = 0;
+				G_enter(spillPriority, node, floatPtr);
+			}
+			*floatPtr = (*floatPtr) + 1;
+			uses = uses->tail;
+		}
+		flowNodeList = flowNodeList->tail;
+	}
+	printf("begin to build livemap!\n");
 	//use multi-round iteration and build livemap
 	bool stopIterFlag = FALSE;
 	while(!stopIterFlag){
@@ -78,12 +109,14 @@ struct Live_graph Live_liveness(G_graph flow) {
 			Temp_tempList oldOut = lookupLiveMap(outmap, node);
 			Temp_tempList uses = lookupLiveMap(usesmap, node);
 			Temp_tempList defs = lookupLiveMap(defsmap, node);
-			Temp_tempList newIn = Temp_unionList(uses, Temp_exclusiveList(oldOut, defs));
+			Temp_tempList newIn = NULL;
 			Temp_tempList newOut = NULL;
 			G_nodeList succList = G_succ(node);
 			while(succList){
 				newOut = Temp_unionList(newOut, lookupLiveMap(inmap, succList->head));
+				succList = succList->tail;
 			} 
+			newIn = Temp_unionList(uses, Temp_exclusiveList(oldOut, defs));
 			if(!Temp_isSameList(oldIn, newIn) || !Temp_isSameList(oldOut, newOut)){
 				stopIterFlag = FALSE;
 			}
@@ -92,9 +125,6 @@ struct Live_graph Live_liveness(G_graph flow) {
 			tempList = tempList->tail;
 		}
 	}
-
-	struct Live_graph lg;
-	G_graph conflictGraph = G_empty();
 	
 	//add machine registers first
 	Temp_tempList registers = F_registers();
@@ -102,12 +132,12 @@ struct Live_graph Live_liveness(G_graph flow) {
 		FindorCreateTempNode(conflictGraph, registers->head);
 		registers = registers->tail;
 	}
-
+	printf("begin to build confict graph!\n");
 	//build conflict graph.
 	Live_moveList moveList = NULL;
 	flowNodeList = G_nodes(flow);
 	G_nodeList tempFlowList = flowNodeList;
-	while(!tempFlowList){
+	while(tempFlowList){
 		G_node flowNode = tempFlowList->head;
 		Temp_tempList defs = lookupLiveMap(defsmap, flowNode);
 
@@ -129,7 +159,8 @@ struct Live_graph Live_liveness(G_graph flow) {
 				Temp_tempList tempLives = liveList;
 				while(tempLives){ 
 					// in MOVE instruction, we don't add a conflict edge between uses and defs
-					if(containsTemp(uses, tempLives->head)){
+					if(Temp_inList(uses, tempLives->head)){
+						tempLives = tempLives->tail;
 						continue;
 					}
 					G_node liveNode = FindorCreateTempNode(conflictGraph, tempLives->head);
@@ -145,22 +176,41 @@ struct Live_graph Live_liveness(G_graph flow) {
 			while(tempDefs){
 				Temp_tempList tempLives = liveList;
 				G_node defNode = FindorCreateTempNode(conflictGraph, tempDefs->head);
-				while(tempLives){ 
+				while(tempLives){
 					G_node liveNode = FindorCreateTempNode(conflictGraph, tempLives->head);
+					//TODO:如果defNode和liveNode相等如何处理？肯定不能加到图中
+					assert(defNode != liveNode);
 					G_addEdge(defNode, liveNode);
 					tempLives = tempLives->tail;
 				}
 				tempDefs = tempDefs->tail;
 			}
 		}
+		tempFlowList = tempFlowList->tail;
 	}
+	printf("begin to build spill priority graph!\n");
+	// / degree
+	G_nodeList conflictNodeList = G_nodes(conflictGraph);
+	registers = F_registers();
+	while(conflictNodeList){
+		Temp_temp temp = G_nodeInfo(conflictNodeList->head);
+		if(!Temp_inList(registers, temp)){
+			int degree = G_degree(conflictNodeList->head);
+			float* floatPtr = (float*) G_look(spillPriority, conflictNodeList->head);
+			assert(floatPtr);
+			*floatPtr = (*floatPtr) / degree;
+		}
+		conflictNodeList = conflictNodeList->tail;
+	}
+
 	lg.graph = conflictGraph;
 	lg.moves = moveList;
+	lg.spillPriority = spillPriority;
 	return lg;
 }
 
 
-bool Move_inList(Live_moveList list, Temp_temp src, Temp_temp dst){
+bool Move_inList(Live_moveList list, G_node src, G_node dst){
     while(list){
         if(list->src == src && list->dst == dst){
             return TRUE;
@@ -210,11 +260,11 @@ bool Move_isSameList(Live_moveList list1, Live_moveList list2){
   return (Move_exclusiveList(list1, list2) == NULL && Move_exclusiveList(list2, list1) == NULL);
 }
 
-Live_moveList Move_insertMove(Live_moveList list, Temp_temp src, Temp_temp dst){
+Live_moveList Move_insertMove(Live_moveList list, G_node src, G_node dst){
 	return Live_MoveList(src, dst, list);
 }
 
-Live_moveList Move_deleteMove(Live_moveList list, Temp_temp src, Temp_temp dst){
+Live_moveList Move_deleteMove(Live_moveList list, G_node src, G_node dst){
 	if(!list) return list;
     if(list->src == src && list->dst == dst){
       return list->tail;

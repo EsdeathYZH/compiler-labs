@@ -42,8 +42,8 @@ AS_proc AS_Proc(string p, AS_instrList b, string e);
 
 
 //TA's implementation. Just for reference.
+typedef struct F_access_ *F_access;
 void AS_rewrite(AS_instrList iList, Temp_map m);
 AS_instrList RewriteOneSpill(AS_instrList instrList, Temp_temp temp, F_access access);
-typedef struct F_frame_ *F_frame;
 
 #endif

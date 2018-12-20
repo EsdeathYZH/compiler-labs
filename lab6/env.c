@@ -91,6 +91,7 @@ S_table E_base_venv(void)
 	formals->tail = NULL;
 
 	S_enter(venv,S_Symbol("print"),E_FunEntry(level,label,formals,Ty_Void()));
+	S_enter(venv,S_Symbol("printi"),E_FunEntry(level,label,Ty_TyList(Ty_Int(), NULL),Ty_Void()));
 
 	result = Ty_Int();
 	S_enter(venv,S_Symbol("ord"),E_FunEntry(level,label,formals,result));

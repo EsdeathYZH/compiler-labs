@@ -31,6 +31,8 @@ G_nodeList G_deleteNode(G_nodeList list, G_node node);
 
 bool G_isSameNodeList(G_nodeList list1, G_nodeList list2);
 
+G_nodeList G_copyFrom(G_nodeList origin);
+
 /* Get the list of nodes belonging to "g" */
 G_nodeList G_nodes(G_graph g);
 

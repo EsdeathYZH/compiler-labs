@@ -33,7 +33,7 @@ struct expty expTy(Tr_exp exp, Ty_ty ty)
 F_fragList SEM_transProg(A_exp exp){
 
 	//TODO LAB5: do not forget to add the main frame
-	Tr_level main_level = Tr_newLevel(Tr_outermost(), Temp_newlabel(), NULL);
+	Tr_level main_level = Tr_newLevel(Tr_outermost(), S_Symbol(String("main")), NULL);
 	struct expty main_exp = transExp(E_base_venv(), E_base_tenv(), exp, main_level, NULL);
 	Tr_procEntryExit(main_level, main_exp.exp, NULL);
 	return Tr_getResult();
@@ -62,7 +62,8 @@ bool is_same_type(Ty_ty ty1, Ty_ty ty2){
 
 U_boolList makeFormalBoolList(A_fieldList fieldList, int index){
 	if(!fieldList) return NULL;
-	return U_BoolList((index > 5), makeFormalBoolList(fieldList->tail, index+1));
+	//modified: (index > 6) -> fieldList->head->escape
+	return U_BoolList(fieldList->head->escape, makeFormalBoolList(fieldList->tail, index+1));
 }
 
 Ty_tyList makeFormalTyList(S_table tenv, A_fieldList fieldList){
@@ -270,8 +271,9 @@ Tr_exp transFunctionDec(S_table venv, S_table tenv, A_dec d, Tr_level level, Tem
 		}else{
 			result_ty = Ty_Void();
 		}
-		Temp_label func_label = Temp_newlabel();
+		Temp_label func_label = f->name;
 		Tr_level func_level = Tr_newLevel(level, func_label, formalBools);
+		assert(func_label);
 		S_enter(venv, f->name, E_FunEntry(func_level, func_label,formalTys, result_ty));
 		funcdecList = funcdecList->tail;
 	}
@@ -343,7 +345,8 @@ struct expty transCallExp(S_table venv, S_table tenv, A_exp exp, Tr_level level,
 		if(args_exps){
 			EM_error(args_exps->head->pos, "too many params in function %s", S_name(exp->u.call.func));
 		}
-		return expTy(Tr_functionCall(level, func->u.fun.level, func->u.fun.label, tr_expList)
+		//assert(func->u.fun.label);
+		return expTy(Tr_functionCall(level, func->u.fun.level, exp->u.call.func, tr_expList)
 					, actual_ty(func->u.fun.result));
 	}else{	
 		EM_error(exp->pos, "undefined function %s", S_name(exp->u.call.func));
@@ -451,6 +454,7 @@ struct expty transSeqExp(S_table venv, S_table tenv, A_exp exp, Tr_level level, 
 	while(explist->tail){
 		struct expty temp_exp = transExp(venv, tenv, explist->head, level, looplabel);
 		tr_expList = Tr_ExpList(temp_exp.exp, tr_expList);
+		assert(temp_exp.exp);
 		explist = explist->tail;
 	}
 	//translate the last exp

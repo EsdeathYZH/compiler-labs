@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "string.h"
 #include "util.h"
 #include "table.h"
 #include "symbol.h"
@@ -104,11 +105,11 @@ static struct Cx unCx(Tr_exp e){
 			  && e->u.ex->u.CONST == 0){
 				cx.stm = T_Jump(T_Name(NULL), NULL);
 				cx.trues = PatchList(NULL, NULL);
-				cx.falses = PatchList(&cx.stm->u.JUMP.exp->u.NAME, NULL);
+				cx.falses = PatchList(&(cx.stm->u.JUMP.exp->u.NAME), NULL);
 			}else if(e->u.ex->kind == T_CONST 
 			  && e->u.ex->u.CONST == 1){
 				cx.stm = T_Jump(T_Name(NULL), NULL);
-				cx.trues = PatchList(&cx.stm->u.JUMP.exp->u.NAME, NULL);
+				cx.trues = PatchList(&(cx.stm->u.JUMP.exp->u.NAME), NULL);
 				cx.falses = PatchList(NULL, NULL);
 			}else{
 				cx.stm = T_Cjump(T_ne, e->u.ex, T_Const(0), NULL, NULL);
@@ -216,7 +217,13 @@ Tr_exp Tr_int(int num){
 
 Tr_exp Tr_string(string str){
 	Temp_label lab = Temp_newlabel();
-	F_frag str_frag = F_StringFrag(lab, str);
+	//在字符串前面加上长度
+	//TODO:因为用的strlen所以现在还没有真正发挥作用
+	int length = strlen(str);
+	char* final_str = (char*) checked_malloc(length+4);
+	strcpy(final_str+4, str);
+	*((int*)final_str) = length;
+	F_frag str_frag = F_StringFrag(lab, final_str);
 	//put fragment onto a global list
 	addFragToGlobalList(str_frag);
 	return Tr_Ex(T_Name(lab));
@@ -313,7 +320,7 @@ Tr_exp Tr_if(Tr_exp test, Tr_exp then, Tr_exp elsee){
 		return Tr_Ex(T_Eseq(T_Seq(cx.stm, 
 						T_Seq(T_Label(true_label),
 						T_Seq(T_Move(T_Temp(result), unEx(then)),
-						T_Seq(T_Jump(T_Name(merge_label), NULL),
+						T_Seq(T_Jump(T_Name(merge_label), Temp_LabelList(merge_label, NULL)),
 						T_Seq(T_Label(false_label),
 						T_Seq(T_Move(T_Temp(result), unEx(elsee)),
 						T_Label(merge_label))))))), 
@@ -328,7 +335,7 @@ Tr_exp Tr_if(Tr_exp test, Tr_exp then, Tr_exp elsee){
 		return Tr_Nx(T_Seq(cx.stm, 
 				T_Seq(T_Label(true_label),
 				T_Seq(unNx(then),
-				T_Seq(T_Jump(T_Name(merge_label), NULL),
+				T_Seq(T_Jump(T_Name(merge_label), Temp_LabelList(merge_label, NULL)),
 				T_Seq(T_Label(false_label),
 				T_Seq(unNx(elsee),
 				T_Label(merge_label))))))));
@@ -344,7 +351,7 @@ Tr_exp Tr_if(Tr_exp test, Tr_exp then, Tr_exp elsee){
 		return Tr_Ex(T_Eseq(T_Seq(cx.stm, 
 						T_Seq(T_Label(true_label),
 						T_Seq(T_Move(T_Temp(result), unEx(then)),
-						T_Seq(T_Jump(T_Name(merge_label), NULL),
+						T_Seq(T_Jump(T_Name(merge_label), Temp_LabelList(merge_label, NULL)),
 						T_Seq(T_Label(false_label),
 						T_Seq(T_Move(T_Temp(result), unEx(elsee)),
 						T_Label(merge_label))))))), 
@@ -353,7 +360,7 @@ Tr_exp Tr_if(Tr_exp test, Tr_exp then, Tr_exp elsee){
 }
 
 Tr_exp Tr_break(Temp_label loopLabel){
-	return Tr_Nx(T_Jump(T_Name(loopLabel), NULL));
+	return Tr_Nx(T_Jump(T_Name(loopLabel), Temp_LabelList(loopLabel, NULL)));
 }
 
 Tr_exp Tr_recordExp(int size, Tr_expList tr_expList){
@@ -403,7 +410,7 @@ Tr_exp Tr_while(Tr_exp test_exp, Tr_exp body_exp ,Temp_label done_label){
 		T_Cjump(T_eq, unEx(test_exp), T_Const(0), done_label, body_label), T_Seq(
 		T_Label(body_label), T_Seq(
 		unNx(body_exp), T_Seq(
-		T_Jump(T_Name(test_label), NULL), T_Label(done_label)
+		T_Jump(T_Name(test_label), Temp_LabelList(test_label, NULL)), T_Label(done_label)
 		))))));
 }
 
