@@ -1,0 +1,4067 @@
+doProc for function tigermain:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t146,
+        TEMP t116),
+       MOVE(
+        TEMP t147,
+        TEMP t115)),
+      MOVE(
+       TEMP t148,
+       TEMP t114)),
+     MOVE(
+      TEMP t149,
+      TEMP t113)),
+    MOVE(
+     TEMP t150,
+     TEMP t112)),
+   MOVE(
+    TEMP t151,
+    TEMP t111)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t110,
+     ESEQ(
+      SEQ(
+       MOVE(
+        MEM(
+         BINOP(PLUS,
+          TEMP t106,
+          CONST -8)),
+        CONST 16),
+       SEQ(
+        EXP(
+         CONST 0),
+        SEQ(
+         MOVE(
+          MEM(
+           BINOP(PLUS,
+            TEMP t106,
+            CONST -16)),
+          CALL(
+           NAME initArray,
+            CONST 0,
+            MEM(
+             BINOP(PLUS,
+              TEMP t106,
+              CONST -8)),
+            CONST 0)),
+         EXP(
+          CONST 0)))),
+      CALL(
+       NAME try,
+        TEMP t106))),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t116,
+          TEMP t146),
+         MOVE(
+          TEMP t115,
+          TEMP t147)),
+        MOVE(
+         TEMP t114,
+         TEMP t148)),
+       MOVE(
+        TEMP t113,
+        TEMP t149)),
+      MOVE(
+       TEMP t112,
+       TEMP t150)),
+     MOVE(
+      TEMP t111,
+      TEMP t151)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t146,
+  TEMP t116)
+ MOVE(
+  TEMP t147,
+  TEMP t115)
+ MOVE(
+  TEMP t148,
+  TEMP t114)
+ MOVE(
+  TEMP t149,
+  TEMP t113)
+ MOVE(
+  TEMP t150,
+  TEMP t112)
+ MOVE(
+  TEMP t151,
+  TEMP t111)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  CONST 16)
+ MOVE(
+  TEMP t155,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -16))
+ MOVE(
+  TEMP t154,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t155),
+  TEMP t154)
+ MOVE(
+  TEMP t110,
+  CALL(
+   NAME try,
+    TEMP t106))
+ MOVE(
+  TEMP t116,
+  TEMP t146)
+ MOVE(
+  TEMP t115,
+  TEMP t147)
+ MOVE(
+  TEMP t114,
+  TEMP t148)
+ MOVE(
+  TEMP t113,
+  TEMP t149)
+ MOVE(
+  TEMP t112,
+  TEMP t150)
+ MOVE(
+  TEMP t111,
+  TEMP t151)
+-------====Linearlized=====-----
+ LABEL L12
+ MOVE(
+  TEMP t146,
+  TEMP t116)
+ MOVE(
+  TEMP t147,
+  TEMP t115)
+ MOVE(
+  TEMP t148,
+  TEMP t114)
+ MOVE(
+  TEMP t149,
+  TEMP t113)
+ MOVE(
+  TEMP t150,
+  TEMP t112)
+ MOVE(
+  TEMP t151,
+  TEMP t111)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  CONST 16)
+ MOVE(
+  TEMP t155,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -16))
+ MOVE(
+  TEMP t154,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t155),
+  TEMP t154)
+ MOVE(
+  TEMP t110,
+  CALL(
+   NAME try,
+    TEMP t106))
+ MOVE(
+  TEMP t116,
+  TEMP t146)
+ MOVE(
+  TEMP t115,
+  TEMP t147)
+ MOVE(
+  TEMP t114,
+  TEMP t148)
+ MOVE(
+  TEMP t113,
+  TEMP t149)
+ MOVE(
+  TEMP t112,
+  TEMP t150)
+ MOVE(
+  TEMP t111,
+  TEMP t151)
+ JUMP(
+  NAME L11)
+------====Basic block=====-------
+ LABEL L12
+ MOVE(
+  TEMP t146,
+  TEMP t116)
+ MOVE(
+  TEMP t147,
+  TEMP t115)
+ MOVE(
+  TEMP t148,
+  TEMP t114)
+ MOVE(
+  TEMP t149,
+  TEMP t113)
+ MOVE(
+  TEMP t150,
+  TEMP t112)
+ MOVE(
+  TEMP t151,
+  TEMP t111)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  CONST 16)
+ MOVE(
+  TEMP t155,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -16))
+ MOVE(
+  TEMP t154,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t155),
+  TEMP t154)
+ MOVE(
+  TEMP t110,
+  CALL(
+   NAME try,
+    TEMP t106))
+ MOVE(
+  TEMP t116,
+  TEMP t146)
+ MOVE(
+  TEMP t115,
+  TEMP t147)
+ MOVE(
+  TEMP t114,
+  TEMP t148)
+ MOVE(
+  TEMP t113,
+  TEMP t149)
+ MOVE(
+  TEMP t112,
+  TEMP t150)
+ MOVE(
+  TEMP t111,
+  TEMP t151)
+ JUMP(
+  NAME L11)
+ LABEL L11
+-------====trace=====-----
+a format: assem= subq $?0#, %rsp, dst=0x564f191a21c0, src=0x564f191a21a0
+ subq $?0#, %rsp
+a format: assem=L12, dst=(nil), src=(nil)
+L12:
+a format: assem= movq `s0, `d0, dst=0x564f191a22e0, src=0x564f191a22c0
+ movq %rbx, 146
+a format: assem= movq `s0, `d0, dst=0x564f191a2390, src=0x564f191a2370
+ movq %rbp, 147
+a format: assem= movq `s0, `d0, dst=0x564f191a2440, src=0x564f191a2420
+ movq %r12, 148
+a format: assem= movq `s0, `d0, dst=0x564f191a24f0, src=0x564f191a24d0
+ movq %r13, 149
+a format: assem= movq `s0, `d0, dst=0x564f191a25a0, src=0x564f191a2580
+ movq %r14, 150
+a format: assem= movq `s0, `d0, dst=0x564f191a2650, src=0x564f191a2630
+ movq %r15, 151
+a format: assem= movq $16, `d0, dst=0x564f191a2750, src=(nil)
+ movq $16, 156
+a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x564f191a2800
+ movq 156, ?-8#(%rsp)
+a format: assem= leaq ?0#(`s0), `d0, dst=0x564f191a2920, src=0x564f191a2900
+ leaq ?0#(%rsp), 157
+a format: assem= addq $-16, `d0, dst=0x564f191a29d0, src=0x564f191a29b0
+ addq $-16, 157
+a format: assem= movq `s0, `d0, dst=0x564f191a2a80, src=0x564f191a2a60
+ movq 157, 155
+a format: assem= movq $0, `d0, dst=0x564f191a2c10, src=(nil)
+ movq $0, 159
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f191a2ca0
+ movq 159, (%rsp)
+a format: assem= movq ?-8#(`s0), `d0, dst=0x564f191a2dc0, src=0x564f191a2da0
+ movq ?-8#(%rsp), 160
+a format: assem= movq `s0, `d0, dst=0x564f191a2e70, src=0x564f191a2e50
+ movq 160, %rdi
+a format: assem= movq $0, `d0, dst=0x564f191a2f70, src=(nil)
+ movq $0, 161
+a format: assem= movq `s0, `d0, dst=0x564f191a3020, src=0x564f191a3000
+ movq 161, %rsi
+a format: assem= callq initArray, dst=0x564f191a3190, src=0x564f191a30d0
+ callq initArray
+a format: assem= movq `s0, `d0, dst=0x564f191a3240, src=0x564f191a3220
+ movq %rax, 154
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x564f191a32f0
+ movq 154, (155)
+a format: assem= leaq ?0#(%rsp), `d0, dst=0x564f191a3410, src=0x564f191a33f0
+ leaq ?0#(%rsp), 162
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f191a34c0
+ movq 162, (%rsp)
+a format: assem= callq try, dst=0x564f191a35b0, src=(nil)
+ callq try
+a format: assem= movq `s0, `d0, dst=0x564f191a3660, src=0x564f191a3640
+ movq %rax, %rax
+a format: assem= movq `s0, `d0, dst=0x564f191a3710, src=0x564f191a36f0
+ movq 146, %rbx
+a format: assem= movq `s0, `d0, dst=0x564f191a37c0, src=0x564f191a37a0
+ movq 147, %rbp
+a format: assem= movq `s0, `d0, dst=0x564f191a3870, src=0x564f191a3850
+ movq 148, %r12
+a format: assem= movq `s0, `d0, dst=0x564f191a3920, src=0x564f191a3900
+ movq 149, %r13
+a format: assem= movq `s0, `d0, dst=0x564f191a39d0, src=0x564f191a39b0
+ movq 150, %r14
+a format: assem= movq `s0, `d0, dst=0x564f191a3a80, src=0x564f191a3a60
+ movq 151, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L11
+a format: assem=L11, dst=(nil), src=(nil)
+L11:
+a format: assem= addq $?0#, %rsp, dst=0x564f191a3c30, src=0x564f191a3c10
+ addq $?0#, %rsp
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+no color left!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+rewrite!
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem= subq $32, %rsp, dst=0x564f191a21c0, src=0x564f191a21a0
+a format: assem=L12, dst=(nil), src=(nil)
+a format: assem= movq $16, `d0, dst=0x564f191a2750, src=(nil)
+a format: assem= movq `s1, 24(`s0), dst=(nil), src=0x564f191a2800
+a format: assem= leaq 32(`s0), `d0, dst=0x564f191a2920, src=0x564f191a2900
+a format: assem= addq $-16, `d0, dst=0x564f191a29d0, src=0x564f191a29b0
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x564f191ef2e0
+a format: assem= movq $0, `d0, dst=0x564f191a2c10, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f191a2ca0
+a format: assem= movq 24(`s0), `d0, dst=0x564f191a2dc0, src=0x564f191a2da0
+a format: assem= movq $0, `d0, dst=0x564f191a2f70, src=(nil)
+a format: assem= callq initArray, dst=0x564f191a3190, src=0x564f191a30d0
+a format: assem= movq 8(`s0), `d0
+, dst=0x564f191ef760, src=0x564f191ef740
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x564f191a32f0
+a format: assem= leaq 32(%rsp), `d0, dst=0x564f191a3410, src=0x564f191a33f0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f191a34c0
+a format: assem= callq try, dst=0x564f191a35b0, src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L11, dst=(nil), src=(nil)
+a format: assem= addq $32, %rsp, dst=0x564f191a3c30, src=0x564f191a3c10
+doProc for function try:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t140,
+        TEMP t116),
+       MOVE(
+        TEMP t141,
+        TEMP t115)),
+      MOVE(
+       TEMP t142,
+       TEMP t114)),
+     MOVE(
+      TEMP t143,
+      TEMP t113)),
+    MOVE(
+     TEMP t144,
+     TEMP t112)),
+   MOVE(
+    TEMP t145,
+    TEMP t111)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t110,
+     ESEQ(
+      SEQ(
+       EXP(
+        CALL(
+         NAME init,
+          MEM(
+           BINOP(PLUS,
+            CONST 8,
+            TEMP t106)))),
+       EXP(
+        CALL(
+         NAME printi,
+          TEMP t106,
+          CALL(
+           NAME bsearch,
+            MEM(
+             BINOP(PLUS,
+              CONST 8,
+              TEMP t106)),
+            CONST 0,
+            BINOP(MINUS,
+             MEM(
+              BINOP(PLUS,
+               MEM(
+                BINOP(PLUS,
+                 CONST 8,
+                 TEMP t106)),
+               CONST -8)),
+             CONST 1),
+            CONST 7)))),
+      CALL(
+       NAME print,
+        TEMP t106,
+        NAME L10))),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t116,
+          TEMP t140),
+         MOVE(
+          TEMP t115,
+          TEMP t141)),
+        MOVE(
+         TEMP t114,
+         TEMP t142)),
+       MOVE(
+        TEMP t113,
+        TEMP t143)),
+      MOVE(
+       TEMP t112,
+       TEMP t144)),
+     MOVE(
+      TEMP t111,
+      TEMP t145)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t140,
+  TEMP t116)
+ MOVE(
+  TEMP t141,
+  TEMP t115)
+ MOVE(
+  TEMP t142,
+  TEMP t114)
+ MOVE(
+  TEMP t143,
+  TEMP t113)
+ MOVE(
+  TEMP t144,
+  TEMP t112)
+ MOVE(
+  TEMP t145,
+  TEMP t111)
+ EXP(
+  CALL(
+   NAME init,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ MOVE(
+  TEMP t197,
+  TEMP t106)
+ MOVE(
+  TEMP t196,
+  CALL(
+   NAME bsearch,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    CONST 0,
+    BINOP(MINUS,
+     MEM(
+      BINOP(PLUS,
+       MEM(
+        BINOP(PLUS,
+         CONST 8,
+         TEMP t106)),
+       CONST -8)),
+     CONST 1),
+    CONST 7))
+ EXP(
+  CALL(
+   NAME printi,
+    TEMP t197,
+    TEMP t196))
+ MOVE(
+  TEMP t110,
+  CALL(
+   NAME print,
+    TEMP t106,
+    NAME L10))
+ MOVE(
+  TEMP t116,
+  TEMP t140)
+ MOVE(
+  TEMP t115,
+  TEMP t141)
+ MOVE(
+  TEMP t114,
+  TEMP t142)
+ MOVE(
+  TEMP t113,
+  TEMP t143)
+ MOVE(
+  TEMP t112,
+  TEMP t144)
+ MOVE(
+  TEMP t111,
+  TEMP t145)
+-------====Linearlized=====-----
+ LABEL L14
+ MOVE(
+  TEMP t140,
+  TEMP t116)
+ MOVE(
+  TEMP t141,
+  TEMP t115)
+ MOVE(
+  TEMP t142,
+  TEMP t114)
+ MOVE(
+  TEMP t143,
+  TEMP t113)
+ MOVE(
+  TEMP t144,
+  TEMP t112)
+ MOVE(
+  TEMP t145,
+  TEMP t111)
+ EXP(
+  CALL(
+   NAME init,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ MOVE(
+  TEMP t197,
+  TEMP t106)
+ MOVE(
+  TEMP t196,
+  CALL(
+   NAME bsearch,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    CONST 0,
+    BINOP(MINUS,
+     MEM(
+      BINOP(PLUS,
+       MEM(
+        BINOP(PLUS,
+         CONST 8,
+         TEMP t106)),
+       CONST -8)),
+     CONST 1),
+    CONST 7))
+ EXP(
+  CALL(
+   NAME printi,
+    TEMP t197,
+    TEMP t196))
+ MOVE(
+  TEMP t110,
+  CALL(
+   NAME print,
+    TEMP t106,
+    NAME L10))
+ MOVE(
+  TEMP t116,
+  TEMP t140)
+ MOVE(
+  TEMP t115,
+  TEMP t141)
+ MOVE(
+  TEMP t114,
+  TEMP t142)
+ MOVE(
+  TEMP t113,
+  TEMP t143)
+ MOVE(
+  TEMP t112,
+  TEMP t144)
+ MOVE(
+  TEMP t111,
+  TEMP t145)
+ JUMP(
+  NAME L13)
+------====Basic block=====-------
+ LABEL L14
+ MOVE(
+  TEMP t140,
+  TEMP t116)
+ MOVE(
+  TEMP t141,
+  TEMP t115)
+ MOVE(
+  TEMP t142,
+  TEMP t114)
+ MOVE(
+  TEMP t143,
+  TEMP t113)
+ MOVE(
+  TEMP t144,
+  TEMP t112)
+ MOVE(
+  TEMP t145,
+  TEMP t111)
+ EXP(
+  CALL(
+   NAME init,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ MOVE(
+  TEMP t197,
+  TEMP t106)
+ MOVE(
+  TEMP t196,
+  CALL(
+   NAME bsearch,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    CONST 0,
+    BINOP(MINUS,
+     MEM(
+      BINOP(PLUS,
+       MEM(
+        BINOP(PLUS,
+         CONST 8,
+         TEMP t106)),
+       CONST -8)),
+     CONST 1),
+    CONST 7))
+ EXP(
+  CALL(
+   NAME printi,
+    TEMP t197,
+    TEMP t196))
+ MOVE(
+  TEMP t110,
+  CALL(
+   NAME print,
+    TEMP t106,
+    NAME L10))
+ MOVE(
+  TEMP t116,
+  TEMP t140)
+ MOVE(
+  TEMP t115,
+  TEMP t141)
+ MOVE(
+  TEMP t114,
+  TEMP t142)
+ MOVE(
+  TEMP t113,
+  TEMP t143)
+ MOVE(
+  TEMP t112,
+  TEMP t144)
+ MOVE(
+  TEMP t111,
+  TEMP t145)
+ JUMP(
+  NAME L13)
+ LABEL L13
+-------====trace=====-----
+a format: assem= subq $?0#, %rsp, dst=0x564f19259a10, src=0x564f192599f0
+ subq $?0#, %rsp
+a format: assem=L14, dst=(nil), src=(nil)
+L14:
+a format: assem= movq `s0, `d0, dst=0x564f19259b30, src=0x564f19259b10
+ movq %rbx, 140
+a format: assem= movq `s0, `d0, dst=0x564f19259be0, src=0x564f19259bc0
+ movq %rbp, 141
+a format: assem= movq `s0, `d0, dst=0x564f19259c90, src=0x564f19259c70
+ movq %r12, 142
+a format: assem= movq `s0, `d0, dst=0x564f19259d40, src=0x564f19259d20
+ movq %r13, 143
+a format: assem= movq `s0, `d0, dst=0x564f19259df0, src=0x564f19259dd0
+ movq %r14, 144
+a format: assem= movq `s0, `d0, dst=0x564f19259ea0, src=0x564f19259e80
+ movq %r15, 145
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f1925a050, src=0x564f1925a030
+ movq ?8#(%rsp), 199
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925a0e0
+ movq 199, (%rsp)
+a format: assem= callq init, dst=0x564f1925a1d0, src=(nil)
+ callq init
+a format: assem= leaq ?0#(`s0), `d0, dst=0x564f1925a280, src=0x564f1925a260
+ leaq ?0#(%rsp), 197
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f1925a430, src=0x564f1925a410
+ movq ?8#(%rsp), 201
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925a4c0
+ movq 201, (%rsp)
+a format: assem= movq $0, `d0, dst=0x564f1925a5c0, src=(nil)
+ movq $0, 202
+a format: assem= movq `s0, `d0, dst=0x564f1925a670, src=0x564f1925a650
+ movq 202, %rdi
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f1925a870, src=0x564f1925a850
+ movq ?8#(%rsp), 205
+a format: assem= movq -8(`s0), `d0, dst=0x564f1925a920, src=0x564f1925a900
+ movq -8(205), 204
+a format: assem= movq `s0, `d0, dst=0x564f1925a9d0, src=0x564f1925a9b0
+ movq 204, 203
+a format: assem= subq $1, `d0, dst=0x564f1925aa60, src=(nil)
+ subq $1, 203
+a format: assem= movq `s0, `d0, dst=0x564f1925ab10, src=0x564f1925aaf0
+ movq 203, %rsi
+a format: assem= movq $7, `d0, dst=0x564f1925ac10, src=(nil)
+ movq $7, 206
+a format: assem= movq `s0, `d0, dst=0x564f1925acc0, src=0x564f1925aca0
+ movq 206, %rdx
+a format: assem= callq bsearch, dst=0x564f1925ae10, src=0x564f1925ad90
+ callq bsearch
+a format: assem= movq `s0, `d0, dst=0x564f1925aec0, src=0x564f1925aea0
+ movq %rax, 196
+a format: assem= leaq ?0#(%rsp), `d0, dst=0x564f1925afe0, src=0x564f1925afc0
+ leaq ?0#(%rsp), 207
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925b090
+ movq 207, (%rsp)
+a format: assem= movq `s0, `d0, dst=0x564f1925b140, src=0x564f1925b120
+ movq 196, %rdi
+a format: assem= callq printi, dst=0x564f1925b250, src=0x564f1925b1d0
+ callq printi
+a format: assem= leaq ?0#(%rsp), `d0, dst=0x564f1925b370, src=0x564f1925b350
+ leaq ?0#(%rsp), 208
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925b420
+ movq 208, (%rsp)
+a format: assem= leaq L10(%rip), `d0, dst=0x564f1925b520, src=(nil)
+ leaq L10(%rip), 209
+a format: assem= movq `s0, `d0, dst=0x564f1925b5d0, src=0x564f1925b5b0
+ movq 209, %rdi
+a format: assem= callq print, dst=0x564f1925b6e0, src=0x564f1925b660
+ callq print
+a format: assem= movq `s0, `d0, dst=0x564f1925b790, src=0x564f1925b770
+ movq %rax, %rax
+a format: assem= movq `s0, `d0, dst=0x564f1925b840, src=0x564f1925b820
+ movq 140, %rbx
+a format: assem= movq `s0, `d0, dst=0x564f1925b8f0, src=0x564f1925b8d0
+ movq 141, %rbp
+a format: assem= movq `s0, `d0, dst=0x564f1925b9a0, src=0x564f1925b980
+ movq 142, %r12
+a format: assem= movq `s0, `d0, dst=0x564f1925ba50, src=0x564f1925ba30
+ movq 143, %r13
+a format: assem= movq `s0, `d0, dst=0x564f1925bb00, src=0x564f1925bae0
+ movq 144, %r14
+a format: assem= movq `s0, `d0, dst=0x564f1925bbb0, src=0x564f1925bb90
+ movq 145, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L13
+a format: assem=L13, dst=(nil), src=(nil)
+L13:
+a format: assem= addq $?0#, %rsp, dst=0x564f1925bd60, src=0x564f1925bd40
+ addq $?0#, %rsp
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem= subq $8, %rsp, dst=0x564f19259a10, src=0x564f192599f0
+a format: assem=L14, dst=(nil), src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x564f1925a050, src=0x564f1925a030
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925a0e0
+a format: assem= callq init, dst=0x564f1925a1d0, src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x564f1925a430, src=0x564f1925a410
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925a4c0
+a format: assem= movq $0, `d0, dst=0x564f1925a5c0, src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x564f1925a870, src=0x564f1925a850
+a format: assem= movq -8(`s0), `d0, dst=0x564f1925a920, src=0x564f1925a900
+a format: assem= subq $1, `d0, dst=0x564f1925aa60, src=(nil)
+a format: assem= movq $7, `d0, dst=0x564f1925ac10, src=(nil)
+a format: assem= callq bsearch, dst=0x564f1925ae10, src=0x564f1925ad90
+a format: assem= movq `s0, `d0, dst=0x564f1925aec0, src=0x564f1925aea0
+a format: assem= leaq 8(%rsp), `d0, dst=0x564f1925afe0, src=0x564f1925afc0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925b090
+a format: assem= callq printi, dst=0x564f1925b250, src=0x564f1925b1d0
+a format: assem= leaq 8(%rsp), `d0, dst=0x564f1925b370, src=0x564f1925b350
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925b420
+a format: assem= leaq L10(%rip), `d0, dst=0x564f1925b520, src=(nil)
+a format: assem= callq print, dst=0x564f1925b6e0, src=0x564f1925b660
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L13, dst=(nil), src=(nil)
+a format: assem= addq $8, %rsp, dst=0x564f1925bd60, src=0x564f1925bd40
+doProc for function bsearch:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t134,
+        TEMP t116),
+       MOVE(
+        TEMP t135,
+        TEMP t115)),
+      MOVE(
+       TEMP t136,
+       TEMP t114)),
+     MOVE(
+      TEMP t137,
+      TEMP t113)),
+    MOVE(
+     TEMP t138,
+     TEMP t112)),
+   MOVE(
+    TEMP t139,
+    TEMP t111)),
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      EXP(
+       CONST 0),
+      MOVE(
+       TEMP t107,
+       TEMP t105)),
+     MOVE(
+      TEMP t108,
+      TEMP t104)),
+    MOVE(
+     TEMP t109,
+     TEMP t103)),
+   SEQ(
+    MOVE(
+     TEMP t110,
+     ESEQ(
+      SEQ(
+       CJUMP(EQ,
+        TEMP t107,
+        TEMP t108,
+        L7,L8),
+       SEQ(
+        LABEL L7,
+        SEQ(
+         MOVE(
+          TEMP t133,
+          TEMP t107),
+         SEQ(
+          JUMP(
+           NAME L9),
+          SEQ(
+           LABEL L8,
+           SEQ(
+            MOVE(
+             TEMP t133,
+             ESEQ(
+              MOVE(
+               MEM(
+                BINOP(PLUS,
+                 TEMP t106,
+                 CONST -8)),
+               BINOP(DIVIDE,
+                BINOP(PLUS,
+                 TEMP t107,
+                 TEMP t108),
+                CONST 2)),
+              ESEQ(
+               SEQ(
+                CJUMP(LT,
+                 MEM(
+                  BINOP(PLUS,
+                   MEM(
+                    BINOP(PLUS,
+                     MEM(
+                      BINOP(PLUS,
+                       CONST 8,
+                       TEMP t106)),
+                     CONST -16)),
+                   BINOP(TIMES,
+                    MEM(
+                     BINOP(PLUS,
+                      TEMP t106,
+                      CONST -8)),
+                    CONST 8))),
+                 TEMP t109,
+                 L4,L5),
+                SEQ(
+                 LABEL L4,
+                 SEQ(
+                  MOVE(
+                   TEMP t132,
+                   CALL(
+                    NAME bsearch,
+                     MEM(
+                      BINOP(PLUS,
+                       CONST 8,
+                       TEMP t106)),
+                     BINOP(PLUS,
+                      MEM(
+                       BINOP(PLUS,
+                        TEMP t106,
+                        CONST -8)),
+                      CONST 1),
+                     TEMP t108,
+                     TEMP t109)),
+                  SEQ(
+                   JUMP(
+                    NAME L6),
+                   SEQ(
+                    LABEL L5,
+                    SEQ(
+                     MOVE(
+                      TEMP t132,
+                      CALL(
+                       NAME bsearch,
+                        MEM(
+                         BINOP(PLUS,
+                          CONST 8,
+                          TEMP t106)),
+                        TEMP t107,
+                        MEM(
+                         BINOP(PLUS,
+                          TEMP t106,
+                          CONST -8)),
+                        TEMP t109)),
+                     LABEL L6)))))),
+               TEMP t132))),
+            LABEL L9)))))),
+      TEMP t133)),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t116,
+          TEMP t134),
+         MOVE(
+          TEMP t115,
+          TEMP t135)),
+        MOVE(
+         TEMP t114,
+         TEMP t136)),
+       MOVE(
+        TEMP t113,
+        TEMP t137)),
+      MOVE(
+       TEMP t112,
+       TEMP t138)),
+     MOVE(
+      TEMP t111,
+      TEMP t139)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t134,
+  TEMP t116)
+ MOVE(
+  TEMP t135,
+  TEMP t115)
+ MOVE(
+  TEMP t136,
+  TEMP t114)
+ MOVE(
+  TEMP t137,
+  TEMP t113)
+ MOVE(
+  TEMP t138,
+  TEMP t112)
+ MOVE(
+  TEMP t139,
+  TEMP t111)
+ MOVE(
+  TEMP t107,
+  TEMP t105)
+ MOVE(
+  TEMP t108,
+  TEMP t104)
+ MOVE(
+  TEMP t109,
+  TEMP t103)
+ CJUMP(EQ,
+  TEMP t107,
+  TEMP t108,
+  L7,L8)
+ LABEL L7
+ MOVE(
+  TEMP t133,
+  TEMP t107)
+ JUMP(
+  NAME L9)
+ LABEL L8
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  BINOP(DIVIDE,
+   BINOP(PLUS,
+    TEMP t107,
+    TEMP t108),
+   CONST 2))
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  TEMP t109,
+  L4,L5)
+ LABEL L4
+ MOVE(
+  TEMP t132,
+  CALL(
+   NAME bsearch,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 1),
+    TEMP t108,
+    TEMP t109))
+ JUMP(
+  NAME L6)
+ LABEL L5
+ MOVE(
+  TEMP t132,
+  CALL(
+   NAME bsearch,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    TEMP t107,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    TEMP t109))
+ LABEL L6
+ MOVE(
+  TEMP t133,
+  TEMP t132)
+ LABEL L9
+ MOVE(
+  TEMP t110,
+  TEMP t133)
+ MOVE(
+  TEMP t116,
+  TEMP t134)
+ MOVE(
+  TEMP t115,
+  TEMP t135)
+ MOVE(
+  TEMP t114,
+  TEMP t136)
+ MOVE(
+  TEMP t113,
+  TEMP t137)
+ MOVE(
+  TEMP t112,
+  TEMP t138)
+ MOVE(
+  TEMP t111,
+  TEMP t139)
+-------====Linearlized=====-----
+ LABEL L16
+ MOVE(
+  TEMP t134,
+  TEMP t116)
+ MOVE(
+  TEMP t135,
+  TEMP t115)
+ MOVE(
+  TEMP t136,
+  TEMP t114)
+ MOVE(
+  TEMP t137,
+  TEMP t113)
+ MOVE(
+  TEMP t138,
+  TEMP t112)
+ MOVE(
+  TEMP t139,
+  TEMP t111)
+ MOVE(
+  TEMP t107,
+  TEMP t105)
+ MOVE(
+  TEMP t108,
+  TEMP t104)
+ MOVE(
+  TEMP t109,
+  TEMP t103)
+ CJUMP(EQ,
+  TEMP t107,
+  TEMP t108,
+  L7,L8)
+------====Basic block=====-------
+ LABEL L7
+ MOVE(
+  TEMP t133,
+  TEMP t107)
+ JUMP(
+  NAME L9)
+------====Basic block=====-------
+ LABEL L8
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  BINOP(DIVIDE,
+   BINOP(PLUS,
+    TEMP t107,
+    TEMP t108),
+   CONST 2))
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  TEMP t109,
+  L4,L5)
+------====Basic block=====-------
+ LABEL L4
+ MOVE(
+  TEMP t132,
+  CALL(
+   NAME bsearch,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 1),
+    TEMP t108,
+    TEMP t109))
+ JUMP(
+  NAME L6)
+------====Basic block=====-------
+ LABEL L5
+ MOVE(
+  TEMP t132,
+  CALL(
+   NAME bsearch,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    TEMP t107,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    TEMP t109))
+ JUMP(
+  NAME L6)
+------====Basic block=====-------
+ LABEL L6
+ MOVE(
+  TEMP t133,
+  TEMP t132)
+ JUMP(
+  NAME L9)
+------====Basic block=====-------
+ LABEL L9
+ MOVE(
+  TEMP t110,
+  TEMP t133)
+ MOVE(
+  TEMP t116,
+  TEMP t134)
+ MOVE(
+  TEMP t115,
+  TEMP t135)
+ MOVE(
+  TEMP t114,
+  TEMP t136)
+ MOVE(
+  TEMP t113,
+  TEMP t137)
+ MOVE(
+  TEMP t112,
+  TEMP t138)
+ MOVE(
+  TEMP t111,
+  TEMP t139)
+ JUMP(
+  NAME L15)
+------====Basic block=====-------
+ LABEL L16
+ MOVE(
+  TEMP t134,
+  TEMP t116)
+ MOVE(
+  TEMP t135,
+  TEMP t115)
+ MOVE(
+  TEMP t136,
+  TEMP t114)
+ MOVE(
+  TEMP t137,
+  TEMP t113)
+ MOVE(
+  TEMP t138,
+  TEMP t112)
+ MOVE(
+  TEMP t139,
+  TEMP t111)
+ MOVE(
+  TEMP t107,
+  TEMP t105)
+ MOVE(
+  TEMP t108,
+  TEMP t104)
+ MOVE(
+  TEMP t109,
+  TEMP t103)
+ CJUMP(EQ,
+  TEMP t107,
+  TEMP t108,
+  L7,L8)
+ LABEL L8
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  BINOP(DIVIDE,
+   BINOP(PLUS,
+    TEMP t107,
+    TEMP t108),
+   CONST 2))
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  TEMP t109,
+  L4,L5)
+ LABEL L5
+ MOVE(
+  TEMP t132,
+  CALL(
+   NAME bsearch,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    TEMP t107,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    TEMP t109))
+ LABEL L6
+ MOVE(
+  TEMP t133,
+  TEMP t132)
+ LABEL L9
+ MOVE(
+  TEMP t110,
+  TEMP t133)
+ MOVE(
+  TEMP t116,
+  TEMP t134)
+ MOVE(
+  TEMP t115,
+  TEMP t135)
+ MOVE(
+  TEMP t114,
+  TEMP t136)
+ MOVE(
+  TEMP t113,
+  TEMP t137)
+ MOVE(
+  TEMP t112,
+  TEMP t138)
+ MOVE(
+  TEMP t111,
+  TEMP t139)
+ JUMP(
+  NAME L15)
+ LABEL L7
+ MOVE(
+  TEMP t133,
+  TEMP t107)
+ JUMP(
+  NAME L9)
+ LABEL L4
+ MOVE(
+  TEMP t132,
+  CALL(
+   NAME bsearch,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 1),
+    TEMP t108,
+    TEMP t109))
+ JUMP(
+  NAME L6)
+ LABEL L15
+-------====trace=====-----
+a format: assem= subq $?0#, %rsp, dst=0x564f192f4100, src=0x564f192f40e0
+ subq $?0#, %rsp
+a format: assem=L16, dst=(nil), src=(nil)
+L16:
+a format: assem= movq `s0, `d0, dst=0x564f192f4220, src=0x564f192f4200
+ movq %rbx, 134
+a format: assem= movq `s0, `d0, dst=0x564f192f42d0, src=0x564f192f42b0
+ movq %rbp, 135
+a format: assem= movq `s0, `d0, dst=0x564f192f4380, src=0x564f192f4360
+ movq %r12, 136
+a format: assem= movq `s0, `d0, dst=0x564f192f4430, src=0x564f192f4410
+ movq %r13, 137
+a format: assem= movq `s0, `d0, dst=0x564f192f44e0, src=0x564f192f44c0
+ movq %r14, 138
+a format: assem= movq `s0, `d0, dst=0x564f192f4590, src=0x564f192f4570
+ movq %r15, 139
+a format: assem= movq `s0, `d0, dst=0x564f192f4640, src=0x564f192f4620
+ movq %rdi, 107
+a format: assem= movq `s0, `d0, dst=0x564f192f46f0, src=0x564f192f46d0
+ movq %rsi, 108
+a format: assem= movq `s0, `d0, dst=0x564f192f47a0, src=0x564f192f4780
+ movq %rdx, 109
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f192f4850
+ cmpq 108, 107
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L7
+a format: assem=L8, dst=(nil), src=(nil)
+L8:
+a format: assem= movq `s0, `d0, dst=0x564f192f4b00, src=0x564f192f4ae0
+ movq 107, 211
+a format: assem= addq `s1, `d0, dst=0x564f192f4bd0, src=0x564f192f4bb0
+ addq 108, 211
+a format: assem= movq `s0, %rax, dst=0x564f192f4c80, src=0x564f192f4c60
+ movq 211, %rax
+a format: assem= cqto, dst=0x564f192f4d50, src=0x564f192f4d10
+ cqto
+a format: assem= movq $2, `d0, dst=0x564f192f4e90, src=(nil)
+ movq $2, 212
+a format: assem= idivq `s0, dst=0x564f192f4f60, src=0x564f192f4f20
+ idivq 212
+a format: assem= movq %rax, `d0, dst=0x564f192f5010, src=0x564f192f4ff0
+ movq %rax, 210
+a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x564f192f50c0
+ movq 210, ?-8#(%rsp)
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f192f5350, src=0x564f192f5330
+ movq ?8#(%rsp), 216
+a format: assem= movq -16(`s0), `d0, dst=0x564f192f5400, src=0x564f192f53e0
+ movq -16(216), 215
+a format: assem= movq `s0, `d0, dst=0x564f192f54b0, src=0x564f192f5490
+ movq 215, 214
+a format: assem= movq ?-8#(`s0), `d0, dst=0x564f192f5640, src=0x564f192f5620
+ movq ?-8#(%rsp), 218
+a format: assem= movq `s0, %rax, dst=0x564f192f56f0, src=0x564f192f56d0
+ movq 218, %rax
+a format: assem= movq $8, `d0, dst=0x564f192f5810, src=(nil)
+ movq $8, 219
+a format: assem= imulq `s0, dst=0x564f192f58e0, src=0x564f192f58a0
+ imulq 219
+a format: assem= movq %rax, `d0, dst=0x564f192f5990, src=0x564f192f5970
+ movq %rax, 217
+a format: assem= addq `s1, `d0, dst=0x564f192f5a60, src=0x564f192f5a40
+ addq 217, 214
+a format: assem= movq (`s0), `d0, dst=0x564f192f5b10, src=0x564f192f5af0
+ movq (214), 213
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f192f5ba0
+ cmpq 109, 213
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+ jl  L4
+a format: assem=L5, dst=(nil), src=(nil)
+L5:
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f192f5e70, src=0x564f192f5e50
+ movq ?8#(%rsp), 221
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f192f5f00
+ movq 221, (%rsp)
+a format: assem= movq `s0, `d0, dst=0x564f192f5fb0, src=0x564f192f5f90
+ movq 107, %rdi
+a format: assem= movq ?-8#(`s0), `d0, dst=0x564f192f60d0, src=0x564f192f60b0
+ movq ?-8#(%rsp), 222
+a format: assem= movq `s0, `d0, dst=0x564f192f6180, src=0x564f192f6160
+ movq 222, %rsi
+a format: assem= movq `s0, `d0, dst=0x564f192f6230, src=0x564f192f6210
+ movq 109, %rdx
+a format: assem= callq bsearch, dst=0x564f192f6380, src=0x564f192f6300
+ callq bsearch
+a format: assem= movq `s0, `d0, dst=0x564f192f6430, src=0x564f192f6410
+ movq %rax, 132
+a format: assem=L6, dst=(nil), src=(nil)
+L6:
+a format: assem= movq `s0, `d0, dst=0x564f192f6550, src=0x564f192f6530
+ movq 132, 133
+a format: assem=L9, dst=(nil), src=(nil)
+L9:
+a format: assem= movq `s0, `d0, dst=0x564f192f6670, src=0x564f192f6650
+ movq 133, %rax
+a format: assem= movq `s0, `d0, dst=0x564f192f6720, src=0x564f192f6700
+ movq 134, %rbx
+a format: assem= movq `s0, `d0, dst=0x564f192f67d0, src=0x564f192f67b0
+ movq 135, %rbp
+a format: assem= movq `s0, `d0, dst=0x564f192f6880, src=0x564f192f6860
+ movq 136, %r12
+a format: assem= movq `s0, `d0, dst=0x564f192f6930, src=0x564f192f6910
+ movq 137, %r13
+a format: assem= movq `s0, `d0, dst=0x564f192f69e0, src=0x564f192f69c0
+ movq 138, %r14
+a format: assem= movq `s0, `d0, dst=0x564f192f6a90, src=0x564f192f6a70
+ movq 139, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L15
+a format: assem=L7, dst=(nil), src=(nil)
+L7:
+a format: assem= movq `s0, `d0, dst=0x564f192f6c40, src=0x564f192f6c20
+ movq 107, 133
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L9
+a format: assem=L4, dst=(nil), src=(nil)
+L4:
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f192f6ef0, src=0x564f192f6ed0
+ movq ?8#(%rsp), 224
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f192f6f80
+ movq 224, (%rsp)
+a format: assem= movq ?-8#(`s0), `d0, dst=0x564f192f7110, src=0x564f192f70f0
+ movq ?-8#(%rsp), 226
+a format: assem= movq `s0, `d0, dst=0x564f192f71c0, src=0x564f192f71a0
+ movq 226, 225
+a format: assem= addq $1, `d0, dst=0x564f192f7270, src=0x564f192f7250
+ addq $1, 225
+a format: assem= movq `s0, `d0, dst=0x564f192f7320, src=0x564f192f7300
+ movq 225, %rdi
+a format: assem= movq `s0, `d0, dst=0x564f192f73d0, src=0x564f192f73b0
+ movq 108, %rsi
+a format: assem= movq `s0, `d0, dst=0x564f192f7480, src=0x564f192f7460
+ movq 109, %rdx
+a format: assem= callq bsearch, dst=0x564f192f75d0, src=0x564f192f7550
+ callq bsearch
+a format: assem= movq `s0, `d0, dst=0x564f192f7680, src=0x564f192f7660
+ movq %rax, 132
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L6
+a format: assem=L15, dst=(nil), src=(nil)
+L15:
+a format: assem= addq $?0#, %rsp, dst=0x564f192f7830, src=0x564f192f7810
+ addq $?0#, %rsp
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+no color left!
+no color left!
+no color left!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+rewrite!
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem= subq $40, %rsp, dst=0x564f192f4100, src=0x564f192f40e0
+a format: assem=L16, dst=(nil), src=(nil)
+a format: assem= movq `s1, 24(`s0)
+, dst=(nil), src=0x564f1947e9c0
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x564f19483d00
+a format: assem= movq `s1, 16(`s0)
+, dst=(nil), src=0x564f19481330
+a format: assem= movq 24(`s0), `d0
+, dst=0x564f1947eba0, src=0x564f1947eb80
+a format: assem= movq 8(`s0), `d0
+, dst=0x564f19483f50, src=0x564f19483f30
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f192f4850
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L8, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0
+, dst=0x564f1947ed10, src=0x564f1947ecf0
+a format: assem= movq 8(`s0), `d0
+, dst=0x564f194841a0, src=0x564f19484180
+a format: assem= addq `s1, `d0, dst=0x564f192f4bd0, src=0x564f192f4bb0
+a format: assem= cqto, dst=0x564f192f4d50, src=0x564f192f4d10
+a format: assem= movq $2, `d0, dst=0x564f192f4e90, src=(nil)
+a format: assem= idivq `s0, dst=0x564f192f4f60, src=0x564f192f4f20
+a format: assem= movq `s1, 32(`s0), dst=(nil), src=0x564f192f50c0
+a format: assem= movq 48(`s0), `d0, dst=0x564f192f5350, src=0x564f192f5330
+a format: assem= movq -16(`s0), `d0, dst=0x564f192f5400, src=0x564f192f53e0
+a format: assem= movq 32(`s0), `d0, dst=0x564f192f5640, src=0x564f192f5620
+a format: assem= movq $8, `d0, dst=0x564f192f5810, src=(nil)
+a format: assem= imulq `s0, dst=0x564f192f58e0, src=0x564f192f58a0
+a format: assem= addq `s1, `d0, dst=0x564f192f5a60, src=0x564f192f5a40
+a format: assem= movq (`s0), `d0, dst=0x564f192f5b10, src=0x564f192f5af0
+a format: assem= movq 16(`s0), `d0
+, dst=0x564f19481dd0, src=0x564f19481db0
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f192f5ba0
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+a format: assem=L5, dst=(nil), src=(nil)
+a format: assem= movq 48(`s0), `d0, dst=0x564f192f5e70, src=0x564f192f5e50
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f192f5f00
+a format: assem= movq 24(`s0), `d0
+, dst=0x564f1947f740, src=0x564f1947f720
+a format: assem= movq 32(`s0), `d0, dst=0x564f192f60d0, src=0x564f192f60b0
+a format: assem= movq 16(`s0), `d0
+, dst=0x564f194821e0, src=0x564f194821c0
+a format: assem= callq bsearch, dst=0x564f192f6380, src=0x564f192f6300
+a format: assem=L6, dst=(nil), src=(nil)
+a format: assem=L9, dst=(nil), src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L7, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0
+, dst=0x564f1947fe60, src=0x564f1947fe40
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L4, dst=(nil), src=(nil)
+a format: assem= movq 48(`s0), `d0, dst=0x564f192f6ef0, src=0x564f192f6ed0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f192f6f80
+a format: assem= movq 32(`s0), `d0, dst=0x564f192f7110, src=0x564f192f70f0
+a format: assem= addq $1, `d0, dst=0x564f192f7270, src=0x564f192f7250
+a format: assem= movq 8(`s0), `d0
+, dst=0x564f19485730, src=0x564f19485710
+a format: assem= movq 16(`s0), `d0
+, dst=0x564f19482c10, src=0x564f19482bf0
+a format: assem= callq bsearch, dst=0x564f192f75d0, src=0x564f192f7550
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L15, dst=(nil), src=(nil)
+a format: assem= addq $40, %rsp, dst=0x564f192f7830, src=0x564f192f7810
+doProc for function init:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t126,
+        TEMP t116),
+       MOVE(
+        TEMP t127,
+        TEMP t115)),
+      MOVE(
+       TEMP t128,
+       TEMP t114)),
+     MOVE(
+      TEMP t129,
+      TEMP t113)),
+    MOVE(
+     TEMP t130,
+     TEMP t112)),
+   MOVE(
+    TEMP t131,
+    TEMP t111)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t110,
+     ESEQ(
+      SEQ(
+       MOVE(
+        TEMP t123,
+        CONST 0),
+       SEQ(
+        MOVE(
+         TEMP t124,
+         BINOP(MINUS,
+          MEM(
+           BINOP(PLUS,
+            MEM(
+             BINOP(PLUS,
+              CONST 8,
+              TEMP t106)),
+            CONST -8)),
+          CONST 1)),
+        SEQ(
+         CJUMP(LE,
+          CONST 0,
+          BINOP(MINUS,
+           MEM(
+            BINOP(PLUS,
+             MEM(
+              BINOP(PLUS,
+               CONST 8,
+               TEMP t106)),
+             CONST -8)),
+           CONST 1),
+          L3,L1),
+         SEQ(
+          LABEL L3,
+          SEQ(
+           EXP(
+            ESEQ(
+             MOVE(
+              MEM(
+               BINOP(PLUS,
+                MEM(
+                 BINOP(PLUS,
+                  MEM(
+                   BINOP(PLUS,
+                    CONST 8,
+                    TEMP t106)),
+                  CONST -16)),
+                BINOP(TIMES,
+                 TEMP t123,
+                 CONST 8))),
+              BINOP(PLUS,
+               BINOP(TIMES,
+                TEMP t123,
+                CONST 2),
+               CONST 1)),
+             CALL(
+              NAME nop,
+               MEM(
+                BINOP(PLUS,
+                 CONST 8,
+                 TEMP t106))))),
+           SEQ(
+            CJUMP(LT,
+             TEMP t123,
+             TEMP t124,
+             L2,L1),
+            SEQ(
+             LABEL L2,
+             SEQ(
+              MOVE(
+               TEMP t123,
+               BINOP(PLUS,
+                TEMP t123,
+                CONST 1)),
+              SEQ(
+               JUMP(
+                NAME L3),
+               LABEL L1))))))))),
+      CONST 0)),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t116,
+          TEMP t126),
+         MOVE(
+          TEMP t115,
+          TEMP t127)),
+        MOVE(
+         TEMP t114,
+         TEMP t128)),
+       MOVE(
+        TEMP t113,
+        TEMP t129)),
+      MOVE(
+       TEMP t112,
+       TEMP t130)),
+     MOVE(
+      TEMP t111,
+      TEMP t131)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t126,
+  TEMP t116)
+ MOVE(
+  TEMP t127,
+  TEMP t115)
+ MOVE(
+  TEMP t128,
+  TEMP t114)
+ MOVE(
+  TEMP t129,
+  TEMP t113)
+ MOVE(
+  TEMP t130,
+  TEMP t112)
+ MOVE(
+  TEMP t131,
+  TEMP t111)
+ MOVE(
+  TEMP t123,
+  CONST 0)
+ MOVE(
+  TEMP t124,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L3,L1)
+ LABEL L3
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t123,
+     CONST 8))),
+  BINOP(PLUS,
+   BINOP(TIMES,
+    TEMP t123,
+    CONST 2),
+   CONST 1))
+ EXP(
+  CALL(
+   NAME nop,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ CJUMP(LT,
+  TEMP t123,
+  TEMP t124,
+  L2,L1)
+ LABEL L2
+ MOVE(
+  TEMP t123,
+  BINOP(PLUS,
+   TEMP t123,
+   CONST 1))
+ JUMP(
+  NAME L3)
+ LABEL L1
+ MOVE(
+  TEMP t110,
+  CONST 0)
+ MOVE(
+  TEMP t116,
+  TEMP t126)
+ MOVE(
+  TEMP t115,
+  TEMP t127)
+ MOVE(
+  TEMP t114,
+  TEMP t128)
+ MOVE(
+  TEMP t113,
+  TEMP t129)
+ MOVE(
+  TEMP t112,
+  TEMP t130)
+ MOVE(
+  TEMP t111,
+  TEMP t131)
+-------====Linearlized=====-----
+ LABEL L18
+ MOVE(
+  TEMP t126,
+  TEMP t116)
+ MOVE(
+  TEMP t127,
+  TEMP t115)
+ MOVE(
+  TEMP t128,
+  TEMP t114)
+ MOVE(
+  TEMP t129,
+  TEMP t113)
+ MOVE(
+  TEMP t130,
+  TEMP t112)
+ MOVE(
+  TEMP t131,
+  TEMP t111)
+ MOVE(
+  TEMP t123,
+  CONST 0)
+ MOVE(
+  TEMP t124,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L3,L1)
+------====Basic block=====-------
+ LABEL L3
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t123,
+     CONST 8))),
+  BINOP(PLUS,
+   BINOP(TIMES,
+    TEMP t123,
+    CONST 2),
+   CONST 1))
+ EXP(
+  CALL(
+   NAME nop,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ CJUMP(LT,
+  TEMP t123,
+  TEMP t124,
+  L2,L1)
+------====Basic block=====-------
+ LABEL L2
+ MOVE(
+  TEMP t123,
+  BINOP(PLUS,
+   TEMP t123,
+   CONST 1))
+ JUMP(
+  NAME L3)
+------====Basic block=====-------
+ LABEL L1
+ MOVE(
+  TEMP t110,
+  CONST 0)
+ MOVE(
+  TEMP t116,
+  TEMP t126)
+ MOVE(
+  TEMP t115,
+  TEMP t127)
+ MOVE(
+  TEMP t114,
+  TEMP t128)
+ MOVE(
+  TEMP t113,
+  TEMP t129)
+ MOVE(
+  TEMP t112,
+  TEMP t130)
+ MOVE(
+  TEMP t111,
+  TEMP t131)
+ JUMP(
+  NAME L17)
+------====Basic block=====-------
+ LABEL L18
+ MOVE(
+  TEMP t126,
+  TEMP t116)
+ MOVE(
+  TEMP t127,
+  TEMP t115)
+ MOVE(
+  TEMP t128,
+  TEMP t114)
+ MOVE(
+  TEMP t129,
+  TEMP t113)
+ MOVE(
+  TEMP t130,
+  TEMP t112)
+ MOVE(
+  TEMP t131,
+  TEMP t111)
+ MOVE(
+  TEMP t123,
+  CONST 0)
+ MOVE(
+  TEMP t124,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L3,L1)
+ LABEL L1
+ MOVE(
+  TEMP t110,
+  CONST 0)
+ MOVE(
+  TEMP t116,
+  TEMP t126)
+ MOVE(
+  TEMP t115,
+  TEMP t127)
+ MOVE(
+  TEMP t114,
+  TEMP t128)
+ MOVE(
+  TEMP t113,
+  TEMP t129)
+ MOVE(
+  TEMP t112,
+  TEMP t130)
+ MOVE(
+  TEMP t111,
+  TEMP t131)
+ JUMP(
+  NAME L17)
+ LABEL L3
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t123,
+     CONST 8))),
+  BINOP(PLUS,
+   BINOP(TIMES,
+    TEMP t123,
+    CONST 2),
+   CONST 1))
+ EXP(
+  CALL(
+   NAME nop,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ CJUMP(GE,
+  TEMP t123,
+  TEMP t124,
+  L1,L2)
+ LABEL L2
+ MOVE(
+  TEMP t123,
+  BINOP(PLUS,
+   TEMP t123,
+   CONST 1))
+ JUMP(
+  NAME L3)
+ LABEL L17
+-------====trace=====-----
+a format: assem= subq $?0#, %rsp, dst=0x564f19623e10, src=0x564f19623df0
+ subq $?0#, %rsp
+a format: assem=L18, dst=(nil), src=(nil)
+L18:
+a format: assem= movq `s0, `d0, dst=0x564f19623f30, src=0x564f19623f10
+ movq %rbx, 126
+a format: assem= movq `s0, `d0, dst=0x564f19623fe0, src=0x564f19623fc0
+ movq %rbp, 127
+a format: assem= movq `s0, `d0, dst=0x564f19624090, src=0x564f19624070
+ movq %r12, 128
+a format: assem= movq `s0, `d0, dst=0x564f19624140, src=0x564f19624120
+ movq %r13, 129
+a format: assem= movq `s0, `d0, dst=0x564f196241f0, src=0x564f196241d0
+ movq %r14, 130
+a format: assem= movq `s0, `d0, dst=0x564f196242a0, src=0x564f19624280
+ movq %r15, 131
+a format: assem= movq $0, `d0, dst=0x564f196243a0, src=(nil)
+ movq $0, 430
+a format: assem= movq `s0, `d0, dst=0x564f19624450, src=0x564f19624430
+ movq 430, 123
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f19624650, src=0x564f19624630
+ movq ?8#(%rsp), 433
+a format: assem= movq -8(`s0), `d0, dst=0x564f19624700, src=0x564f196246e0
+ movq -8(433), 432
+a format: assem= movq `s0, `d0, dst=0x564f196247b0, src=0x564f19624790
+ movq 432, 431
+a format: assem= subq $1, `d0, dst=0x564f19624840, src=(nil)
+ subq $1, 431
+a format: assem= movq `s0, `d0, dst=0x564f196248f0, src=0x564f196248d0
+ movq 431, 124
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f19624af0, src=0x564f19624ad0
+ movq ?8#(%rsp), 436
+a format: assem= movq -8(`s0), `d0, dst=0x564f19624ba0, src=0x564f19624b80
+ movq -8(436), 435
+a format: assem= movq `s0, `d0, dst=0x564f19624c50, src=0x564f19624c30
+ movq 435, 434
+a format: assem= subq $1, `d0, dst=0x564f19624ce0, src=(nil)
+ subq $1, 434
+a format: assem= movq $0, `d0, dst=0x564f19624e00, src=(nil)
+ movq $0, 437
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f19624e90
+ cmpq 434, 437
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+ jle  L3
+a format: assem=L1, dst=(nil), src=(nil)
+L1:
+a format: assem= movq $0, `d0, dst=0x564f196250b0, src=(nil)
+ movq $0, 438
+a format: assem= movq `s0, `d0, dst=0x564f19625160, src=0x564f19625140
+ movq 438, %rax
+a format: assem= movq `s0, `d0, dst=0x564f19625210, src=0x564f196251f0
+ movq 126, %rbx
+a format: assem= movq `s0, `d0, dst=0x564f196252c0, src=0x564f196252a0
+ movq 127, %rbp
+a format: assem= movq `s0, `d0, dst=0x564f19625370, src=0x564f19625350
+ movq 128, %r12
+a format: assem= movq `s0, `d0, dst=0x564f19625420, src=0x564f19625400
+ movq 129, %r13
+a format: assem= movq `s0, `d0, dst=0x564f196254d0, src=0x564f196254b0
+ movq 130, %r14
+a format: assem= movq `s0, `d0, dst=0x564f19625580, src=0x564f19625560
+ movq 131, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L17
+a format: assem=L3, dst=(nil), src=(nil)
+L3:
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f19625880, src=0x564f19625860
+ movq ?8#(%rsp), 441
+a format: assem= movq -16(`s0), `d0, dst=0x564f19625930, src=0x564f19625910
+ movq -16(441), 440
+a format: assem= movq `s0, `d0, dst=0x564f196259e0, src=0x564f196259c0
+ movq 440, 439
+a format: assem= movq `s0, %rax, dst=0x564f19625b00, src=0x564f19625ae0
+ movq 123, %rax
+a format: assem= movq $8, `d0, dst=0x564f19625c20, src=(nil)
+ movq $8, 443
+a format: assem= imulq `s0, dst=0x564f19625cf0, src=0x564f19625cb0
+ imulq 443
+a format: assem= movq %rax, `d0, dst=0x564f19625da0, src=0x564f19625d80
+ movq %rax, 442
+a format: assem= addq `s1, `d0, dst=0x564f19625e70, src=0x564f19625e50
+ addq 442, 439
+a format: assem= movq `s0, %rax, dst=0x564f19626000, src=0x564f19625fe0
+ movq 123, %rax
+a format: assem= movq $2, `d0, dst=0x564f19626120, src=(nil)
+ movq $2, 446
+a format: assem= imulq `s0, dst=0x564f196261f0, src=0x564f196261b0
+ imulq 446
+a format: assem= movq %rax, `d0, dst=0x564f196262a0, src=0x564f19626280
+ movq %rax, 445
+a format: assem= movq `s0, `d0, dst=0x564f19626350, src=0x564f19626330
+ movq 445, 444
+a format: assem= addq $1, `d0, dst=0x564f19626400, src=0x564f196263e0
+ addq $1, 444
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x564f196264b0
+ movq 444, (439)
+a format: assem= movq ?8#(`s0), `d0, dst=0x564f19626660, src=0x564f19626640
+ movq ?8#(%rsp), 448
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f196266f0
+ movq 448, (%rsp)
+a format: assem= callq nop, dst=0x564f196267e0, src=(nil)
+ callq nop
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f19626890
+ cmpq 124, 123
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+ jge  L1
+a format: assem=L2, dst=(nil), src=(nil)
+L2:
+a format: assem= movq `s0, `d0, dst=0x564f19626ad0, src=0x564f19626ab0
+ movq 123, 449
+a format: assem= addq $1, `d0, dst=0x564f19626b80, src=0x564f19626b60
+ addq $1, 449
+a format: assem= movq `s0, `d0, dst=0x564f19626c30, src=0x564f19626c10
+ movq 449, 123
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L3
+a format: assem=L17, dst=(nil), src=(nil)
+L17:
+a format: assem= addq $?0#, %rsp, dst=0x564f19626de0, src=0x564f19626dc0
+ addq $?0#, %rsp
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+no color left!
+no color left!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+rewrite!
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem= subq $24, %rsp, dst=0x564f19623e10, src=0x564f19623df0
+a format: assem=L18, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x564f196243a0, src=(nil)
+a format: assem= movq `s1, 16(`s0)
+, dst=(nil), src=0x564f197fc220
+a format: assem= movq 32(`s0), `d0, dst=0x564f19624650, src=0x564f19624630
+a format: assem= movq -8(`s0), `d0, dst=0x564f19624700, src=0x564f196246e0
+a format: assem= subq $1, `d0, dst=0x564f19624840, src=(nil)
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x564f197fe8b0
+a format: assem= movq 32(`s0), `d0, dst=0x564f19624af0, src=0x564f19624ad0
+a format: assem= movq -8(`s0), `d0, dst=0x564f19624ba0, src=0x564f19624b80
+a format: assem= subq $1, `d0, dst=0x564f19624ce0, src=(nil)
+a format: assem= movq $0, `d0, dst=0x564f19624e00, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f19624e90
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+a format: assem=L1, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x564f196250b0, src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L3, dst=(nil), src=(nil)
+a format: assem= movq 32(`s0), `d0, dst=0x564f19625880, src=0x564f19625860
+a format: assem= movq -16(`s0), `d0, dst=0x564f19625930, src=0x564f19625910
+a format: assem= movq 16(`s0), `d0
+, dst=0x564f197fcda0, src=0x564f197fcd80
+a format: assem= movq $8, `d0, dst=0x564f19625c20, src=(nil)
+a format: assem= imulq `s0, dst=0x564f19625cf0, src=0x564f19625cb0
+a format: assem= addq `s1, `d0, dst=0x564f19625e70, src=0x564f19625e50
+a format: assem= movq 16(`s0), `d0
+, dst=0x564f197fd060, src=0x564f197fd040
+a format: assem= movq $2, `d0, dst=0x564f19626120, src=(nil)
+a format: assem= imulq `s0, dst=0x564f196261f0, src=0x564f196261b0
+a format: assem= addq $1, `d0, dst=0x564f19626400, src=0x564f196263e0
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x564f196264b0
+a format: assem= movq 32(`s0), `d0, dst=0x564f19626660, src=0x564f19626640
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f196266f0
+a format: assem= callq nop, dst=0x564f196267e0, src=(nil)
+a format: assem= movq 16(`s0), `d0
+, dst=0x564f197fd550, src=0x564f197fd530
+a format: assem= movq 8(`s0), `d0
+, dst=0x564f197ff9e0, src=0x564f197ff9c0
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f19626890
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+a format: assem=L2, dst=(nil), src=(nil)
+a format: assem= movq 16(`s0), `d0
+, dst=0x564f197fd6c0, src=0x564f197fd6a0
+a format: assem= addq $1, `d0, dst=0x564f19626b80, src=0x564f19626b60
+a format: assem= movq `s1, 16(`s0)
+, dst=(nil), src=0x564f197fd830
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L17, dst=(nil), src=(nil)
+a format: assem= addq $24, %rsp, dst=0x564f19626de0, src=0x564f19626dc0
+doProc for function nop:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t117,
+        TEMP t116),
+       MOVE(
+        TEMP t118,
+        TEMP t115)),
+      MOVE(
+       TEMP t119,
+       TEMP t114)),
+     MOVE(
+      TEMP t120,
+      TEMP t113)),
+    MOVE(
+     TEMP t121,
+     TEMP t112)),
+   MOVE(
+    TEMP t122,
+    TEMP t111)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t110,
+     CALL(
+      NAME print,
+       TEMP t106,
+       NAME L0)),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t116,
+          TEMP t117),
+         MOVE(
+          TEMP t115,
+          TEMP t118)),
+        MOVE(
+         TEMP t114,
+         TEMP t119)),
+       MOVE(
+        TEMP t113,
+        TEMP t120)),
+      MOVE(
+       TEMP t112,
+       TEMP t121)),
+     MOVE(
+      TEMP t111,
+      TEMP t122)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t117,
+  TEMP t116)
+ MOVE(
+  TEMP t118,
+  TEMP t115)
+ MOVE(
+  TEMP t119,
+  TEMP t114)
+ MOVE(
+  TEMP t120,
+  TEMP t113)
+ MOVE(
+  TEMP t121,
+  TEMP t112)
+ MOVE(
+  TEMP t122,
+  TEMP t111)
+ MOVE(
+  TEMP t110,
+  CALL(
+   NAME print,
+    TEMP t106,
+    NAME L0))
+ MOVE(
+  TEMP t116,
+  TEMP t117)
+ MOVE(
+  TEMP t115,
+  TEMP t118)
+ MOVE(
+  TEMP t114,
+  TEMP t119)
+ MOVE(
+  TEMP t113,
+  TEMP t120)
+ MOVE(
+  TEMP t112,
+  TEMP t121)
+ MOVE(
+  TEMP t111,
+  TEMP t122)
+-------====Linearlized=====-----
+ LABEL L20
+ MOVE(
+  TEMP t117,
+  TEMP t116)
+ MOVE(
+  TEMP t118,
+  TEMP t115)
+ MOVE(
+  TEMP t119,
+  TEMP t114)
+ MOVE(
+  TEMP t120,
+  TEMP t113)
+ MOVE(
+  TEMP t121,
+  TEMP t112)
+ MOVE(
+  TEMP t122,
+  TEMP t111)
+ MOVE(
+  TEMP t110,
+  CALL(
+   NAME print,
+    TEMP t106,
+    NAME L0))
+ MOVE(
+  TEMP t116,
+  TEMP t117)
+ MOVE(
+  TEMP t115,
+  TEMP t118)
+ MOVE(
+  TEMP t114,
+  TEMP t119)
+ MOVE(
+  TEMP t113,
+  TEMP t120)
+ MOVE(
+  TEMP t112,
+  TEMP t121)
+ MOVE(
+  TEMP t111,
+  TEMP t122)
+ JUMP(
+  NAME L19)
+------====Basic block=====-------
+ LABEL L20
+ MOVE(
+  TEMP t117,
+  TEMP t116)
+ MOVE(
+  TEMP t118,
+  TEMP t115)
+ MOVE(
+  TEMP t119,
+  TEMP t114)
+ MOVE(
+  TEMP t120,
+  TEMP t113)
+ MOVE(
+  TEMP t121,
+  TEMP t112)
+ MOVE(
+  TEMP t122,
+  TEMP t111)
+ MOVE(
+  TEMP t110,
+  CALL(
+   NAME print,
+    TEMP t106,
+    NAME L0))
+ MOVE(
+  TEMP t116,
+  TEMP t117)
+ MOVE(
+  TEMP t115,
+  TEMP t118)
+ MOVE(
+  TEMP t114,
+  TEMP t119)
+ MOVE(
+  TEMP t113,
+  TEMP t120)
+ MOVE(
+  TEMP t112,
+  TEMP t121)
+ MOVE(
+  TEMP t111,
+  TEMP t122)
+ JUMP(
+  NAME L19)
+ LABEL L19
+-------====trace=====-----
+a format: assem= subq $?0#, %rsp, dst=0x564f199e1e70, src=0x564f199e1e50
+ subq $?0#, %rsp
+a format: assem=L20, dst=(nil), src=(nil)
+L20:
+a format: assem= movq `s0, `d0, dst=0x564f199e1f90, src=0x564f199e1f70
+ movq %rbx, 117
+a format: assem= movq `s0, `d0, dst=0x564f199e2040, src=0x564f199e2020
+ movq %rbp, 118
+a format: assem= movq `s0, `d0, dst=0x564f199e20f0, src=0x564f199e20d0
+ movq %r12, 119
+a format: assem= movq `s0, `d0, dst=0x564f199e21a0, src=0x564f199e2180
+ movq %r13, 120
+a format: assem= movq `s0, `d0, dst=0x564f199e2250, src=0x564f199e2230
+ movq %r14, 121
+a format: assem= movq `s0, `d0, dst=0x564f199e2300, src=0x564f199e22e0
+ movq %r15, 122
+a format: assem= leaq ?0#(%rsp), `d0, dst=0x564f199e2420, src=0x564f199e2400
+ leaq ?0#(%rsp), 566
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f199e24d0
+ movq 566, (%rsp)
+a format: assem= leaq L0(%rip), `d0, dst=0x564f199e25d0, src=(nil)
+ leaq L0(%rip), 567
+a format: assem= movq `s0, `d0, dst=0x564f199e2680, src=0x564f199e2660
+ movq 567, %rdi
+a format: assem= callq print, dst=0x564f199e2790, src=0x564f199e2710
+ callq print
+a format: assem= movq `s0, `d0, dst=0x564f199e2840, src=0x564f199e2820
+ movq %rax, %rax
+a format: assem= movq `s0, `d0, dst=0x564f199e28f0, src=0x564f199e28d0
+ movq 117, %rbx
+a format: assem= movq `s0, `d0, dst=0x564f199e29a0, src=0x564f199e2980
+ movq 118, %rbp
+a format: assem= movq `s0, `d0, dst=0x564f199e2a50, src=0x564f199e2a30
+ movq 119, %r12
+a format: assem= movq `s0, `d0, dst=0x564f199e2b00, src=0x564f199e2ae0
+ movq 120, %r13
+a format: assem= movq `s0, `d0, dst=0x564f199e2bb0, src=0x564f199e2b90
+ movq 121, %r14
+a format: assem= movq `s0, `d0, dst=0x564f199e2c60, src=0x564f199e2c40
+ movq 122, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L19
+a format: assem=L19, dst=(nil), src=(nil)
+L19:
+a format: assem= addq $?0#, %rsp, dst=0x564f199e2e10, src=0x564f199e2df0
+ addq $?0#, %rsp
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem= subq $8, %rsp, dst=0x564f199e1e70, src=0x564f199e1e50
+a format: assem=L20, dst=(nil), src=(nil)
+a format: assem= leaq 8(%rsp), `d0, dst=0x564f199e2420, src=0x564f199e2400
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f199e24d0
+a format: assem= leaq L0(%rip), `d0, dst=0x564f199e25d0, src=(nil)
+a format: assem= callq print, dst=0x564f199e2790, src=0x564f199e2710
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L19, dst=(nil), src=(nil)
+a format: assem= addq $8, %rsp, dst=0x564f199e2e10, src=0x564f199e2df0

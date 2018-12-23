@@ -42,7 +42,7 @@ Temp_temp F_RV(void){
 }
 
 Temp_temp F_FP(void){
-	return F_RBP();
+	return F_RSP();
 }
 
 Temp_temp F_SP(void){
@@ -340,12 +340,11 @@ F_frame F_newFrame(Temp_label name, U_boolList formals){
 	frame->label = name;
 	frame->current_size = 0;
 	frame->localList = NULL;
-	frame->prologue = NULL;
+	frame->prologue = T_Exp(T_Const(0));
 	frame->epilogue = NULL;
 	//Handle static link first
 	frame->formalList = F_AccessList(InFrame(0), NULL);
 	F_accessList* temp_accessList = &(frame->formalList->tail);
-	T_stm* prologuePtr = &frame->prologue;
 	int offset = 0;
 	//skip static link
 	formals = formals->tail;
@@ -356,12 +355,13 @@ F_frame F_newFrame(Temp_label name, U_boolList formals){
 		if(!formals->head && offset > 5){
 			F_access localVar = F_allocLocal(frame, FALSE);
 			*temp_accessList = F_AccessList(localVar, NULL);
-			*prologuePtr = T_Seq(T_Move(T_Temp(localVar->u.reg), 
-						T_Mem(T_Binop(T_plus, T_Const((2+offset)*F_wordSize), T_Temp(F_FP())))), NULL);
-			prologuePtr = &((*prologuePtr)->u.SEQ.right);
+			frame->prologue = T_Seq(frame->prologue, T_Move(T_Temp(localVar->u.reg), 
+						T_Mem(T_Binop(T_plus, T_Const((2+offset)*F_wordSize), T_Temp(F_FP())))));
 		}//其余两种对应的情况，就什么都不做直接用实参来访问
 		else if(!formals->head && offset <= 5){
-			*temp_accessList = F_AccessList(InReg(argregs->head), NULL);
+			F_access localVar = F_allocLocal(frame, FALSE);
+			*temp_accessList = F_AccessList(localVar, NULL);
+			frame->prologue = T_Seq(frame->prologue, T_Move(T_Temp(localVar->u.reg), T_Temp(argregs->head)));
 		}else if(formals->head && offset > 5){
 			*temp_accessList = F_AccessList(InFrame((2+offset)*F_wordSize), NULL);
 		}
@@ -369,9 +369,8 @@ F_frame F_newFrame(Temp_label name, U_boolList formals){
 		else{
 			F_access localVar = F_allocLocal(frame, TRUE);
 			*temp_accessList = F_AccessList(localVar, NULL);
-			*prologuePtr = T_Seq(T_Move(T_Mem(
-				T_Binop(T_plus, T_Const(localVar->u.offset), T_Temp(F_FP()))), T_Temp(argregs->head)), NULL);
-			prologuePtr = &((*prologuePtr)->u.SEQ.right);
+			frame->prologue = T_Seq(frame->prologue, T_Move(T_Mem(
+				T_Binop(T_plus, T_Const(localVar->u.offset), T_Temp(F_FP()))), T_Temp(argregs->head)));
 		}
 		offset++;
 		formals = formals->tail;
@@ -385,7 +384,8 @@ F_frame F_newFrame(Temp_label name, U_boolList formals){
 // - Underscore function
 // - different calling conventions(such as no static link)
 T_exp F_externalCall(string s, T_expList args){
-	return T_Call(T_Name(Temp_namedlabel(s)), args);
+	//const 0 represent a fate static link
+	return T_Call(T_Name(Temp_namedlabel(s)), T_ExpList(T_Const(0), args));
 }
 
 T_exp F_Exp(F_access access, T_exp framePtr){
@@ -421,33 +421,32 @@ F_fragList F_FragList(F_frag head, F_fragList tail) {
 
 T_stm F_procEntryExit1(F_frame frame, T_stm stm){
 	Temp_tempList calleeSaveRegs = calleeSaves();
-	T_stm saveStm, unsaveStm;
-	T_stm* saveStmPtr = &saveStm, *unsaveStmPtr = &unsaveStm;
+	T_stm saveStm = NULL, unsaveStm = NULL;
 	Temp_tempList saveTemps = NULL;
 	Temp_tempList* saveTempsPtr = &saveTemps;
 	//save stm
 	while(calleeSaveRegs){
 		Temp_temp temp = Temp_newtemp();
-		*saveStmPtr = T_Seq(T_Move(T_Temp(temp), T_Temp(calleeSaveRegs->head)), NULL);
+		saveStm = (saveStm ? T_Seq(saveStm, T_Move(T_Temp(temp), T_Temp(calleeSaveRegs->head)))
+						: T_Move(T_Temp(temp), T_Temp(calleeSaveRegs->head)));
 		*saveTempsPtr = Temp_TempList(temp, NULL);
-		saveStmPtr = &((*saveStmPtr)->u.SEQ.right);
 		saveTempsPtr = &((*saveTempsPtr)->tail);
 		calleeSaveRegs = calleeSaveRegs->tail;
 	}
 	calleeSaveRegs = calleeSaves();
 	//unsave stm
 	while(calleeSaveRegs){
-		*unsaveStmPtr = T_Seq(T_Move(T_Temp(calleeSaveRegs->head), T_Temp(saveTemps->head)), NULL);
-		unsaveStmPtr = &((*unsaveStmPtr)->u.SEQ.right);
+		unsaveStm = (unsaveStm ? T_Seq(unsaveStm, T_Move(T_Temp(calleeSaveRegs->head), T_Temp(saveTemps->head)))
+							: T_Move(T_Temp(calleeSaveRegs->head), T_Temp(saveTemps->head)));
 		calleeSaveRegs = calleeSaveRegs->tail;
 		saveTemps = saveTemps->tail;
 	}
 	//there should no temps left
 	assert(!saveTemps);
-	return stm;
+	return T_Seq(saveStm,T_Seq(frame->prologue, T_Seq(stm, unsaveStm)));
 }
 static Temp_tempList returnSink = NULL;
-AS_instrList F_procEntryExit2(AS_instrList body){
+AS_instrList F_procEntryExit2(F_frame frame, AS_instrList body){
 	//scan the whole proc body to find max arg's number
 	AS_instrList tempBody = body;
 	int max_num = 0;
@@ -464,6 +463,7 @@ AS_instrList F_procEntryExit2(AS_instrList body){
 		}
 		tempBody = tempBody->tail;
 	}
+	frame->max_arg_num = max_num;
 	if(!returnSink){
 		returnSink = Temp_TempList(F_RV(), Temp_TempList(F_SP(), calleeSaves()));
 	}
@@ -471,8 +471,20 @@ AS_instrList F_procEntryExit2(AS_instrList body){
 }
 
 AS_proc F_procEntryExit3(F_frame frame, AS_instrList body){
-    char buf[100];
-    sprintf(buf, "%s:", S_name(frame->label));
-    return AS_Proc(String(buf), body, ".cfi_endproc");
+	//static link
+	frame->current_size += 8;
+	if(frame->max_arg_num > 6){
+		frame->current_size += (frame->max_arg_num - 6) * F_wordSize;
+	}
+	//将之前的framesize#进行统一修正
+	RewriteFrameSize(frame, body);
+	char prolog_buf[100], epilog_buf[100];
+	//sprintf(prolog_buf, "%s:\n .cfi_startproc\n subq $%d, %%rsp\n", S_name(frame->label), frame->current_size);
+	//sprintf(prolog_buf, "%s:\n subq $%d, %%rsp\n", S_name(frame->label), frame->current_size);
+	sprintf(prolog_buf, "%s:\n", S_name(frame->label));
+	//sprintf(epilog_buf, " addq $%d, %%rsp\n ret\n .cfi_endproc\n\n", frame->current_size);
+	//sprintf(epilog_buf, " addq $%d, %%rsp\n retq\n\n", frame->current_size);
+	sprintf(epilog_buf, " retq\n\n");
+    return AS_Proc(String(prolog_buf), body, String(epilog_buf));
 }
 

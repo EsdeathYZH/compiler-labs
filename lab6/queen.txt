@@ -1,0 +1,7755 @@
+doProc for function tigermain:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t141,
+        TEMP t121),
+       MOVE(
+        TEMP t142,
+        TEMP t120)),
+      MOVE(
+       TEMP t143,
+       TEMP t119)),
+     MOVE(
+      TEMP t144,
+      TEMP t118)),
+    MOVE(
+     TEMP t145,
+     TEMP t117)),
+   MOVE(
+    TEMP t146,
+    TEMP t116)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t115,
+     ESEQ(
+      SEQ(
+       MOVE(
+        MEM(
+         BINOP(PLUS,
+          TEMP t106,
+          CONST -8)),
+        CONST 8),
+       SEQ(
+        EXP(
+         CONST 0),
+        SEQ(
+         MOVE(
+          MEM(
+           BINOP(PLUS,
+            TEMP t106,
+            CONST -16)),
+          CALL(
+           NAME initArray,
+            CONST 0,
+            MEM(
+             BINOP(PLUS,
+              TEMP t106,
+              CONST -8)),
+            CONST 0)),
+         SEQ(
+          MOVE(
+           MEM(
+            BINOP(PLUS,
+             TEMP t106,
+             CONST -24)),
+           CALL(
+            NAME initArray,
+             CONST 0,
+             MEM(
+              BINOP(PLUS,
+               TEMP t106,
+               CONST -8)),
+             CONST 0)),
+          SEQ(
+           MOVE(
+            MEM(
+             BINOP(PLUS,
+              TEMP t106,
+              CONST -32)),
+            CALL(
+             NAME initArray,
+              CONST 0,
+              BINOP(MINUS,
+               BINOP(PLUS,
+                MEM(
+                 BINOP(PLUS,
+                  TEMP t106,
+                  CONST -8)),
+                MEM(
+                 BINOP(PLUS,
+                  TEMP t106,
+                  CONST -8))),
+               CONST 1),
+              CONST 0)),
+           SEQ(
+            MOVE(
+             MEM(
+              BINOP(PLUS,
+               TEMP t106,
+               CONST -40)),
+             CALL(
+              NAME initArray,
+               CONST 0,
+               BINOP(MINUS,
+                BINOP(PLUS,
+                 MEM(
+                  BINOP(PLUS,
+                   TEMP t106,
+                   CONST -8)),
+                 MEM(
+                  BINOP(PLUS,
+                   TEMP t106,
+                   CONST -8))),
+                CONST 1),
+               CONST 0)),
+            EXP(
+             CONST 0))))))),
+      CALL(
+       NAME try,
+        TEMP t106,
+        CONST 0))),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t121,
+          TEMP t141),
+         MOVE(
+          TEMP t120,
+          TEMP t142)),
+        MOVE(
+         TEMP t119,
+         TEMP t143)),
+       MOVE(
+        TEMP t118,
+        TEMP t144)),
+      MOVE(
+       TEMP t117,
+       TEMP t145)),
+     MOVE(
+      TEMP t116,
+      TEMP t146)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t141,
+  TEMP t121)
+ MOVE(
+  TEMP t142,
+  TEMP t120)
+ MOVE(
+  TEMP t143,
+  TEMP t119)
+ MOVE(
+  TEMP t144,
+  TEMP t118)
+ MOVE(
+  TEMP t145,
+  TEMP t117)
+ MOVE(
+  TEMP t146,
+  TEMP t116)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  CONST 8)
+ MOVE(
+  TEMP t156,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -16))
+ MOVE(
+  TEMP t155,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t156),
+  TEMP t155)
+ MOVE(
+  TEMP t154,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -24))
+ MOVE(
+  TEMP t153,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t154),
+  TEMP t153)
+ MOVE(
+  TEMP t152,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -32))
+ MOVE(
+  TEMP t151,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    BINOP(MINUS,
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8)),
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8))),
+     CONST 1),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t152),
+  TEMP t151)
+ MOVE(
+  TEMP t150,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -40))
+ MOVE(
+  TEMP t149,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    BINOP(MINUS,
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8)),
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8))),
+     CONST 1),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t150),
+  TEMP t149)
+ MOVE(
+  TEMP t115,
+  CALL(
+   NAME try,
+    TEMP t106,
+    CONST 0))
+ MOVE(
+  TEMP t121,
+  TEMP t141)
+ MOVE(
+  TEMP t120,
+  TEMP t142)
+ MOVE(
+  TEMP t119,
+  TEMP t143)
+ MOVE(
+  TEMP t118,
+  TEMP t144)
+ MOVE(
+  TEMP t117,
+  TEMP t145)
+ MOVE(
+  TEMP t116,
+  TEMP t146)
+-------====Linearlized=====-----
+ LABEL L32
+ MOVE(
+  TEMP t141,
+  TEMP t121)
+ MOVE(
+  TEMP t142,
+  TEMP t120)
+ MOVE(
+  TEMP t143,
+  TEMP t119)
+ MOVE(
+  TEMP t144,
+  TEMP t118)
+ MOVE(
+  TEMP t145,
+  TEMP t117)
+ MOVE(
+  TEMP t146,
+  TEMP t116)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  CONST 8)
+ MOVE(
+  TEMP t156,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -16))
+ MOVE(
+  TEMP t155,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t156),
+  TEMP t155)
+ MOVE(
+  TEMP t154,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -24))
+ MOVE(
+  TEMP t153,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t154),
+  TEMP t153)
+ MOVE(
+  TEMP t152,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -32))
+ MOVE(
+  TEMP t151,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    BINOP(MINUS,
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8)),
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8))),
+     CONST 1),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t152),
+  TEMP t151)
+ MOVE(
+  TEMP t150,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -40))
+ MOVE(
+  TEMP t149,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    BINOP(MINUS,
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8)),
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8))),
+     CONST 1),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t150),
+  TEMP t149)
+ MOVE(
+  TEMP t115,
+  CALL(
+   NAME try,
+    TEMP t106,
+    CONST 0))
+ MOVE(
+  TEMP t121,
+  TEMP t141)
+ MOVE(
+  TEMP t120,
+  TEMP t142)
+ MOVE(
+  TEMP t119,
+  TEMP t143)
+ MOVE(
+  TEMP t118,
+  TEMP t144)
+ MOVE(
+  TEMP t117,
+  TEMP t145)
+ MOVE(
+  TEMP t116,
+  TEMP t146)
+ JUMP(
+  NAME L31)
+------====Basic block=====-------
+ LABEL L32
+ MOVE(
+  TEMP t141,
+  TEMP t121)
+ MOVE(
+  TEMP t142,
+  TEMP t120)
+ MOVE(
+  TEMP t143,
+  TEMP t119)
+ MOVE(
+  TEMP t144,
+  TEMP t118)
+ MOVE(
+  TEMP t145,
+  TEMP t117)
+ MOVE(
+  TEMP t146,
+  TEMP t116)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  CONST 8)
+ MOVE(
+  TEMP t156,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -16))
+ MOVE(
+  TEMP t155,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t156),
+  TEMP t155)
+ MOVE(
+  TEMP t154,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -24))
+ MOVE(
+  TEMP t153,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t154),
+  TEMP t153)
+ MOVE(
+  TEMP t152,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -32))
+ MOVE(
+  TEMP t151,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    BINOP(MINUS,
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8)),
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8))),
+     CONST 1),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t152),
+  TEMP t151)
+ MOVE(
+  TEMP t150,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -40))
+ MOVE(
+  TEMP t149,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    BINOP(MINUS,
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8)),
+      MEM(
+       BINOP(PLUS,
+        TEMP t106,
+        CONST -8))),
+     CONST 1),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t150),
+  TEMP t149)
+ MOVE(
+  TEMP t115,
+  CALL(
+   NAME try,
+    TEMP t106,
+    CONST 0))
+ MOVE(
+  TEMP t121,
+  TEMP t141)
+ MOVE(
+  TEMP t120,
+  TEMP t142)
+ MOVE(
+  TEMP t119,
+  TEMP t143)
+ MOVE(
+  TEMP t118,
+  TEMP t144)
+ MOVE(
+  TEMP t117,
+  TEMP t145)
+ MOVE(
+  TEMP t116,
+  TEMP t146)
+ JUMP(
+  NAME L31)
+ LABEL L31
+-------====trace=====-----
+a format: assem= subq $?0#, %rsp, dst=0x55fbe187c3e0, src=0x55fbe187c3c0
+ subq $?0#, %rsp
+a format: assem=L32, dst=(nil), src=(nil)
+L32:
+a format: assem= movq `s0, `d0, dst=0x55fbe187c500, src=0x55fbe187c4e0
+ movq %rbx, 141
+a format: assem= movq `s0, `d0, dst=0x55fbe187c5b0, src=0x55fbe187c590
+ movq %rbp, 142
+a format: assem= movq `s0, `d0, dst=0x55fbe187c660, src=0x55fbe187c640
+ movq %r12, 143
+a format: assem= movq `s0, `d0, dst=0x55fbe187c710, src=0x55fbe187c6f0
+ movq %r13, 144
+a format: assem= movq `s0, `d0, dst=0x55fbe187c7c0, src=0x55fbe187c7a0
+ movq %r14, 145
+a format: assem= movq `s0, `d0, dst=0x55fbe187c870, src=0x55fbe187c850
+ movq %r15, 146
+a format: assem= movq $8, `d0, dst=0x55fbe187c970, src=(nil)
+ movq $8, 157
+a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x55fbe187ca20
+ movq 157, ?-8#(%rsp)
+a format: assem= leaq ?0#(`s0), `d0, dst=0x55fbe187cb40, src=0x55fbe187cb20
+ leaq ?0#(%rsp), 158
+a format: assem= addq $-16, `d0, dst=0x55fbe187cbf0, src=0x55fbe187cbd0
+ addq $-16, 158
+a format: assem= movq `s0, `d0, dst=0x55fbe187cca0, src=0x55fbe187cc80
+ movq 158, 156
+a format: assem= movq $0, `d0, dst=0x55fbe187ce30, src=(nil)
+ movq $0, 160
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe187cec0
+ movq 160, (%rsp)
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55fbe187cfe0, src=0x55fbe187cfc0
+ movq ?-8#(%rsp), 161
+a format: assem= movq `s0, `d0, dst=0x55fbe187d090, src=0x55fbe187d070
+ movq 161, %rdi
+a format: assem= movq $0, `d0, dst=0x55fbe187d190, src=(nil)
+ movq $0, 162
+a format: assem= movq `s0, `d0, dst=0x55fbe187d240, src=0x55fbe187d220
+ movq 162, %rsi
+a format: assem= callq initArray, dst=0x55fbe187d3b0, src=0x55fbe187d2f0
+ callq initArray
+a format: assem= movq `s0, `d0, dst=0x55fbe187d460, src=0x55fbe187d440
+ movq %rax, 155
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe187d510
+ movq 155, (156)
+a format: assem= leaq ?0#(`s0), `d0, dst=0x55fbe187d630, src=0x55fbe187d610
+ leaq ?0#(%rsp), 163
+a format: assem= addq $-24, `d0, dst=0x55fbe187d6e0, src=0x55fbe187d6c0
+ addq $-24, 163
+a format: assem= movq `s0, `d0, dst=0x55fbe187d790, src=0x55fbe187d770
+ movq 163, 154
+a format: assem= movq $0, `d0, dst=0x55fbe187d920, src=(nil)
+ movq $0, 165
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe187d9b0
+ movq 165, (%rsp)
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55fbe187dad0, src=0x55fbe187dab0
+ movq ?-8#(%rsp), 166
+a format: assem= movq `s0, `d0, dst=0x55fbe187db80, src=0x55fbe187db60
+ movq 166, %rdi
+a format: assem= movq $0, `d0, dst=0x55fbe187dc80, src=(nil)
+ movq $0, 167
+a format: assem= movq `s0, `d0, dst=0x55fbe187dd30, src=0x55fbe187dd10
+ movq 167, %rsi
+a format: assem= callq initArray, dst=0x55fbe187de60, src=0x55fbe187dde0
+ callq initArray
+a format: assem= movq `s0, `d0, dst=0x55fbe187df10, src=0x55fbe187def0
+ movq %rax, 153
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe187dfc0
+ movq 153, (154)
+a format: assem= leaq ?0#(`s0), `d0, dst=0x55fbe187e0e0, src=0x55fbe187e0c0
+ leaq ?0#(%rsp), 168
+a format: assem= addq $-32, `d0, dst=0x55fbe187e190, src=0x55fbe187e170
+ addq $-32, 168
+a format: assem= movq `s0, `d0, dst=0x55fbe187e240, src=0x55fbe187e220
+ movq 168, 152
+a format: assem= movq $0, `d0, dst=0x55fbe187e3d0, src=(nil)
+ movq $0, 170
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe187e460
+ movq 170, (%rsp)
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55fbe187e660, src=0x55fbe187e640
+ movq ?-8#(%rsp), 173
+a format: assem= movq `s0, `d0, dst=0x55fbe187e710, src=0x55fbe187e6f0
+ movq 173, 172
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55fbe187e830, src=0x55fbe187e810
+ movq ?-8#(%rsp), 174
+a format: assem= addq `s1, `d0, dst=0x55fbe187e900, src=0x55fbe187e8e0
+ addq 174, 172
+a format: assem= movq `s0, `d0, dst=0x55fbe187e9b0, src=0x55fbe187e990
+ movq 172, 171
+a format: assem= subq $1, `d0, dst=0x55fbe187ea40, src=(nil)
+ subq $1, 171
+a format: assem= movq `s0, `d0, dst=0x55fbe187eaf0, src=0x55fbe187ead0
+ movq 171, %rdi
+a format: assem= movq $0, `d0, dst=0x55fbe187ebf0, src=(nil)
+ movq $0, 175
+a format: assem= movq `s0, `d0, dst=0x55fbe187eca0, src=0x55fbe187ec80
+ movq 175, %rsi
+a format: assem= callq initArray, dst=0x55fbe187edd0, src=0x55fbe187ed50
+ callq initArray
+a format: assem= movq `s0, `d0, dst=0x55fbe187ee80, src=0x55fbe187ee60
+ movq %rax, 151
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe187ef30
+ movq 151, (152)
+a format: assem= leaq ?0#(`s0), `d0, dst=0x55fbe187f050, src=0x55fbe187f030
+ leaq ?0#(%rsp), 176
+a format: assem= addq $-40, `d0, dst=0x55fbe187f100, src=0x55fbe187f0e0
+ addq $-40, 176
+a format: assem= movq `s0, `d0, dst=0x55fbe187f1b0, src=0x55fbe187f190
+ movq 176, 150
+a format: assem= movq $0, `d0, dst=0x55fbe187f340, src=(nil)
+ movq $0, 178
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe187f3d0
+ movq 178, (%rsp)
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55fbe187f5d0, src=0x55fbe187f5b0
+ movq ?-8#(%rsp), 181
+a format: assem= movq `s0, `d0, dst=0x55fbe187f680, src=0x55fbe187f660
+ movq 181, 180
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55fbe187f7a0, src=0x55fbe187f780
+ movq ?-8#(%rsp), 182
+a format: assem= addq `s1, `d0, dst=0x55fbe187f870, src=0x55fbe187f850
+ addq 182, 180
+a format: assem= movq `s0, `d0, dst=0x55fbe187f920, src=0x55fbe187f900
+ movq 180, 179
+a format: assem= subq $1, `d0, dst=0x55fbe187f9b0, src=(nil)
+ subq $1, 179
+a format: assem= movq `s0, `d0, dst=0x55fbe187fa60, src=0x55fbe187fa40
+ movq 179, %rdi
+a format: assem= movq $0, `d0, dst=0x55fbe187fb60, src=(nil)
+ movq $0, 183
+a format: assem= movq `s0, `d0, dst=0x55fbe187fc10, src=0x55fbe187fbf0
+ movq 183, %rsi
+a format: assem= callq initArray, dst=0x55fbe187fd40, src=0x55fbe187fcc0
+ callq initArray
+a format: assem= movq `s0, `d0, dst=0x55fbe187fdf0, src=0x55fbe187fdd0
+ movq %rax, 149
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe187fea0
+ movq 149, (150)
+a format: assem= leaq ?0#(%rsp), `d0, dst=0x55fbe187ffc0, src=0x55fbe187ffa0
+ leaq ?0#(%rsp), 184
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe1880070
+ movq 184, (%rsp)
+a format: assem= movq $0, `d0, dst=0x55fbe1880170, src=(nil)
+ movq $0, 185
+a format: assem= movq `s0, `d0, dst=0x55fbe1880220, src=0x55fbe1880200
+ movq 185, %rdi
+a format: assem= callq try, dst=0x55fbe1880330, src=0x55fbe18802b0
+ callq try
+a format: assem= movq `s0, `d0, dst=0x55fbe18803e0, src=0x55fbe18803c0
+ movq %rax, %rax
+a format: assem= movq `s0, `d0, dst=0x55fbe1880490, src=0x55fbe1880470
+ movq 141, %rbx
+a format: assem= movq `s0, `d0, dst=0x55fbe1880540, src=0x55fbe1880520
+ movq 142, %rbp
+a format: assem= movq `s0, `d0, dst=0x55fbe18805f0, src=0x55fbe18805d0
+ movq 143, %r12
+a format: assem= movq `s0, `d0, dst=0x55fbe18806a0, src=0x55fbe1880680
+ movq 144, %r13
+a format: assem= movq `s0, `d0, dst=0x55fbe1880750, src=0x55fbe1880730
+ movq 145, %r14
+a format: assem= movq `s0, `d0, dst=0x55fbe1880800, src=0x55fbe18807e0
+ movq 146, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L31
+a format: assem=L31, dst=(nil), src=(nil)
+L31:
+a format: assem= addq $?0#, %rsp, dst=0x55fbe18809b0, src=0x55fbe1880990
+ addq $?0#, %rsp
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+no color left!
+no color left!
+no color left!
+no color left!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+rewrite!
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem= subq $80, %rsp, dst=0x55fbe187c3e0, src=0x55fbe187c3c0
+a format: assem=L32, dst=(nil), src=(nil)
+a format: assem= movq $8, `d0, dst=0x55fbe187c970, src=(nil)
+a format: assem= movq `s1, 72(`s0), dst=(nil), src=0x55fbe187ca20
+a format: assem= leaq 80(`s0), `d0, dst=0x55fbe187cb40, src=0x55fbe187cb20
+a format: assem= addq $-16, `d0, dst=0x55fbe187cbf0, src=0x55fbe187cbd0
+a format: assem= movq `s1, 32(`s0)
+, dst=(nil), src=0x55fbe1943930
+a format: assem= movq $0, `d0, dst=0x55fbe187ce30, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe187cec0
+a format: assem= movq 72(`s0), `d0, dst=0x55fbe187cfe0, src=0x55fbe187cfc0
+a format: assem= movq $0, `d0, dst=0x55fbe187d190, src=(nil)
+a format: assem= callq initArray, dst=0x55fbe187d3b0, src=0x55fbe187d2f0
+a format: assem= movq 32(`s0), `d0
+, dst=0x55fbe1943db0, src=0x55fbe1943d90
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe187d510
+a format: assem= leaq 80(`s0), `d0, dst=0x55fbe187d630, src=0x55fbe187d610
+a format: assem= addq $-24, `d0, dst=0x55fbe187d6e0, src=0x55fbe187d6c0
+a format: assem= movq `s1, 24(`s0)
+, dst=(nil), src=0x55fbe1946ec0
+a format: assem= movq $0, `d0, dst=0x55fbe187d920, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe187d9b0
+a format: assem= movq 72(`s0), `d0, dst=0x55fbe187dad0, src=0x55fbe187dab0
+a format: assem= movq $0, `d0, dst=0x55fbe187dc80, src=(nil)
+a format: assem= callq initArray, dst=0x55fbe187de60, src=0x55fbe187dde0
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1947340, src=0x55fbe1947320
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe187dfc0
+a format: assem= leaq 80(`s0), `d0, dst=0x55fbe187e0e0, src=0x55fbe187e0c0
+a format: assem= addq $-32, `d0, dst=0x55fbe187e190, src=0x55fbe187e170
+a format: assem= movq `s1, 16(`s0)
+, dst=(nil), src=0x55fbe194a570
+a format: assem= movq $0, `d0, dst=0x55fbe187e3d0, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe187e460
+a format: assem= movq 72(`s0), `d0, dst=0x55fbe187e660, src=0x55fbe187e640
+a format: assem= movq 72(`s0), `d0, dst=0x55fbe187e830, src=0x55fbe187e810
+a format: assem= addq `s1, `d0, dst=0x55fbe187e900, src=0x55fbe187e8e0
+a format: assem= subq $1, `d0, dst=0x55fbe187ea40, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe187ebf0, src=(nil)
+a format: assem= callq initArray, dst=0x55fbe187edd0, src=0x55fbe187ed50
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe194ac20, src=0x55fbe194ac00
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe187ef30
+a format: assem= leaq 80(`s0), `d0, dst=0x55fbe187f050, src=0x55fbe187f030
+a format: assem= addq $-40, `d0, dst=0x55fbe187f100, src=0x55fbe187f0e0
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x55fbe194df70
+a format: assem= movq $0, `d0, dst=0x55fbe187f340, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe187f3d0
+a format: assem= movq 72(`s0), `d0, dst=0x55fbe187f5d0, src=0x55fbe187f5b0
+a format: assem= movq 72(`s0), `d0, dst=0x55fbe187f7a0, src=0x55fbe187f780
+a format: assem= addq `s1, `d0, dst=0x55fbe187f870, src=0x55fbe187f850
+a format: assem= subq $1, `d0, dst=0x55fbe187f9b0, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe187fb60, src=(nil)
+a format: assem= callq initArray, dst=0x55fbe187fd40, src=0x55fbe187fcc0
+a format: assem= movq 8(`s0), `d0
+, dst=0x55fbe194e620, src=0x55fbe194e600
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe187fea0
+a format: assem= leaq 80(%rsp), `d0, dst=0x55fbe187ffc0, src=0x55fbe187ffa0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe1880070
+a format: assem= movq $0, `d0, dst=0x55fbe1880170, src=(nil)
+a format: assem= callq try, dst=0x55fbe1880330, src=0x55fbe18802b0
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L31, dst=(nil), src=(nil)
+a format: assem= addq $80, %rsp, dst=0x55fbe18809b0, src=0x55fbe1880990
+doProc for function try:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t135,
+        TEMP t121),
+       MOVE(
+        TEMP t136,
+        TEMP t120)),
+      MOVE(
+       TEMP t137,
+       TEMP t119)),
+     MOVE(
+      TEMP t138,
+      TEMP t118)),
+    MOVE(
+     TEMP t139,
+     TEMP t117)),
+   MOVE(
+    TEMP t140,
+    TEMP t116)),
+  SEQ(
+   SEQ(
+    EXP(
+     CONST 0),
+    MOVE(
+     TEMP t107,
+     TEMP t105)),
+   SEQ(
+    MOVE(
+     TEMP t115,
+     ESEQ(
+      SEQ(
+       CJUMP(EQ,
+        TEMP t107,
+        MEM(
+         BINOP(PLUS,
+          MEM(
+           BINOP(PLUS,
+            CONST 8,
+            TEMP t106)),
+          CONST -8)),
+        L28,L29),
+       SEQ(
+        LABEL L28,
+        SEQ(
+         EXP(
+          CALL(
+           NAME printboard,
+            MEM(
+             BINOP(PLUS,
+              CONST 8,
+              TEMP t106)))),
+         SEQ(
+          JUMP(
+           NAME L30),
+          SEQ(
+           LABEL L29,
+           SEQ(
+            SEQ(
+             MOVE(
+              TEMP t128,
+              CONST 0),
+             SEQ(
+              MOVE(
+               TEMP t133,
+               BINOP(MINUS,
+                MEM(
+                 BINOP(PLUS,
+                  MEM(
+                   BINOP(PLUS,
+                    CONST 8,
+                    TEMP t106)),
+                  CONST -8)),
+                CONST 1)),
+              SEQ(
+               CJUMP(LE,
+                CONST 0,
+                BINOP(MINUS,
+                 MEM(
+                  BINOP(PLUS,
+                   MEM(
+                    BINOP(PLUS,
+                     CONST 8,
+                     TEMP t106)),
+                   CONST -8)),
+                 CONST 1),
+                L27,L13),
+               SEQ(
+                LABEL L27,
+                SEQ(
+                 SEQ(
+                  CJUMP(NE,
+                   ESEQ(
+                    SEQ(
+                     CJUMP(NE,
+                      ESEQ(
+                       SEQ(
+                        CJUMP(EQ,
+                         MEM(
+                          BINOP(PLUS,
+                           MEM(
+                            BINOP(PLUS,
+                             MEM(
+                              BINOP(PLUS,
+                               CONST 8,
+                               TEMP t106)),
+                             CONST -16)),
+                           BINOP(TIMES,
+                            TEMP t128,
+                            CONST 8))),
+                         CONST 0,
+                         L14,L15),
+                        SEQ(
+                         LABEL L14,
+                         SEQ(
+                          MOVE(
+                           TEMP t129,
+                           ESEQ(
+                            MOVE(
+                             TEMP t130,
+                             CONST 1),
+                            ESEQ(
+                             CJUMP(EQ,
+                              MEM(
+                               BINOP(PLUS,
+                                MEM(
+                                 BINOP(PLUS,
+                                  MEM(
+                                   BINOP(PLUS,
+                                    CONST 8,
+                                    TEMP t106)),
+                                  CONST -32)),
+                                BINOP(TIMES,
+                                 BINOP(PLUS,
+                                  TEMP t128,
+                                  TEMP t107),
+                                 CONST 8))),
+                              CONST 0,
+                              L17,L18),
+                             ESEQ(
+                              LABEL L18,
+                              ESEQ(
+                               MOVE(
+                                TEMP t130,
+                                CONST 0),
+                               ESEQ(
+                                LABEL L17,
+                                TEMP t130)))))),
+                          SEQ(
+                           JUMP(
+                            NAME L16),
+                           SEQ(
+                            LABEL L15,
+                            SEQ(
+                             MOVE(
+                              TEMP t129,
+                              CONST 0),
+                             LABEL L16)))))),
+                       TEMP t129),
+                      CONST 0,
+                      L19,L20),
+                     SEQ(
+                      LABEL L19,
+                      SEQ(
+                       MOVE(
+                        TEMP t131,
+                        ESEQ(
+                         MOVE(
+                          TEMP t132,
+                          CONST 1),
+                         ESEQ(
+                          CJUMP(EQ,
+                           MEM(
+                            BINOP(PLUS,
+                             MEM(
+                              BINOP(PLUS,
+                               MEM(
+                                BINOP(PLUS,
+                                 CONST 8,
+                                 TEMP t106)),
+                               CONST -40)),
+                             BINOP(TIMES,
+                              BINOP(MINUS,
+                               BINOP(PLUS,
+                                TEMP t128,
+                                CONST 7),
+                               TEMP t107),
+                              CONST 8))),
+                           CONST 0,
+                           L22,L23),
+                          ESEQ(
+                           LABEL L23,
+                           ESEQ(
+                            MOVE(
+                             TEMP t132,
+                             CONST 0),
+                            ESEQ(
+                             LABEL L22,
+                             TEMP t132)))))),
+                       SEQ(
+                        JUMP(
+                         NAME L21),
+                        SEQ(
+                         LABEL L20,
+                         SEQ(
+                          MOVE(
+                           TEMP t131,
+                           CONST 0),
+                          LABEL L21)))))),
+                    TEMP t131),
+                   CONST 0,
+                   L24,L25),
+                  SEQ(
+                   LABEL L24,
+                   SEQ(
+                    EXP(
+                     ESEQ(
+                      SEQ(
+                       MOVE(
+                        MEM(
+                         BINOP(PLUS,
+                          MEM(
+                           BINOP(PLUS,
+                            MEM(
+                             BINOP(PLUS,
+                              CONST 8,
+                              TEMP t106)),
+                            CONST -16)),
+                          BINOP(TIMES,
+                           TEMP t128,
+                           CONST 8))),
+                        CONST 1),
+                       SEQ(
+                        MOVE(
+                         MEM(
+                          BINOP(PLUS,
+                           MEM(
+                            BINOP(PLUS,
+                             MEM(
+                              BINOP(PLUS,
+                               CONST 8,
+                               TEMP t106)),
+                             CONST -32)),
+                           BINOP(TIMES,
+                            BINOP(PLUS,
+                             TEMP t128,
+                             TEMP t107),
+                            CONST 8))),
+                         CONST 1),
+                        SEQ(
+                         MOVE(
+                          MEM(
+                           BINOP(PLUS,
+                            MEM(
+                             BINOP(PLUS,
+                              MEM(
+                               BINOP(PLUS,
+                                CONST 8,
+                                TEMP t106)),
+                              CONST -40)),
+                            BINOP(TIMES,
+                             BINOP(MINUS,
+                              BINOP(PLUS,
+                               TEMP t128,
+                               CONST 7),
+                              TEMP t107),
+                             CONST 8))),
+                          CONST 1),
+                         SEQ(
+                          MOVE(
+                           MEM(
+                            BINOP(PLUS,
+                             MEM(
+                              BINOP(PLUS,
+                               MEM(
+                                BINOP(PLUS,
+                                 CONST 8,
+                                 TEMP t106)),
+                               CONST -24)),
+                             BINOP(TIMES,
+                              TEMP t107,
+                              CONST 8))),
+                           TEMP t128),
+                          SEQ(
+                           EXP(
+                            CALL(
+                             NAME try,
+                              MEM(
+                               BINOP(PLUS,
+                                CONST 8,
+                                TEMP t106)),
+                              BINOP(PLUS,
+                               TEMP t107,
+                               CONST 1))),
+                           SEQ(
+                            MOVE(
+                             MEM(
+                              BINOP(PLUS,
+                               MEM(
+                                BINOP(PLUS,
+                                 MEM(
+                                  BINOP(PLUS,
+                                   CONST 8,
+                                   TEMP t106)),
+                                 CONST -16)),
+                               BINOP(TIMES,
+                                TEMP t128,
+                                CONST 8))),
+                             CONST 0),
+                            MOVE(
+                             MEM(
+                              BINOP(PLUS,
+                               MEM(
+                                BINOP(PLUS,
+                                 MEM(
+                                  BINOP(PLUS,
+                                   CONST 8,
+                                   TEMP t106)),
+                                 CONST -32)),
+                               BINOP(TIMES,
+                                BINOP(PLUS,
+                                 TEMP t128,
+                                 TEMP t107),
+                                CONST 8))),
+                             CONST 0))))))),
+                      ESEQ(
+                       MOVE(
+                        MEM(
+                         BINOP(PLUS,
+                          MEM(
+                           BINOP(PLUS,
+                            MEM(
+                             BINOP(PLUS,
+                              CONST 8,
+                              TEMP t106)),
+                            CONST -40)),
+                          BINOP(TIMES,
+                           BINOP(MINUS,
+                            BINOP(PLUS,
+                             TEMP t128,
+                             CONST 7),
+                            TEMP t107),
+                           CONST 8))),
+                        CONST 0),
+                       CONST 0))),
+                    LABEL L25))),
+                 SEQ(
+                  CJUMP(LT,
+                   TEMP t128,
+                   TEMP t133,
+                   L26,L13),
+                  SEQ(
+                   LABEL L26,
+                   SEQ(
+                    MOVE(
+                     TEMP t128,
+                     BINOP(PLUS,
+                      TEMP t128,
+                      CONST 1)),
+                    SEQ(
+                     JUMP(
+                      NAME L27),
+                     LABEL L13))))))))),
+            LABEL L30)))))),
+      CONST 0)),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t121,
+          TEMP t135),
+         MOVE(
+          TEMP t120,
+          TEMP t136)),
+        MOVE(
+         TEMP t119,
+         TEMP t137)),
+       MOVE(
+        TEMP t118,
+        TEMP t138)),
+      MOVE(
+       TEMP t117,
+       TEMP t139)),
+     MOVE(
+      TEMP t116,
+      TEMP t140)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t135,
+  TEMP t121)
+ MOVE(
+  TEMP t136,
+  TEMP t120)
+ MOVE(
+  TEMP t137,
+  TEMP t119)
+ MOVE(
+  TEMP t138,
+  TEMP t118)
+ MOVE(
+  TEMP t139,
+  TEMP t117)
+ MOVE(
+  TEMP t140,
+  TEMP t116)
+ MOVE(
+  TEMP t107,
+  TEMP t105)
+ CJUMP(EQ,
+  TEMP t107,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    CONST -8)),
+  L28,L29)
+ LABEL L28
+ EXP(
+  CALL(
+   NAME printboard,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ JUMP(
+  NAME L30)
+ LABEL L29
+ MOVE(
+  TEMP t128,
+  CONST 0)
+ MOVE(
+  TEMP t133,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L27,L13)
+ LABEL L27
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t128,
+     CONST 8))),
+  CONST 0,
+  L14,L15)
+ LABEL L14
+ MOVE(
+  TEMP t130,
+  CONST 1)
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -32)),
+    BINOP(TIMES,
+     BINOP(PLUS,
+      TEMP t128,
+      TEMP t107),
+     CONST 8))),
+  CONST 0,
+  L17,L18)
+ LABEL L18
+ MOVE(
+  TEMP t130,
+  CONST 0)
+ LABEL L17
+ MOVE(
+  TEMP t129,
+  TEMP t130)
+ JUMP(
+  NAME L16)
+ LABEL L15
+ MOVE(
+  TEMP t129,
+  CONST 0)
+ LABEL L16
+ CJUMP(NE,
+  TEMP t129,
+  CONST 0,
+  L19,L20)
+ LABEL L19
+ MOVE(
+  TEMP t132,
+  CONST 1)
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -40)),
+    BINOP(TIMES,
+     BINOP(MINUS,
+      BINOP(PLUS,
+       TEMP t128,
+       CONST 7),
+      TEMP t107),
+     CONST 8))),
+  CONST 0,
+  L22,L23)
+ LABEL L23
+ MOVE(
+  TEMP t132,
+  CONST 0)
+ LABEL L22
+ MOVE(
+  TEMP t131,
+  TEMP t132)
+ JUMP(
+  NAME L21)
+ LABEL L20
+ MOVE(
+  TEMP t131,
+  CONST 0)
+ LABEL L21
+ CJUMP(NE,
+  TEMP t131,
+  CONST 0,
+  L24,L25)
+ LABEL L24
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t128,
+     CONST 8))),
+  CONST 1)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -32)),
+    BINOP(TIMES,
+     BINOP(PLUS,
+      TEMP t128,
+      TEMP t107),
+     CONST 8))),
+  CONST 1)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -40)),
+    BINOP(TIMES,
+     BINOP(MINUS,
+      BINOP(PLUS,
+       TEMP t128,
+       CONST 7),
+      TEMP t107),
+     CONST 8))),
+  CONST 1)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -24)),
+    BINOP(TIMES,
+     TEMP t107,
+     CONST 8))),
+  TEMP t128)
+ EXP(
+  CALL(
+   NAME try,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    BINOP(PLUS,
+     TEMP t107,
+     CONST 1)))
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t128,
+     CONST 8))),
+  CONST 0)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -32)),
+    BINOP(TIMES,
+     BINOP(PLUS,
+      TEMP t128,
+      TEMP t107),
+     CONST 8))),
+  CONST 0)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -40)),
+    BINOP(TIMES,
+     BINOP(MINUS,
+      BINOP(PLUS,
+       TEMP t128,
+       CONST 7),
+      TEMP t107),
+     CONST 8))),
+  CONST 0)
+ LABEL L25
+ CJUMP(LT,
+  TEMP t128,
+  TEMP t133,
+  L26,L13)
+ LABEL L26
+ MOVE(
+  TEMP t128,
+  BINOP(PLUS,
+   TEMP t128,
+   CONST 1))
+ JUMP(
+  NAME L27)
+ LABEL L13
+ LABEL L30
+ MOVE(
+  TEMP t115,
+  CONST 0)
+ MOVE(
+  TEMP t121,
+  TEMP t135)
+ MOVE(
+  TEMP t120,
+  TEMP t136)
+ MOVE(
+  TEMP t119,
+  TEMP t137)
+ MOVE(
+  TEMP t118,
+  TEMP t138)
+ MOVE(
+  TEMP t117,
+  TEMP t139)
+ MOVE(
+  TEMP t116,
+  TEMP t140)
+-------====Linearlized=====-----
+ LABEL L34
+ MOVE(
+  TEMP t135,
+  TEMP t121)
+ MOVE(
+  TEMP t136,
+  TEMP t120)
+ MOVE(
+  TEMP t137,
+  TEMP t119)
+ MOVE(
+  TEMP t138,
+  TEMP t118)
+ MOVE(
+  TEMP t139,
+  TEMP t117)
+ MOVE(
+  TEMP t140,
+  TEMP t116)
+ MOVE(
+  TEMP t107,
+  TEMP t105)
+ CJUMP(EQ,
+  TEMP t107,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    CONST -8)),
+  L28,L29)
+------====Basic block=====-------
+ LABEL L28
+ EXP(
+  CALL(
+   NAME printboard,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ JUMP(
+  NAME L30)
+------====Basic block=====-------
+ LABEL L29
+ MOVE(
+  TEMP t128,
+  CONST 0)
+ MOVE(
+  TEMP t133,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L27,L13)
+------====Basic block=====-------
+ LABEL L27
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t128,
+     CONST 8))),
+  CONST 0,
+  L14,L15)
+------====Basic block=====-------
+ LABEL L14
+ MOVE(
+  TEMP t130,
+  CONST 1)
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -32)),
+    BINOP(TIMES,
+     BINOP(PLUS,
+      TEMP t128,
+      TEMP t107),
+     CONST 8))),
+  CONST 0,
+  L17,L18)
+------====Basic block=====-------
+ LABEL L18
+ MOVE(
+  TEMP t130,
+  CONST 0)
+ JUMP(
+  NAME L17)
+------====Basic block=====-------
+ LABEL L17
+ MOVE(
+  TEMP t129,
+  TEMP t130)
+ JUMP(
+  NAME L16)
+------====Basic block=====-------
+ LABEL L15
+ MOVE(
+  TEMP t129,
+  CONST 0)
+ JUMP(
+  NAME L16)
+------====Basic block=====-------
+ LABEL L16
+ CJUMP(NE,
+  TEMP t129,
+  CONST 0,
+  L19,L20)
+------====Basic block=====-------
+ LABEL L19
+ MOVE(
+  TEMP t132,
+  CONST 1)
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -40)),
+    BINOP(TIMES,
+     BINOP(MINUS,
+      BINOP(PLUS,
+       TEMP t128,
+       CONST 7),
+      TEMP t107),
+     CONST 8))),
+  CONST 0,
+  L22,L23)
+------====Basic block=====-------
+ LABEL L23
+ MOVE(
+  TEMP t132,
+  CONST 0)
+ JUMP(
+  NAME L22)
+------====Basic block=====-------
+ LABEL L22
+ MOVE(
+  TEMP t131,
+  TEMP t132)
+ JUMP(
+  NAME L21)
+------====Basic block=====-------
+ LABEL L20
+ MOVE(
+  TEMP t131,
+  CONST 0)
+ JUMP(
+  NAME L21)
+------====Basic block=====-------
+ LABEL L21
+ CJUMP(NE,
+  TEMP t131,
+  CONST 0,
+  L24,L25)
+------====Basic block=====-------
+ LABEL L24
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t128,
+     CONST 8))),
+  CONST 1)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -32)),
+    BINOP(TIMES,
+     BINOP(PLUS,
+      TEMP t128,
+      TEMP t107),
+     CONST 8))),
+  CONST 1)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -40)),
+    BINOP(TIMES,
+     BINOP(MINUS,
+      BINOP(PLUS,
+       TEMP t128,
+       CONST 7),
+      TEMP t107),
+     CONST 8))),
+  CONST 1)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -24)),
+    BINOP(TIMES,
+     TEMP t107,
+     CONST 8))),
+  TEMP t128)
+ EXP(
+  CALL(
+   NAME try,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    BINOP(PLUS,
+     TEMP t107,
+     CONST 1)))
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t128,
+     CONST 8))),
+  CONST 0)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -32)),
+    BINOP(TIMES,
+     BINOP(PLUS,
+      TEMP t128,
+      TEMP t107),
+     CONST 8))),
+  CONST 0)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -40)),
+    BINOP(TIMES,
+     BINOP(MINUS,
+      BINOP(PLUS,
+       TEMP t128,
+       CONST 7),
+      TEMP t107),
+     CONST 8))),
+  CONST 0)
+ JUMP(
+  NAME L25)
+------====Basic block=====-------
+ LABEL L25
+ CJUMP(LT,
+  TEMP t128,
+  TEMP t133,
+  L26,L13)
+------====Basic block=====-------
+ LABEL L26
+ MOVE(
+  TEMP t128,
+  BINOP(PLUS,
+   TEMP t128,
+   CONST 1))
+ JUMP(
+  NAME L27)
+------====Basic block=====-------
+ LABEL L13
+ JUMP(
+  NAME L30)
+------====Basic block=====-------
+ LABEL L30
+ MOVE(
+  TEMP t115,
+  CONST 0)
+ MOVE(
+  TEMP t121,
+  TEMP t135)
+ MOVE(
+  TEMP t120,
+  TEMP t136)
+ MOVE(
+  TEMP t119,
+  TEMP t137)
+ MOVE(
+  TEMP t118,
+  TEMP t138)
+ MOVE(
+  TEMP t117,
+  TEMP t139)
+ MOVE(
+  TEMP t116,
+  TEMP t140)
+ JUMP(
+  NAME L33)
+------====Basic block=====-------
+ LABEL L34
+ MOVE(
+  TEMP t135,
+  TEMP t121)
+ MOVE(
+  TEMP t136,
+  TEMP t120)
+ MOVE(
+  TEMP t137,
+  TEMP t119)
+ MOVE(
+  TEMP t138,
+  TEMP t118)
+ MOVE(
+  TEMP t139,
+  TEMP t117)
+ MOVE(
+  TEMP t140,
+  TEMP t116)
+ MOVE(
+  TEMP t107,
+  TEMP t105)
+ CJUMP(EQ,
+  TEMP t107,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    CONST -8)),
+  L28,L29)
+ LABEL L29
+ MOVE(
+  TEMP t128,
+  CONST 0)
+ MOVE(
+  TEMP t133,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L27,L13)
+ LABEL L13
+ LABEL L30
+ MOVE(
+  TEMP t115,
+  CONST 0)
+ MOVE(
+  TEMP t121,
+  TEMP t135)
+ MOVE(
+  TEMP t120,
+  TEMP t136)
+ MOVE(
+  TEMP t119,
+  TEMP t137)
+ MOVE(
+  TEMP t118,
+  TEMP t138)
+ MOVE(
+  TEMP t117,
+  TEMP t139)
+ MOVE(
+  TEMP t116,
+  TEMP t140)
+ JUMP(
+  NAME L33)
+ LABEL L28
+ EXP(
+  CALL(
+   NAME printboard,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ JUMP(
+  NAME L30)
+ LABEL L27
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t128,
+     CONST 8))),
+  CONST 0,
+  L14,L15)
+ LABEL L15
+ MOVE(
+  TEMP t129,
+  CONST 0)
+ LABEL L16
+ CJUMP(NE,
+  TEMP t129,
+  CONST 0,
+  L19,L20)
+ LABEL L20
+ MOVE(
+  TEMP t131,
+  CONST 0)
+ LABEL L21
+ CJUMP(NE,
+  TEMP t131,
+  CONST 0,
+  L24,L25)
+ LABEL L25
+ CJUMP(GE,
+  TEMP t128,
+  TEMP t133,
+  L13,L26)
+ LABEL L26
+ MOVE(
+  TEMP t128,
+  BINOP(PLUS,
+   TEMP t128,
+   CONST 1))
+ JUMP(
+  NAME L27)
+ LABEL L14
+ MOVE(
+  TEMP t130,
+  CONST 1)
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -32)),
+    BINOP(TIMES,
+     BINOP(PLUS,
+      TEMP t128,
+      TEMP t107),
+     CONST 8))),
+  CONST 0,
+  L17,L18)
+ LABEL L18
+ MOVE(
+  TEMP t130,
+  CONST 0)
+ LABEL L17
+ MOVE(
+  TEMP t129,
+  TEMP t130)
+ JUMP(
+  NAME L16)
+ LABEL L19
+ MOVE(
+  TEMP t132,
+  CONST 1)
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -40)),
+    BINOP(TIMES,
+     BINOP(MINUS,
+      BINOP(PLUS,
+       TEMP t128,
+       CONST 7),
+      TEMP t107),
+     CONST 8))),
+  CONST 0,
+  L22,L23)
+ LABEL L23
+ MOVE(
+  TEMP t132,
+  CONST 0)
+ LABEL L22
+ MOVE(
+  TEMP t131,
+  TEMP t132)
+ JUMP(
+  NAME L21)
+ LABEL L24
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t128,
+     CONST 8))),
+  CONST 1)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -32)),
+    BINOP(TIMES,
+     BINOP(PLUS,
+      TEMP t128,
+      TEMP t107),
+     CONST 8))),
+  CONST 1)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -40)),
+    BINOP(TIMES,
+     BINOP(MINUS,
+      BINOP(PLUS,
+       TEMP t128,
+       CONST 7),
+      TEMP t107),
+     CONST 8))),
+  CONST 1)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -24)),
+    BINOP(TIMES,
+     TEMP t107,
+     CONST 8))),
+  TEMP t128)
+ EXP(
+  CALL(
+   NAME try,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    BINOP(PLUS,
+     TEMP t107,
+     CONST 1)))
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t128,
+     CONST 8))),
+  CONST 0)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -32)),
+    BINOP(TIMES,
+     BINOP(PLUS,
+      TEMP t128,
+      TEMP t107),
+     CONST 8))),
+  CONST 0)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -40)),
+    BINOP(TIMES,
+     BINOP(MINUS,
+      BINOP(PLUS,
+       TEMP t128,
+       CONST 7),
+      TEMP t107),
+     CONST 8))),
+  CONST 0)
+ JUMP(
+  NAME L25)
+ LABEL L33
+-------====trace=====-----
+a format: assem= subq $?0#, %rsp, dst=0x55fbe1a525f0, src=0x55fbe1a525d0
+ subq $?0#, %rsp
+a format: assem=L34, dst=(nil), src=(nil)
+L34:
+a format: assem= movq `s0, `d0, dst=0x55fbe1a52710, src=0x55fbe1a526f0
+ movq %rbx, 135
+a format: assem= movq `s0, `d0, dst=0x55fbe1a527c0, src=0x55fbe1a527a0
+ movq %rbp, 136
+a format: assem= movq `s0, `d0, dst=0x55fbe1a52870, src=0x55fbe1a52850
+ movq %r12, 137
+a format: assem= movq `s0, `d0, dst=0x55fbe1a52920, src=0x55fbe1a52900
+ movq %r13, 138
+a format: assem= movq `s0, `d0, dst=0x55fbe1a529d0, src=0x55fbe1a529b0
+ movq %r14, 139
+a format: assem= movq `s0, `d0, dst=0x55fbe1a52a80, src=0x55fbe1a52a60
+ movq %r15, 140
+a format: assem= movq `s0, `d0, dst=0x55fbe1a52b30, src=0x55fbe1a52b10
+ movq %rdi, 107
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a52cc0, src=0x55fbe1a52ca0
+ movq ?8#(%rsp), 523
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe1a52d70, src=0x55fbe1a52d50
+ movq -8(523), 522
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a52e20
+ cmpq 522, 107
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L28
+a format: assem=L29, dst=(nil), src=(nil)
+L29:
+a format: assem= movq $0, `d0, dst=0x55fbe1a53040, src=(nil)
+ movq $0, 524
+a format: assem= movq `s0, `d0, dst=0x55fbe1a530f0, src=0x55fbe1a530d0
+ movq 524, 128
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a532f0, src=0x55fbe1a532d0
+ movq ?8#(%rsp), 527
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe1a533a0, src=0x55fbe1a53380
+ movq -8(527), 526
+a format: assem= movq `s0, `d0, dst=0x55fbe1a53450, src=0x55fbe1a53430
+ movq 526, 525
+a format: assem= subq $1, `d0, dst=0x55fbe1a534e0, src=(nil)
+ subq $1, 525
+a format: assem= movq `s0, `d0, dst=0x55fbe1a53590, src=0x55fbe1a53570
+ movq 525, 133
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a53790, src=0x55fbe1a53770
+ movq ?8#(%rsp), 530
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe1a53840, src=0x55fbe1a53820
+ movq -8(530), 529
+a format: assem= movq `s0, `d0, dst=0x55fbe1a538f0, src=0x55fbe1a538d0
+ movq 529, 528
+a format: assem= subq $1, `d0, dst=0x55fbe1a53980, src=(nil)
+ subq $1, 528
+a format: assem= movq $0, `d0, dst=0x55fbe1a53aa0, src=(nil)
+ movq $0, 531
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a53b30
+ cmpq 528, 531
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+ jle  L27
+a format: assem=L13, dst=(nil), src=(nil)
+L13:
+a format: assem=L30, dst=(nil), src=(nil)
+L30:
+a format: assem= movq $0, `d0, dst=0x55fbe1a53dc0, src=(nil)
+ movq $0, 532
+a format: assem= movq `s0, `d0, dst=0x55fbe1a53e70, src=0x55fbe1a53e50
+ movq 532, %rax
+a format: assem= movq `s0, `d0, dst=0x55fbe1a53f20, src=0x55fbe1a53f00
+ movq 135, %rbx
+a format: assem= movq `s0, `d0, dst=0x55fbe1a53fd0, src=0x55fbe1a53fb0
+ movq 136, %rbp
+a format: assem= movq `s0, `d0, dst=0x55fbe1a54080, src=0x55fbe1a54060
+ movq 137, %r12
+a format: assem= movq `s0, `d0, dst=0x55fbe1a54130, src=0x55fbe1a54110
+ movq 138, %r13
+a format: assem= movq `s0, `d0, dst=0x55fbe1a541e0, src=0x55fbe1a541c0
+ movq 139, %r14
+a format: assem= movq `s0, `d0, dst=0x55fbe1a54290, src=0x55fbe1a54270
+ movq 140, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L33
+a format: assem=L28, dst=(nil), src=(nil)
+L28:
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a54540, src=0x55fbe1a54520
+ movq ?8#(%rsp), 534
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe1a545d0
+ movq 534, (%rsp)
+a format: assem= callq printboard, dst=0x55fbe1a546c0, src=(nil)
+ callq printboard
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L30
+a format: assem=L27, dst=(nil), src=(nil)
+L27:
+a format: assem= movq $0, `d0, dst=0x55fbe1a548c0, src=(nil)
+ movq $0, 535
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a54b50, src=0x55fbe1a54b30
+ movq ?8#(%rsp), 539
+a format: assem= movq -16(`s0), `d0, dst=0x55fbe1a54c00, src=0x55fbe1a54be0
+ movq -16(539), 538
+a format: assem= movq `s0, `d0, dst=0x55fbe1a54cb0, src=0x55fbe1a54c90
+ movq 538, 537
+a format: assem= movq `s0, %rax, dst=0x55fbe1a54dd0, src=0x55fbe1a54db0
+ movq 128, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a54ef0, src=(nil)
+ movq $8, 541
+a format: assem= imulq `s0, dst=0x55fbe1a54fc0, src=0x55fbe1a54f80
+ imulq 541
+a format: assem= movq %rax, `d0, dst=0x55fbe1a55070, src=0x55fbe1a55050
+ movq %rax, 540
+a format: assem= addq `s1, `d0, dst=0x55fbe1a55140, src=0x55fbe1a55120
+ addq 540, 537
+a format: assem= movq (`s0), `d0, dst=0x55fbe1a551f0, src=0x55fbe1a551d0
+ movq (537), 536
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a55280
+ cmpq 535, 536
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L14
+a format: assem=L15, dst=(nil), src=(nil)
+L15:
+a format: assem= movq $0, `d0, dst=0x55fbe1a554a0, src=(nil)
+ movq $0, 542
+a format: assem= movq `s0, `d0, dst=0x55fbe1a55550, src=0x55fbe1a55530
+ movq 542, 129
+a format: assem=L16, dst=(nil), src=(nil)
+L16:
+a format: assem= movq $0, `d0, dst=0x55fbe1a556c0, src=(nil)
+ movq $0, 543
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a55770
+ cmpq 543, 129
+a format: assem= jne  `j0, dst=(nil), src=(nil)
+ jne  L19
+a format: assem=L20, dst=(nil), src=(nil)
+L20:
+a format: assem= movq $0, `d0, dst=0x55fbe1a55990, src=(nil)
+ movq $0, 544
+a format: assem= movq `s0, `d0, dst=0x55fbe1a55a40, src=0x55fbe1a55a20
+ movq 544, 131
+a format: assem=L21, dst=(nil), src=(nil)
+L21:
+a format: assem= movq $0, `d0, dst=0x55fbe1a55bb0, src=(nil)
+ movq $0, 545
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a55c60
+ cmpq 545, 131
+a format: assem= jne  `j0, dst=(nil), src=(nil)
+ jne  L24
+a format: assem=L25, dst=(nil), src=(nil)
+L25:
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a55e30
+ cmpq 133, 128
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+ jge  L13
+a format: assem=L26, dst=(nil), src=(nil)
+L26:
+a format: assem= movq `s0, `d0, dst=0x55fbe1a56070, src=0x55fbe1a56050
+ movq 128, 546
+a format: assem= addq $1, `d0, dst=0x55fbe1a56120, src=0x55fbe1a56100
+ addq $1, 546
+a format: assem= movq `s0, `d0, dst=0x55fbe1a561d0, src=0x55fbe1a561b0
+ movq 546, 128
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L27
+a format: assem=L14, dst=(nil), src=(nil)
+L14:
+a format: assem= movq $1, `d0, dst=0x55fbe1a563d0, src=(nil)
+ movq $1, 547
+a format: assem= movq `s0, `d0, dst=0x55fbe1a56480, src=0x55fbe1a56460
+ movq 547, 130
+a format: assem= movq $0, `d0, dst=0x55fbe1a56580, src=(nil)
+ movq $0, 548
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a56810, src=0x55fbe1a567f0
+ movq ?8#(%rsp), 552
+a format: assem= movq -32(`s0), `d0, dst=0x55fbe1a568c0, src=0x55fbe1a568a0
+ movq -32(552), 551
+a format: assem= movq `s0, `d0, dst=0x55fbe1a56970, src=0x55fbe1a56950
+ movq 551, 550
+a format: assem= movq `s0, `d0, dst=0x55fbe1a56b00, src=0x55fbe1a56ae0
+ movq 128, 554
+a format: assem= addq `s1, `d0, dst=0x55fbe1a56bd0, src=0x55fbe1a56bb0
+ addq 107, 554
+a format: assem= movq `s0, %rax, dst=0x55fbe1a56c80, src=0x55fbe1a56c60
+ movq 554, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a56da0, src=(nil)
+ movq $8, 555
+a format: assem= imulq `s0, dst=0x55fbe1a56e70, src=0x55fbe1a56e30
+ imulq 555
+a format: assem= movq %rax, `d0, dst=0x55fbe1a56f20, src=0x55fbe1a56f00
+ movq %rax, 553
+a format: assem= addq `s1, `d0, dst=0x55fbe1a56ff0, src=0x55fbe1a56fd0
+ addq 553, 550
+a format: assem= movq (`s0), `d0, dst=0x55fbe1a570a0, src=0x55fbe1a57080
+ movq (550), 549
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a57130
+ cmpq 548, 549
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L17
+a format: assem=L18, dst=(nil), src=(nil)
+L18:
+a format: assem= movq $0, `d0, dst=0x55fbe1a57350, src=(nil)
+ movq $0, 556
+a format: assem= movq `s0, `d0, dst=0x55fbe1a57400, src=0x55fbe1a573e0
+ movq 556, 130
+a format: assem=L17, dst=(nil), src=(nil)
+L17:
+a format: assem= movq `s0, `d0, dst=0x55fbe1a57520, src=0x55fbe1a57500
+ movq 130, 129
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L16
+a format: assem=L19, dst=(nil), src=(nil)
+L19:
+a format: assem= movq $1, `d0, dst=0x55fbe1a57720, src=(nil)
+ movq $1, 557
+a format: assem= movq `s0, `d0, dst=0x55fbe1a577d0, src=0x55fbe1a577b0
+ movq 557, 132
+a format: assem= movq $0, `d0, dst=0x55fbe1a578d0, src=(nil)
+ movq $0, 558
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a57b60, src=0x55fbe1a57b40
+ movq ?8#(%rsp), 562
+a format: assem= movq -40(`s0), `d0, dst=0x55fbe1a57c10, src=0x55fbe1a57bf0
+ movq -40(562), 561
+a format: assem= movq `s0, `d0, dst=0x55fbe1a57cc0, src=0x55fbe1a57ca0
+ movq 561, 560
+a format: assem= movq `s0, `d0, dst=0x55fbe1a57ec0, src=0x55fbe1a57ea0
+ movq 128, 565
+a format: assem= addq $7, `d0, dst=0x55fbe1a57f70, src=0x55fbe1a57f50
+ addq $7, 565
+a format: assem= movq `s0, `d0, dst=0x55fbe1a58020, src=0x55fbe1a58000
+ movq 565, 564
+a format: assem= subq `s1, `d0, dst=0x55fbe1a580f0, src=0x55fbe1a580d0
+ subq 107, 564
+a format: assem= movq `s0, %rax, dst=0x55fbe1a581a0, src=0x55fbe1a58180
+ movq 564, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a582c0, src=(nil)
+ movq $8, 566
+a format: assem= imulq `s0, dst=0x55fbe1a58390, src=0x55fbe1a58350
+ imulq 566
+a format: assem= movq %rax, `d0, dst=0x55fbe1a58440, src=0x55fbe1a58420
+ movq %rax, 563
+a format: assem= addq `s1, `d0, dst=0x55fbe1a58510, src=0x55fbe1a584f0
+ addq 563, 560
+a format: assem= movq (`s0), `d0, dst=0x55fbe1a585c0, src=0x55fbe1a585a0
+ movq (560), 559
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a58650
+ cmpq 558, 559
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L22
+a format: assem=L23, dst=(nil), src=(nil)
+L23:
+a format: assem= movq $0, `d0, dst=0x55fbe1a58870, src=(nil)
+ movq $0, 567
+a format: assem= movq `s0, `d0, dst=0x55fbe1a58920, src=0x55fbe1a58900
+ movq 567, 132
+a format: assem=L22, dst=(nil), src=(nil)
+L22:
+a format: assem= movq `s0, `d0, dst=0x55fbe1a58a40, src=0x55fbe1a58a20
+ movq 132, 131
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L21
+a format: assem=L24, dst=(nil), src=(nil)
+L24:
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a58d40, src=0x55fbe1a58d20
+ movq ?8#(%rsp), 570
+a format: assem= movq -16(`s0), `d0, dst=0x55fbe1a58df0, src=0x55fbe1a58dd0
+ movq -16(570), 569
+a format: assem= movq `s0, `d0, dst=0x55fbe1a58ea0, src=0x55fbe1a58e80
+ movq 569, 568
+a format: assem= movq `s0, %rax, dst=0x55fbe1a58fc0, src=0x55fbe1a58fa0
+ movq 128, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a590e0, src=(nil)
+ movq $8, 572
+a format: assem= imulq `s0, dst=0x55fbe1a591b0, src=0x55fbe1a59170
+ imulq 572
+a format: assem= movq %rax, `d0, dst=0x55fbe1a59260, src=0x55fbe1a59240
+ movq %rax, 571
+a format: assem= addq `s1, `d0, dst=0x55fbe1a59330, src=0x55fbe1a59310
+ addq 571, 568
+a format: assem= movq $1, `d0, dst=0x55fbe1a59430, src=(nil)
+ movq $1, 573
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a594e0
+ movq 573, (568)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a596e0, src=0x55fbe1a596c0
+ movq ?8#(%rsp), 576
+a format: assem= movq -32(`s0), `d0, dst=0x55fbe1a59790, src=0x55fbe1a59770
+ movq -32(576), 575
+a format: assem= movq `s0, `d0, dst=0x55fbe1a59840, src=0x55fbe1a59820
+ movq 575, 574
+a format: assem= movq `s0, `d0, dst=0x55fbe1a599d0, src=0x55fbe1a599b0
+ movq 128, 578
+a format: assem= addq `s1, `d0, dst=0x55fbe1a59aa0, src=0x55fbe1a59a80
+ addq 107, 578
+a format: assem= movq `s0, %rax, dst=0x55fbe1a59b50, src=0x55fbe1a59b30
+ movq 578, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a59c70, src=(nil)
+ movq $8, 579
+a format: assem= imulq `s0, dst=0x55fbe1a59d40, src=0x55fbe1a59d00
+ imulq 579
+a format: assem= movq %rax, `d0, dst=0x55fbe1a59df0, src=0x55fbe1a59dd0
+ movq %rax, 577
+a format: assem= addq `s1, `d0, dst=0x55fbe1a59ec0, src=0x55fbe1a59ea0
+ addq 577, 574
+a format: assem= movq $1, `d0, dst=0x55fbe1a59fc0, src=(nil)
+ movq $1, 580
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5a070
+ movq 580, (574)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a5a270, src=0x55fbe1a5a250
+ movq ?8#(%rsp), 583
+a format: assem= movq -40(`s0), `d0, dst=0x55fbe1a5a320, src=0x55fbe1a5a300
+ movq -40(583), 582
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5a3d0, src=0x55fbe1a5a3b0
+ movq 582, 581
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5a5d0, src=0x55fbe1a5a5b0
+ movq 128, 586
+a format: assem= addq $7, `d0, dst=0x55fbe1a5a680, src=0x55fbe1a5a660
+ addq $7, 586
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5a730, src=0x55fbe1a5a710
+ movq 586, 585
+a format: assem= subq `s1, `d0, dst=0x55fbe1a5a800, src=0x55fbe1a5a7e0
+ subq 107, 585
+a format: assem= movq `s0, %rax, dst=0x55fbe1a5a8b0, src=0x55fbe1a5a890
+ movq 585, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a5a9d0, src=(nil)
+ movq $8, 587
+a format: assem= imulq `s0, dst=0x55fbe1a5aaa0, src=0x55fbe1a5aa60
+ imulq 587
+a format: assem= movq %rax, `d0, dst=0x55fbe1a5ab50, src=0x55fbe1a5ab30
+ movq %rax, 584
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5ac20, src=0x55fbe1a5ac00
+ addq 584, 581
+a format: assem= movq $1, `d0, dst=0x55fbe1a5ad20, src=(nil)
+ movq $1, 588
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5add0
+ movq 588, (581)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a5afd0, src=0x55fbe1a5afb0
+ movq ?8#(%rsp), 591
+a format: assem= movq -24(`s0), `d0, dst=0x55fbe1a5b080, src=0x55fbe1a5b060
+ movq -24(591), 590
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5b130, src=0x55fbe1a5b110
+ movq 590, 589
+a format: assem= movq `s0, %rax, dst=0x55fbe1a5b250, src=0x55fbe1a5b230
+ movq 107, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a5b370, src=(nil)
+ movq $8, 593
+a format: assem= imulq `s0, dst=0x55fbe1a5b440, src=0x55fbe1a5b400
+ imulq 593
+a format: assem= movq %rax, `d0, dst=0x55fbe1a5b4f0, src=0x55fbe1a5b4d0
+ movq %rax, 592
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5b5c0, src=0x55fbe1a5b5a0
+ addq 592, 589
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5b670
+ movq 128, (589)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a5b820, src=0x55fbe1a5b800
+ movq ?8#(%rsp), 595
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe1a5b8b0
+ movq 595, (%rsp)
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5b9d0, src=0x55fbe1a5b9b0
+ movq 107, 596
+a format: assem= addq $1, `d0, dst=0x55fbe1a5ba80, src=0x55fbe1a5ba60
+ addq $1, 596
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5bb30, src=0x55fbe1a5bb10
+ movq 596, %rdi
+a format: assem= callq try, dst=0x55fbe1a5bc40, src=0x55fbe1a5bbc0
+ callq try
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a5be40, src=0x55fbe1a5be20
+ movq ?8#(%rsp), 599
+a format: assem= movq -16(`s0), `d0, dst=0x55fbe1a5bef0, src=0x55fbe1a5bed0
+ movq -16(599), 598
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5bfa0, src=0x55fbe1a5bf80
+ movq 598, 597
+a format: assem= movq `s0, %rax, dst=0x55fbe1a5c0c0, src=0x55fbe1a5c0a0
+ movq 128, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a5c1e0, src=(nil)
+ movq $8, 601
+a format: assem= imulq `s0, dst=0x55fbe1a5c2b0, src=0x55fbe1a5c270
+ imulq 601
+a format: assem= movq %rax, `d0, dst=0x55fbe1a5c360, src=0x55fbe1a5c340
+ movq %rax, 600
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5c430, src=0x55fbe1a5c410
+ addq 600, 597
+a format: assem= movq $0, `d0, dst=0x55fbe1a5c530, src=(nil)
+ movq $0, 602
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5c5e0
+ movq 602, (597)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a5c7e0, src=0x55fbe1a5c7c0
+ movq ?8#(%rsp), 605
+a format: assem= movq -32(`s0), `d0, dst=0x55fbe1a5c890, src=0x55fbe1a5c870
+ movq -32(605), 604
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5c940, src=0x55fbe1a5c920
+ movq 604, 603
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5cad0, src=0x55fbe1a5cab0
+ movq 128, 607
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5cba0, src=0x55fbe1a5cb80
+ addq 107, 607
+a format: assem= movq `s0, %rax, dst=0x55fbe1a5cc50, src=0x55fbe1a5cc30
+ movq 607, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a5cd70, src=(nil)
+ movq $8, 608
+a format: assem= imulq `s0, dst=0x55fbe1a5ce40, src=0x55fbe1a5ce00
+ imulq 608
+a format: assem= movq %rax, `d0, dst=0x55fbe1a5cef0, src=0x55fbe1a5ced0
+ movq %rax, 606
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5cfc0, src=0x55fbe1a5cfa0
+ addq 606, 603
+a format: assem= movq $0, `d0, dst=0x55fbe1a5d0c0, src=(nil)
+ movq $0, 609
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5d170
+ movq 609, (603)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe1a5d370, src=0x55fbe1a5d350
+ movq ?8#(%rsp), 612
+a format: assem= movq -40(`s0), `d0, dst=0x55fbe1a5d420, src=0x55fbe1a5d400
+ movq -40(612), 611
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5d4d0, src=0x55fbe1a5d4b0
+ movq 611, 610
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5d6d0, src=0x55fbe1a5d6b0
+ movq 128, 615
+a format: assem= addq $7, `d0, dst=0x55fbe1a5d780, src=0x55fbe1a5d760
+ addq $7, 615
+a format: assem= movq `s0, `d0, dst=0x55fbe1a5d830, src=0x55fbe1a5d810
+ movq 615, 614
+a format: assem= subq `s1, `d0, dst=0x55fbe1a5d900, src=0x55fbe1a5d8e0
+ subq 107, 614
+a format: assem= movq `s0, %rax, dst=0x55fbe1a5d9b0, src=0x55fbe1a5d990
+ movq 614, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe1a5dad0, src=(nil)
+ movq $8, 616
+a format: assem= imulq `s0, dst=0x55fbe1a5dba0, src=0x55fbe1a5db60
+ imulq 616
+a format: assem= movq %rax, `d0, dst=0x55fbe1a5dc50, src=0x55fbe1a5dc30
+ movq %rax, 613
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5dd20, src=0x55fbe1a5dd00
+ addq 613, 610
+a format: assem= movq $0, `d0, dst=0x55fbe1a5de20, src=(nil)
+ movq $0, 617
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5ded0
+ movq 617, (610)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L25
+a format: assem=L33, dst=(nil), src=(nil)
+L33:
+a format: assem= addq $?0#, %rsp, dst=0x55fbe1a5e080, src=0x55fbe1a5e060
+ addq $?0#, %rsp
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+no color left!
+assign!
+assign!
+assign!
+assign!
+no color left!
+no color left!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+rewrite!
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem= subq $32, %rsp, dst=0x55fbe1a525f0, src=0x55fbe1a525d0
+a format: assem=L34, dst=(nil), src=(nil)
+a format: assem= movq `s1, 16(`s0)
+, dst=(nil), src=0x55fbe1fb13f0
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a52cc0, src=0x55fbe1a52ca0
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe1a52d70, src=0x55fbe1a52d50
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe1fb15d0, src=0x55fbe1fb15b0
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a52e20
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L29, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a53040, src=(nil)
+a format: assem= movq `s1, 24(`s0)
+, dst=(nil), src=0x55fbe1fa9ad0
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a532f0, src=0x55fbe1a532d0
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe1a533a0, src=0x55fbe1a53380
+a format: assem= subq $1, `d0, dst=0x55fbe1a534e0, src=(nil)
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x55fbe1fb9af0
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a53790, src=0x55fbe1a53770
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe1a53840, src=0x55fbe1a53820
+a format: assem= subq $1, `d0, dst=0x55fbe1a53980, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a53aa0, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a53b30
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+a format: assem=L13, dst=(nil), src=(nil)
+a format: assem=L30, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a53dc0, src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L28, dst=(nil), src=(nil)
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a54540, src=0x55fbe1a54520
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe1a545d0
+a format: assem= callq printboard, dst=0x55fbe1a546c0, src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L27, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a548c0, src=(nil)
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a54b50, src=0x55fbe1a54b30
+a format: assem= movq -16(`s0), `d0, dst=0x55fbe1a54c00, src=0x55fbe1a54be0
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1faa880, src=0x55fbe1faa860
+a format: assem= movq $8, `d0, dst=0x55fbe1a54ef0, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a54fc0, src=0x55fbe1a54f80
+a format: assem= addq `s1, `d0, dst=0x55fbe1a55140, src=0x55fbe1a55120
+a format: assem= movq (`s0), `d0, dst=0x55fbe1a551f0, src=0x55fbe1a551d0
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a55280
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L15, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a554a0, src=(nil)
+a format: assem=L16, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a556c0, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a55770
+a format: assem= jne  `j0, dst=(nil), src=(nil)
+a format: assem=L20, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a55990, src=(nil)
+a format: assem=L21, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a55bb0, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a55c60
+a format: assem= jne  `j0, dst=(nil), src=(nil)
+a format: assem=L25, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1fab0f0, src=0x55fbe1fab0d0
+a format: assem= movq 8(`s0), `d0
+, dst=0x55fbe1fbaf30, src=0x55fbe1fbaf10
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a55e30
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+a format: assem=L26, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1fab260, src=0x55fbe1fab240
+a format: assem= addq $1, `d0, dst=0x55fbe1a56120, src=0x55fbe1a56100
+a format: assem= movq `s1, 24(`s0)
+, dst=(nil), src=0x55fbe1fab3d0
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L14, dst=(nil), src=(nil)
+a format: assem= movq $1, `d0, dst=0x55fbe1a563d0, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a56580, src=(nil)
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a56810, src=0x55fbe1a567f0
+a format: assem= movq -32(`s0), `d0, dst=0x55fbe1a568c0, src=0x55fbe1a568a0
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1fab7e0, src=0x55fbe1fab7c0
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe1fb3500, src=0x55fbe1fb34e0
+a format: assem= addq `s1, `d0, dst=0x55fbe1a56bd0, src=0x55fbe1a56bb0
+a format: assem= movq $8, `d0, dst=0x55fbe1a56da0, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a56e70, src=0x55fbe1a56e30
+a format: assem= addq `s1, `d0, dst=0x55fbe1a56ff0, src=0x55fbe1a56fd0
+a format: assem= movq (`s0), `d0, dst=0x55fbe1a570a0, src=0x55fbe1a57080
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a57130
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L18, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a57350, src=(nil)
+a format: assem=L17, dst=(nil), src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L19, dst=(nil), src=(nil)
+a format: assem= movq $1, `d0, dst=0x55fbe1a57720, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a578d0, src=(nil)
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a57b60, src=0x55fbe1a57b40
+a format: assem= movq -40(`s0), `d0, dst=0x55fbe1a57c10, src=0x55fbe1a57bf0
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1fac130, src=0x55fbe1fac110
+a format: assem= addq $7, `d0, dst=0x55fbe1a57f70, src=0x55fbe1a57f50
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe1fb3fa0, src=0x55fbe1fb3f80
+a format: assem= subq `s1, `d0, dst=0x55fbe1a580f0, src=0x55fbe1a580d0
+a format: assem= movq $8, `d0, dst=0x55fbe1a582c0, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a58390, src=0x55fbe1a58350
+a format: assem= addq `s1, `d0, dst=0x55fbe1a58510, src=0x55fbe1a584f0
+a format: assem= movq (`s0), `d0, dst=0x55fbe1a585c0, src=0x55fbe1a585a0
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe1a58650
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L23, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe1a58870, src=(nil)
+a format: assem=L22, dst=(nil), src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L24, dst=(nil), src=(nil)
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a58d40, src=0x55fbe1a58d20
+a format: assem= movq -16(`s0), `d0, dst=0x55fbe1a58df0, src=0x55fbe1a58dd0
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1faca10, src=0x55fbe1fac9f0
+a format: assem= movq $8, `d0, dst=0x55fbe1a590e0, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a591b0, src=0x55fbe1a59170
+a format: assem= addq `s1, `d0, dst=0x55fbe1a59330, src=0x55fbe1a59310
+a format: assem= movq $1, `d0, dst=0x55fbe1a59430, src=(nil)
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a594e0
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a596e0, src=0x55fbe1a596c0
+a format: assem= movq -32(`s0), `d0, dst=0x55fbe1a59790, src=0x55fbe1a59770
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1facf00, src=0x55fbe1facee0
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe1fb4ce0, src=0x55fbe1fb4cc0
+a format: assem= addq `s1, `d0, dst=0x55fbe1a59aa0, src=0x55fbe1a59a80
+a format: assem= movq $8, `d0, dst=0x55fbe1a59c70, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a59d40, src=0x55fbe1a59d00
+a format: assem= addq `s1, `d0, dst=0x55fbe1a59ec0, src=0x55fbe1a59ea0
+a format: assem= movq $1, `d0, dst=0x55fbe1a59fc0, src=(nil)
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5a070
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a5a270, src=0x55fbe1a5a250
+a format: assem= movq -40(`s0), `d0, dst=0x55fbe1a5a320, src=0x55fbe1a5a300
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1fad4d0, src=0x55fbe1fad4b0
+a format: assem= addq $7, `d0, dst=0x55fbe1a5a680, src=0x55fbe1a5a660
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe1fb5400, src=0x55fbe1fb53e0
+a format: assem= subq `s1, `d0, dst=0x55fbe1a5a800, src=0x55fbe1a5a7e0
+a format: assem= movq $8, `d0, dst=0x55fbe1a5a9d0, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a5aaa0, src=0x55fbe1a5aa60
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5ac20, src=0x55fbe1a5ac00
+a format: assem= movq $1, `d0, dst=0x55fbe1a5ad20, src=(nil)
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5add0
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a5afd0, src=0x55fbe1a5afb0
+a format: assem= movq -24(`s0), `d0, dst=0x55fbe1a5b080, src=0x55fbe1a5b060
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe1fb5960, src=0x55fbe1fb5940
+a format: assem= movq $8, `d0, dst=0x55fbe1a5b370, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a5b440, src=0x55fbe1a5b400
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5b5c0, src=0x55fbe1a5b5a0
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1faddb0, src=0x55fbe1fadd90
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5b670
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a5b820, src=0x55fbe1a5b800
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe1a5b8b0
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe1fb5de0, src=0x55fbe1fb5dc0
+a format: assem= addq $1, `d0, dst=0x55fbe1a5ba80, src=0x55fbe1a5ba60
+a format: assem= callq try, dst=0x55fbe1a5bc40, src=0x55fbe1a5bbc0
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a5be40, src=0x55fbe1a5be20
+a format: assem= movq -16(`s0), `d0, dst=0x55fbe1a5bef0, src=0x55fbe1a5bed0
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1fae2a0, src=0x55fbe1fae280
+a format: assem= movq $8, `d0, dst=0x55fbe1a5c1e0, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a5c2b0, src=0x55fbe1a5c270
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5c430, src=0x55fbe1a5c410
+a format: assem= movq $0, `d0, dst=0x55fbe1a5c530, src=(nil)
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5c5e0
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a5c7e0, src=0x55fbe1a5c7c0
+a format: assem= movq -32(`s0), `d0, dst=0x55fbe1a5c890, src=0x55fbe1a5c870
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1fae790, src=0x55fbe1fae770
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe1fb6730, src=0x55fbe1fb6710
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5cba0, src=0x55fbe1a5cb80
+a format: assem= movq $8, `d0, dst=0x55fbe1a5cd70, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a5ce40, src=0x55fbe1a5ce00
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5cfc0, src=0x55fbe1a5cfa0
+a format: assem= movq $0, `d0, dst=0x55fbe1a5d0c0, src=(nil)
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5d170
+a format: assem= movq 40(`s0), `d0, dst=0x55fbe1a5d370, src=0x55fbe1a5d350
+a format: assem= movq -40(`s0), `d0, dst=0x55fbe1a5d420, src=0x55fbe1a5d400
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe1faed60, src=0x55fbe1faed40
+a format: assem= addq $7, `d0, dst=0x55fbe1a5d780, src=0x55fbe1a5d760
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe1fb6e50, src=0x55fbe1fb6e30
+a format: assem= subq `s1, `d0, dst=0x55fbe1a5d900, src=0x55fbe1a5d8e0
+a format: assem= movq $8, `d0, dst=0x55fbe1a5dad0, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe1a5dba0, src=0x55fbe1a5db60
+a format: assem= addq `s1, `d0, dst=0x55fbe1a5dd20, src=0x55fbe1a5dd00
+a format: assem= movq $0, `d0, dst=0x55fbe1a5de20, src=(nil)
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55fbe1a5ded0
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L33, dst=(nil), src=(nil)
+a format: assem= addq $32, %rsp, dst=0x55fbe1a5e080, src=0x55fbe1a5e060
+doProc for function printboard:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t122,
+        TEMP t121),
+       MOVE(
+        TEMP t123,
+        TEMP t120)),
+      MOVE(
+       TEMP t124,
+       TEMP t119)),
+     MOVE(
+      TEMP t125,
+      TEMP t118)),
+    MOVE(
+     TEMP t126,
+     TEMP t117)),
+   MOVE(
+    TEMP t127,
+    TEMP t116)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t115,
+     ESEQ(
+      SEQ(
+       MOVE(
+        TEMP t108,
+        CONST 0),
+       SEQ(
+        MOVE(
+         TEMP t113,
+         BINOP(MINUS,
+          MEM(
+           BINOP(PLUS,
+            MEM(
+             BINOP(PLUS,
+              CONST 8,
+              TEMP t106)),
+            CONST -8)),
+          CONST 1)),
+        SEQ(
+         CJUMP(LE,
+          CONST 0,
+          BINOP(MINUS,
+           MEM(
+            BINOP(PLUS,
+             MEM(
+              BINOP(PLUS,
+               CONST 8,
+               TEMP t106)),
+             CONST -8)),
+           CONST 1),
+          L11,L0),
+         SEQ(
+          LABEL L11,
+          SEQ(
+           EXP(
+            ESEQ(
+             SEQ(
+              MOVE(
+               TEMP t109,
+               CONST 0),
+              SEQ(
+               MOVE(
+                TEMP t111,
+                BINOP(MINUS,
+                 MEM(
+                  BINOP(PLUS,
+                   MEM(
+                    BINOP(PLUS,
+                     CONST 8,
+                     TEMP t106)),
+                   CONST -8)),
+                 CONST 1)),
+               SEQ(
+                CJUMP(LE,
+                 CONST 0,
+                 BINOP(MINUS,
+                  MEM(
+                   BINOP(PLUS,
+                    MEM(
+                     BINOP(PLUS,
+                      CONST 8,
+                      TEMP t106)),
+                    CONST -8)),
+                  CONST 1),
+                 L8,L1),
+                SEQ(
+                 LABEL L8,
+                 SEQ(
+                  EXP(
+                   CALL(
+                    NAME print,
+                     CONST 0,
+                     ESEQ(
+                      SEQ(
+                       CJUMP(EQ,
+                        MEM(
+                         BINOP(PLUS,
+                          MEM(
+                           BINOP(PLUS,
+                            MEM(
+                             BINOP(PLUS,
+                              CONST 8,
+                              TEMP t106)),
+                            CONST -24)),
+                          BINOP(TIMES,
+                           TEMP t108,
+                           CONST 8))),
+                        TEMP t109,
+                        L4,L5),
+                       SEQ(
+                        LABEL L4,
+                        SEQ(
+                         MOVE(
+                          TEMP t110,
+                          NAME L2),
+                         SEQ(
+                          JUMP(
+                           NAME L6),
+                          SEQ(
+                           LABEL L5,
+                           SEQ(
+                            MOVE(
+                             TEMP t110,
+                             NAME L3),
+                            LABEL L6)))))),
+                      TEMP t110))),
+                  SEQ(
+                   CJUMP(LT,
+                    TEMP t109,
+                    TEMP t111,
+                    L7,L1),
+                   SEQ(
+                    LABEL L7,
+                    SEQ(
+                     MOVE(
+                      TEMP t109,
+                      BINOP(PLUS,
+                       TEMP t109,
+                       CONST 1)),
+                     SEQ(
+                      JUMP(
+                       NAME L8),
+                      LABEL L1))))))))),
+             CALL(
+              NAME print,
+               CONST 0,
+               NAME L9))),
+           SEQ(
+            CJUMP(LT,
+             TEMP t108,
+             TEMP t113,
+             L10,L0),
+            SEQ(
+             LABEL L10,
+             SEQ(
+              MOVE(
+               TEMP t108,
+               BINOP(PLUS,
+                TEMP t108,
+                CONST 1)),
+              SEQ(
+               JUMP(
+                NAME L11),
+               LABEL L0))))))))),
+      CALL(
+       NAME print,
+        CONST 0,
+        NAME L12))),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t121,
+          TEMP t122),
+         MOVE(
+          TEMP t120,
+          TEMP t123)),
+        MOVE(
+         TEMP t119,
+         TEMP t124)),
+       MOVE(
+        TEMP t118,
+        TEMP t125)),
+      MOVE(
+       TEMP t117,
+       TEMP t126)),
+     MOVE(
+      TEMP t116,
+      TEMP t127)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t122,
+  TEMP t121)
+ MOVE(
+  TEMP t123,
+  TEMP t120)
+ MOVE(
+  TEMP t124,
+  TEMP t119)
+ MOVE(
+  TEMP t125,
+  TEMP t118)
+ MOVE(
+  TEMP t126,
+  TEMP t117)
+ MOVE(
+  TEMP t127,
+  TEMP t116)
+ MOVE(
+  TEMP t108,
+  CONST 0)
+ MOVE(
+  TEMP t113,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L11,L0)
+ LABEL L11
+ MOVE(
+  TEMP t109,
+  CONST 0)
+ MOVE(
+  TEMP t111,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L8,L1)
+ LABEL L8
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -24)),
+    BINOP(TIMES,
+     TEMP t108,
+     CONST 8))),
+  TEMP t109,
+  L4,L5)
+ LABEL L4
+ MOVE(
+  TEMP t110,
+  NAME L2)
+ JUMP(
+  NAME L6)
+ LABEL L5
+ MOVE(
+  TEMP t110,
+  NAME L3)
+ LABEL L6
+ EXP(
+  CALL(
+   NAME print,
+    CONST 0,
+    TEMP t110))
+ CJUMP(LT,
+  TEMP t109,
+  TEMP t111,
+  L7,L1)
+ LABEL L7
+ MOVE(
+  TEMP t109,
+  BINOP(PLUS,
+   TEMP t109,
+   CONST 1))
+ JUMP(
+  NAME L8)
+ LABEL L1
+ EXP(
+  CALL(
+   NAME print,
+    CONST 0,
+    NAME L9))
+ CJUMP(LT,
+  TEMP t108,
+  TEMP t113,
+  L10,L0)
+ LABEL L10
+ MOVE(
+  TEMP t108,
+  BINOP(PLUS,
+   TEMP t108,
+   CONST 1))
+ JUMP(
+  NAME L11)
+ LABEL L0
+ MOVE(
+  TEMP t115,
+  CALL(
+   NAME print,
+    CONST 0,
+    NAME L12))
+ MOVE(
+  TEMP t121,
+  TEMP t122)
+ MOVE(
+  TEMP t120,
+  TEMP t123)
+ MOVE(
+  TEMP t119,
+  TEMP t124)
+ MOVE(
+  TEMP t118,
+  TEMP t125)
+ MOVE(
+  TEMP t117,
+  TEMP t126)
+ MOVE(
+  TEMP t116,
+  TEMP t127)
+-------====Linearlized=====-----
+ LABEL L36
+ MOVE(
+  TEMP t122,
+  TEMP t121)
+ MOVE(
+  TEMP t123,
+  TEMP t120)
+ MOVE(
+  TEMP t124,
+  TEMP t119)
+ MOVE(
+  TEMP t125,
+  TEMP t118)
+ MOVE(
+  TEMP t126,
+  TEMP t117)
+ MOVE(
+  TEMP t127,
+  TEMP t116)
+ MOVE(
+  TEMP t108,
+  CONST 0)
+ MOVE(
+  TEMP t113,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L11,L0)
+------====Basic block=====-------
+ LABEL L11
+ MOVE(
+  TEMP t109,
+  CONST 0)
+ MOVE(
+  TEMP t111,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L8,L1)
+------====Basic block=====-------
+ LABEL L8
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -24)),
+    BINOP(TIMES,
+     TEMP t108,
+     CONST 8))),
+  TEMP t109,
+  L4,L5)
+------====Basic block=====-------
+ LABEL L4
+ MOVE(
+  TEMP t110,
+  NAME L2)
+ JUMP(
+  NAME L6)
+------====Basic block=====-------
+ LABEL L5
+ MOVE(
+  TEMP t110,
+  NAME L3)
+ JUMP(
+  NAME L6)
+------====Basic block=====-------
+ LABEL L6
+ EXP(
+  CALL(
+   NAME print,
+    CONST 0,
+    TEMP t110))
+ CJUMP(LT,
+  TEMP t109,
+  TEMP t111,
+  L7,L1)
+------====Basic block=====-------
+ LABEL L7
+ MOVE(
+  TEMP t109,
+  BINOP(PLUS,
+   TEMP t109,
+   CONST 1))
+ JUMP(
+  NAME L8)
+------====Basic block=====-------
+ LABEL L1
+ EXP(
+  CALL(
+   NAME print,
+    CONST 0,
+    NAME L9))
+ CJUMP(LT,
+  TEMP t108,
+  TEMP t113,
+  L10,L0)
+------====Basic block=====-------
+ LABEL L10
+ MOVE(
+  TEMP t108,
+  BINOP(PLUS,
+   TEMP t108,
+   CONST 1))
+ JUMP(
+  NAME L11)
+------====Basic block=====-------
+ LABEL L0
+ MOVE(
+  TEMP t115,
+  CALL(
+   NAME print,
+    CONST 0,
+    NAME L12))
+ MOVE(
+  TEMP t121,
+  TEMP t122)
+ MOVE(
+  TEMP t120,
+  TEMP t123)
+ MOVE(
+  TEMP t119,
+  TEMP t124)
+ MOVE(
+  TEMP t118,
+  TEMP t125)
+ MOVE(
+  TEMP t117,
+  TEMP t126)
+ MOVE(
+  TEMP t116,
+  TEMP t127)
+ JUMP(
+  NAME L35)
+------====Basic block=====-------
+ LABEL L36
+ MOVE(
+  TEMP t122,
+  TEMP t121)
+ MOVE(
+  TEMP t123,
+  TEMP t120)
+ MOVE(
+  TEMP t124,
+  TEMP t119)
+ MOVE(
+  TEMP t125,
+  TEMP t118)
+ MOVE(
+  TEMP t126,
+  TEMP t117)
+ MOVE(
+  TEMP t127,
+  TEMP t116)
+ MOVE(
+  TEMP t108,
+  CONST 0)
+ MOVE(
+  TEMP t113,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L11,L0)
+ LABEL L0
+ MOVE(
+  TEMP t115,
+  CALL(
+   NAME print,
+    CONST 0,
+    NAME L12))
+ MOVE(
+  TEMP t121,
+  TEMP t122)
+ MOVE(
+  TEMP t120,
+  TEMP t123)
+ MOVE(
+  TEMP t119,
+  TEMP t124)
+ MOVE(
+  TEMP t118,
+  TEMP t125)
+ MOVE(
+  TEMP t117,
+  TEMP t126)
+ MOVE(
+  TEMP t116,
+  TEMP t127)
+ JUMP(
+  NAME L35)
+ LABEL L11
+ MOVE(
+  TEMP t109,
+  CONST 0)
+ MOVE(
+  TEMP t111,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1))
+ CJUMP(LE,
+  CONST 0,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L8,L1)
+ LABEL L1
+ EXP(
+  CALL(
+   NAME print,
+    CONST 0,
+    NAME L9))
+ CJUMP(GE,
+  TEMP t108,
+  TEMP t113,
+  L0,L10)
+ LABEL L10
+ MOVE(
+  TEMP t108,
+  BINOP(PLUS,
+   TEMP t108,
+   CONST 1))
+ JUMP(
+  NAME L11)
+ LABEL L8
+ CJUMP(EQ,
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -24)),
+    BINOP(TIMES,
+     TEMP t108,
+     CONST 8))),
+  TEMP t109,
+  L4,L5)
+ LABEL L5
+ MOVE(
+  TEMP t110,
+  NAME L3)
+ LABEL L6
+ EXP(
+  CALL(
+   NAME print,
+    CONST 0,
+    TEMP t110))
+ CJUMP(GE,
+  TEMP t109,
+  TEMP t111,
+  L1,L7)
+ LABEL L7
+ MOVE(
+  TEMP t109,
+  BINOP(PLUS,
+   TEMP t109,
+   CONST 1))
+ JUMP(
+  NAME L8)
+ LABEL L4
+ MOVE(
+  TEMP t110,
+  NAME L2)
+ JUMP(
+  NAME L6)
+ LABEL L35
+-------====trace=====-----
+a format: assem= subq $?0#, %rsp, dst=0x55fbe2514df0, src=0x55fbe2514dd0
+ subq $?0#, %rsp
+a format: assem=L36, dst=(nil), src=(nil)
+L36:
+a format: assem= movq `s0, `d0, dst=0x55fbe2514f10, src=0x55fbe2514ef0
+ movq %rbx, 122
+a format: assem= movq `s0, `d0, dst=0x55fbe2514fc0, src=0x55fbe2514fa0
+ movq %rbp, 123
+a format: assem= movq `s0, `d0, dst=0x55fbe2515070, src=0x55fbe2515050
+ movq %r12, 124
+a format: assem= movq `s0, `d0, dst=0x55fbe2515120, src=0x55fbe2515100
+ movq %r13, 125
+a format: assem= movq `s0, `d0, dst=0x55fbe25151d0, src=0x55fbe25151b0
+ movq %r14, 126
+a format: assem= movq `s0, `d0, dst=0x55fbe2515280, src=0x55fbe2515260
+ movq %r15, 127
+a format: assem= movq $0, `d0, dst=0x55fbe2515380, src=(nil)
+ movq $0, 1250
+a format: assem= movq `s0, `d0, dst=0x55fbe2515430, src=0x55fbe2515410
+ movq 1250, 108
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe2515630, src=0x55fbe2515610
+ movq ?8#(%rsp), 1253
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe25156e0, src=0x55fbe25156c0
+ movq -8(1253), 1252
+a format: assem= movq `s0, `d0, dst=0x55fbe2515790, src=0x55fbe2515770
+ movq 1252, 1251
+a format: assem= subq $1, `d0, dst=0x55fbe2515820, src=(nil)
+ subq $1, 1251
+a format: assem= movq `s0, `d0, dst=0x55fbe25158d0, src=0x55fbe25158b0
+ movq 1251, 113
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe2515ad0, src=0x55fbe2515ab0
+ movq ?8#(%rsp), 1256
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe2515b80, src=0x55fbe2515b60
+ movq -8(1256), 1255
+a format: assem= movq `s0, `d0, dst=0x55fbe2515c30, src=0x55fbe2515c10
+ movq 1255, 1254
+a format: assem= subq $1, `d0, dst=0x55fbe2515cc0, src=(nil)
+ subq $1, 1254
+a format: assem= movq $0, `d0, dst=0x55fbe2515de0, src=(nil)
+ movq $0, 1257
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2515e70
+ cmpq 1254, 1257
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+ jle  L11
+a format: assem=L0, dst=(nil), src=(nil)
+L0:
+a format: assem= movq $0, `d0, dst=0x55fbe2516120, src=(nil)
+ movq $0, 1259
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe25161b0
+ movq 1259, (%rsp)
+a format: assem= leaq L12(%rip), `d0, dst=0x55fbe25162b0, src=(nil)
+ leaq L12(%rip), 1260
+a format: assem= movq `s0, `d0, dst=0x55fbe2516360, src=0x55fbe2516340
+ movq 1260, %rdi
+a format: assem= callq print, dst=0x55fbe2516470, src=0x55fbe25163f0
+ callq print
+a format: assem= movq `s0, `d0, dst=0x55fbe2516520, src=0x55fbe2516500
+ movq %rax, %rax
+a format: assem= movq `s0, `d0, dst=0x55fbe25165d0, src=0x55fbe25165b0
+ movq 122, %rbx
+a format: assem= movq `s0, `d0, dst=0x55fbe2516680, src=0x55fbe2516660
+ movq 123, %rbp
+a format: assem= movq `s0, `d0, dst=0x55fbe2516730, src=0x55fbe2516710
+ movq 124, %r12
+a format: assem= movq `s0, `d0, dst=0x55fbe25167e0, src=0x55fbe25167c0
+ movq 125, %r13
+a format: assem= movq `s0, `d0, dst=0x55fbe2516890, src=0x55fbe2516870
+ movq 126, %r14
+a format: assem= movq `s0, `d0, dst=0x55fbe2516940, src=0x55fbe2516920
+ movq 127, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L35
+a format: assem=L11, dst=(nil), src=(nil)
+L11:
+a format: assem= movq $0, `d0, dst=0x55fbe2516b40, src=(nil)
+ movq $0, 1261
+a format: assem= movq `s0, `d0, dst=0x55fbe2516bf0, src=0x55fbe2516bd0
+ movq 1261, 109
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe2516df0, src=0x55fbe2516dd0
+ movq ?8#(%rsp), 1264
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe2516ea0, src=0x55fbe2516e80
+ movq -8(1264), 1263
+a format: assem= movq `s0, `d0, dst=0x55fbe2516f50, src=0x55fbe2516f30
+ movq 1263, 1262
+a format: assem= subq $1, `d0, dst=0x55fbe2516fe0, src=(nil)
+ subq $1, 1262
+a format: assem= movq `s0, `d0, dst=0x55fbe2517090, src=0x55fbe2517070
+ movq 1262, 111
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe2517290, src=0x55fbe2517270
+ movq ?8#(%rsp), 1267
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe2517340, src=0x55fbe2517320
+ movq -8(1267), 1266
+a format: assem= movq `s0, `d0, dst=0x55fbe25173f0, src=0x55fbe25173d0
+ movq 1266, 1265
+a format: assem= subq $1, `d0, dst=0x55fbe2517480, src=(nil)
+ subq $1, 1265
+a format: assem= movq $0, `d0, dst=0x55fbe25175a0, src=(nil)
+ movq $0, 1268
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2517630
+ cmpq 1265, 1268
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+ jle  L8
+a format: assem=L1, dst=(nil), src=(nil)
+L1:
+a format: assem= movq $0, `d0, dst=0x55fbe25178e0, src=(nil)
+ movq $0, 1270
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe2517970
+ movq 1270, (%rsp)
+a format: assem= leaq L9(%rip), `d0, dst=0x55fbe2517a70, src=(nil)
+ leaq L9(%rip), 1271
+a format: assem= movq `s0, `d0, dst=0x55fbe2517b20, src=0x55fbe2517b00
+ movq 1271, %rdi
+a format: assem= callq print, dst=0x55fbe2517c30, src=0x55fbe2517bb0
+ callq print
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2517ce0
+ cmpq 113, 108
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+ jge  L0
+a format: assem=L10, dst=(nil), src=(nil)
+L10:
+a format: assem= movq `s0, `d0, dst=0x55fbe2517f20, src=0x55fbe2517f00
+ movq 108, 1272
+a format: assem= addq $1, `d0, dst=0x55fbe2517fd0, src=0x55fbe2517fb0
+ addq $1, 1272
+a format: assem= movq `s0, `d0, dst=0x55fbe2518080, src=0x55fbe2518060
+ movq 1272, 108
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L11
+a format: assem=L8, dst=(nil), src=(nil)
+L8:
+a format: assem= movq ?8#(`s0), `d0, dst=0x55fbe2518410, src=0x55fbe25183f0
+ movq ?8#(%rsp), 1276
+a format: assem= movq -24(`s0), `d0, dst=0x55fbe25184c0, src=0x55fbe25184a0
+ movq -24(1276), 1275
+a format: assem= movq `s0, `d0, dst=0x55fbe2518570, src=0x55fbe2518550
+ movq 1275, 1274
+a format: assem= movq `s0, %rax, dst=0x55fbe2518690, src=0x55fbe2518670
+ movq 108, %rax
+a format: assem= movq $8, `d0, dst=0x55fbe25187b0, src=(nil)
+ movq $8, 1278
+a format: assem= imulq `s0, dst=0x55fbe2518880, src=0x55fbe2518840
+ imulq 1278
+a format: assem= movq %rax, `d0, dst=0x55fbe2518930, src=0x55fbe2518910
+ movq %rax, 1277
+a format: assem= addq `s1, `d0, dst=0x55fbe2518a00, src=0x55fbe25189e0
+ addq 1277, 1274
+a format: assem= movq (`s0), `d0, dst=0x55fbe2518ab0, src=0x55fbe2518a90
+ movq (1274), 1273
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2518b40
+ cmpq 109, 1273
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L4
+a format: assem=L5, dst=(nil), src=(nil)
+L5:
+a format: assem= leaq L3(%rip), `d0, dst=0x55fbe2518d60, src=(nil)
+ leaq L3(%rip), 1279
+a format: assem= movq `s0, `d0, dst=0x55fbe2518e10, src=0x55fbe2518df0
+ movq 1279, 110
+a format: assem=L6, dst=(nil), src=(nil)
+L6:
+a format: assem= movq $0, `d0, dst=0x55fbe2519010, src=(nil)
+ movq $0, 1281
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe25190a0
+ movq 1281, (%rsp)
+a format: assem= movq `s0, `d0, dst=0x55fbe2519150, src=0x55fbe2519130
+ movq 110, %rdi
+a format: assem= callq print, dst=0x55fbe2519260, src=0x55fbe25191e0
+ callq print
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2519310
+ cmpq 111, 109
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+ jge  L1
+a format: assem=L7, dst=(nil), src=(nil)
+L7:
+a format: assem= movq `s0, `d0, dst=0x55fbe2519550, src=0x55fbe2519530
+ movq 109, 1282
+a format: assem= addq $1, `d0, dst=0x55fbe2519600, src=0x55fbe25195e0
+ addq $1, 1282
+a format: assem= movq `s0, `d0, dst=0x55fbe25196b0, src=0x55fbe2519690
+ movq 1282, 109
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L8
+a format: assem=L4, dst=(nil), src=(nil)
+L4:
+a format: assem= leaq L2(%rip), `d0, dst=0x55fbe25198b0, src=(nil)
+ leaq L2(%rip), 1283
+a format: assem= movq `s0, `d0, dst=0x55fbe2519960, src=0x55fbe2519940
+ movq 1283, 110
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L6
+a format: assem=L35, dst=(nil), src=(nil)
+L35:
+a format: assem= addq $?0#, %rsp, dst=0x55fbe2519b10, src=0x55fbe2519af0
+ addq $?0#, %rsp
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+no color left!
+no color left!
+no color left!
+no color left!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+rewrite!
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+select a spill node!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem= subq $40, %rsp, dst=0x55fbe2514df0, src=0x55fbe2514dd0
+a format: assem=L36, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe2515380, src=(nil)
+a format: assem= movq `s1, 24(`s0)
+, dst=(nil), src=0x55fbe27dd500
+a format: assem= movq 48(`s0), `d0, dst=0x55fbe2515630, src=0x55fbe2515610
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe25156e0, src=0x55fbe25156c0
+a format: assem= subq $1, `d0, dst=0x55fbe2515820, src=(nil)
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x55fbe27e48e0
+a format: assem= movq 48(`s0), `d0, dst=0x55fbe2515ad0, src=0x55fbe2515ab0
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe2515b80, src=0x55fbe2515b60
+a format: assem= subq $1, `d0, dst=0x55fbe2515cc0, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe2515de0, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2515e70
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+a format: assem=L0, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe2516120, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe25161b0
+a format: assem= leaq L12(%rip), `d0, dst=0x55fbe25162b0, src=(nil)
+a format: assem= callq print, dst=0x55fbe2516470, src=0x55fbe25163f0
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L11, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe2516b40, src=(nil)
+a format: assem= movq `s1, 32(`s0)
+, dst=(nil), src=0x55fbe27dab60
+a format: assem= movq 48(`s0), `d0, dst=0x55fbe2516df0, src=0x55fbe2516dd0
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe2516ea0, src=0x55fbe2516e80
+a format: assem= subq $1, `d0, dst=0x55fbe2516fe0, src=(nil)
+a format: assem= movq `s1, 16(`s0)
+, dst=(nil), src=0x55fbe27e1c20
+a format: assem= movq 48(`s0), `d0, dst=0x55fbe2517290, src=0x55fbe2517270
+a format: assem= movq -8(`s0), `d0, dst=0x55fbe2517340, src=0x55fbe2517320
+a format: assem= subq $1, `d0, dst=0x55fbe2517480, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe25175a0, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2517630
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+a format: assem=L1, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe25178e0, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe2517970
+a format: assem= leaq L9(%rip), `d0, dst=0x55fbe2517a70, src=(nil)
+a format: assem= callq print, dst=0x55fbe2517c30, src=0x55fbe2517bb0
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe27de9b0, src=0x55fbe27de990
+a format: assem= movq 8(`s0), `d0
+, dst=0x55fbe27e5c40, src=0x55fbe27e5c20
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2517ce0
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+a format: assem=L10, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe27deb20, src=0x55fbe27deb00
+a format: assem= addq $1, `d0, dst=0x55fbe2517fd0, src=0x55fbe2517fb0
+a format: assem= movq `s1, 24(`s0)
+, dst=(nil), src=0x55fbe27dec90
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L8, dst=(nil), src=(nil)
+a format: assem= movq 48(`s0), `d0, dst=0x55fbe2518410, src=0x55fbe25183f0
+a format: assem= movq -24(`s0), `d0, dst=0x55fbe25184c0, src=0x55fbe25184a0
+a format: assem= movq 24(`s0), `d0
+, dst=0x55fbe27def50, src=0x55fbe27def30
+a format: assem= movq $8, `d0, dst=0x55fbe25187b0, src=(nil)
+a format: assem= imulq `s0, dst=0x55fbe2518880, src=0x55fbe2518840
+a format: assem= addq `s1, `d0, dst=0x55fbe2518a00, src=0x55fbe25189e0
+a format: assem= movq (`s0), `d0, dst=0x55fbe2518ab0, src=0x55fbe2518a90
+a format: assem= movq 32(`s0), `d0
+, dst=0x55fbe27dba60, src=0x55fbe27dba40
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2518b40
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L5, dst=(nil), src=(nil)
+a format: assem= leaq L3(%rip), `d0, dst=0x55fbe2518d60, src=(nil)
+a format: assem=L6, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55fbe2519010, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55fbe25190a0
+a format: assem= callq print, dst=0x55fbe2519260, src=0x55fbe25191e0
+a format: assem= movq 32(`s0), `d0
+, dst=0x55fbe27dbe70, src=0x55fbe27dbe50
+a format: assem= movq 16(`s0), `d0
+, dst=0x55fbe27e2f10, src=0x55fbe27e2ef0
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55fbe2519310
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+a format: assem=L7, dst=(nil), src=(nil)
+a format: assem= movq 32(`s0), `d0
+, dst=0x55fbe27dbfe0, src=0x55fbe27dbfc0
+a format: assem= addq $1, `d0, dst=0x55fbe2519600, src=0x55fbe25195e0
+a format: assem= movq `s1, 32(`s0)
+, dst=(nil), src=0x55fbe27dc150
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L4, dst=(nil), src=(nil)
+a format: assem= leaq L2(%rip), `d0, dst=0x55fbe25198b0, src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L35, dst=(nil), src=(nil)
+a format: assem= addq $40, %rsp, dst=0x55fbe2519b10, src=0x55fbe2519af0

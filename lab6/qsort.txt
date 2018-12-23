@@ -1,0 +1,6343 @@
+doProc for function tigermain:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t146,
+        TEMP t113),
+       MOVE(
+        TEMP t147,
+        TEMP t112)),
+      MOVE(
+       TEMP t148,
+       TEMP t111)),
+     MOVE(
+      TEMP t149,
+      TEMP t110)),
+    MOVE(
+     TEMP t150,
+     TEMP t109)),
+   MOVE(
+    TEMP t151,
+    TEMP t108)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t107,
+     ESEQ(
+      SEQ(
+       MOVE(
+        MEM(
+         BINOP(PLUS,
+          TEMP t106,
+          CONST -8)),
+        CONST 16),
+       SEQ(
+        EXP(
+         CONST 0),
+        SEQ(
+         MOVE(
+          MEM(
+           BINOP(PLUS,
+            TEMP t106,
+            CONST -16)),
+          CALL(
+           NAME initArray,
+            CONST 0,
+            MEM(
+             BINOP(PLUS,
+              TEMP t106,
+              CONST -8)),
+            CONST 0)),
+         EXP(
+          CONST 0)))),
+      CALL(
+       NAME dosort,
+        TEMP t106))),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t113,
+          TEMP t146),
+         MOVE(
+          TEMP t112,
+          TEMP t147)),
+        MOVE(
+         TEMP t111,
+         TEMP t148)),
+       MOVE(
+        TEMP t110,
+        TEMP t149)),
+      MOVE(
+       TEMP t109,
+       TEMP t150)),
+     MOVE(
+      TEMP t108,
+      TEMP t151)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t146,
+  TEMP t113)
+ MOVE(
+  TEMP t147,
+  TEMP t112)
+ MOVE(
+  TEMP t148,
+  TEMP t111)
+ MOVE(
+  TEMP t149,
+  TEMP t110)
+ MOVE(
+  TEMP t150,
+  TEMP t109)
+ MOVE(
+  TEMP t151,
+  TEMP t108)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  CONST 16)
+ MOVE(
+  TEMP t155,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -16))
+ MOVE(
+  TEMP t154,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t155),
+  TEMP t154)
+ MOVE(
+  TEMP t107,
+  CALL(
+   NAME dosort,
+    TEMP t106))
+ MOVE(
+  TEMP t113,
+  TEMP t146)
+ MOVE(
+  TEMP t112,
+  TEMP t147)
+ MOVE(
+  TEMP t111,
+  TEMP t148)
+ MOVE(
+  TEMP t110,
+  TEMP t149)
+ MOVE(
+  TEMP t109,
+  TEMP t150)
+ MOVE(
+  TEMP t108,
+  TEMP t151)
+-------====Linearlized=====-----
+ LABEL L34
+ MOVE(
+  TEMP t146,
+  TEMP t113)
+ MOVE(
+  TEMP t147,
+  TEMP t112)
+ MOVE(
+  TEMP t148,
+  TEMP t111)
+ MOVE(
+  TEMP t149,
+  TEMP t110)
+ MOVE(
+  TEMP t150,
+  TEMP t109)
+ MOVE(
+  TEMP t151,
+  TEMP t108)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  CONST 16)
+ MOVE(
+  TEMP t155,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -16))
+ MOVE(
+  TEMP t154,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t155),
+  TEMP t154)
+ MOVE(
+  TEMP t107,
+  CALL(
+   NAME dosort,
+    TEMP t106))
+ MOVE(
+  TEMP t113,
+  TEMP t146)
+ MOVE(
+  TEMP t112,
+  TEMP t147)
+ MOVE(
+  TEMP t111,
+  TEMP t148)
+ MOVE(
+  TEMP t110,
+  TEMP t149)
+ MOVE(
+  TEMP t109,
+  TEMP t150)
+ MOVE(
+  TEMP t108,
+  TEMP t151)
+ JUMP(
+  NAME L33)
+------====Basic block=====-------
+ LABEL L34
+ MOVE(
+  TEMP t146,
+  TEMP t113)
+ MOVE(
+  TEMP t147,
+  TEMP t112)
+ MOVE(
+  TEMP t148,
+  TEMP t111)
+ MOVE(
+  TEMP t149,
+  TEMP t110)
+ MOVE(
+  TEMP t150,
+  TEMP t109)
+ MOVE(
+  TEMP t151,
+  TEMP t108)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  CONST 16)
+ MOVE(
+  TEMP t155,
+  BINOP(PLUS,
+   TEMP t106,
+   CONST -16))
+ MOVE(
+  TEMP t154,
+  CALL(
+   NAME initArray,
+    CONST 0,
+    MEM(
+     BINOP(PLUS,
+      TEMP t106,
+      CONST -8)),
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t155),
+  TEMP t154)
+ MOVE(
+  TEMP t107,
+  CALL(
+   NAME dosort,
+    TEMP t106))
+ MOVE(
+  TEMP t113,
+  TEMP t146)
+ MOVE(
+  TEMP t112,
+  TEMP t147)
+ MOVE(
+  TEMP t111,
+  TEMP t148)
+ MOVE(
+  TEMP t110,
+  TEMP t149)
+ MOVE(
+  TEMP t109,
+  TEMP t150)
+ MOVE(
+  TEMP t108,
+  TEMP t151)
+ JUMP(
+  NAME L33)
+ LABEL L33
+-------====trace=====-----
+a format: assem=L34, dst=(nil), src=(nil)
+L34:
+a format: assem= movq `s0, `d0, dst=0x55a6f65f13c0, src=0x55a6f65f13a0
+ movq %rbx, 146
+a format: assem= movq `s0, `d0, dst=0x55a6f65f1470, src=0x55a6f65f1450
+ movq %rbp, 147
+a format: assem= movq `s0, `d0, dst=0x55a6f65f1520, src=0x55a6f65f1500
+ movq %r12, 148
+a format: assem= movq `s0, `d0, dst=0x55a6f65f15d0, src=0x55a6f65f15b0
+ movq %r13, 149
+a format: assem= movq `s0, `d0, dst=0x55a6f65f1680, src=0x55a6f65f1660
+ movq %r14, 150
+a format: assem= movq `s0, `d0, dst=0x55a6f65f1730, src=0x55a6f65f1710
+ movq %r15, 151
+a format: assem= movq $16, `d0, dst=0x55a6f65f1830, src=(nil)
+ movq $16, 156
+a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x55a6f65f18e0
+ movq 156, ?-8#(%rsp)
+a format: assem= leaq ?0#(`s0), `d0, dst=0x55a6f65f1a00, src=0x55a6f65f19e0
+ leaq ?0#(%rsp), 157
+a format: assem= addq $-16, `d0, dst=0x55a6f65f1ab0, src=0x55a6f65f1a90
+ addq $-16, 157
+a format: assem= movq `s0, `d0, dst=0x55a6f65f1b60, src=0x55a6f65f1b40
+ movq 157, 155
+a format: assem= movq $0, `d0, dst=0x55a6f65f1cd0, src=(nil)
+ movq $0, 159
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f65f1d60
+ movq 159, (%rsp)
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f65f1e80, src=0x55a6f65f1e60
+ movq ?-8#(%rsp), 160
+a format: assem= movq `s0, `d0, dst=0x55a6f65f1f30, src=0x55a6f65f1f10
+ movq 160, %rdi
+a format: assem= movq $0, `d0, dst=0x55a6f65f2030, src=(nil)
+ movq $0, 161
+a format: assem= movq `s0, `d0, dst=0x55a6f65f20e0, src=0x55a6f65f20c0
+ movq 161, %rsi
+a format: assem= callq initArray, dst=0x55a6f65f2250, src=0x55a6f65d9200
+ callq initArray
+a format: assem= movq `s0, `d0, dst=0x55a6f65f2300, src=0x55a6f65f22e0
+ movq %rax, 154
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55a6f65f23b0
+ movq 154, (155)
+a format: assem= leaq ?0#(%rsp), `d0, dst=0x55a6f65f24d0, src=0x55a6f65f24b0
+ leaq ?0#(%rsp), 162
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f65f2560
+ movq 162, (%rsp)
+a format: assem= callq dosort, dst=0x55a6f65f2650, src=0x55a6f65d9200
+ callq dosort
+a format: assem= movq `s0, `d0, dst=0x55a6f65f2700, src=0x55a6f65f26e0
+ movq %rax, %rax
+a format: assem= movq `s0, `d0, dst=0x55a6f65f27b0, src=0x55a6f65f2790
+ movq 146, %rbx
+a format: assem= movq `s0, `d0, dst=0x55a6f65f2860, src=0x55a6f65f2840
+ movq 147, %rbp
+a format: assem= movq `s0, `d0, dst=0x55a6f65f2910, src=0x55a6f65f28f0
+ movq 148, %r12
+a format: assem= movq `s0, `d0, dst=0x55a6f65f29c0, src=0x55a6f65f29a0
+ movq 149, %r13
+a format: assem= movq `s0, `d0, dst=0x55a6f65f2a70, src=0x55a6f65f2a50
+ movq 150, %r14
+a format: assem= movq `s0, `d0, dst=0x55a6f65f2b20, src=0x55a6f65f2b00
+ movq 151, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L33
+a format: assem=L33, dst=(nil), src=(nil)
+L33:
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+Simplify!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Freeze!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+no color left!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+rewrite!
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem=L34, dst=(nil), src=(nil)
+a format: assem= movq $16, `d0, dst=0x55a6f65f1830, src=(nil)
+a format: assem= movq `s1, 24(`s0), dst=(nil), src=0x55a6f65f18e0
+a format: assem= leaq 32(`s0), `d0, dst=0x55a6f65f1a00, src=0x55a6f65f19e0
+a format: assem= addq $-16, `d0, dst=0x55a6f65f1ab0, src=0x55a6f65f1a90
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x55a6f66c96a0
+a format: assem= movq $0, `d0, dst=0x55a6f65f1cd0, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f65f1d60
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f65f1e80, src=0x55a6f65f1e60
+a format: assem= movq $0, `d0, dst=0x55a6f65f2030, src=(nil)
+a format: assem= callq initArray, dst=0x55a6f65f2250, src=0x55a6f65d9200
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f66c97a0, src=0x55a6f66c9780
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55a6f65f23b0
+a format: assem= leaq 32(%rsp), `d0, dst=0x55a6f65f24d0, src=0x55a6f65f24b0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f65f2560
+a format: assem= callq dosort, dst=0x55a6f65f2650, src=0x55a6f65d9200
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L33, dst=(nil), src=(nil)
+doProc for function dosort:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t140,
+        TEMP t113),
+       MOVE(
+        TEMP t141,
+        TEMP t112)),
+      MOVE(
+       TEMP t142,
+       TEMP t111)),
+     MOVE(
+      TEMP t143,
+      TEMP t110)),
+    MOVE(
+     TEMP t144,
+     TEMP t109)),
+   MOVE(
+    TEMP t145,
+    TEMP t108)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t107,
+     ESEQ(
+      SEQ(
+       EXP(
+        CALL(
+         NAME init,
+          MEM(
+           BINOP(PLUS,
+            CONST 8,
+            TEMP t106)))),
+       SEQ(
+        EXP(
+         CALL(
+          NAME quicksort,
+           MEM(
+            BINOP(PLUS,
+             CONST 8,
+             TEMP t106)),
+           CONST 0,
+           BINOP(MINUS,
+            MEM(
+             BINOP(PLUS,
+              MEM(
+               BINOP(PLUS,
+                CONST 8,
+                TEMP t106)),
+              CONST -8)),
+            CONST 1))),
+        SEQ(
+         MOVE(
+          TEMP t139,
+          CONST 0),
+         SEQ(
+          CJUMP(GT,
+           TEMP t139,
+           BINOP(MINUS,
+            MEM(
+             BINOP(PLUS,
+              MEM(
+               BINOP(PLUS,
+                CONST 8,
+                TEMP t106)),
+              CONST -8)),
+            CONST 1),
+           L28,L31),
+          SEQ(
+           LABEL L31,
+           SEQ(
+            EXP(
+             ESEQ(
+              EXP(
+               CALL(
+                NAME printi,
+                 MEM(
+                  BINOP(PLUS,
+                   CONST 8,
+                   MEM(
+                    BINOP(PLUS,
+                     CONST 8,
+                     TEMP t106)))),
+                 MEM(
+                  BINOP(PLUS,
+                   MEM(
+                    BINOP(PLUS,
+                     MEM(
+                      BINOP(PLUS,
+                       CONST 8,
+                       TEMP t106)),
+                     CONST -16)),
+                   BINOP(TIMES,
+                    TEMP t139,
+                    CONST 8))))),
+              CALL(
+               NAME print,
+                MEM(
+                 BINOP(PLUS,
+                  CONST 8,
+                  MEM(
+                   BINOP(PLUS,
+                    CONST 8,
+                    TEMP t106)))),
+                NAME L29))),
+            SEQ(
+             CJUMP(EQ,
+              TEMP t139,
+              BINOP(MINUS,
+               MEM(
+                BINOP(PLUS,
+                 MEM(
+                  BINOP(PLUS,
+                   CONST 8,
+                   TEMP t106)),
+                 CONST -8)),
+               CONST 1),
+              L28,L30),
+             SEQ(
+              LABEL L30,
+              SEQ(
+               MOVE(
+                TEMP t139,
+                BINOP(PLUS,
+                 TEMP t139,
+                 CONST 1)),
+               SEQ(
+                EXP(
+                 ESEQ(
+                  EXP(
+                   CALL(
+                    NAME printi,
+                     MEM(
+                      BINOP(PLUS,
+                       CONST 8,
+                       MEM(
+                        BINOP(PLUS,
+                         CONST 8,
+                         TEMP t106)))),
+                     MEM(
+                      BINOP(PLUS,
+                       MEM(
+                        BINOP(PLUS,
+                         MEM(
+                          BINOP(PLUS,
+                           CONST 8,
+                           TEMP t106)),
+                         CONST -16)),
+                       BINOP(TIMES,
+                        TEMP t139,
+                        CONST 8))))),
+                  CALL(
+                   NAME print,
+                    MEM(
+                     BINOP(PLUS,
+                      CONST 8,
+                      MEM(
+                       BINOP(PLUS,
+                        CONST 8,
+                        TEMP t106)))),
+                    NAME L29))),
+                SEQ(
+                 CJUMP(LT,
+                  TEMP t139,
+                  BINOP(MINUS,
+                   MEM(
+                    BINOP(PLUS,
+                     MEM(
+                      BINOP(PLUS,
+                       CONST 8,
+                       TEMP t106)),
+                     CONST -8)),
+                   CONST 1),
+                  L30,L28),
+                 LABEL L28))))))))))),
+      CALL(
+       NAME print,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          MEM(
+           BINOP(PLUS,
+            CONST 8,
+            TEMP t106)))),
+        NAME L32))),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t113,
+          TEMP t140),
+         MOVE(
+          TEMP t112,
+          TEMP t141)),
+        MOVE(
+         TEMP t111,
+         TEMP t142)),
+       MOVE(
+        TEMP t110,
+        TEMP t143)),
+      MOVE(
+       TEMP t109,
+       TEMP t144)),
+     MOVE(
+      TEMP t108,
+      TEMP t145)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t140,
+  TEMP t113)
+ MOVE(
+  TEMP t141,
+  TEMP t112)
+ MOVE(
+  TEMP t142,
+  TEMP t111)
+ MOVE(
+  TEMP t143,
+  TEMP t110)
+ MOVE(
+  TEMP t144,
+  TEMP t109)
+ MOVE(
+  TEMP t145,
+  TEMP t108)
+ EXP(
+  CALL(
+   NAME init,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ EXP(
+  CALL(
+   NAME quicksort,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    CONST 0,
+    BINOP(MINUS,
+     MEM(
+      BINOP(PLUS,
+       MEM(
+        BINOP(PLUS,
+         CONST 8,
+         TEMP t106)),
+       CONST -8)),
+     CONST 1)))
+ MOVE(
+  TEMP t139,
+  CONST 0)
+ CJUMP(GT,
+  TEMP t139,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L28,L31)
+ LABEL L31
+ EXP(
+  CALL(
+   NAME printi,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)),
+        CONST -16)),
+      BINOP(TIMES,
+       TEMP t139,
+       CONST 8)))))
+ EXP(
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L29))
+ CJUMP(EQ,
+  TEMP t139,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L28,L30)
+ LABEL L30
+ MOVE(
+  TEMP t139,
+  BINOP(PLUS,
+   TEMP t139,
+   CONST 1))
+ EXP(
+  CALL(
+   NAME printi,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)),
+        CONST -16)),
+      BINOP(TIMES,
+       TEMP t139,
+       CONST 8)))))
+ EXP(
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L29))
+ CJUMP(LT,
+  TEMP t139,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L30,L28)
+ LABEL L28
+ MOVE(
+  TEMP t107,
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L32))
+ MOVE(
+  TEMP t113,
+  TEMP t140)
+ MOVE(
+  TEMP t112,
+  TEMP t141)
+ MOVE(
+  TEMP t111,
+  TEMP t142)
+ MOVE(
+  TEMP t110,
+  TEMP t143)
+ MOVE(
+  TEMP t109,
+  TEMP t144)
+ MOVE(
+  TEMP t108,
+  TEMP t145)
+-------====Linearlized=====-----
+ LABEL L36
+ MOVE(
+  TEMP t140,
+  TEMP t113)
+ MOVE(
+  TEMP t141,
+  TEMP t112)
+ MOVE(
+  TEMP t142,
+  TEMP t111)
+ MOVE(
+  TEMP t143,
+  TEMP t110)
+ MOVE(
+  TEMP t144,
+  TEMP t109)
+ MOVE(
+  TEMP t145,
+  TEMP t108)
+ EXP(
+  CALL(
+   NAME init,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ EXP(
+  CALL(
+   NAME quicksort,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    CONST 0,
+    BINOP(MINUS,
+     MEM(
+      BINOP(PLUS,
+       MEM(
+        BINOP(PLUS,
+         CONST 8,
+         TEMP t106)),
+       CONST -8)),
+     CONST 1)))
+ MOVE(
+  TEMP t139,
+  CONST 0)
+ CJUMP(GT,
+  TEMP t139,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L28,L31)
+------====Basic block=====-------
+ LABEL L31
+ EXP(
+  CALL(
+   NAME printi,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)),
+        CONST -16)),
+      BINOP(TIMES,
+       TEMP t139,
+       CONST 8)))))
+ EXP(
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L29))
+ CJUMP(EQ,
+  TEMP t139,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L28,L30)
+------====Basic block=====-------
+ LABEL L30
+ MOVE(
+  TEMP t139,
+  BINOP(PLUS,
+   TEMP t139,
+   CONST 1))
+ EXP(
+  CALL(
+   NAME printi,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)),
+        CONST -16)),
+      BINOP(TIMES,
+       TEMP t139,
+       CONST 8)))))
+ EXP(
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L29))
+ CJUMP(LT,
+  TEMP t139,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L30,L28)
+------====Basic block=====-------
+ LABEL L28
+ MOVE(
+  TEMP t107,
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L32))
+ MOVE(
+  TEMP t113,
+  TEMP t140)
+ MOVE(
+  TEMP t112,
+  TEMP t141)
+ MOVE(
+  TEMP t111,
+  TEMP t142)
+ MOVE(
+  TEMP t110,
+  TEMP t143)
+ MOVE(
+  TEMP t109,
+  TEMP t144)
+ MOVE(
+  TEMP t108,
+  TEMP t145)
+ JUMP(
+  NAME L35)
+------====Basic block=====-------
+ LABEL L36
+ MOVE(
+  TEMP t140,
+  TEMP t113)
+ MOVE(
+  TEMP t141,
+  TEMP t112)
+ MOVE(
+  TEMP t142,
+  TEMP t111)
+ MOVE(
+  TEMP t143,
+  TEMP t110)
+ MOVE(
+  TEMP t144,
+  TEMP t109)
+ MOVE(
+  TEMP t145,
+  TEMP t108)
+ EXP(
+  CALL(
+   NAME init,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ EXP(
+  CALL(
+   NAME quicksort,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    CONST 0,
+    BINOP(MINUS,
+     MEM(
+      BINOP(PLUS,
+       MEM(
+        BINOP(PLUS,
+         CONST 8,
+         TEMP t106)),
+       CONST -8)),
+     CONST 1)))
+ MOVE(
+  TEMP t139,
+  CONST 0)
+ CJUMP(GT,
+  TEMP t139,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L28,L31)
+ LABEL L31
+ EXP(
+  CALL(
+   NAME printi,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)),
+        CONST -16)),
+      BINOP(TIMES,
+       TEMP t139,
+       CONST 8)))))
+ EXP(
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L29))
+ CJUMP(EQ,
+  TEMP t139,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L28,L30)
+ LABEL L30
+ MOVE(
+  TEMP t139,
+  BINOP(PLUS,
+   TEMP t139,
+   CONST 1))
+ EXP(
+  CALL(
+   NAME printi,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)),
+        CONST -16)),
+      BINOP(TIMES,
+       TEMP t139,
+       CONST 8)))))
+ EXP(
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L29))
+ CJUMP(LT,
+  TEMP t139,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L30,L28)
+ LABEL L28
+ MOVE(
+  TEMP t107,
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L32))
+ MOVE(
+  TEMP t113,
+  TEMP t140)
+ MOVE(
+  TEMP t112,
+  TEMP t141)
+ MOVE(
+  TEMP t111,
+  TEMP t142)
+ MOVE(
+  TEMP t110,
+  TEMP t143)
+ MOVE(
+  TEMP t109,
+  TEMP t144)
+ MOVE(
+  TEMP t108,
+  TEMP t145)
+ JUMP(
+  NAME L35)
+ LABEL L35
+-------====trace=====-----
+a format: assem=L36, dst=(nil), src=(nil)
+L36:
+a format: assem= movq `s0, `d0, dst=0x55a6f67dbfa0, src=0x55a6f67dbf80
+ movq %rbx, 140
+a format: assem= movq `s0, `d0, dst=0x55a6f67dc050, src=0x55a6f67dc030
+ movq %rbp, 141
+a format: assem= movq `s0, `d0, dst=0x55a6f67dc100, src=0x55a6f67dc0e0
+ movq %r12, 142
+a format: assem= movq `s0, `d0, dst=0x55a6f67dc1b0, src=0x55a6f67dc190
+ movq %r13, 143
+a format: assem= movq `s0, `d0, dst=0x55a6f67dc260, src=0x55a6f67dc240
+ movq %r14, 144
+a format: assem= movq `s0, `d0, dst=0x55a6f67dc310, src=0x55a6f67dc2f0
+ movq %r15, 145
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67dc4a0, src=0x55a6f67dc480
+ movq ?8#(%rsp), 166
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67dc530
+ movq 166, (%rsp)
+a format: assem= callq init, dst=0x55a6f67dc620, src=0x55a6f65d9200
+ callq init
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67dc7b0, src=0x55a6f67dc790
+ movq ?8#(%rsp), 168
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67dc840
+ movq 168, (%rsp)
+a format: assem= movq $0, `d0, dst=0x55a6f67dc940, src=(nil)
+ movq $0, 169
+a format: assem= movq `s0, `d0, dst=0x55a6f67dc9f0, src=0x55a6f67dc9d0
+ movq 169, %rdi
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67dcbf0, src=0x55a6f67dcbd0
+ movq ?8#(%rsp), 172
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f67dcca0, src=0x55a6f67dcc80
+ movq -8(172), 171
+a format: assem= movq `s0, `d0, dst=0x55a6f67dcd50, src=0x55a6f67dcd30
+ movq 171, 170
+a format: assem= subq $1, `d0, dst=0x55a6f67dcde0, src=(nil)
+ subq $1, 170
+a format: assem= movq `s0, `d0, dst=0x55a6f67dce90, src=0x55a6f67dce70
+ movq 170, %rsi
+a format: assem= callq quicksort, dst=0x55a6f67dcfc0, src=0x55a6f65d9200
+ callq quicksort
+a format: assem= movq $0, `d0, dst=0x55a6f67dd0c0, src=(nil)
+ movq $0, 173
+a format: assem= movq `s0, `d0, dst=0x55a6f67dd170, src=0x55a6f67dd150
+ movq 173, 139
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67dd370, src=0x55a6f67dd350
+ movq ?8#(%rsp), 176
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f67dd420, src=0x55a6f67dd400
+ movq -8(176), 175
+a format: assem= movq `s0, `d0, dst=0x55a6f67dd4d0, src=0x55a6f67dd4b0
+ movq 175, 174
+a format: assem= subq $1, `d0, dst=0x55a6f67dd560, src=(nil)
+ subq $1, 174
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f67dd610
+ cmpq 174, 139
+a format: assem= jg  `j0, dst=(nil), src=(nil)
+ jg  L28
+a format: assem=L31, dst=(nil), src=(nil)
+L31:
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67dd930, src=0x55a6f67dd910
+ movq ?8#(%rsp), 179
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67dd9e0, src=0x55a6f67dd9c0
+ movq 8(179), 178
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67dda70
+ movq 178, (%rsp)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67ddce0, src=0x55a6f67ddcc0
+ movq ?8#(%rsp), 183
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f67ddd90, src=0x55a6f67ddd70
+ movq -16(183), 182
+a format: assem= movq `s0, `d0, dst=0x55a6f67dde40, src=0x55a6f67dde20
+ movq 182, 181
+a format: assem= movq %rdx, `d0, dst=0x55a6f67ddfd0, src=0x55a6f67ddfb0
+ movq %rdx, 185
+a format: assem= movq `s0, %rax, dst=0x55a6f67de080, src=0x55a6f67de060
+ movq 139, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f67de1a0, src=(nil)
+ movq $8, 186
+a format: assem= imulq `s0, dst=0x55a6f67de270, src=0x55a6f67de230
+ imulq 186
+a format: assem= movq `s0, %rdx, dst=0x55a6f67de320, src=0x55a6f67de300
+ movq 185, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f67de3d0, src=0x55a6f67de3b0
+ movq %rax, 184
+a format: assem= addq `s1, `d0, dst=0x55a6f67de4a0, src=0x55a6f67de480
+ addq 184, 181
+a format: assem= movq (`s0), `d0, dst=0x55a6f67de550, src=0x55a6f67de530
+ movq (181), 180
+a format: assem= movq `s0, `d0, dst=0x55a6f67de600, src=0x55a6f67de5e0
+ movq 180, %rdi
+a format: assem= callq printi, dst=0x55a6f67de710, src=0x55a6f65d9200
+ callq printi
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67de910, src=0x55a6f67de8f0
+ movq ?8#(%rsp), 189
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67de9c0, src=0x55a6f67de9a0
+ movq 8(189), 188
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67dea50
+ movq 188, (%rsp)
+a format: assem= leaq L29(%rip), `d0, dst=0x55a6f67deb50, src=(nil)
+ leaq L29(%rip), 190
+a format: assem= movq `s0, `d0, dst=0x55a6f67dec00, src=0x55a6f67debe0
+ movq 190, %rdi
+a format: assem= callq print, dst=0x55a6f67ded10, src=0x55a6f65d9200
+ callq print
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67def10, src=0x55a6f67deef0
+ movq ?8#(%rsp), 193
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f67defc0, src=0x55a6f67defa0
+ movq -8(193), 192
+a format: assem= movq `s0, `d0, dst=0x55a6f67df070, src=0x55a6f67df050
+ movq 192, 191
+a format: assem= subq $1, `d0, dst=0x55a6f67df100, src=(nil)
+ subq $1, 191
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f67df1b0
+ cmpq 191, 139
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L28
+a format: assem=L30, dst=(nil), src=(nil)
+L30:
+a format: assem= movq `s0, `d0, dst=0x55a6f67df3f0, src=0x55a6f67df3d0
+ movq 139, 194
+a format: assem= addq $1, `d0, dst=0x55a6f67df4a0, src=0x55a6f67df480
+ addq $1, 194
+a format: assem= movq `s0, `d0, dst=0x55a6f67df550, src=0x55a6f67df530
+ movq 194, 139
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67df750, src=0x55a6f67df730
+ movq ?8#(%rsp), 197
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67df800, src=0x55a6f67df7e0
+ movq 8(197), 196
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67df890
+ movq 196, (%rsp)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67dfb00, src=0x55a6f67dfae0
+ movq ?8#(%rsp), 201
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f67dfbb0, src=0x55a6f67dfb90
+ movq -16(201), 200
+a format: assem= movq `s0, `d0, dst=0x55a6f67dfc60, src=0x55a6f67dfc40
+ movq 200, 199
+a format: assem= movq %rdx, `d0, dst=0x55a6f67dfdf0, src=0x55a6f67dfdd0
+ movq %rdx, 203
+a format: assem= movq `s0, %rax, dst=0x55a6f67dfea0, src=0x55a6f67dfe80
+ movq 139, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f67dffc0, src=(nil)
+ movq $8, 204
+a format: assem= imulq `s0, dst=0x55a6f67e0090, src=0x55a6f67e0050
+ imulq 204
+a format: assem= movq `s0, %rdx, dst=0x55a6f67e0140, src=0x55a6f67e0120
+ movq 203, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f67e01f0, src=0x55a6f67e01d0
+ movq %rax, 202
+a format: assem= addq `s1, `d0, dst=0x55a6f67e02c0, src=0x55a6f67e02a0
+ addq 202, 199
+a format: assem= movq (`s0), `d0, dst=0x55a6f67e0370, src=0x55a6f67e0350
+ movq (199), 198
+a format: assem= movq `s0, `d0, dst=0x55a6f67e0420, src=0x55a6f67e0400
+ movq 198, %rdi
+a format: assem= callq printi, dst=0x55a6f67e0530, src=0x55a6f65d9200
+ callq printi
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67e0730, src=0x55a6f67e0710
+ movq ?8#(%rsp), 207
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67e07e0, src=0x55a6f67e07c0
+ movq 8(207), 206
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67e0870
+ movq 206, (%rsp)
+a format: assem= leaq L29(%rip), `d0, dst=0x55a6f67e0970, src=(nil)
+ leaq L29(%rip), 208
+a format: assem= movq `s0, `d0, dst=0x55a6f67e0a20, src=0x55a6f67e0a00
+ movq 208, %rdi
+a format: assem= callq print, dst=0x55a6f67e0b30, src=0x55a6f65d9200
+ callq print
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67e0d30, src=0x55a6f67e0d10
+ movq ?8#(%rsp), 211
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f67e0de0, src=0x55a6f67e0dc0
+ movq -8(211), 210
+a format: assem= movq `s0, `d0, dst=0x55a6f67e0e90, src=0x55a6f67e0e70
+ movq 210, 209
+a format: assem= subq $1, `d0, dst=0x55a6f67e0f20, src=(nil)
+ subq $1, 209
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f67e0fd0
+ cmpq 209, 139
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+ jl  L30
+a format: assem=L28, dst=(nil), src=(nil)
+L28:
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f67e12f0, src=0x55a6f67e12d0
+ movq ?8#(%rsp), 214
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67e13a0, src=0x55a6f67e1380
+ movq 8(214), 213
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67e1430
+ movq 213, (%rsp)
+a format: assem= leaq L32(%rip), `d0, dst=0x55a6f67e1530, src=(nil)
+ leaq L32(%rip), 215
+a format: assem= movq `s0, `d0, dst=0x55a6f67e15e0, src=0x55a6f67e15c0
+ movq 215, %rdi
+a format: assem= callq print, dst=0x55a6f67e16f0, src=0x55a6f65d9200
+ callq print
+a format: assem= movq `s0, `d0, dst=0x55a6f67e17a0, src=0x55a6f67e1780
+ movq %rax, %rax
+a format: assem= movq `s0, `d0, dst=0x55a6f67e1850, src=0x55a6f67e1830
+ movq 140, %rbx
+a format: assem= movq `s0, `d0, dst=0x55a6f67e1900, src=0x55a6f67e18e0
+ movq 141, %rbp
+a format: assem= movq `s0, `d0, dst=0x55a6f67e19b0, src=0x55a6f67e1990
+ movq 142, %r12
+a format: assem= movq `s0, `d0, dst=0x55a6f67e1a60, src=0x55a6f67e1a40
+ movq 143, %r13
+a format: assem= movq `s0, `d0, dst=0x55a6f67e1b10, src=0x55a6f67e1af0
+ movq 144, %r14
+a format: assem= movq `s0, `d0, dst=0x55a6f67e1bc0, src=0x55a6f67e1ba0
+ movq 145, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L35
+a format: assem=L35, dst=(nil), src=(nil)
+L35:
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+select a spill node!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+no color left!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+rewrite!
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Freeze!
+Simplify!
+select a spill node!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem=L36, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67dc4a0, src=0x55a6f67dc480
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67dc530
+a format: assem= callq init, dst=0x55a6f67dc620, src=0x55a6f65d9200
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67dc7b0, src=0x55a6f67dc790
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67dc840
+a format: assem= movq $0, `d0, dst=0x55a6f67dc940, src=(nil)
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67dcbf0, src=0x55a6f67dcbd0
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f67dcca0, src=0x55a6f67dcc80
+a format: assem= subq $1, `d0, dst=0x55a6f67dcde0, src=(nil)
+a format: assem= callq quicksort, dst=0x55a6f67dcfc0, src=0x55a6f65d9200
+a format: assem= movq $0, `d0, dst=0x55a6f67dd0c0, src=(nil)
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x55a6f6d18490
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67dd370, src=0x55a6f67dd350
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f67dd420, src=0x55a6f67dd400
+a format: assem= subq $1, `d0, dst=0x55a6f67dd560, src=(nil)
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f6d18590, src=0x55a6f6d18570
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f67dd610
+a format: assem= jg  `j0, dst=(nil), src=(nil)
+a format: assem=L31, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67dd930, src=0x55a6f67dd910
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67dd9e0, src=0x55a6f67dd9c0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67dda70
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67ddce0, src=0x55a6f67ddcc0
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f67ddd90, src=0x55a6f67ddd70
+a format: assem= movq `s0, `d0, dst=0x55a6f67dde40, src=0x55a6f67dde20
+a format: assem= movq %rdx, `d0, dst=0x55a6f67ddfd0, src=0x55a6f67ddfb0
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f6d18690, src=0x55a6f6d18670
+a format: assem= movq $8, `d0, dst=0x55a6f67de1a0, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f67de270, src=0x55a6f67de230
+a format: assem= movq `s0, %rdx, dst=0x55a6f67de320, src=0x55a6f67de300
+a format: assem= addq `s1, `d0, dst=0x55a6f67de4a0, src=0x55a6f67de480
+a format: assem= movq (`s0), `d0, dst=0x55a6f67de550, src=0x55a6f67de530
+a format: assem= callq printi, dst=0x55a6f67de710, src=0x55a6f65d9200
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67de910, src=0x55a6f67de8f0
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67de9c0, src=0x55a6f67de9a0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67dea50
+a format: assem= leaq L29(%rip), `d0, dst=0x55a6f67deb50, src=(nil)
+a format: assem= callq print, dst=0x55a6f67ded10, src=0x55a6f65d9200
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67def10, src=0x55a6f67deef0
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f67defc0, src=0x55a6f67defa0
+a format: assem= subq $1, `d0, dst=0x55a6f67df100, src=(nil)
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f6d18790, src=0x55a6f6d18770
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f67df1b0
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L30, dst=(nil), src=(nil)
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f6d18890, src=0x55a6f6d18870
+a format: assem= addq $1, `d0, dst=0x55a6f67df4a0, src=0x55a6f67df480
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x55a6f6d18990
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67df750, src=0x55a6f67df730
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67df800, src=0x55a6f67df7e0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67df890
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67dfb00, src=0x55a6f67dfae0
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f67dfbb0, src=0x55a6f67dfb90
+a format: assem= movq %rdx, `d0, dst=0x55a6f67dfdf0, src=0x55a6f67dfdd0
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f6d18a90, src=0x55a6f6d18a70
+a format: assem= movq $8, `d0, dst=0x55a6f67dffc0, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f67e0090, src=0x55a6f67e0050
+a format: assem= movq `s0, %rdx, dst=0x55a6f67e0140, src=0x55a6f67e0120
+a format: assem= addq `s1, `d0, dst=0x55a6f67e02c0, src=0x55a6f67e02a0
+a format: assem= movq (`s0), `d0, dst=0x55a6f67e0370, src=0x55a6f67e0350
+a format: assem= callq printi, dst=0x55a6f67e0530, src=0x55a6f65d9200
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67e0730, src=0x55a6f67e0710
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67e07e0, src=0x55a6f67e07c0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67e0870
+a format: assem= leaq L29(%rip), `d0, dst=0x55a6f67e0970, src=(nil)
+a format: assem= callq print, dst=0x55a6f67e0b30, src=0x55a6f65d9200
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67e0d30, src=0x55a6f67e0d10
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f67e0de0, src=0x55a6f67e0dc0
+a format: assem= subq $1, `d0, dst=0x55a6f67e0f20, src=(nil)
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f6d18b90, src=0x55a6f6d18b70
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f67e0fd0
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+a format: assem=L28, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f67e12f0, src=0x55a6f67e12d0
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f67e13a0, src=0x55a6f67e1380
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f67e1430
+a format: assem= leaq L32(%rip), `d0, dst=0x55a6f67e1530, src=(nil)
+a format: assem= callq print, dst=0x55a6f67e16f0, src=0x55a6f65d9200
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L35, dst=(nil), src=(nil)
+doProc for function quicksort:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t133,
+        TEMP t113),
+       MOVE(
+        TEMP t134,
+        TEMP t112)),
+      MOVE(
+       TEMP t135,
+       TEMP t111)),
+     MOVE(
+      TEMP t136,
+      TEMP t110)),
+    MOVE(
+     TEMP t137,
+     TEMP t109)),
+   MOVE(
+    TEMP t138,
+    TEMP t108)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t107,
+     ESEQ(
+      SEQ(
+       MOVE(
+        MEM(
+         BINOP(PLUS,
+          TEMP t106,
+          CONST -8)),
+        TEMP t105),
+       SEQ(
+        MOVE(
+         MEM(
+          BINOP(PLUS,
+           TEMP t106,
+           CONST -16)),
+         TEMP t104),
+        MOVE(
+         MEM(
+          BINOP(PLUS,
+           TEMP t106,
+           CONST -24)),
+         MEM(
+          BINOP(PLUS,
+           MEM(
+            BINOP(PLUS,
+             MEM(
+              BINOP(PLUS,
+               CONST 8,
+               TEMP t106)),
+             CONST -16)),
+           BINOP(TIMES,
+            TEMP t105,
+            CONST 8)))))),
+      ESEQ(
+       SEQ(
+        CJUMP(LT,
+         TEMP t105,
+         TEMP t104,
+         L25,L26),
+        SEQ(
+         LABEL L25,
+         SEQ(
+          MOVE(
+           TEMP t132,
+           ESEQ(
+            SEQ(
+             SEQ(
+              LABEL L21,
+              SEQ(
+               CJUMP(EQ,
+                ESEQ(
+                 MOVE(
+                  TEMP t131,
+                  CONST 1),
+                 ESEQ(
+                  CJUMP(LT,
+                   MEM(
+                    BINOP(PLUS,
+                     TEMP t106,
+                     CONST -8)),
+                   MEM(
+                    BINOP(PLUS,
+                     TEMP t106,
+                     CONST -16)),
+                   L23,L24),
+                  ESEQ(
+                   LABEL L24,
+                   ESEQ(
+                    MOVE(
+                     TEMP t131,
+                     CONST 0),
+                    ESEQ(
+                     LABEL L23,
+                     TEMP t131))))),
+                CONST 0,
+                L4,L22),
+               SEQ(
+                LABEL L22,
+                SEQ(
+                 EXP(
+                  ESEQ(
+                   SEQ(
+                    SEQ(
+                     LABEL L11,
+                     SEQ(
+                      CJUMP(EQ,
+                       ESEQ(
+                        SEQ(
+                         CJUMP(LT,
+                          MEM(
+                           BINOP(PLUS,
+                            TEMP t106,
+                            CONST -8)),
+                          MEM(
+                           BINOP(PLUS,
+                            TEMP t106,
+                            CONST -16)),
+                          L6,L7),
+                         SEQ(
+                          LABEL L6,
+                          SEQ(
+                           MOVE(
+                            TEMP t127,
+                            ESEQ(
+                             MOVE(
+                              TEMP t128,
+                              CONST 1),
+                             ESEQ(
+                              CJUMP(LE,
+                               MEM(
+                                BINOP(PLUS,
+                                 TEMP t106,
+                                 CONST -24)),
+                               MEM(
+                                BINOP(PLUS,
+                                 MEM(
+                                  BINOP(PLUS,
+                                   MEM(
+                                    BINOP(PLUS,
+                                     CONST 8,
+                                     TEMP t106)),
+                                   CONST -16)),
+                                 BINOP(TIMES,
+                                  MEM(
+                                   BINOP(PLUS,
+                                    TEMP t106,
+                                    CONST -16)),
+                                  CONST 8))),
+                               L9,L10),
+                              ESEQ(
+                               LABEL L10,
+                               ESEQ(
+                                MOVE(
+                                 TEMP t128,
+                                 CONST 0),
+                                ESEQ(
+                                 LABEL L9,
+                                 TEMP t128)))))),
+                           SEQ(
+                            JUMP(
+                             NAME L8),
+                            SEQ(
+                             LABEL L7,
+                             SEQ(
+                              MOVE(
+                               TEMP t127,
+                               CONST 0),
+                              LABEL L8)))))),
+                        TEMP t127),
+                       CONST 0,
+                       L5,L12),
+                      SEQ(
+                       LABEL L12,
+                       SEQ(
+                        MOVE(
+                         MEM(
+                          BINOP(PLUS,
+                           TEMP t106,
+                           CONST -16)),
+                         BINOP(MINUS,
+                          MEM(
+                           BINOP(PLUS,
+                            TEMP t106,
+                            CONST -16)),
+                          CONST 1)),
+                        SEQ(
+                         JUMP(
+                          NAME L11),
+                         LABEL L5))))),
+                    SEQ(
+                     MOVE(
+                      MEM(
+                       BINOP(PLUS,
+                        MEM(
+                         BINOP(PLUS,
+                          MEM(
+                           BINOP(PLUS,
+                            CONST 8,
+                            TEMP t106)),
+                          CONST -16)),
+                        BINOP(TIMES,
+                         MEM(
+                          BINOP(PLUS,
+                           TEMP t106,
+                           CONST -8)),
+                         CONST 8))),
+                      MEM(
+                       BINOP(PLUS,
+                        MEM(
+                         BINOP(PLUS,
+                          MEM(
+                           BINOP(PLUS,
+                            CONST 8,
+                            TEMP t106)),
+                          CONST -16)),
+                        BINOP(TIMES,
+                         MEM(
+                          BINOP(PLUS,
+                           TEMP t106,
+                           CONST -16)),
+                         CONST 8)))),
+                     SEQ(
+                      LABEL L19,
+                      SEQ(
+                       CJUMP(EQ,
+                        ESEQ(
+                         SEQ(
+                          CJUMP(LT,
+                           MEM(
+                            BINOP(PLUS,
+                             TEMP t106,
+                             CONST -8)),
+                           MEM(
+                            BINOP(PLUS,
+                             TEMP t106,
+                             CONST -16)),
+                           L14,L15),
+                          SEQ(
+                           LABEL L14,
+                           SEQ(
+                            MOVE(
+                             TEMP t129,
+                             ESEQ(
+                              MOVE(
+                               TEMP t130,
+                               CONST 1),
+                              ESEQ(
+                               CJUMP(GE,
+                                MEM(
+                                 BINOP(PLUS,
+                                  TEMP t106,
+                                  CONST -24)),
+                                MEM(
+                                 BINOP(PLUS,
+                                  MEM(
+                                   BINOP(PLUS,
+                                    MEM(
+                                     BINOP(PLUS,
+                                      CONST 8,
+                                      TEMP t106)),
+                                    CONST -16)),
+                                  BINOP(TIMES,
+                                   MEM(
+                                    BINOP(PLUS,
+                                     TEMP t106,
+                                     CONST -8)),
+                                   CONST 8))),
+                                L17,L18),
+                               ESEQ(
+                                LABEL L18,
+                                ESEQ(
+                                 MOVE(
+                                  TEMP t130,
+                                  CONST 0),
+                                 ESEQ(
+                                  LABEL L17,
+                                  TEMP t130)))))),
+                            SEQ(
+                             JUMP(
+                              NAME L16),
+                             SEQ(
+                              LABEL L15,
+                              SEQ(
+                               MOVE(
+                                TEMP t129,
+                                CONST 0),
+                               LABEL L16)))))),
+                         TEMP t129),
+                        CONST 0,
+                        L13,L20),
+                       SEQ(
+                        LABEL L20,
+                        SEQ(
+                         MOVE(
+                          MEM(
+                           BINOP(PLUS,
+                            TEMP t106,
+                            CONST -8)),
+                          BINOP(PLUS,
+                           MEM(
+                            BINOP(PLUS,
+                             TEMP t106,
+                             CONST -8)),
+                           CONST 1)),
+                         SEQ(
+                          JUMP(
+                           NAME L19),
+                          LABEL L13))))))),
+                   ESEQ(
+                    MOVE(
+                     MEM(
+                      BINOP(PLUS,
+                       MEM(
+                        BINOP(PLUS,
+                         MEM(
+                          BINOP(PLUS,
+                           CONST 8,
+                           TEMP t106)),
+                         CONST -16)),
+                       BINOP(TIMES,
+                        MEM(
+                         BINOP(PLUS,
+                          TEMP t106,
+                          CONST -16)),
+                        CONST 8))),
+                     MEM(
+                      BINOP(PLUS,
+                       MEM(
+                        BINOP(PLUS,
+                         MEM(
+                          BINOP(PLUS,
+                           CONST 8,
+                           TEMP t106)),
+                         CONST -16)),
+                       BINOP(TIMES,
+                        MEM(
+                         BINOP(PLUS,
+                          TEMP t106,
+                          CONST -8)),
+                        CONST 8)))),
+                    CONST 0))),
+                 SEQ(
+                  JUMP(
+                   NAME L21),
+                  LABEL L4))))),
+             SEQ(
+              MOVE(
+               MEM(
+                BINOP(PLUS,
+                 MEM(
+                  BINOP(PLUS,
+                   MEM(
+                    BINOP(PLUS,
+                     CONST 8,
+                     TEMP t106)),
+                   CONST -16)),
+                 BINOP(TIMES,
+                  MEM(
+                   BINOP(PLUS,
+                    TEMP t106,
+                    CONST -8)),
+                  CONST 8))),
+               MEM(
+                BINOP(PLUS,
+                 TEMP t106,
+                 CONST -24))),
+              EXP(
+               CALL(
+                NAME quicksort,
+                 MEM(
+                  BINOP(PLUS,
+                   CONST 8,
+                   TEMP t106)),
+                 TEMP t105,
+                 BINOP(MINUS,
+                  MEM(
+                   BINOP(PLUS,
+                    TEMP t106,
+                    CONST -8)),
+                  CONST 1))))),
+            CALL(
+             NAME quicksort,
+              MEM(
+               BINOP(PLUS,
+                CONST 8,
+                TEMP t106)),
+              BINOP(PLUS,
+               MEM(
+                BINOP(PLUS,
+                 TEMP t106,
+                 CONST -8)),
+               CONST 1),
+              TEMP t104))),
+          SEQ(
+           JUMP(
+            NAME L27),
+           SEQ(
+            LABEL L26,
+            SEQ(
+             MOVE(
+              TEMP t132,
+              ESEQ(
+               EXP(
+                CONST 0),
+               CONST 0)),
+             LABEL L27)))))),
+       TEMP t132))),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t113,
+          TEMP t133),
+         MOVE(
+          TEMP t112,
+          TEMP t134)),
+        MOVE(
+         TEMP t111,
+         TEMP t135)),
+       MOVE(
+        TEMP t110,
+        TEMP t136)),
+      MOVE(
+       TEMP t109,
+       TEMP t137)),
+     MOVE(
+      TEMP t108,
+      TEMP t138)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t133,
+  TEMP t113)
+ MOVE(
+  TEMP t134,
+  TEMP t112)
+ MOVE(
+  TEMP t135,
+  TEMP t111)
+ MOVE(
+  TEMP t136,
+  TEMP t110)
+ MOVE(
+  TEMP t137,
+  TEMP t109)
+ MOVE(
+  TEMP t138,
+  TEMP t108)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  TEMP t105)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  TEMP t104)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t105,
+     CONST 8))))
+ CJUMP(LT,
+  TEMP t105,
+  TEMP t104,
+  L25,L26)
+ LABEL L25
+ LABEL L21
+ MOVE(
+  TEMP t131,
+  CONST 1)
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  L23,L24)
+ LABEL L24
+ MOVE(
+  TEMP t131,
+  CONST 0)
+ LABEL L23
+ CJUMP(EQ,
+  TEMP t131,
+  CONST 0,
+  L4,L22)
+ LABEL L22
+ LABEL L11
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  L6,L7)
+ LABEL L6
+ MOVE(
+  TEMP t128,
+  CONST 1)
+ CJUMP(LE,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -16)),
+     CONST 8))),
+  L9,L10)
+ LABEL L10
+ MOVE(
+  TEMP t128,
+  CONST 0)
+ LABEL L9
+ MOVE(
+  TEMP t127,
+  TEMP t128)
+ JUMP(
+  NAME L8)
+ LABEL L7
+ MOVE(
+  TEMP t127,
+  CONST 0)
+ LABEL L8
+ CJUMP(EQ,
+  TEMP t127,
+  CONST 0,
+  L5,L12)
+ LABEL L12
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     TEMP t106,
+     CONST -16)),
+   CONST 1))
+ JUMP(
+  NAME L11)
+ LABEL L5
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -16)),
+     CONST 8))))
+ LABEL L19
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  L14,L15)
+ LABEL L14
+ MOVE(
+  TEMP t130,
+  CONST 1)
+ CJUMP(GE,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  L17,L18)
+ LABEL L18
+ MOVE(
+  TEMP t130,
+  CONST 0)
+ LABEL L17
+ MOVE(
+  TEMP t129,
+  TEMP t130)
+ JUMP(
+  NAME L16)
+ LABEL L15
+ MOVE(
+  TEMP t129,
+  CONST 0)
+ LABEL L16
+ CJUMP(EQ,
+  TEMP t129,
+  CONST 0,
+  L13,L20)
+ LABEL L20
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  BINOP(PLUS,
+   MEM(
+    BINOP(PLUS,
+     TEMP t106,
+     CONST -8)),
+   CONST 1))
+ JUMP(
+  NAME L19)
+ LABEL L13
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -16)),
+     CONST 8))),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))))
+ JUMP(
+  NAME L21)
+ LABEL L4
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)))
+ EXP(
+  CALL(
+   NAME quicksort,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    TEMP t105,
+    BINOP(MINUS,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 1)))
+ MOVE(
+  TEMP t132,
+  CALL(
+   NAME quicksort,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 1),
+    TEMP t104))
+ JUMP(
+  NAME L27)
+ LABEL L26
+ MOVE(
+  TEMP t132,
+  CONST 0)
+ LABEL L27
+ MOVE(
+  TEMP t107,
+  TEMP t132)
+ MOVE(
+  TEMP t113,
+  TEMP t133)
+ MOVE(
+  TEMP t112,
+  TEMP t134)
+ MOVE(
+  TEMP t111,
+  TEMP t135)
+ MOVE(
+  TEMP t110,
+  TEMP t136)
+ MOVE(
+  TEMP t109,
+  TEMP t137)
+ MOVE(
+  TEMP t108,
+  TEMP t138)
+-------====Linearlized=====-----
+ LABEL L38
+ MOVE(
+  TEMP t133,
+  TEMP t113)
+ MOVE(
+  TEMP t134,
+  TEMP t112)
+ MOVE(
+  TEMP t135,
+  TEMP t111)
+ MOVE(
+  TEMP t136,
+  TEMP t110)
+ MOVE(
+  TEMP t137,
+  TEMP t109)
+ MOVE(
+  TEMP t138,
+  TEMP t108)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  TEMP t105)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  TEMP t104)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t105,
+     CONST 8))))
+ CJUMP(LT,
+  TEMP t105,
+  TEMP t104,
+  L25,L26)
+------====Basic block=====-------
+ LABEL L25
+ JUMP(
+  NAME L21)
+------====Basic block=====-------
+ LABEL L21
+ MOVE(
+  TEMP t131,
+  CONST 1)
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  L23,L24)
+------====Basic block=====-------
+ LABEL L24
+ MOVE(
+  TEMP t131,
+  CONST 0)
+ JUMP(
+  NAME L23)
+------====Basic block=====-------
+ LABEL L23
+ CJUMP(EQ,
+  TEMP t131,
+  CONST 0,
+  L4,L22)
+------====Basic block=====-------
+ LABEL L22
+ JUMP(
+  NAME L11)
+------====Basic block=====-------
+ LABEL L11
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  L6,L7)
+------====Basic block=====-------
+ LABEL L6
+ MOVE(
+  TEMP t128,
+  CONST 1)
+ CJUMP(LE,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -16)),
+     CONST 8))),
+  L9,L10)
+------====Basic block=====-------
+ LABEL L10
+ MOVE(
+  TEMP t128,
+  CONST 0)
+ JUMP(
+  NAME L9)
+------====Basic block=====-------
+ LABEL L9
+ MOVE(
+  TEMP t127,
+  TEMP t128)
+ JUMP(
+  NAME L8)
+------====Basic block=====-------
+ LABEL L7
+ MOVE(
+  TEMP t127,
+  CONST 0)
+ JUMP(
+  NAME L8)
+------====Basic block=====-------
+ LABEL L8
+ CJUMP(EQ,
+  TEMP t127,
+  CONST 0,
+  L5,L12)
+------====Basic block=====-------
+ LABEL L12
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     TEMP t106,
+     CONST -16)),
+   CONST 1))
+ JUMP(
+  NAME L11)
+------====Basic block=====-------
+ LABEL L5
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -16)),
+     CONST 8))))
+ JUMP(
+  NAME L19)
+------====Basic block=====-------
+ LABEL L19
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  L14,L15)
+------====Basic block=====-------
+ LABEL L14
+ MOVE(
+  TEMP t130,
+  CONST 1)
+ CJUMP(GE,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  L17,L18)
+------====Basic block=====-------
+ LABEL L18
+ MOVE(
+  TEMP t130,
+  CONST 0)
+ JUMP(
+  NAME L17)
+------====Basic block=====-------
+ LABEL L17
+ MOVE(
+  TEMP t129,
+  TEMP t130)
+ JUMP(
+  NAME L16)
+------====Basic block=====-------
+ LABEL L15
+ MOVE(
+  TEMP t129,
+  CONST 0)
+ JUMP(
+  NAME L16)
+------====Basic block=====-------
+ LABEL L16
+ CJUMP(EQ,
+  TEMP t129,
+  CONST 0,
+  L13,L20)
+------====Basic block=====-------
+ LABEL L20
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  BINOP(PLUS,
+   MEM(
+    BINOP(PLUS,
+     TEMP t106,
+     CONST -8)),
+   CONST 1))
+ JUMP(
+  NAME L19)
+------====Basic block=====-------
+ LABEL L13
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -16)),
+     CONST 8))),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))))
+ JUMP(
+  NAME L21)
+------====Basic block=====-------
+ LABEL L4
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)))
+ EXP(
+  CALL(
+   NAME quicksort,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    TEMP t105,
+    BINOP(MINUS,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 1)))
+ MOVE(
+  TEMP t132,
+  CALL(
+   NAME quicksort,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 1),
+    TEMP t104))
+ JUMP(
+  NAME L27)
+------====Basic block=====-------
+ LABEL L26
+ MOVE(
+  TEMP t132,
+  CONST 0)
+ JUMP(
+  NAME L27)
+------====Basic block=====-------
+ LABEL L27
+ MOVE(
+  TEMP t107,
+  TEMP t132)
+ MOVE(
+  TEMP t113,
+  TEMP t133)
+ MOVE(
+  TEMP t112,
+  TEMP t134)
+ MOVE(
+  TEMP t111,
+  TEMP t135)
+ MOVE(
+  TEMP t110,
+  TEMP t136)
+ MOVE(
+  TEMP t109,
+  TEMP t137)
+ MOVE(
+  TEMP t108,
+  TEMP t138)
+ JUMP(
+  NAME L37)
+------====Basic block=====-------
+ LABEL L38
+ MOVE(
+  TEMP t133,
+  TEMP t113)
+ MOVE(
+  TEMP t134,
+  TEMP t112)
+ MOVE(
+  TEMP t135,
+  TEMP t111)
+ MOVE(
+  TEMP t136,
+  TEMP t110)
+ MOVE(
+  TEMP t137,
+  TEMP t109)
+ MOVE(
+  TEMP t138,
+  TEMP t108)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  TEMP t105)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  TEMP t104)
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t105,
+     CONST 8))))
+ CJUMP(LT,
+  TEMP t105,
+  TEMP t104,
+  L25,L26)
+ LABEL L26
+ MOVE(
+  TEMP t132,
+  CONST 0)
+ LABEL L27
+ MOVE(
+  TEMP t107,
+  TEMP t132)
+ MOVE(
+  TEMP t113,
+  TEMP t133)
+ MOVE(
+  TEMP t112,
+  TEMP t134)
+ MOVE(
+  TEMP t111,
+  TEMP t135)
+ MOVE(
+  TEMP t110,
+  TEMP t136)
+ MOVE(
+  TEMP t109,
+  TEMP t137)
+ MOVE(
+  TEMP t108,
+  TEMP t138)
+ JUMP(
+  NAME L37)
+ LABEL L25
+ LABEL L21
+ MOVE(
+  TEMP t131,
+  CONST 1)
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  L23,L24)
+ LABEL L24
+ MOVE(
+  TEMP t131,
+  CONST 0)
+ LABEL L23
+ CJUMP(EQ,
+  TEMP t131,
+  CONST 0,
+  L4,L22)
+ LABEL L22
+ LABEL L11
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  L6,L7)
+ LABEL L7
+ MOVE(
+  TEMP t127,
+  CONST 0)
+ LABEL L8
+ CJUMP(EQ,
+  TEMP t127,
+  CONST 0,
+  L5,L12)
+ LABEL L12
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     TEMP t106,
+     CONST -16)),
+   CONST 1))
+ JUMP(
+  NAME L11)
+ LABEL L6
+ MOVE(
+  TEMP t128,
+  CONST 1)
+ CJUMP(LE,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -16)),
+     CONST 8))),
+  L9,L10)
+ LABEL L10
+ MOVE(
+  TEMP t128,
+  CONST 0)
+ LABEL L9
+ MOVE(
+  TEMP t127,
+  TEMP t128)
+ JUMP(
+  NAME L8)
+ LABEL L5
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -16)),
+     CONST 8))))
+ LABEL L19
+ CJUMP(LT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -16)),
+  L14,L15)
+ LABEL L15
+ MOVE(
+  TEMP t129,
+  CONST 0)
+ LABEL L16
+ CJUMP(EQ,
+  TEMP t129,
+  CONST 0,
+  L13,L20)
+ LABEL L20
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -8)),
+  BINOP(PLUS,
+   MEM(
+    BINOP(PLUS,
+     TEMP t106,
+     CONST -8)),
+   CONST 1))
+ JUMP(
+  NAME L19)
+ LABEL L14
+ MOVE(
+  TEMP t130,
+  CONST 1)
+ CJUMP(GE,
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  L17,L18)
+ LABEL L18
+ MOVE(
+  TEMP t130,
+  CONST 0)
+ LABEL L17
+ MOVE(
+  TEMP t129,
+  TEMP t130)
+ JUMP(
+  NAME L16)
+ LABEL L13
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -16)),
+     CONST 8))),
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))))
+ JUMP(
+  NAME L21)
+ LABEL L4
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 8))),
+  MEM(
+   BINOP(PLUS,
+    TEMP t106,
+    CONST -24)))
+ EXP(
+  CALL(
+   NAME quicksort,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    TEMP t105,
+    BINOP(MINUS,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 1)))
+ MOVE(
+  TEMP t132,
+  CALL(
+   NAME quicksort,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106)),
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       TEMP t106,
+       CONST -8)),
+     CONST 1),
+    TEMP t104))
+ JUMP(
+  NAME L27)
+ LABEL L37
+-------====trace=====-----
+a format: assem=L38, dst=(nil), src=(nil)
+L38:
+a format: assem= movq `s0, `d0, dst=0x55a6f72d6e60, src=0x55a6f72d6e40
+ movq %rbx, 133
+a format: assem= movq `s0, `d0, dst=0x55a6f72d6f10, src=0x55a6f72d6ef0
+ movq %rbp, 134
+a format: assem= movq `s0, `d0, dst=0x55a6f72d6fc0, src=0x55a6f72d6fa0
+ movq %r12, 135
+a format: assem= movq `s0, `d0, dst=0x55a6f72d7070, src=0x55a6f72d7050
+ movq %r13, 136
+a format: assem= movq `s0, `d0, dst=0x55a6f72d7120, src=0x55a6f72d7100
+ movq %r14, 137
+a format: assem= movq `s0, `d0, dst=0x55a6f72d71d0, src=0x55a6f72d71b0
+ movq %r15, 138
+a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x55a6f72d7280
+ movq %rdi, ?-8#(%rsp)
+a format: assem= movq `s1, ?-16#(`s0), dst=(nil), src=0x55a6f72d7330
+ movq %rsi, ?-16#(%rsp)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72d75a0, src=0x55a6f72d7580
+ movq ?8#(%rsp), 227
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72d7650, src=0x55a6f72d7630
+ movq -16(227), 226
+a format: assem= movq `s0, `d0, dst=0x55a6f72d7700, src=0x55a6f72d76e0
+ movq 226, 225
+a format: assem= movq %rdx, `d0, dst=0x55a6f72d7890, src=0x55a6f72d7870
+ movq %rdx, 229
+a format: assem= movq `s0, %rax, dst=0x55a6f72d7940, src=0x55a6f72d7920
+ movq %rdi, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f72d7a60, src=(nil)
+ movq $8, 230
+a format: assem= imulq `s0, dst=0x55a6f72d7b30, src=0x55a6f72d7af0
+ imulq 230
+a format: assem= movq `s0, %rdx, dst=0x55a6f72d7be0, src=0x55a6f72d7bc0
+ movq 229, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f72d7c90, src=0x55a6f72d7c70
+ movq %rax, 228
+a format: assem= addq `s1, `d0, dst=0x55a6f72d7d60, src=0x55a6f72d7d40
+ addq 228, 225
+a format: assem= movq (`s0), `d0, dst=0x55a6f72d7e10, src=0x55a6f72d7df0
+ movq (225), 224
+a format: assem= movq `s1, ?-24#(`s0), dst=(nil), src=0x55a6f72d7ec0
+ movq 224, ?-24#(%rsp)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d7f70
+ cmpq %rsi, %rdi
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+ jl  L25
+a format: assem=L26, dst=(nil), src=(nil)
+L26:
+a format: assem= movq $0, `d0, dst=0x55a6f72d8190, src=(nil)
+ movq $0, 231
+a format: assem= movq `s0, `d0, dst=0x55a6f72d8240, src=0x55a6f72d8220
+ movq 231, 132
+a format: assem=L27, dst=(nil), src=(nil)
+L27:
+a format: assem= movq `s0, `d0, dst=0x55a6f72d8360, src=0x55a6f72d8340
+ movq 132, %rax
+a format: assem= movq `s0, `d0, dst=0x55a6f72d8410, src=0x55a6f72d83f0
+ movq 133, %rbx
+a format: assem= movq `s0, `d0, dst=0x55a6f72d84c0, src=0x55a6f72d84a0
+ movq 134, %rbp
+a format: assem= movq `s0, `d0, dst=0x55a6f72d8570, src=0x55a6f72d8550
+ movq 135, %r12
+a format: assem= movq `s0, `d0, dst=0x55a6f72d8620, src=0x55a6f72d8600
+ movq 136, %r13
+a format: assem= movq `s0, `d0, dst=0x55a6f72d86d0, src=0x55a6f72d86b0
+ movq 137, %r14
+a format: assem= movq `s0, `d0, dst=0x55a6f72d8780, src=0x55a6f72d8760
+ movq 138, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L37
+a format: assem=L25, dst=(nil), src=(nil)
+L25:
+a format: assem=L21, dst=(nil), src=(nil)
+L21:
+a format: assem= movq $1, `d0, dst=0x55a6f72d89f0, src=(nil)
+ movq $1, 232
+a format: assem= movq `s0, `d0, dst=0x55a6f72d8aa0, src=0x55a6f72d8a80
+ movq 232, 131
+a format: assem= movq ?-16#(`s0), `d0, dst=0x55a6f72d8bc0, src=0x55a6f72d8ba0
+ movq ?-16#(%rsp), 233
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72d8d00, src=0x55a6f72d8ce0
+ movq ?-8#(%rsp), 234
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d8d90
+ cmpq 233, 234
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+ jl  L23
+a format: assem=L24, dst=(nil), src=(nil)
+L24:
+a format: assem= movq $0, `d0, dst=0x55a6f72d8fb0, src=(nil)
+ movq $0, 235
+a format: assem= movq `s0, `d0, dst=0x55a6f72d9060, src=0x55a6f72d9040
+ movq 235, 131
+a format: assem=L23, dst=(nil), src=(nil)
+L23:
+a format: assem= movq $0, `d0, dst=0x55a6f72d91d0, src=(nil)
+ movq $0, 236
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d9280
+ cmpq 236, 131
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L4
+a format: assem=L22, dst=(nil), src=(nil)
+L22:
+a format: assem=L11, dst=(nil), src=(nil)
+L11:
+a format: assem= movq ?-16#(`s0), `d0, dst=0x55a6f72d9530, src=0x55a6f72d9510
+ movq ?-16#(%rsp), 237
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72d9670, src=0x55a6f72d9650
+ movq ?-8#(%rsp), 238
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d9700
+ cmpq 237, 238
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+ jl  L6
+a format: assem=L7, dst=(nil), src=(nil)
+L7:
+a format: assem= movq $0, `d0, dst=0x55a6f72d9920, src=(nil)
+ movq $0, 239
+a format: assem= movq `s0, `d0, dst=0x55a6f72d99d0, src=0x55a6f72d99b0
+ movq 239, 127
+a format: assem=L8, dst=(nil), src=(nil)
+L8:
+a format: assem= movq $0, `d0, dst=0x55a6f72d9b40, src=(nil)
+ movq $0, 240
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d9bf0
+ cmpq 240, 127
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L5
+a format: assem=L12, dst=(nil), src=(nil)
+L12:
+a format: assem= movq ?-16#(`s0), `d0, dst=0x55a6f72d9ea0, src=0x55a6f72d9e80
+ movq ?-16#(%rsp), 242
+a format: assem= movq `s0, `d0, dst=0x55a6f72d9f50, src=0x55a6f72d9f30
+ movq 242, 241
+a format: assem= subq $1, `d0, dst=0x55a6f72d9fe0, src=(nil)
+ subq $1, 241
+a format: assem= movq `s1, ?-16#(`s0), dst=(nil), src=0x55a6f72da090
+ movq 241, ?-16#(%rsp)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L11
+a format: assem=L6, dst=(nil), src=(nil)
+L6:
+a format: assem= movq $1, `d0, dst=0x55a6f72da290, src=(nil)
+ movq $1, 243
+a format: assem= movq `s0, `d0, dst=0x55a6f72da340, src=0x55a6f72da320
+ movq 243, 128
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72da5b0, src=0x55a6f72da590
+ movq ?8#(%rsp), 247
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72da660, src=0x55a6f72da640
+ movq -16(247), 246
+a format: assem= movq `s0, `d0, dst=0x55a6f72da710, src=0x55a6f72da6f0
+ movq 246, 245
+a format: assem= movq %rdx, `d0, dst=0x55a6f72da8a0, src=0x55a6f72da880
+ movq %rdx, 249
+a format: assem= movq ?-16#(`s0), `d0, dst=0x55a6f72da9c0, src=0x55a6f72da9a0
+ movq ?-16#(%rsp), 250
+a format: assem= movq `s0, %rax, dst=0x55a6f72daa70, src=0x55a6f72daa50
+ movq 250, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f72dab90, src=(nil)
+ movq $8, 251
+a format: assem= imulq `s0, dst=0x55a6f72dac60, src=0x55a6f72dac20
+ imulq 251
+a format: assem= movq `s0, %rdx, dst=0x55a6f72dad10, src=0x55a6f72dacf0
+ movq 249, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f72dadc0, src=0x55a6f72dada0
+ movq %rax, 248
+a format: assem= addq `s1, `d0, dst=0x55a6f72dae90, src=0x55a6f72dae70
+ addq 248, 245
+a format: assem= movq (`s0), `d0, dst=0x55a6f72daf40, src=0x55a6f72daf20
+ movq (245), 244
+a format: assem= movq ?-24#(`s0), `d0, dst=0x55a6f72db080, src=0x55a6f72db060
+ movq ?-24#(%rsp), 252
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72db110
+ cmpq 244, 252
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+ jle  L9
+a format: assem=L10, dst=(nil), src=(nil)
+L10:
+a format: assem= movq $0, `d0, dst=0x55a6f72db330, src=(nil)
+ movq $0, 253
+a format: assem= movq `s0, `d0, dst=0x55a6f72db3e0, src=0x55a6f72db3c0
+ movq 253, 128
+a format: assem=L9, dst=(nil), src=(nil)
+L9:
+a format: assem= movq `s0, `d0, dst=0x55a6f72db500, src=0x55a6f72db4e0
+ movq 128, 127
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L8
+a format: assem=L5, dst=(nil), src=(nil)
+L5:
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72db870, src=0x55a6f72db850
+ movq ?8#(%rsp), 257
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72db920, src=0x55a6f72db900
+ movq -16(257), 256
+a format: assem= movq `s0, `d0, dst=0x55a6f72db9d0, src=0x55a6f72db9b0
+ movq 256, 255
+a format: assem= movq %rdx, `d0, dst=0x55a6f72dbb60, src=0x55a6f72dbb40
+ movq %rdx, 259
+a format: assem= movq ?-16#(`s0), `d0, dst=0x55a6f72dbc80, src=0x55a6f72dbc60
+ movq ?-16#(%rsp), 260
+a format: assem= movq `s0, %rax, dst=0x55a6f72dbd30, src=0x55a6f72dbd10
+ movq 260, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f72dbe50, src=(nil)
+ movq $8, 261
+a format: assem= imulq `s0, dst=0x55a6f72dbf20, src=0x55a6f72dbee0
+ imulq 261
+a format: assem= movq `s0, %rdx, dst=0x55a6f72dbfd0, src=0x55a6f72dbfb0
+ movq 259, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f72dc080, src=0x55a6f72dc060
+ movq %rax, 258
+a format: assem= addq `s1, `d0, dst=0x55a6f72dc150, src=0x55a6f72dc130
+ addq 258, 255
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72dc350, src=0x55a6f72dc330
+ movq ?8#(%rsp), 264
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72dc400, src=0x55a6f72dc3e0
+ movq -16(264), 263
+a format: assem= movq `s0, `d0, dst=0x55a6f72dc4b0, src=0x55a6f72dc490
+ movq 263, 262
+a format: assem= movq %rdx, `d0, dst=0x55a6f72dc640, src=0x55a6f72dc620
+ movq %rdx, 266
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72dc760, src=0x55a6f72dc740
+ movq ?-8#(%rsp), 267
+a format: assem= movq `s0, %rax, dst=0x55a6f72dc810, src=0x55a6f72dc7f0
+ movq 267, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f72dc930, src=(nil)
+ movq $8, 268
+a format: assem= imulq `s0, dst=0x55a6f72dca00, src=0x55a6f72dc9c0
+ imulq 268
+a format: assem= movq `s0, %rdx, dst=0x55a6f72dcab0, src=0x55a6f72dca90
+ movq 266, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f72dcb60, src=0x55a6f72dcb40
+ movq %rax, 265
+a format: assem= addq `s1, `d0, dst=0x55a6f72dcc30, src=0x55a6f72dcc10
+ addq 265, 262
+a format: assem= movq (`s0), `d0, dst=0x55a6f72dcce0, src=0x55a6f72dccc0
+ movq (255), 254
+a format: assem= movq `s0, (`s1), dst=(nil), src=0x55a6f72dcd90
+ movq 254, (262)
+a format: assem=L19, dst=(nil), src=(nil)
+L19:
+a format: assem= movq ?-16#(`s0), `d0, dst=0x55a6f72dcf20, src=0x55a6f72dcf00
+ movq ?-16#(%rsp), 269
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72dd060, src=0x55a6f72dd040
+ movq ?-8#(%rsp), 270
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72dd0f0
+ cmpq 269, 270
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+ jl  L14
+a format: assem=L15, dst=(nil), src=(nil)
+L15:
+a format: assem= movq $0, `d0, dst=0x55a6f72dd310, src=(nil)
+ movq $0, 271
+a format: assem= movq `s0, `d0, dst=0x55a6f72dd3c0, src=0x55a6f72dd3a0
+ movq 271, 129
+a format: assem=L16, dst=(nil), src=(nil)
+L16:
+a format: assem= movq $0, `d0, dst=0x55a6f72dd530, src=(nil)
+ movq $0, 272
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72dd5e0
+ cmpq 272, 129
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L13
+a format: assem=L20, dst=(nil), src=(nil)
+L20:
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72dd890, src=0x55a6f72dd870
+ movq ?-8#(%rsp), 274
+a format: assem= movq `s0, `d0, dst=0x55a6f72dd940, src=0x55a6f72dd920
+ movq 274, 273
+a format: assem= addq $1, `d0, dst=0x55a6f72dd9f0, src=0x55a6f72dd9d0
+ addq $1, 273
+a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x55a6f72ddaa0
+ movq 273, ?-8#(%rsp)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L19
+a format: assem=L14, dst=(nil), src=(nil)
+L14:
+a format: assem= movq $1, `d0, dst=0x55a6f72ddca0, src=(nil)
+ movq $1, 275
+a format: assem= movq `s0, `d0, dst=0x55a6f72ddd50, src=0x55a6f72ddd30
+ movq 275, 130
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72ddfc0, src=0x55a6f72ddfa0
+ movq ?8#(%rsp), 279
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72de070, src=0x55a6f72de050
+ movq -16(279), 278
+a format: assem= movq `s0, `d0, dst=0x55a6f72de120, src=0x55a6f72de100
+ movq 278, 277
+a format: assem= movq %rdx, `d0, dst=0x55a6f72de2b0, src=0x55a6f72de290
+ movq %rdx, 281
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72de3d0, src=0x55a6f72de3b0
+ movq ?-8#(%rsp), 282
+a format: assem= movq `s0, %rax, dst=0x55a6f72de480, src=0x55a6f72de460
+ movq 282, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f72de5a0, src=(nil)
+ movq $8, 283
+a format: assem= imulq `s0, dst=0x55a6f72de670, src=0x55a6f72de630
+ imulq 283
+a format: assem= movq `s0, %rdx, dst=0x55a6f72de720, src=0x55a6f72de700
+ movq 281, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f72de7d0, src=0x55a6f72de7b0
+ movq %rax, 280
+a format: assem= addq `s1, `d0, dst=0x55a6f72de8a0, src=0x55a6f72de880
+ addq 280, 277
+a format: assem= movq (`s0), `d0, dst=0x55a6f72de950, src=0x55a6f72de930
+ movq (277), 276
+a format: assem= movq ?-24#(`s0), `d0, dst=0x55a6f72dea90, src=0x55a6f72dea70
+ movq ?-24#(%rsp), 284
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72deb20
+ cmpq 276, 284
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+ jge  L17
+a format: assem=L18, dst=(nil), src=(nil)
+L18:
+a format: assem= movq $0, `d0, dst=0x55a6f72ded40, src=(nil)
+ movq $0, 285
+a format: assem= movq `s0, `d0, dst=0x55a6f72dedf0, src=0x55a6f72dedd0
+ movq 285, 130
+a format: assem=L17, dst=(nil), src=(nil)
+L17:
+a format: assem= movq `s0, `d0, dst=0x55a6f72def10, src=0x55a6f72deef0
+ movq 130, 129
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L16
+a format: assem=L13, dst=(nil), src=(nil)
+L13:
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72df280, src=0x55a6f72df260
+ movq ?8#(%rsp), 289
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72df330, src=0x55a6f72df310
+ movq -16(289), 288
+a format: assem= movq `s0, `d0, dst=0x55a6f72df3e0, src=0x55a6f72df3c0
+ movq 288, 287
+a format: assem= movq %rdx, `d0, dst=0x55a6f72df570, src=0x55a6f72df550
+ movq %rdx, 291
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72df690, src=0x55a6f72df670
+ movq ?-8#(%rsp), 292
+a format: assem= movq `s0, %rax, dst=0x55a6f72df740, src=0x55a6f72df720
+ movq 292, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f72df860, src=(nil)
+ movq $8, 293
+a format: assem= imulq `s0, dst=0x55a6f72df930, src=0x55a6f72df8f0
+ imulq 293
+a format: assem= movq `s0, %rdx, dst=0x55a6f72df9e0, src=0x55a6f72df9c0
+ movq 291, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f72dfa90, src=0x55a6f72dfa70
+ movq %rax, 290
+a format: assem= addq `s1, `d0, dst=0x55a6f72dfb60, src=0x55a6f72dfb40
+ addq 290, 287
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72dfd60, src=0x55a6f72dfd40
+ movq ?8#(%rsp), 296
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72dfe10, src=0x55a6f72dfdf0
+ movq -16(296), 295
+a format: assem= movq `s0, `d0, dst=0x55a6f72dfec0, src=0x55a6f72dfea0
+ movq 295, 294
+a format: assem= movq %rdx, `d0, dst=0x55a6f72e0050, src=0x55a6f72e0030
+ movq %rdx, 298
+a format: assem= movq ?-16#(`s0), `d0, dst=0x55a6f72e0170, src=0x55a6f72e0150
+ movq ?-16#(%rsp), 299
+a format: assem= movq `s0, %rax, dst=0x55a6f72e0220, src=0x55a6f72e0200
+ movq 299, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f72e0340, src=(nil)
+ movq $8, 300
+a format: assem= imulq `s0, dst=0x55a6f72e0410, src=0x55a6f72e03d0
+ imulq 300
+a format: assem= movq `s0, %rdx, dst=0x55a6f72e04c0, src=0x55a6f72e04a0
+ movq 298, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f72e0570, src=0x55a6f72e0550
+ movq %rax, 297
+a format: assem= addq `s1, `d0, dst=0x55a6f72e0640, src=0x55a6f72e0620
+ addq 297, 294
+a format: assem= movq (`s0), `d0, dst=0x55a6f72e06f0, src=0x55a6f72e06d0
+ movq (287), 286
+a format: assem= movq `s0, (`s1), dst=(nil), src=0x55a6f72e07a0
+ movq 286, (294)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L21
+a format: assem=L4, dst=(nil), src=(nil)
+L4:
+a format: assem= leaq ?0#(`s0), `d0, dst=0x55a6f72e0a30, src=0x55a6f72e0a10
+ leaq ?0#(%rsp), 302
+a format: assem= addq $-24, `d0, dst=0x55a6f72e0ae0, src=0x55a6f72e0ac0
+ addq $-24, 302
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72e0ce0, src=0x55a6f72e0cc0
+ movq ?8#(%rsp), 305
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72e0d90, src=0x55a6f72e0d70
+ movq -16(305), 304
+a format: assem= movq `s0, `d0, dst=0x55a6f72e0e40, src=0x55a6f72e0e20
+ movq 304, 303
+a format: assem= movq %rdx, `d0, dst=0x55a6f72e0fd0, src=0x55a6f72e0fb0
+ movq %rdx, 307
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72e10f0, src=0x55a6f72e10d0
+ movq ?-8#(%rsp), 308
+a format: assem= movq `s0, %rax, dst=0x55a6f72e11a0, src=0x55a6f72e1180
+ movq 308, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f72e12c0, src=(nil)
+ movq $8, 309
+a format: assem= imulq `s0, dst=0x55a6f72e1390, src=0x55a6f72e1350
+ imulq 309
+a format: assem= movq `s0, %rdx, dst=0x55a6f72e1440, src=0x55a6f72e1420
+ movq 307, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f72e14f0, src=0x55a6f72e14d0
+ movq %rax, 306
+a format: assem= addq `s1, `d0, dst=0x55a6f72e15c0, src=0x55a6f72e15a0
+ addq 306, 303
+a format: assem= movq (`s0), `d0, dst=0x55a6f72e1670, src=0x55a6f72e1650
+ movq (302), 301
+a format: assem= movq `s0, (`s1), dst=(nil), src=0x55a6f72e1720
+ movq 301, (303)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72e18b0, src=0x55a6f72e1890
+ movq ?8#(%rsp), 311
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f72e1940
+ movq 311, (%rsp)
+a format: assem= movq `s0, `d0, dst=0x55a6f72e19f0, src=0x55a6f72e19d0
+ movq %rdi, %rdi
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72e1b80, src=0x55a6f72e1b60
+ movq ?-8#(%rsp), 313
+a format: assem= movq `s0, `d0, dst=0x55a6f72e1c30, src=0x55a6f72e1c10
+ movq 313, 312
+a format: assem= subq $1, `d0, dst=0x55a6f72e1cc0, src=(nil)
+ subq $1, 312
+a format: assem= movq `s0, `d0, dst=0x55a6f72e1d70, src=0x55a6f72e1d50
+ movq 312, %rsi
+a format: assem= callq quicksort, dst=0x55a6f72e1ea0, src=0x55a6f65d9200
+ callq quicksort
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f72e2030, src=0x55a6f72e2010
+ movq ?8#(%rsp), 315
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f72e20c0
+ movq 315, (%rsp)
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55a6f72e2250, src=0x55a6f72e2230
+ movq ?-8#(%rsp), 317
+a format: assem= movq `s0, `d0, dst=0x55a6f72e2300, src=0x55a6f72e22e0
+ movq 317, 316
+a format: assem= addq $1, `d0, dst=0x55a6f72e23b0, src=0x55a6f72e2390
+ addq $1, 316
+a format: assem= movq `s0, `d0, dst=0x55a6f72e2460, src=0x55a6f72e2440
+ movq 316, %rdi
+a format: assem= movq `s0, `d0, dst=0x55a6f72e2510, src=0x55a6f72e24f0
+ movq %rsi, %rsi
+a format: assem= callq quicksort, dst=0x55a6f72e2640, src=0x55a6f65d9200
+ callq quicksort
+a format: assem= movq `s0, `d0, dst=0x55a6f72e26f0, src=0x55a6f72e26d0
+ movq %rax, 132
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L27
+a format: assem=L37, dst=(nil), src=(nil)
+L37:
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+select a spill node!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem=L38, dst=(nil), src=(nil)
+a format: assem= movq `s1, 24(`s0), dst=(nil), src=0x55a6f72d7280
+a format: assem= movq `s1, 16(`s0), dst=(nil), src=0x55a6f72d7330
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72d75a0, src=0x55a6f72d7580
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72d7650, src=0x55a6f72d7630
+a format: assem= movq `s0, `d0, dst=0x55a6f72d7700, src=0x55a6f72d76e0
+a format: assem= movq %rdx, `d0, dst=0x55a6f72d7890, src=0x55a6f72d7870
+a format: assem= movq `s0, %rax, dst=0x55a6f72d7940, src=0x55a6f72d7920
+a format: assem= movq $8, `d0, dst=0x55a6f72d7a60, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f72d7b30, src=0x55a6f72d7af0
+a format: assem= movq `s0, %rdx, dst=0x55a6f72d7be0, src=0x55a6f72d7bc0
+a format: assem= addq `s1, `d0, dst=0x55a6f72d7d60, src=0x55a6f72d7d40
+a format: assem= movq (`s0), `d0, dst=0x55a6f72d7e10, src=0x55a6f72d7df0
+a format: assem= movq `s1, 8(`s0), dst=(nil), src=0x55a6f72d7ec0
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d7f70
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+a format: assem=L26, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f72d8190, src=(nil)
+a format: assem=L27, dst=(nil), src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L25, dst=(nil), src=(nil)
+a format: assem=L21, dst=(nil), src=(nil)
+a format: assem= movq $1, `d0, dst=0x55a6f72d89f0, src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x55a6f72d8bc0, src=0x55a6f72d8ba0
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72d8d00, src=0x55a6f72d8ce0
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d8d90
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+a format: assem=L24, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f72d8fb0, src=(nil)
+a format: assem=L23, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f72d91d0, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d9280
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L22, dst=(nil), src=(nil)
+a format: assem=L11, dst=(nil), src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x55a6f72d9530, src=0x55a6f72d9510
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72d9670, src=0x55a6f72d9650
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d9700
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+a format: assem=L7, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f72d9920, src=(nil)
+a format: assem=L8, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f72d9b40, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72d9bf0
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L12, dst=(nil), src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x55a6f72d9ea0, src=0x55a6f72d9e80
+a format: assem= subq $1, `d0, dst=0x55a6f72d9fe0, src=(nil)
+a format: assem= movq `s1, 16(`s0), dst=(nil), src=0x55a6f72da090
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L6, dst=(nil), src=(nil)
+a format: assem= movq $1, `d0, dst=0x55a6f72da290, src=(nil)
+a format: assem= movq `s0, `d0, dst=0x55a6f72da340, src=0x55a6f72da320
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72da5b0, src=0x55a6f72da590
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72da660, src=0x55a6f72da640
+a format: assem= movq `s0, `d0, dst=0x55a6f72da710, src=0x55a6f72da6f0
+a format: assem= movq %rdx, `d0, dst=0x55a6f72da8a0, src=0x55a6f72da880
+a format: assem= movq 16(`s0), `d0, dst=0x55a6f72da9c0, src=0x55a6f72da9a0
+a format: assem= movq $8, `d0, dst=0x55a6f72dab90, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f72dac60, src=0x55a6f72dac20
+a format: assem= movq `s0, %rdx, dst=0x55a6f72dad10, src=0x55a6f72dacf0
+a format: assem= addq `s1, `d0, dst=0x55a6f72dae90, src=0x55a6f72dae70
+a format: assem= movq (`s0), `d0, dst=0x55a6f72daf40, src=0x55a6f72daf20
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f72db080, src=0x55a6f72db060
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72db110
+a format: assem= jle  `j0, dst=(nil), src=(nil)
+a format: assem=L10, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f72db330, src=(nil)
+a format: assem= movq `s0, `d0, dst=0x55a6f72db3e0, src=0x55a6f72db3c0
+a format: assem=L9, dst=(nil), src=(nil)
+a format: assem= movq `s0, `d0, dst=0x55a6f72db500, src=0x55a6f72db4e0
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L5, dst=(nil), src=(nil)
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72db870, src=0x55a6f72db850
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72db920, src=0x55a6f72db900
+a format: assem= movq `s0, `d0, dst=0x55a6f72db9d0, src=0x55a6f72db9b0
+a format: assem= movq %rdx, `d0, dst=0x55a6f72dbb60, src=0x55a6f72dbb40
+a format: assem= movq 16(`s0), `d0, dst=0x55a6f72dbc80, src=0x55a6f72dbc60
+a format: assem= movq $8, `d0, dst=0x55a6f72dbe50, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f72dbf20, src=0x55a6f72dbee0
+a format: assem= movq `s0, %rdx, dst=0x55a6f72dbfd0, src=0x55a6f72dbfb0
+a format: assem= addq `s1, `d0, dst=0x55a6f72dc150, src=0x55a6f72dc130
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72dc350, src=0x55a6f72dc330
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72dc400, src=0x55a6f72dc3e0
+a format: assem= movq `s0, `d0, dst=0x55a6f72dc4b0, src=0x55a6f72dc490
+a format: assem= movq %rdx, `d0, dst=0x55a6f72dc640, src=0x55a6f72dc620
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72dc760, src=0x55a6f72dc740
+a format: assem= movq $8, `d0, dst=0x55a6f72dc930, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f72dca00, src=0x55a6f72dc9c0
+a format: assem= movq `s0, %rdx, dst=0x55a6f72dcab0, src=0x55a6f72dca90
+a format: assem= addq `s1, `d0, dst=0x55a6f72dcc30, src=0x55a6f72dcc10
+a format: assem= movq (`s0), `d0, dst=0x55a6f72dcce0, src=0x55a6f72dccc0
+a format: assem= movq `s0, (`s1), dst=(nil), src=0x55a6f72dcd90
+a format: assem=L19, dst=(nil), src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x55a6f72dcf20, src=0x55a6f72dcf00
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72dd060, src=0x55a6f72dd040
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72dd0f0
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+a format: assem=L15, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f72dd310, src=(nil)
+a format: assem=L16, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f72dd530, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72dd5e0
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L20, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72dd890, src=0x55a6f72dd870
+a format: assem= addq $1, `d0, dst=0x55a6f72dd9f0, src=0x55a6f72dd9d0
+a format: assem= movq `s1, 24(`s0), dst=(nil), src=0x55a6f72ddaa0
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L14, dst=(nil), src=(nil)
+a format: assem= movq $1, `d0, dst=0x55a6f72ddca0, src=(nil)
+a format: assem= movq `s0, `d0, dst=0x55a6f72ddd50, src=0x55a6f72ddd30
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72ddfc0, src=0x55a6f72ddfa0
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72de070, src=0x55a6f72de050
+a format: assem= movq `s0, `d0, dst=0x55a6f72de120, src=0x55a6f72de100
+a format: assem= movq %rdx, `d0, dst=0x55a6f72de2b0, src=0x55a6f72de290
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72de3d0, src=0x55a6f72de3b0
+a format: assem= movq $8, `d0, dst=0x55a6f72de5a0, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f72de670, src=0x55a6f72de630
+a format: assem= movq `s0, %rdx, dst=0x55a6f72de720, src=0x55a6f72de700
+a format: assem= addq `s1, `d0, dst=0x55a6f72de8a0, src=0x55a6f72de880
+a format: assem= movq (`s0), `d0, dst=0x55a6f72de950, src=0x55a6f72de930
+a format: assem= movq 8(`s0), `d0, dst=0x55a6f72dea90, src=0x55a6f72dea70
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f72deb20
+a format: assem= jge  `j0, dst=(nil), src=(nil)
+a format: assem=L18, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f72ded40, src=(nil)
+a format: assem= movq `s0, `d0, dst=0x55a6f72dedf0, src=0x55a6f72dedd0
+a format: assem=L17, dst=(nil), src=(nil)
+a format: assem= movq `s0, `d0, dst=0x55a6f72def10, src=0x55a6f72deef0
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L13, dst=(nil), src=(nil)
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72df280, src=0x55a6f72df260
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72df330, src=0x55a6f72df310
+a format: assem= movq `s0, `d0, dst=0x55a6f72df3e0, src=0x55a6f72df3c0
+a format: assem= movq %rdx, `d0, dst=0x55a6f72df570, src=0x55a6f72df550
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72df690, src=0x55a6f72df670
+a format: assem= movq $8, `d0, dst=0x55a6f72df860, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f72df930, src=0x55a6f72df8f0
+a format: assem= movq `s0, %rdx, dst=0x55a6f72df9e0, src=0x55a6f72df9c0
+a format: assem= addq `s1, `d0, dst=0x55a6f72dfb60, src=0x55a6f72dfb40
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72dfd60, src=0x55a6f72dfd40
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72dfe10, src=0x55a6f72dfdf0
+a format: assem= movq `s0, `d0, dst=0x55a6f72dfec0, src=0x55a6f72dfea0
+a format: assem= movq %rdx, `d0, dst=0x55a6f72e0050, src=0x55a6f72e0030
+a format: assem= movq 16(`s0), `d0, dst=0x55a6f72e0170, src=0x55a6f72e0150
+a format: assem= movq $8, `d0, dst=0x55a6f72e0340, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f72e0410, src=0x55a6f72e03d0
+a format: assem= movq `s0, %rdx, dst=0x55a6f72e04c0, src=0x55a6f72e04a0
+a format: assem= addq `s1, `d0, dst=0x55a6f72e0640, src=0x55a6f72e0620
+a format: assem= movq (`s0), `d0, dst=0x55a6f72e06f0, src=0x55a6f72e06d0
+a format: assem= movq `s0, (`s1), dst=(nil), src=0x55a6f72e07a0
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L4, dst=(nil), src=(nil)
+a format: assem= leaq 32(`s0), `d0, dst=0x55a6f72e0a30, src=0x55a6f72e0a10
+a format: assem= addq $-24, `d0, dst=0x55a6f72e0ae0, src=0x55a6f72e0ac0
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72e0ce0, src=0x55a6f72e0cc0
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f72e0d90, src=0x55a6f72e0d70
+a format: assem= movq `s0, `d0, dst=0x55a6f72e0e40, src=0x55a6f72e0e20
+a format: assem= movq %rdx, `d0, dst=0x55a6f72e0fd0, src=0x55a6f72e0fb0
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72e10f0, src=0x55a6f72e10d0
+a format: assem= movq $8, `d0, dst=0x55a6f72e12c0, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f72e1390, src=0x55a6f72e1350
+a format: assem= movq `s0, %rdx, dst=0x55a6f72e1440, src=0x55a6f72e1420
+a format: assem= addq `s1, `d0, dst=0x55a6f72e15c0, src=0x55a6f72e15a0
+a format: assem= movq (`s0), `d0, dst=0x55a6f72e1670, src=0x55a6f72e1650
+a format: assem= movq `s0, (`s1), dst=(nil), src=0x55a6f72e1720
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72e18b0, src=0x55a6f72e1890
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f72e1940
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72e1b80, src=0x55a6f72e1b60
+a format: assem= subq $1, `d0, dst=0x55a6f72e1cc0, src=(nil)
+a format: assem= callq quicksort, dst=0x55a6f72e1ea0, src=0x55a6f65d9200
+a format: assem= movq 40(`s0), `d0, dst=0x55a6f72e2030, src=0x55a6f72e2010
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f72e20c0
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f72e2250, src=0x55a6f72e2230
+a format: assem= addq $1, `d0, dst=0x55a6f72e23b0, src=0x55a6f72e2390
+a format: assem= callq quicksort, dst=0x55a6f72e2640, src=0x55a6f65d9200
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L37, dst=(nil), src=(nil)
+doProc for function init:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t121,
+        TEMP t113),
+       MOVE(
+        TEMP t122,
+        TEMP t112)),
+      MOVE(
+       TEMP t123,
+       TEMP t111)),
+     MOVE(
+      TEMP t124,
+      TEMP t110)),
+    MOVE(
+     TEMP t125,
+     TEMP t109)),
+   MOVE(
+    TEMP t126,
+    TEMP t108)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t107,
+     ESEQ(
+      SEQ(
+       MOVE(
+        TEMP t120,
+        CONST 0),
+       SEQ(
+        CJUMP(GT,
+         TEMP t120,
+         BINOP(MINUS,
+          MEM(
+           BINOP(PLUS,
+            MEM(
+             BINOP(PLUS,
+              CONST 8,
+              TEMP t106)),
+            CONST -8)),
+          CONST 1),
+         L1,L3),
+        SEQ(
+         LABEL L3,
+         SEQ(
+          EXP(
+           ESEQ(
+            MOVE(
+             MEM(
+              BINOP(PLUS,
+               MEM(
+                BINOP(PLUS,
+                 MEM(
+                  BINOP(PLUS,
+                   CONST 8,
+                   TEMP t106)),
+                 CONST -16)),
+               BINOP(TIMES,
+                TEMP t120,
+                CONST 8))),
+             BINOP(MINUS,
+              MEM(
+               BINOP(PLUS,
+                MEM(
+                 BINOP(PLUS,
+                  CONST 8,
+                  TEMP t106)),
+                CONST -8)),
+              TEMP t120)),
+            CALL(
+             NAME nop,
+              MEM(
+               BINOP(PLUS,
+                CONST 8,
+                TEMP t106))))),
+          SEQ(
+           CJUMP(EQ,
+            TEMP t120,
+            BINOP(MINUS,
+             MEM(
+              BINOP(PLUS,
+               MEM(
+                BINOP(PLUS,
+                 CONST 8,
+                 TEMP t106)),
+               CONST -8)),
+             CONST 1),
+            L1,L2),
+           SEQ(
+            LABEL L2,
+            SEQ(
+             MOVE(
+              TEMP t120,
+              BINOP(PLUS,
+               TEMP t120,
+               CONST 1)),
+             SEQ(
+              EXP(
+               ESEQ(
+                MOVE(
+                 MEM(
+                  BINOP(PLUS,
+                   MEM(
+                    BINOP(PLUS,
+                     MEM(
+                      BINOP(PLUS,
+                       CONST 8,
+                       TEMP t106)),
+                     CONST -16)),
+                   BINOP(TIMES,
+                    TEMP t120,
+                    CONST 8))),
+                 BINOP(MINUS,
+                  MEM(
+                   BINOP(PLUS,
+                    MEM(
+                     BINOP(PLUS,
+                      CONST 8,
+                      TEMP t106)),
+                    CONST -8)),
+                  TEMP t120)),
+                CALL(
+                 NAME nop,
+                  MEM(
+                   BINOP(PLUS,
+                    CONST 8,
+                    TEMP t106))))),
+              SEQ(
+               CJUMP(LT,
+                TEMP t120,
+                BINOP(MINUS,
+                 MEM(
+                  BINOP(PLUS,
+                   MEM(
+                    BINOP(PLUS,
+                     CONST 8,
+                     TEMP t106)),
+                   CONST -8)),
+                 CONST 1),
+                L2,L1),
+               LABEL L1))))))))),
+      CONST 0)),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t113,
+          TEMP t121),
+         MOVE(
+          TEMP t112,
+          TEMP t122)),
+        MOVE(
+         TEMP t111,
+         TEMP t123)),
+       MOVE(
+        TEMP t110,
+        TEMP t124)),
+      MOVE(
+       TEMP t109,
+       TEMP t125)),
+     MOVE(
+      TEMP t108,
+      TEMP t126)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t121,
+  TEMP t113)
+ MOVE(
+  TEMP t122,
+  TEMP t112)
+ MOVE(
+  TEMP t123,
+  TEMP t111)
+ MOVE(
+  TEMP t124,
+  TEMP t110)
+ MOVE(
+  TEMP t125,
+  TEMP t109)
+ MOVE(
+  TEMP t126,
+  TEMP t108)
+ MOVE(
+  TEMP t120,
+  CONST 0)
+ CJUMP(GT,
+  TEMP t120,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L1,L3)
+ LABEL L3
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t120,
+     CONST 8))),
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   TEMP t120))
+ EXP(
+  CALL(
+   NAME nop,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ CJUMP(EQ,
+  TEMP t120,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L1,L2)
+ LABEL L2
+ MOVE(
+  TEMP t120,
+  BINOP(PLUS,
+   TEMP t120,
+   CONST 1))
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t120,
+     CONST 8))),
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   TEMP t120))
+ EXP(
+  CALL(
+   NAME nop,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ CJUMP(LT,
+  TEMP t120,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L2,L1)
+ LABEL L1
+ MOVE(
+  TEMP t107,
+  CONST 0)
+ MOVE(
+  TEMP t113,
+  TEMP t121)
+ MOVE(
+  TEMP t112,
+  TEMP t122)
+ MOVE(
+  TEMP t111,
+  TEMP t123)
+ MOVE(
+  TEMP t110,
+  TEMP t124)
+ MOVE(
+  TEMP t109,
+  TEMP t125)
+ MOVE(
+  TEMP t108,
+  TEMP t126)
+-------====Linearlized=====-----
+ LABEL L40
+ MOVE(
+  TEMP t121,
+  TEMP t113)
+ MOVE(
+  TEMP t122,
+  TEMP t112)
+ MOVE(
+  TEMP t123,
+  TEMP t111)
+ MOVE(
+  TEMP t124,
+  TEMP t110)
+ MOVE(
+  TEMP t125,
+  TEMP t109)
+ MOVE(
+  TEMP t126,
+  TEMP t108)
+ MOVE(
+  TEMP t120,
+  CONST 0)
+ CJUMP(GT,
+  TEMP t120,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L1,L3)
+------====Basic block=====-------
+ LABEL L3
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t120,
+     CONST 8))),
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   TEMP t120))
+ EXP(
+  CALL(
+   NAME nop,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ CJUMP(EQ,
+  TEMP t120,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L1,L2)
+------====Basic block=====-------
+ LABEL L2
+ MOVE(
+  TEMP t120,
+  BINOP(PLUS,
+   TEMP t120,
+   CONST 1))
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t120,
+     CONST 8))),
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   TEMP t120))
+ EXP(
+  CALL(
+   NAME nop,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ CJUMP(LT,
+  TEMP t120,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L2,L1)
+------====Basic block=====-------
+ LABEL L1
+ MOVE(
+  TEMP t107,
+  CONST 0)
+ MOVE(
+  TEMP t113,
+  TEMP t121)
+ MOVE(
+  TEMP t112,
+  TEMP t122)
+ MOVE(
+  TEMP t111,
+  TEMP t123)
+ MOVE(
+  TEMP t110,
+  TEMP t124)
+ MOVE(
+  TEMP t109,
+  TEMP t125)
+ MOVE(
+  TEMP t108,
+  TEMP t126)
+ JUMP(
+  NAME L39)
+------====Basic block=====-------
+ LABEL L40
+ MOVE(
+  TEMP t121,
+  TEMP t113)
+ MOVE(
+  TEMP t122,
+  TEMP t112)
+ MOVE(
+  TEMP t123,
+  TEMP t111)
+ MOVE(
+  TEMP t124,
+  TEMP t110)
+ MOVE(
+  TEMP t125,
+  TEMP t109)
+ MOVE(
+  TEMP t126,
+  TEMP t108)
+ MOVE(
+  TEMP t120,
+  CONST 0)
+ CJUMP(GT,
+  TEMP t120,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L1,L3)
+ LABEL L3
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t120,
+     CONST 8))),
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   TEMP t120))
+ EXP(
+  CALL(
+   NAME nop,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ CJUMP(EQ,
+  TEMP t120,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L1,L2)
+ LABEL L2
+ MOVE(
+  TEMP t120,
+  BINOP(PLUS,
+   TEMP t120,
+   CONST 1))
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    MEM(
+     BINOP(PLUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)),
+      CONST -16)),
+    BINOP(TIMES,
+     TEMP t120,
+     CONST 8))),
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   TEMP t120))
+ EXP(
+  CALL(
+   NAME nop,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      TEMP t106))))
+ CJUMP(LT,
+  TEMP t120,
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     MEM(
+      BINOP(PLUS,
+       CONST 8,
+       TEMP t106)),
+     CONST -8)),
+   CONST 1),
+  L2,L1)
+ LABEL L1
+ MOVE(
+  TEMP t107,
+  CONST 0)
+ MOVE(
+  TEMP t113,
+  TEMP t121)
+ MOVE(
+  TEMP t112,
+  TEMP t122)
+ MOVE(
+  TEMP t111,
+  TEMP t123)
+ MOVE(
+  TEMP t110,
+  TEMP t124)
+ MOVE(
+  TEMP t109,
+  TEMP t125)
+ MOVE(
+  TEMP t108,
+  TEMP t126)
+ JUMP(
+  NAME L39)
+ LABEL L39
+-------====trace=====-----
+a format: assem=L40, dst=(nil), src=(nil)
+L40:
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3c020, src=0x55a6f9a3c000
+ movq %rbx, 121
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3c0d0, src=0x55a6f9a3c0b0
+ movq %rbp, 122
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3c180, src=0x55a6f9a3c160
+ movq %r12, 123
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3c230, src=0x55a6f9a3c210
+ movq %r13, 124
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3c2e0, src=0x55a6f9a3c2c0
+ movq %r14, 125
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3c390, src=0x55a6f9a3c370
+ movq %r15, 126
+a format: assem= movq $0, `d0, dst=0x55a6f9a3c490, src=(nil)
+ movq $0, 318
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3c540, src=0x55a6f9a3c520
+ movq 318, 120
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f9a3c740, src=0x55a6f9a3c720
+ movq ?8#(%rsp), 321
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3c7f0, src=0x55a6f9a3c7d0
+ movq -8(321), 320
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3c8a0, src=0x55a6f9a3c880
+ movq 320, 319
+a format: assem= subq $1, `d0, dst=0x55a6f9a3c930, src=(nil)
+ subq $1, 319
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f9a3c9e0
+ cmpq 319, 120
+a format: assem= jg  `j0, dst=(nil), src=(nil)
+ jg  L1
+a format: assem=L3, dst=(nil), src=(nil)
+L3:
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f9a3cd00, src=0x55a6f9a3cce0
+ movq ?8#(%rsp), 324
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f9a3cdb0, src=0x55a6f9a3cd90
+ movq -16(324), 323
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3ce60, src=0x55a6f9a3ce40
+ movq 323, 322
+a format: assem= movq %rdx, `d0, dst=0x55a6f9a3cff0, src=0x55a6f9a3cfd0
+ movq %rdx, 326
+a format: assem= movq `s0, %rax, dst=0x55a6f9a3d0a0, src=0x55a6f9a3d080
+ movq 120, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f9a3d1c0, src=(nil)
+ movq $8, 327
+a format: assem= imulq `s0, dst=0x55a6f9a3d290, src=0x55a6f9a3d250
+ imulq 327
+a format: assem= movq `s0, %rdx, dst=0x55a6f9a3d340, src=0x55a6f9a3d320
+ movq 326, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f9a3d3f0, src=0x55a6f9a3d3d0
+ movq %rax, 325
+a format: assem= addq `s1, `d0, dst=0x55a6f9a3d4c0, src=0x55a6f9a3d4a0
+ addq 325, 322
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f9a3d6c0, src=0x55a6f9a3d6a0
+ movq ?8#(%rsp), 330
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3d770, src=0x55a6f9a3d750
+ movq -8(330), 329
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3d820, src=0x55a6f9a3d800
+ movq 329, 328
+a format: assem= subq `s1, `d0, dst=0x55a6f9a3d8f0, src=0x55a6f9a3d8d0
+ subq 120, 328
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55a6f9a3d9a0
+ movq 328, (322)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f9a3db30, src=0x55a6f9a3db10
+ movq ?8#(%rsp), 332
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f9a3dbc0
+ movq 332, (%rsp)
+a format: assem= callq nop, dst=0x55a6f9a3dcb0, src=0x55a6f65d9200
+ callq nop
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f9a3deb0, src=0x55a6f9a3de90
+ movq ?8#(%rsp), 335
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3df60, src=0x55a6f9a3df40
+ movq -8(335), 334
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3e010, src=0x55a6f9a3dff0
+ movq 334, 333
+a format: assem= subq $1, `d0, dst=0x55a6f9a3e0a0, src=(nil)
+ subq $1, 333
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f9a3e150
+ cmpq 333, 120
+a format: assem= je  `j0, dst=(nil), src=(nil)
+ je  L1
+a format: assem=L2, dst=(nil), src=(nil)
+L2:
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3e390, src=0x55a6f9a3e370
+ movq 120, 336
+a format: assem= addq $1, `d0, dst=0x55a6f9a3e440, src=0x55a6f9a3e420
+ addq $1, 336
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3e4f0, src=0x55a6f9a3e4d0
+ movq 336, 120
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f9a3e6f0, src=0x55a6f9a3e6d0
+ movq ?8#(%rsp), 339
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f9a3e7a0, src=0x55a6f9a3e780
+ movq -16(339), 338
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3e850, src=0x55a6f9a3e830
+ movq 338, 337
+a format: assem= movq %rdx, `d0, dst=0x55a6f9a3e9e0, src=0x55a6f9a3e9c0
+ movq %rdx, 341
+a format: assem= movq `s0, %rax, dst=0x55a6f9a3ea90, src=0x55a6f9a3ea70
+ movq 120, %rax
+a format: assem= movq $8, `d0, dst=0x55a6f9a3ebb0, src=(nil)
+ movq $8, 342
+a format: assem= imulq `s0, dst=0x55a6f9a3ec80, src=0x55a6f9a3ec40
+ imulq 342
+a format: assem= movq `s0, %rdx, dst=0x55a6f9a3ed30, src=0x55a6f9a3ed10
+ movq 341, %rdx
+a format: assem= movq %rax, `d0, dst=0x55a6f9a3ede0, src=0x55a6f9a3edc0
+ movq %rax, 340
+a format: assem= addq `s1, `d0, dst=0x55a6f9a3eeb0, src=0x55a6f9a3ee90
+ addq 340, 337
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f9a3f0b0, src=0x55a6f9a3f090
+ movq ?8#(%rsp), 345
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3f160, src=0x55a6f9a3f140
+ movq -8(345), 344
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3f210, src=0x55a6f9a3f1f0
+ movq 344, 343
+a format: assem= subq `s1, `d0, dst=0x55a6f9a3f2e0, src=0x55a6f9a3f2c0
+ subq 120, 343
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55a6f9a3f390
+ movq 343, (337)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f9a3f520, src=0x55a6f9a3f500
+ movq ?8#(%rsp), 347
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f9a3f5b0
+ movq 347, (%rsp)
+a format: assem= callq nop, dst=0x55a6f9a3f6a0, src=0x55a6f65d9200
+ callq nop
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6f9a3f8a0, src=0x55a6f9a3f880
+ movq ?8#(%rsp), 350
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3f950, src=0x55a6f9a3f930
+ movq -8(350), 349
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3fa00, src=0x55a6f9a3f9e0
+ movq 349, 348
+a format: assem= subq $1, `d0, dst=0x55a6f9a3fa90, src=(nil)
+ subq $1, 348
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f9a3fb40
+ cmpq 348, 120
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+ jl  L2
+a format: assem=L1, dst=(nil), src=(nil)
+L1:
+a format: assem= movq $0, `d0, dst=0x55a6f9a3fd60, src=(nil)
+ movq $0, 351
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3fe10, src=0x55a6f9a3fdf0
+ movq 351, %rax
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3fec0, src=0x55a6f9a3fea0
+ movq 121, %rbx
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3ff70, src=0x55a6f9a3ff50
+ movq 122, %rbp
+a format: assem= movq `s0, `d0, dst=0x55a6f9a40020, src=0x55a6f9a40000
+ movq 123, %r12
+a format: assem= movq `s0, `d0, dst=0x55a6f9a400d0, src=0x55a6f9a400b0
+ movq 124, %r13
+a format: assem= movq `s0, `d0, dst=0x55a6f9a40180, src=0x55a6f9a40160
+ movq 125, %r14
+a format: assem= movq `s0, `d0, dst=0x55a6f9a40230, src=0x55a6f9a40210
+ movq 126, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L39
+a format: assem=L39, dst=(nil), src=(nil)
+L39:
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+no color left!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+rewrite!
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Simplify!
+Coalesce!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Freeze!
+Simplify!
+Freeze!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem=L40, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f9a3c490, src=(nil)
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x55a6f9e32d80
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f9a3c740, src=0x55a6f9a3c720
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3c7f0, src=0x55a6f9a3c7d0
+a format: assem= subq $1, `d0, dst=0x55a6f9a3c930, src=(nil)
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f9e32e80, src=0x55a6f9e32e60
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f9a3c9e0
+a format: assem= jg  `j0, dst=(nil), src=(nil)
+a format: assem=L3, dst=(nil), src=(nil)
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f9a3cd00, src=0x55a6f9a3cce0
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f9a3cdb0, src=0x55a6f9a3cd90
+a format: assem= movq `s0, `d0, dst=0x55a6f9a3ce60, src=0x55a6f9a3ce40
+a format: assem= movq %rdx, `d0, dst=0x55a6f9a3cff0, src=0x55a6f9a3cfd0
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f9e32f80, src=0x55a6f9e32f60
+a format: assem= movq $8, `d0, dst=0x55a6f9a3d1c0, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f9a3d290, src=0x55a6f9a3d250
+a format: assem= movq `s0, %rdx, dst=0x55a6f9a3d340, src=0x55a6f9a3d320
+a format: assem= addq `s1, `d0, dst=0x55a6f9a3d4c0, src=0x55a6f9a3d4a0
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f9a3d6c0, src=0x55a6f9a3d6a0
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3d770, src=0x55a6f9a3d750
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f9e33080, src=0x55a6f9e33060
+a format: assem= subq `s1, `d0, dst=0x55a6f9a3d8f0, src=0x55a6f9a3d8d0
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55a6f9a3d9a0
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f9a3db30, src=0x55a6f9a3db10
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f9a3dbc0
+a format: assem= callq nop, dst=0x55a6f9a3dcb0, src=0x55a6f65d9200
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f9a3deb0, src=0x55a6f9a3de90
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3df60, src=0x55a6f9a3df40
+a format: assem= subq $1, `d0, dst=0x55a6f9a3e0a0, src=(nil)
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f9e33180, src=0x55a6f9e33160
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f9a3e150
+a format: assem= je  `j0, dst=(nil), src=(nil)
+a format: assem=L2, dst=(nil), src=(nil)
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f9e33280, src=0x55a6f9e33260
+a format: assem= addq $1, `d0, dst=0x55a6f9a3e440, src=0x55a6f9a3e420
+a format: assem= movq `s1, 8(`s0)
+, dst=(nil), src=0x55a6f9e33380
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f9a3e6f0, src=0x55a6f9a3e6d0
+a format: assem= movq -16(`s0), `d0, dst=0x55a6f9a3e7a0, src=0x55a6f9a3e780
+a format: assem= movq %rdx, `d0, dst=0x55a6f9a3e9e0, src=0x55a6f9a3e9c0
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f9e33480, src=0x55a6f9e33460
+a format: assem= movq $8, `d0, dst=0x55a6f9a3ebb0, src=(nil)
+a format: assem= imulq `s0, dst=0x55a6f9a3ec80, src=0x55a6f9a3ec40
+a format: assem= movq `s0, %rdx, dst=0x55a6f9a3ed30, src=0x55a6f9a3ed10
+a format: assem= addq `s1, `d0, dst=0x55a6f9a3eeb0, src=0x55a6f9a3ee90
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f9a3f0b0, src=0x55a6f9a3f090
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3f160, src=0x55a6f9a3f140
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f9e33580, src=0x55a6f9e33560
+a format: assem= subq `s1, `d0, dst=0x55a6f9a3f2e0, src=0x55a6f9a3f2c0
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55a6f9a3f390
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f9a3f520, src=0x55a6f9a3f500
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6f9a3f5b0
+a format: assem= callq nop, dst=0x55a6f9a3f6a0, src=0x55a6f65d9200
+a format: assem= movq 24(`s0), `d0, dst=0x55a6f9a3f8a0, src=0x55a6f9a3f880
+a format: assem= movq -8(`s0), `d0, dst=0x55a6f9a3f950, src=0x55a6f9a3f930
+a format: assem= subq $1, `d0, dst=0x55a6f9a3fa90, src=(nil)
+a format: assem= movq 8(`s0), `d0
+, dst=0x55a6f9e33680, src=0x55a6f9e33660
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55a6f9a3fb40
+a format: assem= jl  `j0, dst=(nil), src=(nil)
+a format: assem=L1, dst=(nil), src=(nil)
+a format: assem= movq $0, `d0, dst=0x55a6f9a3fd60, src=(nil)
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L39, dst=(nil), src=(nil)
+doProc for function nop:
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      SEQ(
+       MOVE(
+        TEMP t114,
+        TEMP t113),
+       MOVE(
+        TEMP t115,
+        TEMP t112)),
+      MOVE(
+       TEMP t116,
+       TEMP t111)),
+     MOVE(
+      TEMP t117,
+      TEMP t110)),
+    MOVE(
+     TEMP t118,
+     TEMP t109)),
+   MOVE(
+    TEMP t119,
+    TEMP t108)),
+  SEQ(
+   EXP(
+    CONST 0),
+   SEQ(
+    MOVE(
+     TEMP t107,
+     CALL(
+      NAME print,
+       MEM(
+        BINOP(PLUS,
+         CONST 8,
+         MEM(
+          BINOP(PLUS,
+           CONST 8,
+           TEMP t106)))),
+       NAME L0)),
+    SEQ(
+     SEQ(
+      SEQ(
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP t113,
+          TEMP t114),
+         MOVE(
+          TEMP t112,
+          TEMP t115)),
+        MOVE(
+         TEMP t111,
+         TEMP t116)),
+       MOVE(
+        TEMP t110,
+        TEMP t117)),
+      MOVE(
+       TEMP t109,
+       TEMP t118)),
+     MOVE(
+      TEMP t108,
+      TEMP t119)))))
+-------====IR tree=====-----
+ MOVE(
+  TEMP t114,
+  TEMP t113)
+ MOVE(
+  TEMP t115,
+  TEMP t112)
+ MOVE(
+  TEMP t116,
+  TEMP t111)
+ MOVE(
+  TEMP t117,
+  TEMP t110)
+ MOVE(
+  TEMP t118,
+  TEMP t109)
+ MOVE(
+  TEMP t119,
+  TEMP t108)
+ MOVE(
+  TEMP t107,
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L0))
+ MOVE(
+  TEMP t113,
+  TEMP t114)
+ MOVE(
+  TEMP t112,
+  TEMP t115)
+ MOVE(
+  TEMP t111,
+  TEMP t116)
+ MOVE(
+  TEMP t110,
+  TEMP t117)
+ MOVE(
+  TEMP t109,
+  TEMP t118)
+ MOVE(
+  TEMP t108,
+  TEMP t119)
+-------====Linearlized=====-----
+ LABEL L42
+ MOVE(
+  TEMP t114,
+  TEMP t113)
+ MOVE(
+  TEMP t115,
+  TEMP t112)
+ MOVE(
+  TEMP t116,
+  TEMP t111)
+ MOVE(
+  TEMP t117,
+  TEMP t110)
+ MOVE(
+  TEMP t118,
+  TEMP t109)
+ MOVE(
+  TEMP t119,
+  TEMP t108)
+ MOVE(
+  TEMP t107,
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L0))
+ MOVE(
+  TEMP t113,
+  TEMP t114)
+ MOVE(
+  TEMP t112,
+  TEMP t115)
+ MOVE(
+  TEMP t111,
+  TEMP t116)
+ MOVE(
+  TEMP t110,
+  TEMP t117)
+ MOVE(
+  TEMP t109,
+  TEMP t118)
+ MOVE(
+  TEMP t108,
+  TEMP t119)
+ JUMP(
+  NAME L41)
+------====Basic block=====-------
+ LABEL L42
+ MOVE(
+  TEMP t114,
+  TEMP t113)
+ MOVE(
+  TEMP t115,
+  TEMP t112)
+ MOVE(
+  TEMP t116,
+  TEMP t111)
+ MOVE(
+  TEMP t117,
+  TEMP t110)
+ MOVE(
+  TEMP t118,
+  TEMP t109)
+ MOVE(
+  TEMP t119,
+  TEMP t108)
+ MOVE(
+  TEMP t107,
+  CALL(
+   NAME print,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))),
+    NAME L0))
+ MOVE(
+  TEMP t113,
+  TEMP t114)
+ MOVE(
+  TEMP t112,
+  TEMP t115)
+ MOVE(
+  TEMP t111,
+  TEMP t116)
+ MOVE(
+  TEMP t110,
+  TEMP t117)
+ MOVE(
+  TEMP t109,
+  TEMP t118)
+ MOVE(
+  TEMP t108,
+  TEMP t119)
+ JUMP(
+  NAME L41)
+ LABEL L41
+-------====trace=====-----
+a format: assem=L42, dst=(nil), src=(nil)
+L42:
+a format: assem= movq `s0, `d0, dst=0x55a6fa2afec0, src=0x55a6fa2afea0
+ movq %rbx, 114
+a format: assem= movq `s0, `d0, dst=0x55a6fa2aff70, src=0x55a6fa2aff50
+ movq %rbp, 115
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0020, src=0x55a6fa2b0000
+ movq %r12, 116
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b00d0, src=0x55a6fa2b00b0
+ movq %r13, 117
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0180, src=0x55a6fa2b0160
+ movq %r14, 118
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0230, src=0x55a6fa2b0210
+ movq %r15, 119
+a format: assem= movq ?8#(`s0), `d0, dst=0x55a6fa2b0430, src=0x55a6fa2b0410
+ movq ?8#(%rsp), 364
+a format: assem= movq 8(`s0), `d0, dst=0x55a6fa2b04e0, src=0x55a6fa2b04c0
+ movq 8(364), 363
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6fa2b0570
+ movq 363, (%rsp)
+a format: assem= leaq L0(%rip), `d0, dst=0x55a6fa2b0670, src=(nil)
+ leaq L0(%rip), 365
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0720, src=0x55a6fa2b0700
+ movq 365, %rdi
+a format: assem= callq print, dst=0x55a6fa2b0830, src=0x55a6f65d9200
+ callq print
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b08e0, src=0x55a6fa2b08c0
+ movq %rax, %rax
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0990, src=0x55a6fa2b0970
+ movq 114, %rbx
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0a40, src=0x55a6fa2b0a20
+ movq 115, %rbp
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0af0, src=0x55a6fa2b0ad0
+ movq 116, %r12
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0ba0, src=0x55a6fa2b0b80
+ movq 117, %r13
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0c50, src=0x55a6fa2b0c30
+ movq 118, %r14
+a format: assem= movq `s0, `d0, dst=0x55a6fa2b0d00, src=0x55a6fa2b0ce0
+ movq 119, %r15
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+ jmp  L41
+a format: assem=L41, dst=(nil), src=(nil)
+L41:
+
+----======before RA=======-----
+Finish flowgraph!!
+begin to initial all maps!
+begin to build livemap!
+begin to build confict graph!
+begin to build spill priority graph!
+Finish liveness analysis!!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+make work list!
+Simplify!
+Simplify!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+Coalesce!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+select a spill node!
+Simplify!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+assign!
+a assign color round!
+----======after RA=======-----
+a format: assem=L42, dst=(nil), src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x55a6fa2b0430, src=0x55a6fa2b0410
+a format: assem= movq 8(`s0), `d0, dst=0x55a6fa2b04e0, src=0x55a6fa2b04c0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55a6fa2b0570
+a format: assem= leaq L0(%rip), `d0, dst=0x55a6fa2b0670, src=(nil)
+a format: assem= callq print, dst=0x55a6fa2b0830, src=0x55a6f65d9200
+a format: assem= jmp  `j0, dst=(nil), src=(nil)
+a format: assem=L41, dst=(nil), src=(nil)

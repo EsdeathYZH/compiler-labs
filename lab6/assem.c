@@ -169,16 +169,17 @@ void AS_rewrite(AS_instrList iList, Temp_map m){
 }
 
 AS_instrList RewriteOneSpill(AS_instrList instrList, Temp_temp temp, F_access access){
+	if(!instrList) return NULL;
 	AS_instr instr = instrList->head;
 	if(instr->kind == I_LABEL){
 		return AS_InstrList(instr, RewriteOneSpill(instrList->tail, temp, access));
 	}else{
 		AS_instr spilledGet = NULL, spillPut = NULL;
+		Temp_temp new_temp = Temp_newtemp();
 		if((instr->kind == I_MOVE && Temp_inList(instr->u.MOVE.src, temp)) ||
 			(instr->kind == I_OPER && Temp_inList(instr->u.OPER.src, temp))){
-			Temp_temp new_temp = Temp_newtemp();
 			char str[100];
-			sprintf(str, " movq %d(`s0), `d0\n", access->u.offset);
+			sprintf(str, " movq ?%d#(`s0), `d0\n", access->u.offset);
 			spilledGet = AS_Oper(String(str), Temp_TempList(new_temp, NULL),
 				Temp_TempList(F_FP(), NULL), NULL);
 			//replace temp with new_temp
@@ -190,9 +191,8 @@ AS_instrList RewriteOneSpill(AS_instrList instrList, Temp_temp temp, F_access ac
 		}
 		if((instr->kind == I_MOVE && Temp_inList(instr->u.MOVE.dst, temp)) ||
 			(instr->kind == I_OPER && Temp_inList(instr->u.OPER.dst, temp))){
-			Temp_temp new_temp = Temp_newtemp();
 			char str[100];
-			sprintf(str, " movq `s1, %d(`s0)\n", access->u.offset);
+			sprintf(str, " movq `s1, ?%d#(`s0)\n", access->u.offset);
 			spillPut = AS_Oper(String(str), NULL,
 				Temp_TempList(F_FP(), Temp_TempList(new_temp, NULL)), NULL);
 			//replace temp with new_temp
@@ -221,3 +221,30 @@ AS_instrList RewriteOneSpill(AS_instrList instrList, Temp_temp temp, F_access ac
 		return result;
 	}
 } 
+
+void RewriteFrameSize(F_frame frame, AS_instrList body){
+	while(body){
+		AS_instr instruction = body->head;
+		body = body->tail;
+		if(instruction->kind == I_OPER && strstr(instruction->u.OPER.assem, "?")){
+			char begin[50] = {0}, middle[10] = {0}, result[100] = {0};
+			char* first_ptr = strstr(instruction->u.OPER.assem, "?");
+			char* second_ptr = strstr(instruction->u.OPER.assem, "#");
+			strncpy(begin, instruction->u.OPER.assem, first_ptr - instruction->u.OPER.assem);
+			strncpy(middle, first_ptr+1, second_ptr-first_ptr-1);
+			int offset = atoi(middle);
+			sprintf(result, "%s%d%s", begin, frame->current_size+offset, second_ptr+1);
+			instruction->u.OPER.assem = String(result);
+		}
+		else if(instruction->kind == I_MOVE && strstr(instruction->u.MOVE.assem, "?")){
+			char begin[50] = {0}, middle[10] = {0}, result[100] = {0};
+			char* first_ptr = strstr(instruction->u.MOVE.assem, "?");
+			char* second_ptr = strstr(instruction->u.MOVE.assem, "#");
+			strncpy(begin, instruction->u.MOVE.assem, first_ptr - instruction->u.MOVE.assem);
+			strncpy(middle, first_ptr+1, second_ptr-first_ptr-1);
+			int offset = atoi(middle);
+			sprintf(result, "%s%d%s", begin, frame->current_size+offset, second_ptr+1);
+			instruction->u.MOVE.assem = String(result);
+		}
+	}
+}

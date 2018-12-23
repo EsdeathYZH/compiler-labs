@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+extern int tigermain();
 
 int *initArray(int size, int init)
 {int i;

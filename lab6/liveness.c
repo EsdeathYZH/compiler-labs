@@ -62,6 +62,7 @@ struct Live_graph Live_liveness(G_graph flow) {
 	assert(flowNodeList);
 	while(flowNodeList){
 		G_node flowNode = flowNodeList->head;
+		//build reverse instructions
 		reverseNodeList = G_NodeList(flowNodeList->head, reverseNodeList);
 
 		enterLiveMap(defsmap, flowNode, FG_def(flowNode));
@@ -113,10 +114,11 @@ struct Live_graph Live_liveness(G_graph flow) {
 			Temp_tempList newOut = NULL;
 			G_nodeList succList = G_succ(node);
 			while(succList){
+				printf("iteration round!\n");
 				newOut = Temp_unionList(newOut, lookupLiveMap(inmap, succList->head));
 				succList = succList->tail;
 			} 
-			newIn = Temp_unionList(uses, Temp_exclusiveList(oldOut, defs));
+			newIn = Temp_unionList(uses, Temp_exclusiveList(newOut, defs));
 			if(!Temp_isSameList(oldIn, newIn) || !Temp_isSameList(oldOut, newOut)){
 				stopIterFlag = FALSE;
 			}
@@ -179,8 +181,10 @@ struct Live_graph Live_liveness(G_graph flow) {
 				while(tempLives){
 					G_node liveNode = FindorCreateTempNode(conflictGraph, tempLives->head);
 					//TODO:如果defNode和liveNode相等如何处理？肯定不能加到图中
-					assert(defNode != liveNode);
-					G_addEdge(defNode, liveNode);
+					//assert(defNode != liveNode);
+					if(defNode!= liveNode){
+						G_addEdge(defNode, liveNode);
+					}
 					tempLives = tempLives->tail;
 				}
 				tempDefs = tempDefs->tail;

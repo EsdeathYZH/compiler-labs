@@ -33,7 +33,8 @@ struct expty expTy(Tr_exp exp, Ty_ty ty)
 F_fragList SEM_transProg(A_exp exp){
 
 	//TODO LAB5: do not forget to add the main frame
-	Tr_level main_level = Tr_newLevel(Tr_outermost(), S_Symbol(String("main")), NULL);
+	Tr_level main_level = Tr_newLevel(Tr_outermost(), S_Symbol(String("tigermain")), NULL);
+	//Tr_level main_level = Tr_outermost();
 	struct expty main_exp = transExp(E_base_venv(), E_base_tenv(), exp, main_level, NULL);
 	Tr_procEntryExit(main_level, main_exp.exp, NULL);
 	return Tr_getResult();

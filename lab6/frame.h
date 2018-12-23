@@ -83,7 +83,7 @@ struct F_fragList_
 
 F_fragList F_FragList(F_frag head, F_fragList tail);
 
-T_stm F_procEntryExit1(F_frame feame, T_stm stm);
-AS_instrList F_procEntryExit2(AS_instrList body);
+T_stm F_procEntryExit1(F_frame frame, T_stm stm);
+AS_instrList F_procEntryExit2(F_frame frame, AS_instrList body);
 AS_proc F_procEntryExit3(F_frame frame, AS_instrList body);
 #endif

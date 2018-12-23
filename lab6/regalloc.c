@@ -268,7 +268,7 @@ void AddEdge(G_node u, G_node v){
 
 void MakeWorklist(){
 	while(initial){
-		printf("make work list!\n");
+		//printf("make work list!\n");
 		G_node n = initial->head;
 		initial = initial->tail;
 		if(Degree(n) >= K){
@@ -298,7 +298,7 @@ bool MoveRelated(G_node n){
 }
 
 void Simplify(){
-	printf("Simplify!\n");
+	//printf("Simplify!\n");
 	G_node n = simplifyWorklist->head;
 	simplifyWorklist = simplifyWorklist->tail;
 	PushSelectStack(n);
@@ -343,7 +343,7 @@ void EnableMoves(G_nodeList nodes){
 void Coalesce(){
 	//TODO:两个问题，一个是copy的顺序问题，一个是m变不变的问题
 	//select first move
-	printf("Coalesce!\n");
+	//printf("Coalesce!\n");
 	G_node u, v;
 	G_node x = worklistMoves->src, mx = worklistMoves->src;
 	G_node y = worklistMoves->dst, my = worklistMoves->dst;
@@ -449,7 +449,7 @@ void Combine(G_node u, G_node v){
 
 void Freeze(){
 	//select the first node
-	printf("Freeze!\n");
+	//printf("Freeze!\n");
 	G_node u = freezeWorklist->head;
 	freezeWorklist = freezeWorklist->tail;
 
@@ -469,7 +469,8 @@ void FreezeMoves(G_node u){
 		}
 		activeMoves = Move_deleteMove(activeMoves, x, y);
 		frozenMoves = Move_insertMove(frozenMoves, x, y);
-		if(!NodeMoves(v) && Degree(v) < K){
+		//TODO:为了防止段错误加的第一个判断条件
+		if(!G_inNodeList(v, precolored) && !NodeMoves(v) && Degree(v) < K){
 			freezeWorklist = G_deleteNode(freezeWorklist, v);
 			simplifyWorklist = G_insertNode(simplifyWorklist, v);
 		}

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "util.h"
 #include "symbol.h"
+#include "string.h"
 #include "graph.h"
 #include "types.h"
 #include "absyn.h"
@@ -48,25 +49,24 @@ static void doProc(FILE *out, F_frame frame, T_stm body)
  Init_F_TempMap();
 
  printf("doProc for function %s:\n", S_name(F_name(frame)));
- /*printStmList(stdout, T_StmList(body, NULL));
- printf("-------====IR tree=====-----\n");*/
+ printStmList(stdout, T_StmList(body, NULL));
+ printf("-------====IR tree=====-----\n");
 
  stmList = C_linearize(body);
- /*printStmList(stdout, stmList);
- printf("-------====Linearlized=====-----\n");*/
+ printStmList(stdout, stmList);
+ printf("-------====Linearlized=====-----\n");
 
  blo = C_basicBlocks(stmList);
  C_stmListList stmLists = blo.stmLists;
- /*for (; stmLists; stmLists = stmLists->tail) {
+ for (; stmLists; stmLists = stmLists->tail) {
  	printStmList(stdout, stmLists->head);
 	printf("------====Basic block=====-------\n");
- }*/
+ }
 
  stmList = C_traceSchedule(blo);
- /*printStmList(stdout, stmList);
- printf("-------====trace=====-----\n");*/
+ printStmList(stdout, stmList);
+ printf("-------====trace=====-----\n");
  iList  = F_codegen(frame, stmList); /* 9 */
-
  AS_printInstrList(stdout, iList, Temp_layerMap(F_tempMap, Temp_name()));
 
  printf("----======before RA=======-----\n");
@@ -76,20 +76,21 @@ static void doProc(FILE *out, F_frame frame, T_stm body)
  proc =	F_procEntryExit3(frame, ra.il);
 
  string procName = S_name(F_name(frame));
- fprintf(out, ".text\n");
+ //fprintf(out, ".text\n");
  fprintf(out, ".globl %s\n", procName);
  fprintf(out, ".type %s, @function\n", procName);
- fprintf(out, "%s:\n", procName);
+ //fprintf(out, "%s:\n", procName);
 
- fprintf(out, "BEGIN function\n");
+ //fprintf(out, "BEGIN function\n");
  //fprintf(stdout, "%s:\n", Temp_labelstring(F_name(frame)));
  //prologue
  fprintf(out, "%s", proc->prolog);
  AS_printInstrList (out, proc->body,
                        Temp_layerMap(F_tempMap, ra.coloring));
  fprintf(out, "%s", proc->epilog);
+ fprintf(out, ".size %s, .-%s\n", procName, procName);
  //fprintf(out, "END %s\n\n", Temp_labelstring(F_name(frame)));
- fprintf(out, "END function\n");
+ //fprintf(out, "END function\n");
 
  //Part of TA's implementation. Just for reference.
  /*
@@ -107,16 +108,26 @@ static void doProc(FILE *out, F_frame frame, T_stm body)
 }
 
 void doStr(FILE *out, Temp_label label, string str) {
-	fprintf(out, ".section .rodata\n");
-	fprintf(out, ".%s:\n", S_name(label));
+	//fprintf(out, ".section .rodata\n");
+	fprintf(out, "%s:\n", S_name(label));
 
-	int length = *(int *)str;
-	length = length + 4;
+	//int length = *(int *)str;
+	//length = length + 4;
+  int length = strlen(str);
 	//it may contains zeros in the middle of string. To keep this work, we need to print all the charactors instead of using fprintf(str)
-	fprintf(out, ".string \"");
+  fprintf(out, ".long %lu\n", length);
+  fprintf(out, ".string \"");
 	int i = 0;
 	for (; i < length; i++) {
-		fprintf(out, "%c", str[i]);
+    if(str[i] == '\n'){
+      fprintf(out, "\\n");
+    }else if(str[i] == '\t'){
+      fprintf(out, "\\t");
+    }else if(str[i] == '\"'){
+      fprintf(out, "\\\"");
+    }else{
+		  fprintf(out, "%c", str[i]);
+    }
 	}
 	fprintf(out, "\"\n");
 
@@ -152,14 +163,26 @@ int main(int argc, string *argv)
    sprintf(outfile, "%s.s", argv[1]);
    out = fopen(outfile, "w");
    /* Chapter 8, 9, 10, 11 & 12 */
-   for (;frags;frags=frags->tail){
-     if(frags->head->kind == F_procFrag) {
-       doProc(out, frags->head->u.proc.frame, frags->head->u.proc.body);
-	   }
-     else if (frags->head->kind == F_stringFrag){
-	    doStr(out, frags->head->u.stringg.label, frags->head->u.stringg.str);
-     }
-   }
+  //  for (;frags;frags=frags->tail){
+  //    if(frags->head->kind == F_procFrag) {
+  //      doProc(out, frags->head->u.proc.frame, frags->head->u.proc.body);
+	//    }
+  //  }
+  //  for (;frags;frags=frags->tail){
+  //    if (frags->head->kind == F_stringFrag){
+	//     doStr(out, frags->head->u.stringg.label, frags->head->u.stringg.str);
+  //    }
+  //  }
+    F_fragList fragments;
+    fprintf(out, ".text\n");
+    for (fragments = frags; fragments; fragments=fragments->tail)
+        if (fragments->head->kind == F_procFrag)
+            doProc(out, fragments->head->u.proc.frame, fragments->head->u.proc.body);
+
+    fprintf(out, ".section .rodata\n");
+    for (fragments = frags; fragments; fragments=fragments->tail)
+        if (fragments->head->kind == F_stringFrag)
+            doStr(out, fragments->head->u.stringg.label, fragments->head->u.stringg.str);
 
    fclose(out);
    return 0;

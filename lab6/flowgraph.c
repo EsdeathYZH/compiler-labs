@@ -69,9 +69,9 @@ bool FG_isMove(G_node n) {
 }
 
 G_graph FG_AssemFlowGraph(AS_instrList il, F_frame f) {
-	//your code here.
 	G_graph flowGraph = G_Graph();
-	//insert all instructions in graph before whole process, so that we don't need to use FindorCreateNode...
+	//insert all instructions in graph before whole process, so that we don't need to use 
+	//function such as FindorCreateNode...
 	AS_instrList tempInstrList = il;
 	while(tempInstrList){
 		AS_instr instruction = tempInstrList->head;
@@ -96,13 +96,7 @@ G_graph FG_AssemFlowGraph(AS_instrList il, F_frame f) {
 		//instruction->kind == I_OPER
 		else{
 			G_node from = findNodeByInstr(nodeList, instruction);
-			if(instruction->u.OPER.jumps == NULL){
-				if(!tempInstrList->tail){
-					G_node to = findNodeByInstr(nodeList, tempInstrList->tail->head);
-					assert(from && to);
-					G_addEdge(from, to);
-				}
-			}else{
+			if(instruction->u.OPER.jumps != NULL){
 				Temp_labelList labelList = instruction->u.OPER.jumps->labels;
 				while(labelList){
 					G_node to = findNodeByInstr(nodeList, findLabelStm(il, labelList->head));
@@ -110,6 +104,11 @@ G_graph FG_AssemFlowGraph(AS_instrList il, F_frame f) {
 					G_addEdge(from, to);
 					labelList = labelList->tail;
 				}
+			}
+			if(tempInstrList->tail){
+				G_node to = findNodeByInstr(nodeList, tempInstrList->tail->head);
+				assert(from && to);
+				G_addEdge(from, to);
 			}
 		}
 		tempInstrList = tempInstrList->tail;
