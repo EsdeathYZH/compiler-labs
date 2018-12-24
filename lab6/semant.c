@@ -158,7 +158,13 @@ struct expty transSubscriptVar(S_table venv, S_table tenv, A_var var, Tr_level l
 			EM_error(get_subvar_exp(var)->pos, "integer required");
 			return expTy(NULL, Ty_Int());
 		}
-		return expTy(Tr_subscriptVar(var_ty.exp, subscript_ty.exp), actual_ty(get_array(var_ty)));
+		int element_size;
+		if(actual_ty(var_ty.ty->u.array) == Ty_Int()){
+			element_size = 4;
+		}else{
+			element_size = 8;
+		}
+		return expTy(Tr_subscriptVar(var_ty.exp, subscript_ty.exp, element_size), actual_ty(get_array(var_ty)));
 	}else{
 		EM_error(var->pos, "array type required");
 		return expTy(NULL, Ty_Int());

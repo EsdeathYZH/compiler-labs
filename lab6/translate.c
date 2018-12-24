@@ -246,10 +246,11 @@ Tr_exp Tr_fieldVar(Tr_exp rec, int offset){
 			T_Binop(T_mul, T_Const(offset), T_Const(F_wordSize)))));
 }
 
-Tr_exp Tr_subscriptVar(Tr_exp array, Tr_exp subscript){
+Tr_exp Tr_subscriptVar(Tr_exp array, Tr_exp subscript, int element_size){
 	return Tr_Ex(T_Mem(
 			T_Binop(T_plus, unEx(array),
-			T_Binop(T_mul, unEx(subscript), T_Const(F_wordSize)))));
+			//Notice!!!The element of a array is integer but not pointer 
+			T_Binop(T_mul, unEx(subscript), T_Const(8)))));
 }
 
 Tr_exp Tr_arithmatic(A_oper op, Tr_exp left, Tr_exp right){

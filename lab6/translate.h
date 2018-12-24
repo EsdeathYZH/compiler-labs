@@ -83,7 +83,7 @@ Tr_exp Tr_string(string str);
 
 Tr_exp Tr_simpleVar(Tr_access, Tr_level);
 
-Tr_exp Tr_subscriptVar(Tr_exp array, Tr_exp subscript);
+Tr_exp Tr_subscriptVar(Tr_exp array, Tr_exp subscript, int element_size);
 
 Tr_exp Tr_fieldVar(Tr_exp rec, int offset);
 

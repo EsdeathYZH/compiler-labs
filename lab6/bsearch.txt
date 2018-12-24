@@ -291,75 +291,75 @@ doProc for function tigermain:
   NAME L11)
  LABEL L11
 -------====trace=====-----
-a format: assem= subq $?0#, %rsp, dst=0x564f191a21c0, src=0x564f191a21a0
+a format: assem= subq $?0#, %rsp, dst=0x55679b9f4640, src=0x55679b9f4620
  subq $?0#, %rsp
 a format: assem=L12, dst=(nil), src=(nil)
 L12:
-a format: assem= movq `s0, `d0, dst=0x564f191a22e0, src=0x564f191a22c0
+a format: assem= movq `s0, `d0, dst=0x55679b9f4760, src=0x55679b9f4740
  movq %rbx, 146
-a format: assem= movq `s0, `d0, dst=0x564f191a2390, src=0x564f191a2370
+a format: assem= movq `s0, `d0, dst=0x55679b9f4810, src=0x55679b9f47f0
  movq %rbp, 147
-a format: assem= movq `s0, `d0, dst=0x564f191a2440, src=0x564f191a2420
+a format: assem= movq `s0, `d0, dst=0x55679b9f48c0, src=0x55679b9f48a0
  movq %r12, 148
-a format: assem= movq `s0, `d0, dst=0x564f191a24f0, src=0x564f191a24d0
+a format: assem= movq `s0, `d0, dst=0x55679b9f4970, src=0x55679b9f4950
  movq %r13, 149
-a format: assem= movq `s0, `d0, dst=0x564f191a25a0, src=0x564f191a2580
+a format: assem= movq `s0, `d0, dst=0x55679b9f4a20, src=0x55679b9f4a00
  movq %r14, 150
-a format: assem= movq `s0, `d0, dst=0x564f191a2650, src=0x564f191a2630
+a format: assem= movq `s0, `d0, dst=0x55679b9f4ad0, src=0x55679b9f4ab0
  movq %r15, 151
-a format: assem= movq $16, `d0, dst=0x564f191a2750, src=(nil)
+a format: assem= movq $16, `d0, dst=0x55679b9f4bd0, src=(nil)
  movq $16, 156
-a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x564f191a2800
+a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x55679b9f4c80
  movq 156, ?-8#(%rsp)
-a format: assem= leaq ?0#(`s0), `d0, dst=0x564f191a2920, src=0x564f191a2900
+a format: assem= leaq ?0#(`s0), `d0, dst=0x55679b9f4da0, src=0x55679b9f4d80
  leaq ?0#(%rsp), 157
-a format: assem= addq $-16, `d0, dst=0x564f191a29d0, src=0x564f191a29b0
+a format: assem= addq $-16, `d0, dst=0x55679b9f4e50, src=0x55679b9f4e30
  addq $-16, 157
-a format: assem= movq `s0, `d0, dst=0x564f191a2a80, src=0x564f191a2a60
+a format: assem= movq `s0, `d0, dst=0x55679b9f4f00, src=0x55679b9f4ee0
  movq 157, 155
-a format: assem= movq $0, `d0, dst=0x564f191a2c10, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55679b9f5090, src=(nil)
  movq $0, 159
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f191a2ca0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679b9f5120
  movq 159, (%rsp)
-a format: assem= movq ?-8#(`s0), `d0, dst=0x564f191a2dc0, src=0x564f191a2da0
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55679b9f5240, src=0x55679b9f5220
  movq ?-8#(%rsp), 160
-a format: assem= movq `s0, `d0, dst=0x564f191a2e70, src=0x564f191a2e50
+a format: assem= movq `s0, `d0, dst=0x55679b9f52f0, src=0x55679b9f52d0
  movq 160, %rdi
-a format: assem= movq $0, `d0, dst=0x564f191a2f70, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55679b9f53f0, src=(nil)
  movq $0, 161
-a format: assem= movq `s0, `d0, dst=0x564f191a3020, src=0x564f191a3000
+a format: assem= movq `s0, `d0, dst=0x55679b9f54a0, src=0x55679b9f5480
  movq 161, %rsi
-a format: assem= callq initArray, dst=0x564f191a3190, src=0x564f191a30d0
+a format: assem= callq initArray, dst=0x55679b9f5610, src=0x55679b9f5550
  callq initArray
-a format: assem= movq `s0, `d0, dst=0x564f191a3240, src=0x564f191a3220
+a format: assem= movq `s0, `d0, dst=0x55679b9f56c0, src=0x55679b9f56a0
  movq %rax, 154
-a format: assem= movq `s1, (`s0), dst=(nil), src=0x564f191a32f0
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55679b9f5770
  movq 154, (155)
-a format: assem= leaq ?0#(%rsp), `d0, dst=0x564f191a3410, src=0x564f191a33f0
+a format: assem= leaq ?0#(%rsp), `d0, dst=0x55679b9f5890, src=0x55679b9f5870
  leaq ?0#(%rsp), 162
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f191a34c0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679b9f5940
  movq 162, (%rsp)
-a format: assem= callq try, dst=0x564f191a35b0, src=(nil)
+a format: assem= callq try, dst=0x55679b9f5a30, src=(nil)
  callq try
-a format: assem= movq `s0, `d0, dst=0x564f191a3660, src=0x564f191a3640
+a format: assem= movq `s0, `d0, dst=0x55679b9f5ae0, src=0x55679b9f5ac0
  movq %rax, %rax
-a format: assem= movq `s0, `d0, dst=0x564f191a3710, src=0x564f191a36f0
+a format: assem= movq `s0, `d0, dst=0x55679b9f5b90, src=0x55679b9f5b70
  movq 146, %rbx
-a format: assem= movq `s0, `d0, dst=0x564f191a37c0, src=0x564f191a37a0
+a format: assem= movq `s0, `d0, dst=0x55679b9f5c40, src=0x55679b9f5c20
  movq 147, %rbp
-a format: assem= movq `s0, `d0, dst=0x564f191a3870, src=0x564f191a3850
+a format: assem= movq `s0, `d0, dst=0x55679b9f5cf0, src=0x55679b9f5cd0
  movq 148, %r12
-a format: assem= movq `s0, `d0, dst=0x564f191a3920, src=0x564f191a3900
+a format: assem= movq `s0, `d0, dst=0x55679b9f5da0, src=0x55679b9f5d80
  movq 149, %r13
-a format: assem= movq `s0, `d0, dst=0x564f191a39d0, src=0x564f191a39b0
+a format: assem= movq `s0, `d0, dst=0x55679b9f5e50, src=0x55679b9f5e30
  movq 150, %r14
-a format: assem= movq `s0, `d0, dst=0x564f191a3a80, src=0x564f191a3a60
+a format: assem= movq `s0, `d0, dst=0x55679b9f5f00, src=0x55679b9f5ee0
  movq 151, %r15
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
  jmp  L11
 a format: assem=L11, dst=(nil), src=(nil)
 L11:
-a format: assem= addq $?0#, %rsp, dst=0x564f191a3c30, src=0x564f191a3c10
+a format: assem= addq $?0#, %rsp, dst=0x55679b9f60b0, src=0x55679b9f6090
  addq $?0#, %rsp
 
 ----======before RA=======-----
@@ -561,28 +561,28 @@ assign!
 assign!
 a assign color round!
 ----======after RA=======-----
-a format: assem= subq $32, %rsp, dst=0x564f191a21c0, src=0x564f191a21a0
+a format: assem= subq $32, %rsp, dst=0x55679b9f4640, src=0x55679b9f4620
 a format: assem=L12, dst=(nil), src=(nil)
-a format: assem= movq $16, `d0, dst=0x564f191a2750, src=(nil)
-a format: assem= movq `s1, 24(`s0), dst=(nil), src=0x564f191a2800
-a format: assem= leaq 32(`s0), `d0, dst=0x564f191a2920, src=0x564f191a2900
-a format: assem= addq $-16, `d0, dst=0x564f191a29d0, src=0x564f191a29b0
+a format: assem= movq $16, `d0, dst=0x55679b9f4bd0, src=(nil)
+a format: assem= movq `s1, 24(`s0), dst=(nil), src=0x55679b9f4c80
+a format: assem= leaq 32(`s0), `d0, dst=0x55679b9f4da0, src=0x55679b9f4d80
+a format: assem= addq $-16, `d0, dst=0x55679b9f4e50, src=0x55679b9f4e30
 a format: assem= movq `s1, 8(`s0)
-, dst=(nil), src=0x564f191ef2e0
-a format: assem= movq $0, `d0, dst=0x564f191a2c10, src=(nil)
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f191a2ca0
-a format: assem= movq 24(`s0), `d0, dst=0x564f191a2dc0, src=0x564f191a2da0
-a format: assem= movq $0, `d0, dst=0x564f191a2f70, src=(nil)
-a format: assem= callq initArray, dst=0x564f191a3190, src=0x564f191a30d0
+, dst=(nil), src=0x55679ba41760
+a format: assem= movq $0, `d0, dst=0x55679b9f5090, src=(nil)
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679b9f5120
+a format: assem= movq 24(`s0), `d0, dst=0x55679b9f5240, src=0x55679b9f5220
+a format: assem= movq $0, `d0, dst=0x55679b9f53f0, src=(nil)
+a format: assem= callq initArray, dst=0x55679b9f5610, src=0x55679b9f5550
 a format: assem= movq 8(`s0), `d0
-, dst=0x564f191ef760, src=0x564f191ef740
-a format: assem= movq `s1, (`s0), dst=(nil), src=0x564f191a32f0
-a format: assem= leaq 32(%rsp), `d0, dst=0x564f191a3410, src=0x564f191a33f0
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f191a34c0
-a format: assem= callq try, dst=0x564f191a35b0, src=(nil)
+, dst=0x55679ba41be0, src=0x55679ba41bc0
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55679b9f5770
+a format: assem= leaq 32(%rsp), `d0, dst=0x55679b9f5890, src=0x55679b9f5870
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679b9f5940
+a format: assem= callq try, dst=0x55679b9f5a30, src=(nil)
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
 a format: assem=L11, dst=(nil), src=(nil)
-a format: assem= addq $32, %rsp, dst=0x564f191a3c30, src=0x564f191a3c10
+a format: assem= addq $32, %rsp, dst=0x55679b9f60b0, src=0x55679b9f6090
 doProc for function try:
  SEQ(
   SEQ(
@@ -626,7 +626,16 @@ doProc for function try:
        EXP(
         CALL(
          NAME printi,
-          TEMP t106,
+          MEM(
+           BINOP(PLUS,
+            CONST 8,
+            MEM(
+             BINOP(PLUS,
+              CONST 8,
+              MEM(
+               BINOP(PLUS,
+                CONST 8,
+                TEMP t106)))))),
           CALL(
            NAME bsearch,
             MEM(
@@ -646,7 +655,16 @@ doProc for function try:
             CONST 7)))),
       CALL(
        NAME print,
-        TEMP t106,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          MEM(
+           BINOP(PLUS,
+            CONST 8,
+            MEM(
+             BINOP(PLUS,
+              CONST 8,
+              TEMP t106)))))),
         NAME L10))),
     SEQ(
      SEQ(
@@ -699,7 +717,16 @@ doProc for function try:
       TEMP t106))))
  MOVE(
   TEMP t197,
-  TEMP t106)
+  MEM(
+   BINOP(PLUS,
+    CONST 8,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))))))
  MOVE(
   TEMP t196,
   CALL(
@@ -728,7 +755,16 @@ doProc for function try:
   TEMP t110,
   CALL(
    NAME print,
-    TEMP t106,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)))))),
     NAME L10))
  MOVE(
   TEMP t116,
@@ -777,7 +813,16 @@ doProc for function try:
       TEMP t106))))
  MOVE(
   TEMP t197,
-  TEMP t106)
+  MEM(
+   BINOP(PLUS,
+    CONST 8,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))))))
  MOVE(
   TEMP t196,
   CALL(
@@ -806,7 +851,16 @@ doProc for function try:
   TEMP t110,
   CALL(
    NAME print,
-    TEMP t106,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)))))),
     NAME L10))
  MOVE(
   TEMP t116,
@@ -857,7 +911,16 @@ doProc for function try:
       TEMP t106))))
  MOVE(
   TEMP t197,
-  TEMP t106)
+  MEM(
+   BINOP(PLUS,
+    CONST 8,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        TEMP t106)))))))
  MOVE(
   TEMP t196,
   CALL(
@@ -886,7 +949,16 @@ doProc for function try:
   TEMP t110,
   CALL(
    NAME print,
-    TEMP t106,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)))))),
     NAME L10))
  MOVE(
   TEMP t116,
@@ -910,99 +982,119 @@ doProc for function try:
   NAME L13)
  LABEL L13
 -------====trace=====-----
-a format: assem= subq $?0#, %rsp, dst=0x564f19259a10, src=0x564f192599f0
+a format: assem= subq $?0#, %rsp, dst=0x55679baac8b0, src=0x55679baac890
  subq $?0#, %rsp
 a format: assem=L14, dst=(nil), src=(nil)
 L14:
-a format: assem= movq `s0, `d0, dst=0x564f19259b30, src=0x564f19259b10
+a format: assem= movq `s0, `d0, dst=0x55679baac9d0, src=0x55679baac9b0
  movq %rbx, 140
-a format: assem= movq `s0, `d0, dst=0x564f19259be0, src=0x564f19259bc0
+a format: assem= movq `s0, `d0, dst=0x55679baaca80, src=0x55679baaca60
  movq %rbp, 141
-a format: assem= movq `s0, `d0, dst=0x564f19259c90, src=0x564f19259c70
+a format: assem= movq `s0, `d0, dst=0x55679baacb30, src=0x55679baacb10
  movq %r12, 142
-a format: assem= movq `s0, `d0, dst=0x564f19259d40, src=0x564f19259d20
+a format: assem= movq `s0, `d0, dst=0x55679baacbe0, src=0x55679baacbc0
  movq %r13, 143
-a format: assem= movq `s0, `d0, dst=0x564f19259df0, src=0x564f19259dd0
+a format: assem= movq `s0, `d0, dst=0x55679baacc90, src=0x55679baacc70
  movq %r14, 144
-a format: assem= movq `s0, `d0, dst=0x564f19259ea0, src=0x564f19259e80
+a format: assem= movq `s0, `d0, dst=0x55679baacd40, src=0x55679baacd20
  movq %r15, 145
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f1925a050, src=0x564f1925a030
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679baacef0, src=0x55679baaced0
  movq ?8#(%rsp), 199
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925a0e0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679baacf80
  movq 199, (%rsp)
-a format: assem= callq init, dst=0x564f1925a1d0, src=(nil)
+a format: assem= callq init, dst=0x55679baad070, src=(nil)
  callq init
-a format: assem= leaq ?0#(`s0), `d0, dst=0x564f1925a280, src=0x564f1925a260
- leaq ?0#(%rsp), 197
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f1925a430, src=0x564f1925a410
- movq ?8#(%rsp), 201
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925a4c0
- movq 201, (%rsp)
-a format: assem= movq $0, `d0, dst=0x564f1925a5c0, src=(nil)
- movq $0, 202
-a format: assem= movq `s0, `d0, dst=0x564f1925a670, src=0x564f1925a650
- movq 202, %rdi
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f1925a870, src=0x564f1925a850
- movq ?8#(%rsp), 205
-a format: assem= movq -8(`s0), `d0, dst=0x564f1925a920, src=0x564f1925a900
- movq -8(205), 204
-a format: assem= movq `s0, `d0, dst=0x564f1925a9d0, src=0x564f1925a9b0
- movq 204, 203
-a format: assem= subq $1, `d0, dst=0x564f1925aa60, src=(nil)
- subq $1, 203
-a format: assem= movq `s0, `d0, dst=0x564f1925ab10, src=0x564f1925aaf0
- movq 203, %rsi
-a format: assem= movq $7, `d0, dst=0x564f1925ac10, src=(nil)
- movq $7, 206
-a format: assem= movq `s0, `d0, dst=0x564f1925acc0, src=0x564f1925aca0
- movq 206, %rdx
-a format: assem= callq bsearch, dst=0x564f1925ae10, src=0x564f1925ad90
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679baad270, src=0x55679baad250
+ movq ?8#(%rsp), 202
+a format: assem= movq 8(`s0), `d0, dst=0x55679baad320, src=0x55679baad300
+ movq 8(202), 201
+a format: assem= movq 8(`s0), `d0, dst=0x55679baad3d0, src=0x55679baad3b0
+ movq 8(201), 200
+a format: assem= movq `s0, `d0, dst=0x55679baad480, src=0x55679baad460
+ movq 200, 197
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679baad630, src=0x55679baad610
+ movq ?8#(%rsp), 204
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679baad6c0
+ movq 204, (%rsp)
+a format: assem= movq $0, `d0, dst=0x55679baad7c0, src=(nil)
+ movq $0, 205
+a format: assem= movq `s0, `d0, dst=0x55679baad870, src=0x55679baad850
+ movq 205, %rdi
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679baada70, src=0x55679baada50
+ movq ?8#(%rsp), 208
+a format: assem= movq -8(`s0), `d0, dst=0x55679baadb20, src=0x55679baadb00
+ movq -8(208), 207
+a format: assem= movq `s0, `d0, dst=0x55679baadbd0, src=0x55679baadbb0
+ movq 207, 206
+a format: assem= subq $1, `d0, dst=0x55679baadc60, src=(nil)
+ subq $1, 206
+a format: assem= movq `s0, `d0, dst=0x55679baadd10, src=0x55679baadcf0
+ movq 206, %rsi
+a format: assem= movq $7, `d0, dst=0x55679baade10, src=(nil)
+ movq $7, 209
+a format: assem= movq `s0, `d0, dst=0x55679baadec0, src=0x55679baadea0
+ movq 209, %rdx
+a format: assem= callq bsearch, dst=0x55679baae010, src=0x55679baadf90
  callq bsearch
-a format: assem= movq `s0, `d0, dst=0x564f1925aec0, src=0x564f1925aea0
+a format: assem= movq `s0, `d0, dst=0x55679baae0c0, src=0x55679baae0a0
  movq %rax, 196
-a format: assem= leaq ?0#(%rsp), `d0, dst=0x564f1925afe0, src=0x564f1925afc0
- leaq ?0#(%rsp), 207
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925b090
- movq 207, (%rsp)
-a format: assem= movq `s0, `d0, dst=0x564f1925b140, src=0x564f1925b120
+a format: assem= leaq ?0#(%rsp), `d0, dst=0x55679baae1e0, src=0x55679baae1c0
+ leaq ?0#(%rsp), 210
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679baae290
+ movq 210, (%rsp)
+a format: assem= movq `s0, `d0, dst=0x55679baae340, src=0x55679baae320
  movq 196, %rdi
-a format: assem= callq printi, dst=0x564f1925b250, src=0x564f1925b1d0
+a format: assem= callq printi, dst=0x55679baae450, src=0x55679baae3d0
  callq printi
-a format: assem= leaq ?0#(%rsp), `d0, dst=0x564f1925b370, src=0x564f1925b350
- leaq ?0#(%rsp), 208
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925b420
- movq 208, (%rsp)
-a format: assem= leaq L10(%rip), `d0, dst=0x564f1925b520, src=(nil)
- leaq L10(%rip), 209
-a format: assem= movq `s0, `d0, dst=0x564f1925b5d0, src=0x564f1925b5b0
- movq 209, %rdi
-a format: assem= callq print, dst=0x564f1925b6e0, src=0x564f1925b660
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679baae6e0, src=0x55679baae6c0
+ movq ?8#(%rsp), 214
+a format: assem= movq 8(`s0), `d0, dst=0x55679baae790, src=0x55679baae770
+ movq 8(214), 213
+a format: assem= movq 8(`s0), `d0, dst=0x55679baae840, src=0x55679baae820
+ movq 8(213), 212
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679baae8d0
+ movq 212, (%rsp)
+a format: assem= leaq L10(%rip), `d0, dst=0x55679baae9d0, src=(nil)
+ leaq L10(%rip), 215
+a format: assem= movq `s0, `d0, dst=0x55679baaea80, src=0x55679baaea60
+ movq 215, %rdi
+a format: assem= callq print, dst=0x55679baaeb90, src=0x55679baaeb10
  callq print
-a format: assem= movq `s0, `d0, dst=0x564f1925b790, src=0x564f1925b770
+a format: assem= movq `s0, `d0, dst=0x55679baaec40, src=0x55679baaec20
  movq %rax, %rax
-a format: assem= movq `s0, `d0, dst=0x564f1925b840, src=0x564f1925b820
+a format: assem= movq `s0, `d0, dst=0x55679baaecf0, src=0x55679baaecd0
  movq 140, %rbx
-a format: assem= movq `s0, `d0, dst=0x564f1925b8f0, src=0x564f1925b8d0
+a format: assem= movq `s0, `d0, dst=0x55679baaeda0, src=0x55679baaed80
  movq 141, %rbp
-a format: assem= movq `s0, `d0, dst=0x564f1925b9a0, src=0x564f1925b980
+a format: assem= movq `s0, `d0, dst=0x55679baaee50, src=0x55679baaee30
  movq 142, %r12
-a format: assem= movq `s0, `d0, dst=0x564f1925ba50, src=0x564f1925ba30
+a format: assem= movq `s0, `d0, dst=0x55679baaef00, src=0x55679baaeee0
  movq 143, %r13
-a format: assem= movq `s0, `d0, dst=0x564f1925bb00, src=0x564f1925bae0
+a format: assem= movq `s0, `d0, dst=0x55679baaefb0, src=0x55679baaef90
  movq 144, %r14
-a format: assem= movq `s0, `d0, dst=0x564f1925bbb0, src=0x564f1925bb90
+a format: assem= movq `s0, `d0, dst=0x55679baaf060, src=0x55679baaf040
  movq 145, %r15
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
  jmp  L13
 a format: assem=L13, dst=(nil), src=(nil)
 L13:
-a format: assem= addq $?0#, %rsp, dst=0x564f1925bd60, src=0x564f1925bd40
+a format: assem= addq $?0#, %rsp, dst=0x55679baaf210, src=0x55679baaf1f0
  addq $?0#, %rsp
 
 ----======before RA=======-----
 Finish flowgraph!!
 begin to initial all maps!
 begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
 iteration round!
 iteration round!
 iteration round!
@@ -1116,32 +1208,42 @@ assign!
 assign!
 assign!
 assign!
+assign!
+assign!
+assign!
+assign!
+assign!
 a assign color round!
 ----======after RA=======-----
-a format: assem= subq $8, %rsp, dst=0x564f19259a10, src=0x564f192599f0
+a format: assem= subq $8, %rsp, dst=0x55679baac8b0, src=0x55679baac890
 a format: assem=L14, dst=(nil), src=(nil)
-a format: assem= movq 16(`s0), `d0, dst=0x564f1925a050, src=0x564f1925a030
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925a0e0
-a format: assem= callq init, dst=0x564f1925a1d0, src=(nil)
-a format: assem= movq 16(`s0), `d0, dst=0x564f1925a430, src=0x564f1925a410
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925a4c0
-a format: assem= movq $0, `d0, dst=0x564f1925a5c0, src=(nil)
-a format: assem= movq 16(`s0), `d0, dst=0x564f1925a870, src=0x564f1925a850
-a format: assem= movq -8(`s0), `d0, dst=0x564f1925a920, src=0x564f1925a900
-a format: assem= subq $1, `d0, dst=0x564f1925aa60, src=(nil)
-a format: assem= movq $7, `d0, dst=0x564f1925ac10, src=(nil)
-a format: assem= callq bsearch, dst=0x564f1925ae10, src=0x564f1925ad90
-a format: assem= movq `s0, `d0, dst=0x564f1925aec0, src=0x564f1925aea0
-a format: assem= leaq 8(%rsp), `d0, dst=0x564f1925afe0, src=0x564f1925afc0
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925b090
-a format: assem= callq printi, dst=0x564f1925b250, src=0x564f1925b1d0
-a format: assem= leaq 8(%rsp), `d0, dst=0x564f1925b370, src=0x564f1925b350
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f1925b420
-a format: assem= leaq L10(%rip), `d0, dst=0x564f1925b520, src=(nil)
-a format: assem= callq print, dst=0x564f1925b6e0, src=0x564f1925b660
+a format: assem= movq 16(`s0), `d0, dst=0x55679baacef0, src=0x55679baaced0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679baacf80
+a format: assem= callq init, dst=0x55679baad070, src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x55679baad270, src=0x55679baad250
+a format: assem= movq 8(`s0), `d0, dst=0x55679baad320, src=0x55679baad300
+a format: assem= movq 8(`s0), `d0, dst=0x55679baad3d0, src=0x55679baad3b0
+a format: assem= movq 16(`s0), `d0, dst=0x55679baad630, src=0x55679baad610
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679baad6c0
+a format: assem= movq $0, `d0, dst=0x55679baad7c0, src=(nil)
+a format: assem= movq 16(`s0), `d0, dst=0x55679baada70, src=0x55679baada50
+a format: assem= movq -8(`s0), `d0, dst=0x55679baadb20, src=0x55679baadb00
+a format: assem= subq $1, `d0, dst=0x55679baadc60, src=(nil)
+a format: assem= movq $7, `d0, dst=0x55679baade10, src=(nil)
+a format: assem= callq bsearch, dst=0x55679baae010, src=0x55679baadf90
+a format: assem= movq `s0, `d0, dst=0x55679baae0c0, src=0x55679baae0a0
+a format: assem= leaq 8(%rsp), `d0, dst=0x55679baae1e0, src=0x55679baae1c0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679baae290
+a format: assem= callq printi, dst=0x55679baae450, src=0x55679baae3d0
+a format: assem= movq 16(`s0), `d0, dst=0x55679baae6e0, src=0x55679baae6c0
+a format: assem= movq 8(`s0), `d0, dst=0x55679baae790, src=0x55679baae770
+a format: assem= movq 8(`s0), `d0, dst=0x55679baae840, src=0x55679baae820
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679baae8d0
+a format: assem= leaq L10(%rip), `d0, dst=0x55679baae9d0, src=(nil)
+a format: assem= callq print, dst=0x55679baaeb90, src=0x55679baaeb10
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
 a format: assem=L13, dst=(nil), src=(nil)
-a format: assem= addq $8, %rsp, dst=0x564f1925bd60, src=0x564f1925bd40
+a format: assem= addq $8, %rsp, dst=0x55679baaf210, src=0x55679baaf1f0
 doProc for function bsearch:
  SEQ(
   SEQ(
@@ -1233,7 +1335,7 @@ doProc for function bsearch:
                      BINOP(PLUS,
                       TEMP t106,
                       CONST -8)),
-                    CONST 8))),
+                    CONST 4))),
                  TEMP t109,
                  L4,L5),
                 SEQ(
@@ -1366,7 +1468,7 @@ doProc for function bsearch:
       BINOP(PLUS,
        TEMP t106,
        CONST -8)),
-     CONST 8))),
+     CONST 4))),
   TEMP t109,
   L4,L5)
  LABEL L4
@@ -1496,7 +1598,7 @@ doProc for function bsearch:
       BINOP(PLUS,
        TEMP t106,
        CONST -8)),
-     CONST 8))),
+     CONST 4))),
   TEMP t109,
   L4,L5)
 ------====Basic block=====-------
@@ -1628,7 +1730,7 @@ doProc for function bsearch:
       BINOP(PLUS,
        TEMP t106,
        CONST -8)),
-     CONST 8))),
+     CONST 4))),
   TEMP t109,
   L4,L5)
  LABEL L5
@@ -1701,147 +1803,147 @@ doProc for function bsearch:
   NAME L6)
  LABEL L15
 -------====trace=====-----
-a format: assem= subq $?0#, %rsp, dst=0x564f192f4100, src=0x564f192f40e0
+a format: assem= subq $?0#, %rsp, dst=0x55679bb66050, src=0x55679bb66030
  subq $?0#, %rsp
 a format: assem=L16, dst=(nil), src=(nil)
 L16:
-a format: assem= movq `s0, `d0, dst=0x564f192f4220, src=0x564f192f4200
+a format: assem= movq `s0, `d0, dst=0x55679bb66170, src=0x55679bb66150
  movq %rbx, 134
-a format: assem= movq `s0, `d0, dst=0x564f192f42d0, src=0x564f192f42b0
+a format: assem= movq `s0, `d0, dst=0x55679bb66220, src=0x55679bb66200
  movq %rbp, 135
-a format: assem= movq `s0, `d0, dst=0x564f192f4380, src=0x564f192f4360
+a format: assem= movq `s0, `d0, dst=0x55679bb662d0, src=0x55679bb662b0
  movq %r12, 136
-a format: assem= movq `s0, `d0, dst=0x564f192f4430, src=0x564f192f4410
+a format: assem= movq `s0, `d0, dst=0x55679bb66380, src=0x55679bb66360
  movq %r13, 137
-a format: assem= movq `s0, `d0, dst=0x564f192f44e0, src=0x564f192f44c0
+a format: assem= movq `s0, `d0, dst=0x55679bb66430, src=0x55679bb66410
  movq %r14, 138
-a format: assem= movq `s0, `d0, dst=0x564f192f4590, src=0x564f192f4570
+a format: assem= movq `s0, `d0, dst=0x55679bb664e0, src=0x55679bb664c0
  movq %r15, 139
-a format: assem= movq `s0, `d0, dst=0x564f192f4640, src=0x564f192f4620
+a format: assem= movq `s0, `d0, dst=0x55679bb66590, src=0x55679bb66570
  movq %rdi, 107
-a format: assem= movq `s0, `d0, dst=0x564f192f46f0, src=0x564f192f46d0
+a format: assem= movq `s0, `d0, dst=0x55679bb66640, src=0x55679bb66620
  movq %rsi, 108
-a format: assem= movq `s0, `d0, dst=0x564f192f47a0, src=0x564f192f4780
+a format: assem= movq `s0, `d0, dst=0x55679bb666f0, src=0x55679bb666d0
  movq %rdx, 109
-a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f192f4850
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55679bb667a0
  cmpq 108, 107
 a format: assem= je  `j0, dst=(nil), src=(nil)
  je  L7
 a format: assem=L8, dst=(nil), src=(nil)
 L8:
-a format: assem= movq `s0, `d0, dst=0x564f192f4b00, src=0x564f192f4ae0
- movq 107, 211
-a format: assem= addq `s1, `d0, dst=0x564f192f4bd0, src=0x564f192f4bb0
- addq 108, 211
-a format: assem= movq `s0, %rax, dst=0x564f192f4c80, src=0x564f192f4c60
- movq 211, %rax
-a format: assem= cqto, dst=0x564f192f4d50, src=0x564f192f4d10
+a format: assem= movq `s0, `d0, dst=0x55679bb66a50, src=0x55679bb66a30
+ movq 107, 217
+a format: assem= addq `s1, `d0, dst=0x55679bb66b20, src=0x55679bb66b00
+ addq 108, 217
+a format: assem= movq `s0, %rax, dst=0x55679bb66bd0, src=0x55679bb66bb0
+ movq 217, %rax
+a format: assem= cqto, dst=0x55679bb66ca0, src=0x55679bb66c60
  cqto
-a format: assem= movq $2, `d0, dst=0x564f192f4e90, src=(nil)
- movq $2, 212
-a format: assem= idivq `s0, dst=0x564f192f4f60, src=0x564f192f4f20
- idivq 212
-a format: assem= movq %rax, `d0, dst=0x564f192f5010, src=0x564f192f4ff0
- movq %rax, 210
-a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x564f192f50c0
- movq 210, ?-8#(%rsp)
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f192f5350, src=0x564f192f5330
- movq ?8#(%rsp), 216
-a format: assem= movq -16(`s0), `d0, dst=0x564f192f5400, src=0x564f192f53e0
- movq -16(216), 215
-a format: assem= movq `s0, `d0, dst=0x564f192f54b0, src=0x564f192f5490
- movq 215, 214
-a format: assem= movq ?-8#(`s0), `d0, dst=0x564f192f5640, src=0x564f192f5620
- movq ?-8#(%rsp), 218
-a format: assem= movq `s0, %rax, dst=0x564f192f56f0, src=0x564f192f56d0
- movq 218, %rax
-a format: assem= movq $8, `d0, dst=0x564f192f5810, src=(nil)
- movq $8, 219
-a format: assem= imulq `s0, dst=0x564f192f58e0, src=0x564f192f58a0
- imulq 219
-a format: assem= movq %rax, `d0, dst=0x564f192f5990, src=0x564f192f5970
- movq %rax, 217
-a format: assem= addq `s1, `d0, dst=0x564f192f5a60, src=0x564f192f5a40
- addq 217, 214
-a format: assem= movq (`s0), `d0, dst=0x564f192f5b10, src=0x564f192f5af0
- movq (214), 213
-a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f192f5ba0
- cmpq 109, 213
+a format: assem= movq $2, `d0, dst=0x55679bb66de0, src=(nil)
+ movq $2, 218
+a format: assem= idivq `s0, dst=0x55679bb66eb0, src=0x55679bb66e70
+ idivq 218
+a format: assem= movq %rax, `d0, dst=0x55679bb66f60, src=0x55679bb66f40
+ movq %rax, 216
+a format: assem= movq `s1, ?-8#(`s0), dst=(nil), src=0x55679bb67010
+ movq 216, ?-8#(%rsp)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679bb672a0, src=0x55679bb67280
+ movq ?8#(%rsp), 222
+a format: assem= movq -16(`s0), `d0, dst=0x55679bb67350, src=0x55679bb67330
+ movq -16(222), 221
+a format: assem= movq `s0, `d0, dst=0x55679bb67400, src=0x55679bb673e0
+ movq 221, 220
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55679bb67590, src=0x55679bb67570
+ movq ?-8#(%rsp), 224
+a format: assem= movq `s0, %rax, dst=0x55679bb67640, src=0x55679bb67620
+ movq 224, %rax
+a format: assem= movq $4, `d0, dst=0x55679bb67760, src=(nil)
+ movq $4, 225
+a format: assem= imulq `s0, dst=0x55679bb67830, src=0x55679bb677f0
+ imulq 225
+a format: assem= movq %rax, `d0, dst=0x55679bb678e0, src=0x55679bb678c0
+ movq %rax, 223
+a format: assem= addq `s1, `d0, dst=0x55679bb679b0, src=0x55679bb67990
+ addq 223, 220
+a format: assem= movq (`s0), `d0, dst=0x55679bb67a60, src=0x55679bb67a40
+ movq (220), 219
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55679bb67af0
+ cmpq 109, 219
 a format: assem= jl  `j0, dst=(nil), src=(nil)
  jl  L4
 a format: assem=L5, dst=(nil), src=(nil)
 L5:
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f192f5e70, src=0x564f192f5e50
- movq ?8#(%rsp), 221
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f192f5f00
- movq 221, (%rsp)
-a format: assem= movq `s0, `d0, dst=0x564f192f5fb0, src=0x564f192f5f90
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679bb67dc0, src=0x55679bb67da0
+ movq ?8#(%rsp), 227
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679bb67e50
+ movq 227, (%rsp)
+a format: assem= movq `s0, `d0, dst=0x55679bb67f00, src=0x55679bb67ee0
  movq 107, %rdi
-a format: assem= movq ?-8#(`s0), `d0, dst=0x564f192f60d0, src=0x564f192f60b0
- movq ?-8#(%rsp), 222
-a format: assem= movq `s0, `d0, dst=0x564f192f6180, src=0x564f192f6160
- movq 222, %rsi
-a format: assem= movq `s0, `d0, dst=0x564f192f6230, src=0x564f192f6210
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55679bb68020, src=0x55679bb68000
+ movq ?-8#(%rsp), 228
+a format: assem= movq `s0, `d0, dst=0x55679bb680d0, src=0x55679bb680b0
+ movq 228, %rsi
+a format: assem= movq `s0, `d0, dst=0x55679bb68180, src=0x55679bb68160
  movq 109, %rdx
-a format: assem= callq bsearch, dst=0x564f192f6380, src=0x564f192f6300
+a format: assem= callq bsearch, dst=0x55679bb682d0, src=0x55679bb68250
  callq bsearch
-a format: assem= movq `s0, `d0, dst=0x564f192f6430, src=0x564f192f6410
+a format: assem= movq `s0, `d0, dst=0x55679bb68380, src=0x55679bb68360
  movq %rax, 132
 a format: assem=L6, dst=(nil), src=(nil)
 L6:
-a format: assem= movq `s0, `d0, dst=0x564f192f6550, src=0x564f192f6530
+a format: assem= movq `s0, `d0, dst=0x55679bb684a0, src=0x55679bb68480
  movq 132, 133
 a format: assem=L9, dst=(nil), src=(nil)
 L9:
-a format: assem= movq `s0, `d0, dst=0x564f192f6670, src=0x564f192f6650
+a format: assem= movq `s0, `d0, dst=0x55679bb685c0, src=0x55679bb685a0
  movq 133, %rax
-a format: assem= movq `s0, `d0, dst=0x564f192f6720, src=0x564f192f6700
+a format: assem= movq `s0, `d0, dst=0x55679bb68670, src=0x55679bb68650
  movq 134, %rbx
-a format: assem= movq `s0, `d0, dst=0x564f192f67d0, src=0x564f192f67b0
+a format: assem= movq `s0, `d0, dst=0x55679bb68720, src=0x55679bb68700
  movq 135, %rbp
-a format: assem= movq `s0, `d0, dst=0x564f192f6880, src=0x564f192f6860
+a format: assem= movq `s0, `d0, dst=0x55679bb687d0, src=0x55679bb687b0
  movq 136, %r12
-a format: assem= movq `s0, `d0, dst=0x564f192f6930, src=0x564f192f6910
+a format: assem= movq `s0, `d0, dst=0x55679bb68880, src=0x55679bb68860
  movq 137, %r13
-a format: assem= movq `s0, `d0, dst=0x564f192f69e0, src=0x564f192f69c0
+a format: assem= movq `s0, `d0, dst=0x55679bb68930, src=0x55679bb68910
  movq 138, %r14
-a format: assem= movq `s0, `d0, dst=0x564f192f6a90, src=0x564f192f6a70
+a format: assem= movq `s0, `d0, dst=0x55679bb689e0, src=0x55679bb689c0
  movq 139, %r15
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
  jmp  L15
 a format: assem=L7, dst=(nil), src=(nil)
 L7:
-a format: assem= movq `s0, `d0, dst=0x564f192f6c40, src=0x564f192f6c20
+a format: assem= movq `s0, `d0, dst=0x55679bb68b90, src=0x55679bb68b70
  movq 107, 133
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
  jmp  L9
 a format: assem=L4, dst=(nil), src=(nil)
 L4:
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f192f6ef0, src=0x564f192f6ed0
- movq ?8#(%rsp), 224
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f192f6f80
- movq 224, (%rsp)
-a format: assem= movq ?-8#(`s0), `d0, dst=0x564f192f7110, src=0x564f192f70f0
- movq ?-8#(%rsp), 226
-a format: assem= movq `s0, `d0, dst=0x564f192f71c0, src=0x564f192f71a0
- movq 226, 225
-a format: assem= addq $1, `d0, dst=0x564f192f7270, src=0x564f192f7250
- addq $1, 225
-a format: assem= movq `s0, `d0, dst=0x564f192f7320, src=0x564f192f7300
- movq 225, %rdi
-a format: assem= movq `s0, `d0, dst=0x564f192f73d0, src=0x564f192f73b0
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679bb68e40, src=0x55679bb68e20
+ movq ?8#(%rsp), 230
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679bb68ed0
+ movq 230, (%rsp)
+a format: assem= movq ?-8#(`s0), `d0, dst=0x55679bb69060, src=0x55679bb69040
+ movq ?-8#(%rsp), 232
+a format: assem= movq `s0, `d0, dst=0x55679bb69110, src=0x55679bb690f0
+ movq 232, 231
+a format: assem= addq $1, `d0, dst=0x55679bb691c0, src=0x55679bb691a0
+ addq $1, 231
+a format: assem= movq `s0, `d0, dst=0x55679bb69270, src=0x55679bb69250
+ movq 231, %rdi
+a format: assem= movq `s0, `d0, dst=0x55679bb69320, src=0x55679bb69300
  movq 108, %rsi
-a format: assem= movq `s0, `d0, dst=0x564f192f7480, src=0x564f192f7460
+a format: assem= movq `s0, `d0, dst=0x55679bb693d0, src=0x55679bb693b0
  movq 109, %rdx
-a format: assem= callq bsearch, dst=0x564f192f75d0, src=0x564f192f7550
+a format: assem= callq bsearch, dst=0x55679bb69520, src=0x55679bb694a0
  callq bsearch
-a format: assem= movq `s0, `d0, dst=0x564f192f7680, src=0x564f192f7660
+a format: assem= movq `s0, `d0, dst=0x55679bb695d0, src=0x55679bb695b0
  movq %rax, 132
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
  jmp  L6
 a format: assem=L15, dst=(nil), src=(nil)
 L15:
-a format: assem= addq $?0#, %rsp, dst=0x564f192f7830, src=0x564f192f7810
+a format: assem= addq $?0#, %rsp, dst=0x55679bb69780, src=0x55679bb69760
  addq $?0#, %rsp
 
 ----======before RA=======-----
@@ -2427,70 +2529,70 @@ assign!
 assign!
 a assign color round!
 ----======after RA=======-----
-a format: assem= subq $40, %rsp, dst=0x564f192f4100, src=0x564f192f40e0
+a format: assem= subq $40, %rsp, dst=0x55679bb66050, src=0x55679bb66030
 a format: assem=L16, dst=(nil), src=(nil)
 a format: assem= movq `s1, 24(`s0)
-, dst=(nil), src=0x564f1947e9c0
+, dst=(nil), src=0x55679bcf0910
 a format: assem= movq `s1, 8(`s0)
-, dst=(nil), src=0x564f19483d00
+, dst=(nil), src=0x55679bcf5c50
 a format: assem= movq `s1, 16(`s0)
-, dst=(nil), src=0x564f19481330
+, dst=(nil), src=0x55679bcf3280
 a format: assem= movq 24(`s0), `d0
-, dst=0x564f1947eba0, src=0x564f1947eb80
+, dst=0x55679bcf0af0, src=0x55679bcf0ad0
 a format: assem= movq 8(`s0), `d0
-, dst=0x564f19483f50, src=0x564f19483f30
-a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f192f4850
+, dst=0x55679bcf5ea0, src=0x55679bcf5e80
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55679bb667a0
 a format: assem= je  `j0, dst=(nil), src=(nil)
 a format: assem=L8, dst=(nil), src=(nil)
 a format: assem= movq 24(`s0), `d0
-, dst=0x564f1947ed10, src=0x564f1947ecf0
+, dst=0x55679bcf0c60, src=0x55679bcf0c40
 a format: assem= movq 8(`s0), `d0
-, dst=0x564f194841a0, src=0x564f19484180
-a format: assem= addq `s1, `d0, dst=0x564f192f4bd0, src=0x564f192f4bb0
-a format: assem= cqto, dst=0x564f192f4d50, src=0x564f192f4d10
-a format: assem= movq $2, `d0, dst=0x564f192f4e90, src=(nil)
-a format: assem= idivq `s0, dst=0x564f192f4f60, src=0x564f192f4f20
-a format: assem= movq `s1, 32(`s0), dst=(nil), src=0x564f192f50c0
-a format: assem= movq 48(`s0), `d0, dst=0x564f192f5350, src=0x564f192f5330
-a format: assem= movq -16(`s0), `d0, dst=0x564f192f5400, src=0x564f192f53e0
-a format: assem= movq 32(`s0), `d0, dst=0x564f192f5640, src=0x564f192f5620
-a format: assem= movq $8, `d0, dst=0x564f192f5810, src=(nil)
-a format: assem= imulq `s0, dst=0x564f192f58e0, src=0x564f192f58a0
-a format: assem= addq `s1, `d0, dst=0x564f192f5a60, src=0x564f192f5a40
-a format: assem= movq (`s0), `d0, dst=0x564f192f5b10, src=0x564f192f5af0
+, dst=0x55679bcf60f0, src=0x55679bcf60d0
+a format: assem= addq `s1, `d0, dst=0x55679bb66b20, src=0x55679bb66b00
+a format: assem= cqto, dst=0x55679bb66ca0, src=0x55679bb66c60
+a format: assem= movq $2, `d0, dst=0x55679bb66de0, src=(nil)
+a format: assem= idivq `s0, dst=0x55679bb66eb0, src=0x55679bb66e70
+a format: assem= movq `s1, 32(`s0), dst=(nil), src=0x55679bb67010
+a format: assem= movq 48(`s0), `d0, dst=0x55679bb672a0, src=0x55679bb67280
+a format: assem= movq -16(`s0), `d0, dst=0x55679bb67350, src=0x55679bb67330
+a format: assem= movq 32(`s0), `d0, dst=0x55679bb67590, src=0x55679bb67570
+a format: assem= movq $4, `d0, dst=0x55679bb67760, src=(nil)
+a format: assem= imulq `s0, dst=0x55679bb67830, src=0x55679bb677f0
+a format: assem= addq `s1, `d0, dst=0x55679bb679b0, src=0x55679bb67990
+a format: assem= movq (`s0), `d0, dst=0x55679bb67a60, src=0x55679bb67a40
 a format: assem= movq 16(`s0), `d0
-, dst=0x564f19481dd0, src=0x564f19481db0
-a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f192f5ba0
+, dst=0x55679bcf3d20, src=0x55679bcf3d00
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55679bb67af0
 a format: assem= jl  `j0, dst=(nil), src=(nil)
 a format: assem=L5, dst=(nil), src=(nil)
-a format: assem= movq 48(`s0), `d0, dst=0x564f192f5e70, src=0x564f192f5e50
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f192f5f00
+a format: assem= movq 48(`s0), `d0, dst=0x55679bb67dc0, src=0x55679bb67da0
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679bb67e50
 a format: assem= movq 24(`s0), `d0
-, dst=0x564f1947f740, src=0x564f1947f720
-a format: assem= movq 32(`s0), `d0, dst=0x564f192f60d0, src=0x564f192f60b0
+, dst=0x55679bcf1690, src=0x55679bcf1670
+a format: assem= movq 32(`s0), `d0, dst=0x55679bb68020, src=0x55679bb68000
 a format: assem= movq 16(`s0), `d0
-, dst=0x564f194821e0, src=0x564f194821c0
-a format: assem= callq bsearch, dst=0x564f192f6380, src=0x564f192f6300
+, dst=0x55679bcf4130, src=0x55679bcf4110
+a format: assem= callq bsearch, dst=0x55679bb682d0, src=0x55679bb68250
 a format: assem=L6, dst=(nil), src=(nil)
 a format: assem=L9, dst=(nil), src=(nil)
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
 a format: assem=L7, dst=(nil), src=(nil)
 a format: assem= movq 24(`s0), `d0
-, dst=0x564f1947fe60, src=0x564f1947fe40
+, dst=0x55679bcf1db0, src=0x55679bcf1d90
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
 a format: assem=L4, dst=(nil), src=(nil)
-a format: assem= movq 48(`s0), `d0, dst=0x564f192f6ef0, src=0x564f192f6ed0
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f192f6f80
-a format: assem= movq 32(`s0), `d0, dst=0x564f192f7110, src=0x564f192f70f0
-a format: assem= addq $1, `d0, dst=0x564f192f7270, src=0x564f192f7250
+a format: assem= movq 48(`s0), `d0, dst=0x55679bb68e40, src=0x55679bb68e20
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679bb68ed0
+a format: assem= movq 32(`s0), `d0, dst=0x55679bb69060, src=0x55679bb69040
+a format: assem= addq $1, `d0, dst=0x55679bb691c0, src=0x55679bb691a0
 a format: assem= movq 8(`s0), `d0
-, dst=0x564f19485730, src=0x564f19485710
+, dst=0x55679bcf7680, src=0x55679bcf7660
 a format: assem= movq 16(`s0), `d0
-, dst=0x564f19482c10, src=0x564f19482bf0
-a format: assem= callq bsearch, dst=0x564f192f75d0, src=0x564f192f7550
+, dst=0x55679bcf4b60, src=0x55679bcf4b40
+a format: assem= callq bsearch, dst=0x55679bb69520, src=0x55679bb694a0
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
 a format: assem=L15, dst=(nil), src=(nil)
-a format: assem= addq $40, %rsp, dst=0x564f192f7830, src=0x564f192f7810
+a format: assem= addq $40, %rsp, dst=0x55679bb69780, src=0x55679bb69760
 doProc for function init:
  SEQ(
   SEQ(
@@ -2569,7 +2671,7 @@ doProc for function init:
                   CONST -16)),
                 BINOP(TIMES,
                  TEMP t123,
-                 CONST 8))),
+                 CONST 4))),
               BINOP(PLUS,
                BINOP(TIMES,
                 TEMP t123,
@@ -2680,7 +2782,7 @@ doProc for function init:
       CONST -16)),
     BINOP(TIMES,
      TEMP t123,
-     CONST 8))),
+     CONST 4))),
   BINOP(PLUS,
    BINOP(TIMES,
     TEMP t123,
@@ -2787,7 +2889,7 @@ doProc for function init:
       CONST -16)),
     BINOP(TIMES,
      TEMP t123,
-     CONST 8))),
+     CONST 4))),
   BINOP(PLUS,
    BINOP(TIMES,
     TEMP t123,
@@ -2921,7 +3023,7 @@ doProc for function init:
       CONST -16)),
     BINOP(TIMES,
      TEMP t123,
-     CONST 8))),
+     CONST 4))),
   BINOP(PLUS,
    BINOP(TIMES,
     TEMP t123,
@@ -2948,125 +3050,125 @@ doProc for function init:
   NAME L3)
  LABEL L17
 -------====trace=====-----
-a format: assem= subq $?0#, %rsp, dst=0x564f19623e10, src=0x564f19623df0
+a format: assem= subq $?0#, %rsp, dst=0x55679be95d60, src=0x55679be95d40
  subq $?0#, %rsp
 a format: assem=L18, dst=(nil), src=(nil)
 L18:
-a format: assem= movq `s0, `d0, dst=0x564f19623f30, src=0x564f19623f10
+a format: assem= movq `s0, `d0, dst=0x55679be95e80, src=0x55679be95e60
  movq %rbx, 126
-a format: assem= movq `s0, `d0, dst=0x564f19623fe0, src=0x564f19623fc0
+a format: assem= movq `s0, `d0, dst=0x55679be95f30, src=0x55679be95f10
  movq %rbp, 127
-a format: assem= movq `s0, `d0, dst=0x564f19624090, src=0x564f19624070
+a format: assem= movq `s0, `d0, dst=0x55679be95fe0, src=0x55679be95fc0
  movq %r12, 128
-a format: assem= movq `s0, `d0, dst=0x564f19624140, src=0x564f19624120
+a format: assem= movq `s0, `d0, dst=0x55679be96090, src=0x55679be96070
  movq %r13, 129
-a format: assem= movq `s0, `d0, dst=0x564f196241f0, src=0x564f196241d0
+a format: assem= movq `s0, `d0, dst=0x55679be96140, src=0x55679be96120
  movq %r14, 130
-a format: assem= movq `s0, `d0, dst=0x564f196242a0, src=0x564f19624280
+a format: assem= movq `s0, `d0, dst=0x55679be961f0, src=0x55679be961d0
  movq %r15, 131
-a format: assem= movq $0, `d0, dst=0x564f196243a0, src=(nil)
- movq $0, 430
-a format: assem= movq `s0, `d0, dst=0x564f19624450, src=0x564f19624430
- movq 430, 123
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f19624650, src=0x564f19624630
- movq ?8#(%rsp), 433
-a format: assem= movq -8(`s0), `d0, dst=0x564f19624700, src=0x564f196246e0
- movq -8(433), 432
-a format: assem= movq `s0, `d0, dst=0x564f196247b0, src=0x564f19624790
- movq 432, 431
-a format: assem= subq $1, `d0, dst=0x564f19624840, src=(nil)
- subq $1, 431
-a format: assem= movq `s0, `d0, dst=0x564f196248f0, src=0x564f196248d0
- movq 431, 124
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f19624af0, src=0x564f19624ad0
- movq ?8#(%rsp), 436
-a format: assem= movq -8(`s0), `d0, dst=0x564f19624ba0, src=0x564f19624b80
- movq -8(436), 435
-a format: assem= movq `s0, `d0, dst=0x564f19624c50, src=0x564f19624c30
- movq 435, 434
-a format: assem= subq $1, `d0, dst=0x564f19624ce0, src=(nil)
- subq $1, 434
-a format: assem= movq $0, `d0, dst=0x564f19624e00, src=(nil)
- movq $0, 437
-a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f19624e90
- cmpq 434, 437
+a format: assem= movq $0, `d0, dst=0x55679be962f0, src=(nil)
+ movq $0, 436
+a format: assem= movq `s0, `d0, dst=0x55679be963a0, src=0x55679be96380
+ movq 436, 123
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679be965a0, src=0x55679be96580
+ movq ?8#(%rsp), 439
+a format: assem= movq -8(`s0), `d0, dst=0x55679be96650, src=0x55679be96630
+ movq -8(439), 438
+a format: assem= movq `s0, `d0, dst=0x55679be96700, src=0x55679be966e0
+ movq 438, 437
+a format: assem= subq $1, `d0, dst=0x55679be96790, src=(nil)
+ subq $1, 437
+a format: assem= movq `s0, `d0, dst=0x55679be96840, src=0x55679be96820
+ movq 437, 124
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679be96a40, src=0x55679be96a20
+ movq ?8#(%rsp), 442
+a format: assem= movq -8(`s0), `d0, dst=0x55679be96af0, src=0x55679be96ad0
+ movq -8(442), 441
+a format: assem= movq `s0, `d0, dst=0x55679be96ba0, src=0x55679be96b80
+ movq 441, 440
+a format: assem= subq $1, `d0, dst=0x55679be96c30, src=(nil)
+ subq $1, 440
+a format: assem= movq $0, `d0, dst=0x55679be96d50, src=(nil)
+ movq $0, 443
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55679be96de0
+ cmpq 440, 443
 a format: assem= jle  `j0, dst=(nil), src=(nil)
  jle  L3
 a format: assem=L1, dst=(nil), src=(nil)
 L1:
-a format: assem= movq $0, `d0, dst=0x564f196250b0, src=(nil)
- movq $0, 438
-a format: assem= movq `s0, `d0, dst=0x564f19625160, src=0x564f19625140
- movq 438, %rax
-a format: assem= movq `s0, `d0, dst=0x564f19625210, src=0x564f196251f0
+a format: assem= movq $0, `d0, dst=0x55679be97000, src=(nil)
+ movq $0, 444
+a format: assem= movq `s0, `d0, dst=0x55679be970b0, src=0x55679be97090
+ movq 444, %rax
+a format: assem= movq `s0, `d0, dst=0x55679be97160, src=0x55679be97140
  movq 126, %rbx
-a format: assem= movq `s0, `d0, dst=0x564f196252c0, src=0x564f196252a0
+a format: assem= movq `s0, `d0, dst=0x55679be97210, src=0x55679be971f0
  movq 127, %rbp
-a format: assem= movq `s0, `d0, dst=0x564f19625370, src=0x564f19625350
+a format: assem= movq `s0, `d0, dst=0x55679be972c0, src=0x55679be972a0
  movq 128, %r12
-a format: assem= movq `s0, `d0, dst=0x564f19625420, src=0x564f19625400
+a format: assem= movq `s0, `d0, dst=0x55679be97370, src=0x55679be97350
  movq 129, %r13
-a format: assem= movq `s0, `d0, dst=0x564f196254d0, src=0x564f196254b0
+a format: assem= movq `s0, `d0, dst=0x55679be97420, src=0x55679be97400
  movq 130, %r14
-a format: assem= movq `s0, `d0, dst=0x564f19625580, src=0x564f19625560
+a format: assem= movq `s0, `d0, dst=0x55679be974d0, src=0x55679be974b0
  movq 131, %r15
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
  jmp  L17
 a format: assem=L3, dst=(nil), src=(nil)
 L3:
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f19625880, src=0x564f19625860
- movq ?8#(%rsp), 441
-a format: assem= movq -16(`s0), `d0, dst=0x564f19625930, src=0x564f19625910
- movq -16(441), 440
-a format: assem= movq `s0, `d0, dst=0x564f196259e0, src=0x564f196259c0
- movq 440, 439
-a format: assem= movq `s0, %rax, dst=0x564f19625b00, src=0x564f19625ae0
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679be977d0, src=0x55679be977b0
+ movq ?8#(%rsp), 447
+a format: assem= movq -16(`s0), `d0, dst=0x55679be97880, src=0x55679be97860
+ movq -16(447), 446
+a format: assem= movq `s0, `d0, dst=0x55679be97930, src=0x55679be97910
+ movq 446, 445
+a format: assem= movq `s0, %rax, dst=0x55679be97a50, src=0x55679be97a30
  movq 123, %rax
-a format: assem= movq $8, `d0, dst=0x564f19625c20, src=(nil)
- movq $8, 443
-a format: assem= imulq `s0, dst=0x564f19625cf0, src=0x564f19625cb0
- imulq 443
-a format: assem= movq %rax, `d0, dst=0x564f19625da0, src=0x564f19625d80
- movq %rax, 442
-a format: assem= addq `s1, `d0, dst=0x564f19625e70, src=0x564f19625e50
- addq 442, 439
-a format: assem= movq `s0, %rax, dst=0x564f19626000, src=0x564f19625fe0
+a format: assem= movq $4, `d0, dst=0x55679be97b70, src=(nil)
+ movq $4, 449
+a format: assem= imulq `s0, dst=0x55679be97c40, src=0x55679be97c00
+ imulq 449
+a format: assem= movq %rax, `d0, dst=0x55679be97cf0, src=0x55679be97cd0
+ movq %rax, 448
+a format: assem= addq `s1, `d0, dst=0x55679be97dc0, src=0x55679be97da0
+ addq 448, 445
+a format: assem= movq `s0, %rax, dst=0x55679be97f50, src=0x55679be97f30
  movq 123, %rax
-a format: assem= movq $2, `d0, dst=0x564f19626120, src=(nil)
- movq $2, 446
-a format: assem= imulq `s0, dst=0x564f196261f0, src=0x564f196261b0
- imulq 446
-a format: assem= movq %rax, `d0, dst=0x564f196262a0, src=0x564f19626280
- movq %rax, 445
-a format: assem= movq `s0, `d0, dst=0x564f19626350, src=0x564f19626330
- movq 445, 444
-a format: assem= addq $1, `d0, dst=0x564f19626400, src=0x564f196263e0
- addq $1, 444
-a format: assem= movq `s1, (`s0), dst=(nil), src=0x564f196264b0
- movq 444, (439)
-a format: assem= movq ?8#(`s0), `d0, dst=0x564f19626660, src=0x564f19626640
- movq ?8#(%rsp), 448
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f196266f0
- movq 448, (%rsp)
-a format: assem= callq nop, dst=0x564f196267e0, src=(nil)
+a format: assem= movq $2, `d0, dst=0x55679be98070, src=(nil)
+ movq $2, 452
+a format: assem= imulq `s0, dst=0x55679be98140, src=0x55679be98100
+ imulq 452
+a format: assem= movq %rax, `d0, dst=0x55679be981f0, src=0x55679be981d0
+ movq %rax, 451
+a format: assem= movq `s0, `d0, dst=0x55679be982a0, src=0x55679be98280
+ movq 451, 450
+a format: assem= addq $1, `d0, dst=0x55679be98350, src=0x55679be98330
+ addq $1, 450
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55679be98400
+ movq 450, (445)
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679be985b0, src=0x55679be98590
+ movq ?8#(%rsp), 454
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679be98640
+ movq 454, (%rsp)
+a format: assem= callq nop, dst=0x55679be98730, src=(nil)
  callq nop
-a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f19626890
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55679be987e0
  cmpq 124, 123
 a format: assem= jge  `j0, dst=(nil), src=(nil)
  jge  L1
 a format: assem=L2, dst=(nil), src=(nil)
 L2:
-a format: assem= movq `s0, `d0, dst=0x564f19626ad0, src=0x564f19626ab0
- movq 123, 449
-a format: assem= addq $1, `d0, dst=0x564f19626b80, src=0x564f19626b60
- addq $1, 449
-a format: assem= movq `s0, `d0, dst=0x564f19626c30, src=0x564f19626c10
- movq 449, 123
+a format: assem= movq `s0, `d0, dst=0x55679be98a20, src=0x55679be98a00
+ movq 123, 455
+a format: assem= addq $1, `d0, dst=0x55679be98ad0, src=0x55679be98ab0
+ addq $1, 455
+a format: assem= movq `s0, `d0, dst=0x55679be98b80, src=0x55679be98b60
+ movq 455, 123
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
  jmp  L3
 a format: assem=L17, dst=(nil), src=(nil)
 L17:
-a format: assem= addq $?0#, %rsp, dst=0x564f19626de0, src=0x564f19626dc0
+a format: assem= addq $?0#, %rsp, dst=0x55679be98d30, src=0x55679be98d10
  addq $?0#, %rsp
 
 ----======before RA=======-----
@@ -3696,57 +3798,57 @@ assign!
 assign!
 a assign color round!
 ----======after RA=======-----
-a format: assem= subq $24, %rsp, dst=0x564f19623e10, src=0x564f19623df0
+a format: assem= subq $24, %rsp, dst=0x55679be95d60, src=0x55679be95d40
 a format: assem=L18, dst=(nil), src=(nil)
-a format: assem= movq $0, `d0, dst=0x564f196243a0, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55679be962f0, src=(nil)
 a format: assem= movq `s1, 16(`s0)
-, dst=(nil), src=0x564f197fc220
-a format: assem= movq 32(`s0), `d0, dst=0x564f19624650, src=0x564f19624630
-a format: assem= movq -8(`s0), `d0, dst=0x564f19624700, src=0x564f196246e0
-a format: assem= subq $1, `d0, dst=0x564f19624840, src=(nil)
+, dst=(nil), src=0x55679c06e170
+a format: assem= movq 32(`s0), `d0, dst=0x55679be965a0, src=0x55679be96580
+a format: assem= movq -8(`s0), `d0, dst=0x55679be96650, src=0x55679be96630
+a format: assem= subq $1, `d0, dst=0x55679be96790, src=(nil)
 a format: assem= movq `s1, 8(`s0)
-, dst=(nil), src=0x564f197fe8b0
-a format: assem= movq 32(`s0), `d0, dst=0x564f19624af0, src=0x564f19624ad0
-a format: assem= movq -8(`s0), `d0, dst=0x564f19624ba0, src=0x564f19624b80
-a format: assem= subq $1, `d0, dst=0x564f19624ce0, src=(nil)
-a format: assem= movq $0, `d0, dst=0x564f19624e00, src=(nil)
-a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f19624e90
+, dst=(nil), src=0x55679c070800
+a format: assem= movq 32(`s0), `d0, dst=0x55679be96a40, src=0x55679be96a20
+a format: assem= movq -8(`s0), `d0, dst=0x55679be96af0, src=0x55679be96ad0
+a format: assem= subq $1, `d0, dst=0x55679be96c30, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55679be96d50, src=(nil)
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55679be96de0
 a format: assem= jle  `j0, dst=(nil), src=(nil)
 a format: assem=L1, dst=(nil), src=(nil)
-a format: assem= movq $0, `d0, dst=0x564f196250b0, src=(nil)
+a format: assem= movq $0, `d0, dst=0x55679be97000, src=(nil)
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
 a format: assem=L3, dst=(nil), src=(nil)
-a format: assem= movq 32(`s0), `d0, dst=0x564f19625880, src=0x564f19625860
-a format: assem= movq -16(`s0), `d0, dst=0x564f19625930, src=0x564f19625910
+a format: assem= movq 32(`s0), `d0, dst=0x55679be977d0, src=0x55679be977b0
+a format: assem= movq -16(`s0), `d0, dst=0x55679be97880, src=0x55679be97860
 a format: assem= movq 16(`s0), `d0
-, dst=0x564f197fcda0, src=0x564f197fcd80
-a format: assem= movq $8, `d0, dst=0x564f19625c20, src=(nil)
-a format: assem= imulq `s0, dst=0x564f19625cf0, src=0x564f19625cb0
-a format: assem= addq `s1, `d0, dst=0x564f19625e70, src=0x564f19625e50
+, dst=0x55679c06ecf0, src=0x55679c06ecd0
+a format: assem= movq $4, `d0, dst=0x55679be97b70, src=(nil)
+a format: assem= imulq `s0, dst=0x55679be97c40, src=0x55679be97c00
+a format: assem= addq `s1, `d0, dst=0x55679be97dc0, src=0x55679be97da0
 a format: assem= movq 16(`s0), `d0
-, dst=0x564f197fd060, src=0x564f197fd040
-a format: assem= movq $2, `d0, dst=0x564f19626120, src=(nil)
-a format: assem= imulq `s0, dst=0x564f196261f0, src=0x564f196261b0
-a format: assem= addq $1, `d0, dst=0x564f19626400, src=0x564f196263e0
-a format: assem= movq `s1, (`s0), dst=(nil), src=0x564f196264b0
-a format: assem= movq 32(`s0), `d0, dst=0x564f19626660, src=0x564f19626640
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f196266f0
-a format: assem= callq nop, dst=0x564f196267e0, src=(nil)
+, dst=0x55679c06efb0, src=0x55679c06ef90
+a format: assem= movq $2, `d0, dst=0x55679be98070, src=(nil)
+a format: assem= imulq `s0, dst=0x55679be98140, src=0x55679be98100
+a format: assem= addq $1, `d0, dst=0x55679be98350, src=0x55679be98330
+a format: assem= movq `s1, (`s0), dst=(nil), src=0x55679be98400
+a format: assem= movq 32(`s0), `d0, dst=0x55679be985b0, src=0x55679be98590
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679be98640
+a format: assem= callq nop, dst=0x55679be98730, src=(nil)
 a format: assem= movq 16(`s0), `d0
-, dst=0x564f197fd550, src=0x564f197fd530
+, dst=0x55679c06f4a0, src=0x55679c06f480
 a format: assem= movq 8(`s0), `d0
-, dst=0x564f197ff9e0, src=0x564f197ff9c0
-a format: assem= cmpq `s1, `s0, dst=(nil), src=0x564f19626890
+, dst=0x55679c071930, src=0x55679c071910
+a format: assem= cmpq `s1, `s0, dst=(nil), src=0x55679be987e0
 a format: assem= jge  `j0, dst=(nil), src=(nil)
 a format: assem=L2, dst=(nil), src=(nil)
 a format: assem= movq 16(`s0), `d0
-, dst=0x564f197fd6c0, src=0x564f197fd6a0
-a format: assem= addq $1, `d0, dst=0x564f19626b80, src=0x564f19626b60
+, dst=0x55679c06f610, src=0x55679c06f5f0
+a format: assem= addq $1, `d0, dst=0x55679be98ad0, src=0x55679be98ab0
 a format: assem= movq `s1, 16(`s0)
-, dst=(nil), src=0x564f197fd830
+, dst=(nil), src=0x55679c06f780
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
 a format: assem=L17, dst=(nil), src=(nil)
-a format: assem= addq $24, %rsp, dst=0x564f19626de0, src=0x564f19626dc0
+a format: assem= addq $24, %rsp, dst=0x55679be98d30, src=0x55679be98d10
 doProc for function nop:
  SEQ(
   SEQ(
@@ -3780,7 +3882,16 @@ doProc for function nop:
      TEMP t110,
      CALL(
       NAME print,
-       TEMP t106,
+       MEM(
+        BINOP(PLUS,
+         CONST 8,
+         MEM(
+          BINOP(PLUS,
+           CONST 8,
+           MEM(
+            BINOP(PLUS,
+             CONST 8,
+             TEMP t106)))))),
        NAME L0)),
     SEQ(
      SEQ(
@@ -3828,7 +3939,16 @@ doProc for function nop:
   TEMP t110,
   CALL(
    NAME print,
-    TEMP t106,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)))))),
     NAME L0))
  MOVE(
   TEMP t116,
@@ -3872,7 +3992,16 @@ doProc for function nop:
   TEMP t110,
   CALL(
    NAME print,
-    TEMP t106,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)))))),
     NAME L0))
  MOVE(
   TEMP t116,
@@ -3918,7 +4047,16 @@ doProc for function nop:
   TEMP t110,
   CALL(
    NAME print,
-    TEMP t106,
+    MEM(
+     BINOP(PLUS,
+      CONST 8,
+      MEM(
+       BINOP(PLUS,
+        CONST 8,
+        MEM(
+         BINOP(PLUS,
+          CONST 8,
+          TEMP t106)))))),
     NAME L0))
  MOVE(
   TEMP t116,
@@ -3942,57 +4080,65 @@ doProc for function nop:
   NAME L19)
  LABEL L19
 -------====trace=====-----
-a format: assem= subq $?0#, %rsp, dst=0x564f199e1e70, src=0x564f199e1e50
+a format: assem= subq $?0#, %rsp, dst=0x55679c2542d0, src=0x55679c2542b0
  subq $?0#, %rsp
 a format: assem=L20, dst=(nil), src=(nil)
 L20:
-a format: assem= movq `s0, `d0, dst=0x564f199e1f90, src=0x564f199e1f70
+a format: assem= movq `s0, `d0, dst=0x55679c2543f0, src=0x55679c2543d0
  movq %rbx, 117
-a format: assem= movq `s0, `d0, dst=0x564f199e2040, src=0x564f199e2020
+a format: assem= movq `s0, `d0, dst=0x55679c2544a0, src=0x55679c254480
  movq %rbp, 118
-a format: assem= movq `s0, `d0, dst=0x564f199e20f0, src=0x564f199e20d0
+a format: assem= movq `s0, `d0, dst=0x55679c254550, src=0x55679c254530
  movq %r12, 119
-a format: assem= movq `s0, `d0, dst=0x564f199e21a0, src=0x564f199e2180
+a format: assem= movq `s0, `d0, dst=0x55679c254600, src=0x55679c2545e0
  movq %r13, 120
-a format: assem= movq `s0, `d0, dst=0x564f199e2250, src=0x564f199e2230
+a format: assem= movq `s0, `d0, dst=0x55679c2546b0, src=0x55679c254690
  movq %r14, 121
-a format: assem= movq `s0, `d0, dst=0x564f199e2300, src=0x564f199e22e0
+a format: assem= movq `s0, `d0, dst=0x55679c254760, src=0x55679c254740
  movq %r15, 122
-a format: assem= leaq ?0#(%rsp), `d0, dst=0x564f199e2420, src=0x564f199e2400
- leaq ?0#(%rsp), 566
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f199e24d0
- movq 566, (%rsp)
-a format: assem= leaq L0(%rip), `d0, dst=0x564f199e25d0, src=(nil)
- leaq L0(%rip), 567
-a format: assem= movq `s0, `d0, dst=0x564f199e2680, src=0x564f199e2660
- movq 567, %rdi
-a format: assem= callq print, dst=0x564f199e2790, src=0x564f199e2710
+a format: assem= movq ?8#(`s0), `d0, dst=0x55679c2549f0, src=0x55679c2549d0
+ movq ?8#(%rsp), 575
+a format: assem= movq 8(`s0), `d0, dst=0x55679c254aa0, src=0x55679c254a80
+ movq 8(575), 574
+a format: assem= movq 8(`s0), `d0, dst=0x55679c254b50, src=0x55679c254b30
+ movq 8(574), 573
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679c254be0
+ movq 573, (%rsp)
+a format: assem= leaq L0(%rip), `d0, dst=0x55679c254ce0, src=(nil)
+ leaq L0(%rip), 576
+a format: assem= movq `s0, `d0, dst=0x55679c254d90, src=0x55679c254d70
+ movq 576, %rdi
+a format: assem= callq print, dst=0x55679c254ea0, src=0x55679c254e20
  callq print
-a format: assem= movq `s0, `d0, dst=0x564f199e2840, src=0x564f199e2820
+a format: assem= movq `s0, `d0, dst=0x55679c254f50, src=0x55679c254f30
  movq %rax, %rax
-a format: assem= movq `s0, `d0, dst=0x564f199e28f0, src=0x564f199e28d0
+a format: assem= movq `s0, `d0, dst=0x55679c255000, src=0x55679c254fe0
  movq 117, %rbx
-a format: assem= movq `s0, `d0, dst=0x564f199e29a0, src=0x564f199e2980
+a format: assem= movq `s0, `d0, dst=0x55679c2550b0, src=0x55679c255090
  movq 118, %rbp
-a format: assem= movq `s0, `d0, dst=0x564f199e2a50, src=0x564f199e2a30
+a format: assem= movq `s0, `d0, dst=0x55679c255160, src=0x55679c255140
  movq 119, %r12
-a format: assem= movq `s0, `d0, dst=0x564f199e2b00, src=0x564f199e2ae0
+a format: assem= movq `s0, `d0, dst=0x55679c255210, src=0x55679c2551f0
  movq 120, %r13
-a format: assem= movq `s0, `d0, dst=0x564f199e2bb0, src=0x564f199e2b90
+a format: assem= movq `s0, `d0, dst=0x55679c2552c0, src=0x55679c2552a0
  movq 121, %r14
-a format: assem= movq `s0, `d0, dst=0x564f199e2c60, src=0x564f199e2c40
+a format: assem= movq `s0, `d0, dst=0x55679c255370, src=0x55679c255350
  movq 122, %r15
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
  jmp  L19
 a format: assem=L19, dst=(nil), src=(nil)
 L19:
-a format: assem= addq $?0#, %rsp, dst=0x564f199e2e10, src=0x564f199e2df0
+a format: assem= addq $?0#, %rsp, dst=0x55679c255520, src=0x55679c255500
  addq $?0#, %rsp
 
 ----======before RA=======-----
 Finish flowgraph!!
 begin to initial all maps!
 begin to build livemap!
+iteration round!
+iteration round!
+iteration round!
+iteration round!
 iteration round!
 iteration round!
 iteration round!
@@ -4054,14 +4200,18 @@ assign!
 assign!
 assign!
 assign!
+assign!
+assign!
 a assign color round!
 ----======after RA=======-----
-a format: assem= subq $8, %rsp, dst=0x564f199e1e70, src=0x564f199e1e50
+a format: assem= subq $8, %rsp, dst=0x55679c2542d0, src=0x55679c2542b0
 a format: assem=L20, dst=(nil), src=(nil)
-a format: assem= leaq 8(%rsp), `d0, dst=0x564f199e2420, src=0x564f199e2400
-a format: assem= movq `s0, (%rsp), dst=(nil), src=0x564f199e24d0
-a format: assem= leaq L0(%rip), `d0, dst=0x564f199e25d0, src=(nil)
-a format: assem= callq print, dst=0x564f199e2790, src=0x564f199e2710
+a format: assem= movq 16(`s0), `d0, dst=0x55679c2549f0, src=0x55679c2549d0
+a format: assem= movq 8(`s0), `d0, dst=0x55679c254aa0, src=0x55679c254a80
+a format: assem= movq 8(`s0), `d0, dst=0x55679c254b50, src=0x55679c254b30
+a format: assem= movq `s0, (%rsp), dst=(nil), src=0x55679c254be0
+a format: assem= leaq L0(%rip), `d0, dst=0x55679c254ce0, src=(nil)
+a format: assem= callq print, dst=0x55679c254ea0, src=0x55679c254e20
 a format: assem= jmp  `j0, dst=(nil), src=(nil)
 a format: assem=L19, dst=(nil), src=(nil)
-a format: assem= addq $8, %rsp, dst=0x564f199e2e10, src=0x564f199e2df0
+a format: assem= addq $8, %rsp, dst=0x55679c255520, src=0x55679c255500
