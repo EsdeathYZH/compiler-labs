@@ -273,18 +273,18 @@ void Init_F_TempMap(){
     //initialize calleesaveregs
     if(calleesaves == NULL){
         calleesaves = Temp_empty();
-        Temp_enter(calleesaves, F_RBP(), String("%%rbp"));
-        Temp_enter(calleesaves, F_RBX(), String("%%rbx"));
-        Temp_enter(calleesaves, F_R12(), String("%%r12"));
-        Temp_enter(calleesaves, F_R13(), String("%%r13"));
-        Temp_enter(calleesaves, F_R14(), String("%%r14"));
-        Temp_enter(calleesaves, F_R15(), String("%%r15"));
+        Temp_enter(calleesaves, F_RBP(), String("%rbp"));
+        Temp_enter(calleesaves, F_RBX(), String("%rbx"));
+        Temp_enter(calleesaves, F_R12(), String("%r12"));
+        Temp_enter(calleesaves, F_R13(), String("%r13"));
+        Temp_enter(calleesaves, F_R14(), String("%r14"));
+        Temp_enter(calleesaves, F_R15(), String("%r15"));
     }
     //initialize callersaveregs
     if(callersaves == NULL){
         callersaves = Temp_empty();
-        Temp_enter(callersaves, F_R10(), String("%%r10"));
-	    Temp_enter(callersaves, F_R11(), String("%%r11"));
+        Temp_enter(callersaves, F_R10(), String("%r10"));
+	    Temp_enter(callersaves, F_R11(), String("%r11"));
     }
 }
 
@@ -349,6 +349,7 @@ F_frame F_newFrame(Temp_label name, U_boolList formals){
 	//skip static link
 	formals = formals->tail;
 	Temp_tempList argregs = argRegs();
+	//arguments view change
 	while(formals){
 		//argument in memory
 		//如果实参在内存但是本身不逃逸，就move到寄存器中
@@ -357,12 +358,13 @@ F_frame F_newFrame(Temp_label name, U_boolList formals){
 			*temp_accessList = F_AccessList(localVar, NULL);
 			frame->prologue = T_Seq(frame->prologue, T_Move(T_Temp(localVar->u.reg), 
 						T_Mem(T_Binop(T_plus, T_Const((2+offset)*F_wordSize), T_Temp(F_FP())))));
-		}//其余两种对应的情况，就什么都不做直接用实参来访问
+		}//如果实参在寄存器，也要mov到临时变量中，原因见bug-report.txt
 		else if(!formals->head && offset <= 5){
 			F_access localVar = F_allocLocal(frame, FALSE);
 			*temp_accessList = F_AccessList(localVar, NULL);
 			frame->prologue = T_Seq(frame->prologue, T_Move(T_Temp(localVar->u.reg), T_Temp(argregs->head)));
-		}else if(formals->head && offset > 5){
+		}//如果1实参在内存并且逃逸，就在原位置就好
+		else if(formals->head && offset > 5){
 			*temp_accessList = F_AccessList(InFrame((2+offset)*F_wordSize), NULL);
 		}
 		//如果实参在寄存器但是本身逃逸，就move到内存中
@@ -476,7 +478,7 @@ AS_proc F_procEntryExit3(F_frame frame, AS_instrList body){
 	if(frame->max_arg_num > 6){
 		frame->current_size += (frame->max_arg_num - 6) * F_wordSize;
 	}
-	//将之前的framesize#进行统一修正
+	//fix all framesize
 	RewriteFrameSize(frame, body);
 	char prolog_buf[100], epilog_buf[100];
 	//sprintf(prolog_buf, "%s:\n .cfi_startproc\n subq $%d, %%rsp\n", S_name(frame->label), frame->current_size);

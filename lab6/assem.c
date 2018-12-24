@@ -179,7 +179,7 @@ AS_instrList RewriteOneSpill(AS_instrList instrList, Temp_temp temp, F_access ac
 		if((instr->kind == I_MOVE && Temp_inList(instr->u.MOVE.src, temp)) ||
 			(instr->kind == I_OPER && Temp_inList(instr->u.OPER.src, temp))){
 			char str[100];
-			sprintf(str, " movq ?%d#(`s0), `d0\n", access->u.offset);
+			sprintf(str, " movq ?%d#(`s0), `d0", access->u.offset);
 			spilledGet = AS_Oper(String(str), Temp_TempList(new_temp, NULL),
 				Temp_TempList(F_FP(), NULL), NULL);
 			//replace temp with new_temp
@@ -192,7 +192,7 @@ AS_instrList RewriteOneSpill(AS_instrList instrList, Temp_temp temp, F_access ac
 		if((instr->kind == I_MOVE && Temp_inList(instr->u.MOVE.dst, temp)) ||
 			(instr->kind == I_OPER && Temp_inList(instr->u.OPER.dst, temp))){
 			char str[100];
-			sprintf(str, " movq `s1, ?%d#(`s0)\n", access->u.offset);
+			sprintf(str, " movq `s1, ?%d#(`s0)", access->u.offset);
 			spillPut = AS_Oper(String(str), NULL,
 				Temp_TempList(F_FP(), Temp_TempList(new_temp, NULL)), NULL);
 			//replace temp with new_temp

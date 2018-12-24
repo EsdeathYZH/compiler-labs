@@ -15,7 +15,8 @@
 #include "flowgraph.h"
 
 /*
-目前所有操作暂时都是对无序列表进行的操作！！！
+*目前所有操作暂时都是对无序列表进行的操作,可以进行优化对有序列表进行操作，
+*但是寄存器分配伪代码就要改很多排序的地方，有序基本操作在temp.c里面有给出
 */
 
 #define K 16
@@ -89,7 +90,6 @@ struct RA_result RA_regAlloc(F_frame f, AS_instrList il) {
 }
 
 void RA_initAll(F_frame f, AS_instrList il){
-	//还没用到orz
 	frame = f;
 	//指令序列，初始值就是传进来的指令, 之后rewrite会修改
 	instructions = il;
@@ -137,9 +137,8 @@ void LivenessAnalysis(){
 }
 
 void Build(){
-	//因为在liveness analysis中已经分析出了冲突图与movelist，所以在不更改liveness模块接口的前提下
-	//利用live graph将需要的数据结构全部构造出来
-
+	//use live graphto build all data structures we need
+	//this BUILD function is not the BUILD function given in book
 	//the following data structure should be NULL
 	assert(!simplifyWorklist);
  	assert(!freezeWorklist);
@@ -153,9 +152,6 @@ void Build(){
 	//assert(!frozenMoves);
 	assert(!worklistMoves);
 	//assert(!activeMoves);
-
-	//TODO:adjSet should be a bool-bitmap???
-	//adjList = G_empty();
 
 	simplifyWorklist = NULL;
  	freezeWorklist = NULL;
@@ -341,9 +337,7 @@ void EnableMoves(G_nodeList nodes){
 }
 
 void Coalesce(){
-	//TODO:两个问题，一个是copy的顺序问题，一个是m变不变的问题
 	//select first move
-	//printf("Coalesce!\n");
 	G_node u, v;
 	G_node x = worklistMoves->src, mx = worklistMoves->src;
 	G_node y = worklistMoves->dst, my = worklistMoves->dst;
@@ -469,7 +463,7 @@ void FreezeMoves(G_node u){
 		}
 		activeMoves = Move_deleteMove(activeMoves, x, y);
 		frozenMoves = Move_insertMove(frozenMoves, x, y);
-		//TODO:为了防止段错误加的第一个判断条件
+		//TODO:the first condition is not present in book
 		if(!G_inNodeList(v, precolored) && !NodeMoves(v) && Degree(v) < K){
 			freezeWorklist = G_deleteNode(freezeWorklist, v);
 			simplifyWorklist = G_insertNode(simplifyWorklist, v);
@@ -479,7 +473,6 @@ void FreezeMoves(G_node u){
 }
 
 void SelectSpill(){
-	//TODO:
 	/* 用所喜好的启发式从spillWorkList选出一个节点，
 	注意：要避免选择那种由读取前面已溢出的寄存器产生的、活跃范围很小的节点*/
 	printf("select a spill node!\n");
@@ -544,8 +537,7 @@ void AssignColors(){
 		Temp_enter(map, node_temp, assign_color);
 		tempCoalescedNodes = tempCoalescedNodes->tail;
 	}
-	//每一轮的分配颜色迭代都会产生一个新层
-	printf("a assign color round!\n");
+	//each aiign round will produce a new layermap over coloring map
 	coloring = Temp_layerMap(map, coloring);
 }
 
@@ -555,7 +547,6 @@ void RewriteProgram(){
 	//在程序中（指令序列中）vi的每一个定值之后插入一条存储指令
 	//在vi的每一个使用之前插入一条取数指令
 	//将所有的vi放入集合newTemps
-	printf("rewrite!\n");
 	G_table accessTab = G_empty();
 	while(spilledNodes){
 		F_access access = F_allocLocal(frame, TRUE);

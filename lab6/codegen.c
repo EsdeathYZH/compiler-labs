@@ -170,7 +170,6 @@ static void munchStm(T_stm s){
         case T_JUMP:{
             char str[TEMP_STR_LENGTH] = " jmp  `j0";
             emit(AS_Oper(String(str), NULL, NULL, AS_Targets(s->u.JUMP.jumps)));
-            //TODO: not completed
             break;
         }
         case T_CJUMP:{
@@ -221,7 +220,6 @@ static void munchStm(T_stm s){
                 default:
                     assert(0);
             }
-            //TODO: not completed!!
             sprintf(str, " cmpq `s1, `s0");
             emit(AS_Oper(String(str), NULL, 
                     Temp_TempList(munchExp(s->u.CJUMP.left), Temp_TempList(munchExp(s->u.CJUMP.right), NULL)), NULL));
@@ -301,7 +299,6 @@ static Temp_temp munchExp(T_exp e){
             switch(e->u.BINOP.op){
                 case T_plus:{
                     Temp_temp temp = Temp_newtemp();
-                    //TODO: can we use leaq here?
                     if(e->u.BINOP.right->kind == T_CONST){
                         T_exp e1 = e->u.BINOP.left;
                         Temp_temp possible_fp = munchExp(e1);
@@ -346,7 +343,6 @@ static Temp_temp munchExp(T_exp e){
                 }
                 case T_minus:{
                     Temp_temp temp = Temp_newtemp();
-                    //TODO: can we use leaq here?
                     if(e->u.BINOP.right->kind == T_CONST){
                         T_exp e1 = e->u.BINOP.left;
                         char str[TEMP_STR_LENGTH];
@@ -427,7 +423,6 @@ static Temp_temp munchExp(T_exp e){
                 }
                 case T_and:{
                     Temp_temp temp = Temp_newtemp();
-                    //TODO: can we use leaq here?
                     if(e->u.BINOP.right->kind == T_CONST){
                         T_exp e1 = e->u.BINOP.left;
                         char str[TEMP_STR_LENGTH];
@@ -474,7 +469,6 @@ static Temp_temp munchExp(T_exp e){
                 }
                 case T_or:{
                     Temp_temp temp = Temp_newtemp();
-                    //TODO: can we use leaq here?
                     if(e->u.BINOP.right->kind == T_CONST){
                         T_exp e1 = e->u.BINOP.left;
                         char str[TEMP_STR_LENGTH];
@@ -581,7 +575,6 @@ static Temp_temp munchExp(T_exp e){
                 }
                 case T_xor:{
                     Temp_temp temp = Temp_newtemp();
-                    //TODO: can we use leaq here?
                     if(e->u.BINOP.right->kind == T_CONST){
                         T_exp e1 = e->u.BINOP.left;
                         char str[TEMP_STR_LENGTH];
@@ -651,7 +644,7 @@ static Temp_temp munchExp(T_exp e){
             //Temp_temp r = munchExp(e->u.CALL.fun);
             //generate static link
             Temp_temp temp = Temp_newtemp();
-            //这里没有判断是不是rsp的原因是发现有的时候会生成先把rsp move到一个temp，然后再用那个temp的情况。。。
+            //这里没有判断是不是rsp的原因是发现有的时候会生成先把rsp move到一个temp，然后再用那个temp的情况
             if(e->u.CALL.args->head->kind == T_TEMP ){
                 sprintf(str, " leaq ?0#(%%rsp), `d0");
                 emit(AS_Oper(String(str), Temp_TempList(temp, NULL),
@@ -664,7 +657,6 @@ static Temp_temp munchExp(T_exp e){
             }
             //skip static link
             Temp_tempList l = munchArgs(0, e->u.CALL.args->tail);
-            //TODO: calldefs is not sure
             sprintf(str, " callq %s", Temp_labelstring(e->u.CALL.fun->u.NAME));
             emit(AS_Oper(String(str), Temp_unionList(argRegs(), Temp_TempList(F_RV(), callerSaves())), l, NULL));
             // return %rax
@@ -687,7 +679,7 @@ static Temp_tempList munchArgs(int index, T_expList args){
         }
         sprintf(str, " movq `s0, `d0");
         emit(AS_Move(String(str), Temp_TempList(argregs->head, NULL), Temp_TempList(munchExp(args->head), NULL)));
-        //TODO:第一个是机器寄存器还是munch的结果？我认为应该是机器寄存器
+        //return argument registers
         return Temp_TempList(argregs->head, munchArgs(index+1, args->tail));
     }else{
         sprintf(str, " movq `s0, %d(%%rsp)", (index-5)*F_wordSize);

@@ -214,12 +214,7 @@ Tr_exp Tr_int(int num){
 
 Tr_exp Tr_string(string str){
 	Temp_label lab = Temp_newlabel();
-	//在字符串前面加上长度
-	//TODO:因为用的strlen所以现在还没有真正发挥作用
-	//int length = strlen(str);
-	//char* final_str = (char*) checked_malloc(length+4);
-	//strcpy(final_str+4, str);
-	//*((int*)final_str) = length;
+	//TODO:书上说的在字符串前加长度来避免中间有\0字符没有实现
 	F_frag str_frag = F_StringFrag(lab, str);
 	//put fragment onto a global list
 	addFragToGlobalList(str_frag);
@@ -246,7 +241,7 @@ Tr_exp Tr_fieldVar(Tr_exp rec, int offset){
 			T_Binop(T_mul, T_Const(offset), T_Const(F_wordSize)))));
 }
 
-Tr_exp Tr_subscriptVar(Tr_exp array, Tr_exp subscript, int element_size){
+Tr_exp Tr_subscriptVar(Tr_exp array, Tr_exp subscript){
 	return Tr_Ex(T_Mem(
 			T_Binop(T_plus, unEx(array),
 			//Notice!!!The element of a array is integer but not pointer 
