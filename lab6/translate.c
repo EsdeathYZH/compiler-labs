@@ -335,7 +335,7 @@ Tr_exp Tr_if(Tr_exp test, Tr_exp then, Tr_exp elsee){
 		struct Cx cx = unCx(test);
 		doPatch(cx.trues, true_label);
 		doPatch(cx.falses, false_label);
-		return Tr_Nx(T_Seq(cx.stm, 
+		return Tr_Nx(T_Seq(cx.stm,
 				T_Seq(T_Label(true_label),
 				T_Seq(unNx(then),
 				T_Seq(T_Jump(T_Name(merge_label), Temp_LabelList(merge_label, NULL)),
@@ -357,7 +357,7 @@ Tr_exp Tr_if(Tr_exp test, Tr_exp then, Tr_exp elsee){
 						T_Seq(T_Jump(T_Name(merge_label), Temp_LabelList(merge_label, NULL)),
 						T_Seq(T_Label(false_label),
 						T_Seq(T_Move(T_Temp(result), unEx(elsee)),
-						T_Label(merge_label))))))), 
+						T_Label(merge_label))))))),
 					T_Temp(result)));
 	}
 }
@@ -367,6 +367,7 @@ Tr_exp Tr_break(Temp_label loopLabel){
 }
 
 Tr_exp Tr_recordExp(int size, Tr_expList tr_expList){
+	//at the function beginning, tr_expList is a reverse list
 	int record_size = size;
 	Temp_temp record = Temp_newtemp();
 	T_stm statement = T_Move(T_Mem(
@@ -475,6 +476,7 @@ Tr_exp Tr_for(Tr_access loopVar, Tr_exp low, Tr_exp high, Tr_exp body_exp, Temp_
 
 //Just like translate a series of exps, and translate the last exp 
 Tr_exp Tr_let(Tr_expList decExpList, Tr_exp body_exp){
+	//at the function beginning, decExpList is a reverse list
 	if(!decExpList){
 		return body_exp;
 	}
@@ -488,6 +490,7 @@ Tr_exp Tr_let(Tr_expList decExpList, Tr_exp body_exp){
 }
 
 Tr_exp Tr_functionCall(Tr_level current_level, Tr_level function_level, Temp_label func, Tr_expList args){
+	//at the function beginning, args is a reverse list
 	T_exp static_link = T_Temp(F_FP());
 	//an optimization for runtime functions
 	if(function_level == Tr_outermost()){

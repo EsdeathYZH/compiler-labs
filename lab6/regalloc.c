@@ -48,6 +48,7 @@ void SelectSpill();
 void AssignColors();
 void RewriteProgram();
 AS_instrList clearUselessMove(AS_instrList il);
+AS_instrList clearUselessJump(AS_instrList il);
 void LivenessAnalysis();
 void Build();
 void RA_main();
@@ -121,6 +122,8 @@ void RA_main(){
 		RA_main();
 	}
 	instructions = clearUselessMove(instructions);
+	instructions = clearUselessJump(instructions);
+	//TODO:clear useless label 
 	simplifyWorklist = NULL;
  	freezeWorklist = NULL;
  	spillWorklist = NULL;
@@ -517,8 +520,9 @@ void AssignColors(){
 			printf("no color left!\n");
 			spilledNodes = G_insertNode(spilledNodes, node);
 		}else{
-			printf("assign!\n");
+			//printf("assign!\n");
 			coloredNodes = G_insertNode(coloredNodes, node);
+			//TODO:This is an optimization point, we should choose a color that help us eliminate more MOVEs.
 			G_enter(color, node, okColors->head);
 			string assign_color = Temp_look(coloring, okColors->head);
 			assert(assign_color);
@@ -527,7 +531,7 @@ void AssignColors(){
 	}
 	G_nodeList tempCoalescedNodes = coalescedNodes;
 	while(tempCoalescedNodes){
-		printf("assign!\n");
+		//printf("assign!\n");
 		Temp_temp temp = (Temp_temp) G_look(color, GetAlias(tempCoalescedNodes->head));
 		Temp_temp node_temp = (Temp_temp) G_nodeInfo(tempCoalescedNodes->head);
 		assert(temp);
@@ -571,4 +575,19 @@ AS_instrList clearUselessMove(AS_instrList il){
 	}
 	return AS_InstrList(instruction, clearUselessMove(il->tail));
 }
+
+AS_instrList clearUselessJump(AS_instrList il){
+	if(!il) return NULL;
+	AS_instr instruction = il->head;
+	if(instruction->kind == I_OPER && !strncmp(instruction->u.OPER.assem, " jmp", 4)){
+		AS_instr possible_label = il->tail ? il->tail->head : NULL;
+		if(possible_label && possible_label->kind == I_LABEL 
+			&& possible_label->u.LABEL.label == instruction->u.OPER.jumps->labels->head){
+			return clearUselessJump(il->tail);
+		}
+	}
+	return AS_InstrList(instruction, clearUselessJump(il->tail));
+}
+
+
 

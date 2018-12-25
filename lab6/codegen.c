@@ -88,6 +88,7 @@ static void munchStm(T_stm s){
                     && dst->u.MEM->u.BINOP.op == T_plus
                     && dst->u.MEM->u.BINOP.right->kind == T_CONST){
                     T_exp e1 = dst->u.MEM->u.BINOP.left, e2 = src;
+                    Temp_temp e2temp = munchExp(e2);
                     Temp_temp possible_fp = munchExp(e1);
                     if(possible_fp == F_FP()){
                         sprintf(str, " movq `s1, ?%d#(`s0)", dst->u.MEM->u.BINOP.right->u.CONST);
@@ -95,7 +96,7 @@ static void munchStm(T_stm s){
                         sprintf(str, " movq `s1, %d(`s0)", dst->u.MEM->u.BINOP.right->u.CONST);
                     }
                     emit(AS_Oper(String(str),NULL,
-                        Temp_TempList(possible_fp, Temp_TempList(munchExp(e2), NULL)), NULL));
+                        Temp_TempList(possible_fp, Temp_TempList(e2temp, NULL)), NULL));
                 }
                 /* MOVE(MEM(BINOP(PLUS,CONST(i),e1)),e2) */
                 /* movq %rdi, -24(%rbp)*/
@@ -225,8 +226,7 @@ static void munchStm(T_stm s){
                     Temp_TempList(munchExp(s->u.CJUMP.left), Temp_TempList(munchExp(s->u.CJUMP.right), NULL)), NULL));
             sprintf(str, " %s  `j0", jump_str);
             emit(AS_Oper(String(str), NULL, NULL,
-            //TODO:s->u.CJUMP.false here?
-                    AS_Targets(Temp_LabelList(s->u.CJUMP.true, NULL))));
+                    AS_Targets(Temp_LabelList(s->u.CJUMP.true, Temp_LabelList(s->u.CJUMP.false, NULL)))));
             break;
         }
         case T_LABEL:{

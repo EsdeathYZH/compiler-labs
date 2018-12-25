@@ -104,11 +104,12 @@ G_graph FG_AssemFlowGraph(AS_instrList il, F_frame f) {
 					G_addEdge(from, to);
 					labelList = labelList->tail;
 				}
-			}
+			}else{
 			if(tempInstrList->tail){
 				G_node to = findNodeByInstr(nodeList, tempInstrList->tail->head);
 				assert(from && to);
 				G_addEdge(from, to);
+			}
 			}
 		}
 		tempInstrList = tempInstrList->tail;

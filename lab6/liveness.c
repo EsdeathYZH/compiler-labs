@@ -114,7 +114,6 @@ struct Live_graph Live_liveness(G_graph flow) {
 			Temp_tempList newOut = NULL;
 			G_nodeList succList = G_succ(node);
 			while(succList){
-				printf("iteration round!\n");
 				newOut = Temp_unionList(newOut, lookupLiveMap(inmap, succList->head));
 				succList = succList->tail;
 			} 

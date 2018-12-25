@@ -49,11 +49,11 @@ static void doProc(FILE *out, F_frame frame, T_stm body)
  Init_F_TempMap();
 
  printf("doProc for function %s:\n", S_name(F_name(frame)));
- //printStmList(stdout, T_StmList(body, NULL));
+ printStmList(stdout, T_StmList(body, NULL));
  printf("-------====IR tree=====-----\n");
 
  stmList = C_linearize(body);
- //printStmList(stdout, stmList);
+ printStmList(stdout, stmList);
  printf("-------====Linearlized=====-----\n");
 
  blo = C_basicBlocks(stmList);
