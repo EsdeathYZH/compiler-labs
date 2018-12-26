@@ -51,6 +51,14 @@ Temp_tempList callerSaves();
 Temp_tempList F_registers();
 
 F_accessList F_AccessList(F_access head, F_accessList tail);
+bool F_inList(F_accessList list, F_access access);
+bool F_isSameList(F_accessList list1, F_accessList list2);
+F_accessList F_unionList(F_accessList list1, F_accessList list2);
+F_accessList F_intersectList(F_accessList list1, F_accessList list2);
+F_accessList F_exclusiveList(F_accessList list1, F_accessList list2);
+F_accessList F_insertAccess(F_accessList list, F_access access);
+F_accessList F_deleteAccess(F_accessList list, F_access access);
+F_accessList F_copyFrom(F_accessList origin);
 
 extern const int F_wordSize;
 T_exp F_Exp(F_access access, T_exp framePtr);

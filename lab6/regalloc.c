@@ -47,8 +47,10 @@ void FreezeMoves(G_node u);
 void SelectSpill();
 void AssignColors();
 void RewriteProgram();
+void selectColorForSpill();
 AS_instrList clearUselessMove(AS_instrList il);
 AS_instrList clearUselessJump(AS_instrList il);
+AS_instrList clearSameSpillMove(AS_instrList il);
 void LivenessAnalysis();
 void Build();
 void RA_main();
@@ -64,6 +66,12 @@ G_nodeList spilledNodes;
 G_nodeList coalescedNodes;
 G_nodeList coloredNodes;
 G_nodeList selectStack;
+
+//select color for spill node
+struct Live_graph spill_liveGraph;
+Temp_tempList spillTempList;
+G_nodeList spill_coloredNodes;
+G_table spill_color; //value:F_access
 
 Live_moveList coalescedMoves;
 Live_moveList constrainedMoves;
@@ -118,7 +126,8 @@ void RA_main(){
 	}
 	AssignColors();
 	if(spilledNodes){
-		RewriteProgram(spilledNodes);
+		selectColorForSpill();
+		RewriteProgram();
 		RA_main();
 	}
 	instructions = clearUselessMove(instructions);
@@ -136,6 +145,7 @@ void LivenessAnalysis(){
 	G_graph flowGraph = FG_AssemFlowGraph(instructions, frame);
 	printf("Finish flowgraph!!\n");
 	liveGraph = Live_liveness(flowGraph);
+	spill_liveGraph = Live_liveness(flowGraph);
 	printf("Finish liveness analysis!!\n");
 }
 
@@ -175,6 +185,7 @@ void Build(){
 	degree = G_empty();
 	alias = G_empty();
 	moveList = G_empty();
+	spill_color = G_empty();
 
 	G_graph conflictGraph = liveGraph.graph;
 	Live_moveList tempMoveList = liveGraph.moves;
@@ -551,15 +562,51 @@ void RewriteProgram(){
 	//在程序中（指令序列中）vi的每一个定值之后插入一条存储指令
 	//在vi的每一个使用之前插入一条取数指令
 	//将所有的vi放入集合newTemps
-	G_table accessTab = G_empty();
-	while(spilledNodes){
-		F_access access = F_allocLocal(frame, TRUE);
-		instructions = RewriteOneSpill(instructions, (Temp_temp)G_nodeInfo(spilledNodes->head), access);
-		spilledNodes = spilledNodes->tail;
+	// while(spilledNodes){
+	// 	F_access access = F_allocLocal(frame, TRUE);
+	// 	instructions = RewriteOneSpill(instructions, (Temp_temp)G_nodeInfo(spilledNodes->head), access);
+	// 	spilledNodes = spilledNodes->tail;
+	// }
+	//instructions = clearSameSpillMove(instructions);
+	while(spill_coloredNodes){
+		F_access access = G_look(spill_color, spill_coloredNodes->head);
+		instructions = RewriteOneSpill(instructions, (Temp_temp)G_nodeInfo(spill_coloredNodes->head), access);
+		spill_coloredNodes = spill_coloredNodes->tail;
 	}
 	spilledNodes = NULL;
 	coloredNodes = NULL;
 	coalescedNodes = NULL;
+	spill_coloredNodes = NULL;
+	spillTempList = NULL;
+}
+
+void selectColorForSpill(){
+	F_accessList colors = NULL;
+	G_nodeList new_spillNodes = NULL;
+	while(spilledNodes){
+		Temp_temp temp = (Temp_temp)G_nodeInfo(spilledNodes->head);
+		spillTempList = Temp_insertTemp(spillTempList, temp);
+		new_spillNodes = G_insertNode(new_spillNodes, FindorCreateTempNode(spill_liveGraph.graph, temp));
+		spilledNodes = spilledNodes->tail;
+	}
+	while(new_spillNodes){
+		F_accessList okColors = F_copyFrom(colors);
+		G_nodeList list = G_intersectNodeList(spill_coloredNodes, G_adj(new_spillNodes->head));
+		while(list){
+			F_access access = G_look(spill_color, list->head);
+			okColors = F_deleteAccess(okColors, access);
+			list = list->tail;
+		}
+		if(okColors){
+			G_enter(spill_color, new_spillNodes->head, okColors->head);
+		}else{
+			F_access access = F_allocLocal(frame, TRUE);
+			colors = F_insertAccess(colors, access);
+			G_enter(spill_color, new_spillNodes->head, access);
+		}
+		spill_coloredNodes = G_insertNode(spill_coloredNodes, new_spillNodes->head);
+		new_spillNodes = new_spillNodes->tail;
+	}
 }
 
 AS_instrList clearUselessMove(AS_instrList il){
@@ -574,6 +621,20 @@ AS_instrList clearUselessMove(AS_instrList il){
 		}
 	}
 	return AS_InstrList(instruction, clearUselessMove(il->tail));
+}
+
+AS_instrList clearSameSpillMove(AS_instrList il){
+	if(!il) return NULL;
+	AS_instr instruction = il->head;
+	if(instruction->kind == I_MOVE){
+		Temp_temp src = instruction->u.MOVE.src->head;
+		Temp_temp dst = instruction->u.MOVE.dst->head;
+		if(G_look(spill_color, FindorCreateTempNode(spill_liveGraph.graph, src)) == 
+			G_look(spill_color, FindorCreateTempNode(spill_liveGraph.graph, dst))){
+			return clearSameSpillMove(il->tail);
+		}
+	}
+	return AS_InstrList(instruction, clearSameSpillMove(il->tail));
 }
 
 AS_instrList clearUselessJump(AS_instrList il){

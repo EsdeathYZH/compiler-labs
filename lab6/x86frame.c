@@ -309,6 +309,80 @@ F_accessList F_AccessList(F_access head, F_accessList tail){
 	return f_accessList;
 }
 
+bool F_inList(F_accessList list, F_access access){
+    while(list){
+        if(list->head == access){
+            return TRUE;
+        }
+        list = list->tail;
+    }
+    return FALSE;
+}
+
+//list1 U list2
+F_accessList F_unionList(F_accessList list1, F_accessList list2){
+    F_accessList result = list1;
+    while(list2){
+        if(!F_inList(list1, list2->head)){
+            result = F_AccessList(list2->head, result);
+        }
+        list2 = list2->tail;
+    }
+    return result;
+}
+
+//list1 ^ list2
+F_accessList F_intersectList(F_accessList list1, F_accessList list2){
+    F_accessList result = NULL;
+    while(list2){
+        if(F_inList(list1, list2->head)){
+            result = F_AccessList(list2->head, result);
+        }
+        list2 = list2->tail;
+    }
+    return result;
+}
+
+//list1 - list2
+F_accessList F_exclusiveList(F_accessList list1, F_accessList list2){
+    F_accessList result = NULL;
+    while(list1){
+        if(!F_inList(list2, list1->head)){
+            result = F_AccessList(list1->head, result);
+        }
+        list1 = list1->tail;
+    }
+    return result;
+}
+
+bool F_isSameList(F_accessList list1, F_accessList list2){
+  return (F_exclusiveList(list1, list2) == NULL && F_exclusiveList(list2, list1) == NULL);
+}
+
+F_accessList F_copyFrom(F_accessList origin){
+    F_accessList result = NULL;
+    F_accessList* listPtr = &result;
+    while(origin){
+      (*listPtr) = F_AccessList(origin->head, NULL);
+      listPtr = &((*listPtr)->tail);
+      origin = origin->tail;
+    }
+    return result;
+}
+
+F_accessList F_insertAccess(F_accessList list, F_access access){
+    return F_AccessList(access, list);
+}
+
+F_accessList F_deleteAccess(F_accessList list, F_access access){
+    if(!list) return list;
+    if(list->head == access){
+      return list->tail;
+    }
+    list->tail = F_deleteAccess(list->tail, access);
+    return list;
+}
+
 F_access F_allocLocal(F_frame f, bool escape){
 	F_accessList* temp_accessList = &(f->localList);
 	while(*temp_accessList){

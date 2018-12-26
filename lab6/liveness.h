@@ -26,5 +26,5 @@ struct Live_graph {
 Temp_temp Live_gtemp(G_node n);
 
 struct Live_graph Live_liveness(G_graph flow);
-
+G_node FindorCreateTempNode(G_graph graph, Temp_temp temp);
 #endif

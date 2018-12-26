@@ -19,7 +19,7 @@ static Temp_tempList lookupLiveMap(G_table t, G_node flownode){
 	return (Temp_tempList) G_look(t, flownode);
 }
 
-static G_node FindorCreateTempNode(G_graph graph, Temp_temp temp){
+G_node FindorCreateTempNode(G_graph graph, Temp_temp temp){
 	G_nodeList nodeList = G_nodes(graph);
 	while(nodeList){
 		Temp_temp info = Live_gtemp(nodeList->head);
